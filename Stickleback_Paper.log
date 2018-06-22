@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 JUN 2018 23:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  22 JUN 2018 14:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -762,7 +762,11 @@ LaTeX Info: Redefining \addtolength on input line 81.
 )
 \c@@todonotes@numberoftodonotes=\count121
 )
-(./Stickleback_Paper.aux)
+(./Stickleback_Paper.aux
+
+LaTeX Warning: Label `fig:boat1' multiply defined.
+
+)
 \openout1 = `Stickleback_Paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
@@ -777,8 +781,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
-
-(/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count122
 \scratchdimen=\dimen162
@@ -856,45 +859,55 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 <matplotlib/Fst.png, id=30, 703.1871pt x 437.9562pt>
 File: matplotlib/Fst.png Graphic file (type png)
  <use matplotlib/Fst.png>
-Package pdftex.def Info: matplotlib/Fst.png used on input line 289.
+Package pdftex.def Info: matplotlib/Fst.png used on input line 287.
 (pdftex.def)             Requested size: 345.0pt x 214.8744pt.
 
 
 LaTeX Warning: Marginpar on page 6 moved.
 
-[6 <./matplotlib/Fst.png>]
-<matplotlib/MPFAI.png, id=36, 491.436pt x 352.6776pt>
+<matplotlib/TimeToAdaptation.png, id=32, 533.3526pt x 277.5168pt>
+File: matplotlib/TimeToAdaptation.png Graphic file (type png)
+
+<use matplotlib/TimeToAdaptation.png>
+Package pdftex.def Info: matplotlib/TimeToAdaptation.png used on input line 313
+.
+(pdftex.def)             Requested size: 345.0pt x 179.51146pt.
+ [6 <./matplotlib/Fst.png>]
+<matplotlib/MPFAI.png, id=37, 617.9085pt x 406.8801pt>
 File: matplotlib/MPFAI.png Graphic file (type png)
 
 <use matplotlib/MPFAI.png>
-Package pdftex.def Info: matplotlib/MPFAI.png used on input line 341.
-(pdftex.def)             Requested size: 276.00105pt x 198.07928pt.
- [7 <./matplotlib/MPFAI.png>]
-Excluding 'comment' comment. (./Stickleback_Paper.bbl [8]) [9]
-(./Stickleback_Paper.aux) ) 
+Package pdftex.def Info: matplotlib/MPFAI.png used on input line 339.
+(pdftex.def)             Requested size: 276.00105pt x 181.7409pt.
+ [7 <./matplotlib/TimeToAdaptation.png>] [8 <./matplotlib/MPFAI.png>] Excluding
+ 'comment' comment. [9] (./Stickleback_Paper.bbl)
+[10] (./Stickleback_Paper.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 14389 strings out of 492995
- 281731 string characters out of 6132704
- 341471 words of memory out of 5000000
- 17672 multiletter control sequences out of 15000+600000
+ 14394 strings out of 492995
+ 281894 string characters out of 6132704
+ 340516 words of memory out of 5000000
+ 17676 multiletter control sequences out of 15000+600000
  5504 words of font info for 20 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,9n,77p,427b,700s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti10.pfb>
-Output written on Stickleback_Paper.pdf (9 pages, 236798 bytes).
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Stickleback_Paper.pdf (10 pages, 297965 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 87 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
