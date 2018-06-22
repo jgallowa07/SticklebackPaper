@@ -277,16 +277,16 @@ $F_{st}$ plots along the genome, show peaks at loci underlying local adaptation.
 
 \subsection{The Effect of Migration Rate}
 
-\subsubsection{Migration is Mixing}
+\subsubsection*{Migration is Mixing}
 
 %FIGURES THAT SHOW THIS:
 %- Fst Plots.
 %- SGV Plots.
 %- Haplotype plots
 
-\begin{figure}[h!tb]
+\begin{figure}[htb]
 	\begin{center}
-  		\includegraphics[width=01.0\linewidth]{}
+  		\includegraphics[width=01.0\linewidth]{matplotlib/Fst.png}
   		\caption{A boat.}
   		\label{fig:boat1}
 	\end{center}
@@ -294,7 +294,7 @@ $F_{st}$ plots along the genome, show peaks at loci underlying local adaptation.
 
 Across increasing parameters of migration, we observed more gene flow across the populations. 
 As can be seen in Figure (neutral fst figure)
-$F_{st}$ values for neutral Alleles steadily decline between all sets of populations as 
+$F_{st}$ values for neutral alleles steadily decline between all sets of populations as 
 migration increases, this illustrates less difference between sections of the genome which are not acted up 
 upon by selection, in all populations.
 Additionally, Standing Genetic Variance \todo{computed as?}
@@ -306,10 +306,17 @@ lakes surrounding were exporting alleles into the marine individuals.
 %TIES TO NATURE?
 %SPECIFICALLY (interesting stuff)
 
-\subsubsection{migration affects the speed of adaptation}
+\subsubsection*{migration affects the speed of adaptation}
 
 %FIGURES THAT SHOW THIS:
 %-Time to adaptation
+%\begin{figure}[h!tb]
+%	\begin{center}
+%  		\includegraphics[width=01.0\linewidth]{???}
+%  		\caption{A boat.}
+%  		\label{fig:boat1}
+%	\end{center}
+%\end{figure}
 
 We observed a dramatic shift in time until adaptation for the introduced populations
 as migration rates increased. 
@@ -324,11 +331,18 @@ marine and the rapid adaptation of the introduced populations.
 
 %TIES TO NATURE?
  
-\subsubsection{sharing of freshwater adapted alleles}
+\subsubsection*{sharing of freshwater adapted alleles}
 
 %FIGURES THAT SHOW THIS:
 %-MPAA / IND
 %-Total/Avg shared
+\begin{figure}[h!tb]
+	\begin{center}
+  		\includegraphics[width=0.8\linewidth]{matplotlib/MPFAI.png}
+  		\caption{A boat.}
+  		\label{fig:boat2}
+	\end{center}
+\end{figure}
 
 To further investigate this correlation, we take a look at the FAA driving 
 local adaptation of the introduced population. 
@@ -351,7 +365,7 @@ these are both suggestive of the original lakes sharing solutions to the same se
 
 %SPECIFICALLY (interesting stuff)
 
-\subsubsection{We see Migration Load after a certain threshold of migration}
+\subsubsection*{We see Migration Load after a certain threshold of migration}
 
 %FIGURES THAT SHOW THIS:
 %- Phenotype Distribution
@@ -371,7 +385,7 @@ pull towards the opposing selective pressure value and away from the local optim
 
 %SPECIFICALLY (interesting stuff)
 	
-\subsubsection {There is a Qualitative Threshold of migration rates}
+\subsubsection*{There is a Qualitative Threshold of migration rates}
 
 %FIGURES THAT SHOW THIS:
 %all
@@ -385,7 +399,7 @@ the ability for species to locally adapt to the selective pressure of their envi
 This leads us to consider a window (Goldilocks Zone) of introgression which allows for the transportation
 of FAA's without migration load. 
 
-\subsubsection {Low Recombination Causes Clustering}
+\subsubsection*{Low Recombination Causes Clustering}
 
 \begin{comment}
 %--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -479,7 +493,7 @@ This is because migration tends to oppose the natural divergence of populations 
 Migration load depreciation of fitness between two subpopulations with a high amount of introgression between them. 
 This is often observed in nature when the sharing of genes constricts the adaptation of both species. 
 
- In our simulations, at high migration rates of $0.05$, 
+In our simulations, at high migration rates of $0.05$, 
 we consistently saw this effect in all subpopulations. 
 
 
