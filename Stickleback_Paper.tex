@@ -185,6 +185,8 @@ with a shape parameter of $1$ and a mean of either $0.5$, or ${-0.5}$.
 \textnormal{Mutation.selectionCoeff = } X \sim \Gamma (1,\pm0.5)
 	\]
 
+\todo{maybe the order of these should be reversed?}
+
 \subsubsection{Genomic Architecture}
 
 Although still uncertain about how much of the genome is directly associated with the distinguished phenotypes, 
@@ -285,13 +287,16 @@ $F_{st}$ plots along the genome, show peaks at loci underlying local adaptation.
 \begin{figure}[htb]
 	\begin{center}
   		\includegraphics[width=01.0\linewidth]{matplotlib/Fst.png}
-  		\caption{A boat.}
-  		\label{fig:boat1}
+  		\caption{Distributions of $F_{st}$  values between the three subpopulations throughout the simulations.
+		On the left, $F_{st}$ was calculated only on neutral mutation frequencies. On the right, $F_{st}$ was calculated
+		only on effect (Impact on phenotype) mutation frequencies. 
+		Effect mutations are acted upon by selection as they have an affect on fitness where neutral mutations  }
+  		\label{fig:Fst}
 	\end{center}
 \end{figure}
 
 Across increasing parameters of migration, we observed more gene flow across the populations. 
-As can be seen in Figure (neutral fst figure)
+As can be seen in Figure \ref{fig:Fst},
 $F_{st}$ values for neutral alleles steadily decline between all sets of populations as 
 migration increases, this illustrates less difference between sections of the genome which are not acted up 
 upon by selection, in all populations.
@@ -311,14 +316,17 @@ lakes surrounding were exporting alleles into the marine individuals.
 \begin{figure}[h!tb]
 	\begin{center}
   		\includegraphics[width=01.0\linewidth]{matplotlib/TimeToAdaptation.png}
-  		\caption{A boat.}
-  		\label{fig:boat1}
+  		\caption{Time to adaptation as a function of migration rate ($M$) parameter value. This is where we measure how many generation
+		it takes for the introduced population's mean phenotype to come within 0.5 of the original lakes average phenotype. 
+		Each point represents a simulation run at some value of $M$. 
+		The yellow dashed line is the average of all points at each respective parameter value}
+  		\label{fig:TimeToAdaptation}
 	\end{center}
 \end{figure}
 
 We observed a dramatic shift in time until adaptation for the introduced populations
 as migration rates increased. 
-As can be seen in Figure (Time Until Adaptation) at the lowest migration rate of $5 * 10^{-5}$,
+As can be seen in Figure \ref{fig:TimeToAdaptation} at the lowest migration rate of $5 * 10^{-5}$,
 It took the introduced population over 30 thousand generations for the average phenotype of all the lakes to 
 get to within 0.5 of the original lakes original phenotypes. 
 This suggests that selection was acting primarily on new mutations, meaning the 
@@ -337,10 +345,16 @@ marine and the rapid adaptation of the introduced populations.
 \begin{figure}[h!tb]
 	\begin{center}
   		\includegraphics[width=0.8\linewidth]{matplotlib/MPFAI.png}
-  		\caption{A boat.}
-  		\label{fig:boat2}
+  		\caption{Distributions of mean percentage of freshwater adapted alleles (FAA) throughout the simulation run, for each subpopulation.
+		We count the total number of freshwater alleles for each individual before averaging them in each population and dividing by the total number of defined
+		freshwater adapted alleles.
+		Looking at total number of FAA per individual gives us an idea behind how many alleles underly a freshwater haplotype, 
+		while the percentage tells us the variance of the haplotype (note: I also have boxplots telling us total num FAA for the average individual that are interesting to look at "matplotlib/MFAI.png")}
+  		\label{fig:MPFAI}
 	\end{center}
 \end{figure}
+
+
 
 To further investigate this correlation, we take a look at the FAA driving 
 local adaptation of the introduced population. 
@@ -367,6 +381,17 @@ these are both suggestive of the original lakes sharing solutions to the same se
 
 %FIGURES THAT SHOW THIS:
 %- Phenotype Distribution
+\begin{figure}[h!tb]
+	\begin{center}
+  		\includegraphics[width=0.8\linewidth]{matplotlib/MeanPhenotype1.png}
+  		\caption{Distribution of mean phenotype throughout simulation runs at separate migration rate ($M$) parameter values, for each population.
+		The dashed pink line (Pheno = +10) is the optimum phenotype any individual in the marine environment.
+		In contrast the purple line at (Pheno = -10) represents the optimum for any individual in the freshwater environment. 
+		All individuals at generation 0 (beginning of the simulation) 
+		}
+  		\label{fig:MeanPhenotype}
+	\end{center}
+\end{figure}
 
 %GENERAL
 
@@ -375,7 +400,7 @@ We have experienced the most dramatic shifts of the population dynamics at $M = 
 After a threshold between this and $M = 5x10^{-2}$, we start to experience migration load. 
 Significant gene flow constricts local adaptation
 as a consequence of a large number of offspring through hybridization events between subpopulations.
-In Figure (Phenotype distribution) at $M = 5x10^{-2}$, we can see the distribution of average phenotype throughout the simulation
+In Figure \ref{fig:MeanPhenotype} at $M = 5x10^{-2}$, we can see the distribution of average phenotype throughout the simulation
 pull towards the opposing selective pressure value and away from the local optimum in all subpopulations.
 
 
@@ -395,7 +420,8 @@ We have found that too little migration leads to selection upon new mutations in
 In contrast, at high migration rates we have seen that migration load limits 
 the ability for species to locally adapt to the selective pressure of their environment.
 This leads us to consider a window (Goldilocks Zone) of introgression which allows for the transportation
-of FAA's without migration load. 
+of FAA's without migration load. In a species that commonly is subjected to two general types of selective pressure 
+such as marine and 
 
 \subsubsection*{Low Recombination Causes Clustering}
 
@@ -506,12 +532,14 @@ is the first parameter value at which we observe
 %--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \end{comment}
 
-\section{Discussion}
+\section{Conclusion \& Discussion}
 
 % at low M we should be able to predict something ---
 % at high M we should be able to predict something ----
 
-These simulation we're
+Here, we suggest a range of migration rate (introgression) parameter values which would allow for the rapid (and in turn, parallel) adaptation 
+of marine stickleback introduced intro a freshwater environment.
+While this range is heavily effected by all other selections of parameter values. 
 
 \newpage
 \bibliography{Citations}{}
