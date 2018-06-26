@@ -41,6 +41,8 @@
 
 \section{Introduction}
 
+\todo{Take out any "we's" and be more specific}
+
 In the mid 19th century,
 Darwin theorized that the process of natural selection resulted in speciation, 
 meaning all living species derived from a common ancestor. 
@@ -134,6 +136,8 @@ continuous or discrete, connected by any rate of migration.
 
 \subsubsection{Geography}
 
+
+
 What we've modeled geographically is a coastal marine population 
 connected by migration to multiple, smaller freshwater populations that are located along the coast.
 The population structure for the marine is modeled as a one-dimensional, continuous population
@@ -148,7 +152,17 @@ and connected by migration only through the marine environment.
 The marine has $2000$ individuals while 
 each of the lakes fluctuate around $200$. 
 
-\todo{Should I put my geography picture here?}
+\begin{figure}[htb]
+	\begin{center}
+  		\includegraphics[width=0.8\linewidth]{GeographyDiagram}
+  		\caption{A representation of the geographic and evolutionary history of all populations throughout the simulation. 
+		The marine is a one-dimensional, continuous population with spatial positions ranging from [0.0 - 10.0]. Each 
+		lake$_{i}$ is a discrete population connected by migration only through the marine at position $i - 0.5$. The introduced lakes 
+		have the same location and selective pressure as the original lakes, but arise at 40K generations, 
+		initialized as a copy of all marine individuals.}
+  		\label{fig:Geo}
+	\end{center}
+\end{figure}
 
 \subsubsection{Selective Pressure}
 
@@ -371,7 +385,6 @@ we see the distribution of the total number of FAA's decrease, and
 the average number of lakes each allele appears in at high frequency ($p > 0.5$), increase.
 With the distribution of effect size remaining the same across all simulations, 
 these are both suggestive of the original lakes sharing solutions to the same selective pressure.
-
 
 %TIES TO NATURE?
 
