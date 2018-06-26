@@ -210,12 +210,13 @@ Although still uncertain about how much of the genome is directly associated wit
 GWAS has indicated clusters of loci (linkage groups? Operon?) along the genome to be causative. 
 To mimic this and compare dynamics of neutral vs. effect under selection, 
 we create regions of effect. 
-These genomic elements are the only loci which allow for mutations that impact phenotype. 
+In these genomic elements of effect, we uniformly allow additive, recessive, and dominant, mutation that can push phenotype in either the positive or negative direction to arise. 
+Every genomic position outside of these effect regions only allows for selectively neutral mutations to arise.
 
 In our simulations, there are 10 effect regions of size 100 loci, uniformly placed between buffer regions of size 4950 loci. 
 This means the effect regions make up exactly $1\%$ of the entire genome for every individual throughout the simulation. 
 The entire genome has a mutation rate of $10^{-7}$ meaning approximately 1 in every 100 individuals, per generation, is subject to a new mutation. 
-The genome has a recombination rate of $10^{-5}$, which allows for approximately 1 breakpoint event, per individual, per generation. 
+The genome has a recombination rate of $10^{-5}$, which is approximately 1 breakpoint event, per individual, per generation. 
 
 %This allows us to observe differences in selection at the genomic level. 
 
