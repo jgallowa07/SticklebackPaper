@@ -203,13 +203,25 @@ with a shape parameter of $1$ and a mean of either $0.5$, or ${-0.5}$.
 
 \subsubsection{Genomic Architecture}
 
+In SLiM, the genome is conceptually a linear array of loci defining locations for 
+mutations that arise and breakpoints for recombination. 
+Genomic elements define a range depicting the types of mutations that can arise, the ratio at which they can arise. 
 Although still uncertain about how much of the genome is directly associated with the distinguished phenotypes, 
 GWAS has indicated clusters of loci (linkage groups? Operon?) along the genome to be causative. 
 To mimic this and compare dynamics of neutral vs. effect under selection, 
-we create regions of effect. These genomic elements are the only loci which allow for mutation that impact phenotype. 
-This allows us to observe differences in selection at the genomic level. 
-In SLiM, the genome is conceptually a linear array of loci for which we can define
-different amount 
+we create regions of effect. 
+These genomic elements are the only loci which allow for mutations that impact phenotype. 
+
+In our simulations, there are 10 effect regions of size 100 loci, uniformly placed between buffer regions of size 4950 loci. 
+This means the effect regions make up exactly $1\%$ of the entire genome for every individual throughout the simulation. 
+The entire genome has a mutation rate of $10^{-7}$ meaning approximately 1 in every 100 individuals, per generation, is subject to a new mutation. 
+The genome has a recombination rate of $10^{-5}$, which allows for approximately 1 breakpoint event, per individual, per generation. 
+
+%This allows us to observe differences in selection at the genomic level. 
+
+
+
+
 \todo{finish this}
 
 
