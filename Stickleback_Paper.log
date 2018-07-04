@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 JUN 2018 11:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 JUL 2018 16:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -762,23 +762,33 @@ LaTeX Info: Redefining \addtolength on input line 81.
 )
 \c@@todonotes@numberoftodonotes=\count121
 )
-(./Stickleback_Paper.aux)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/preprint/fullpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip53
+)
+(./Stickleback_Paper.aux
+
+LaTeX Warning: Label `fig:MPFAI' multiply defined.
+
+
+LaTeX Warning: Label `fig:NumFAA' multiply defined.
+
+)
 \openout1 = `Stickleback_Paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-
-(/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+ (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count122
 \scratchdimen=\dimen162
@@ -846,76 +856,210 @@ Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 66.
+(Font)              <7> on input line 51.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 66.
+(Font)              <5> on input line 51.
  [1
 
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<GeographyDiagram.pdf, id=16, 1027.84pt x 770.88pt>
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<GeographyDiagram.pdf, id=13, 1027.84pt x 770.88pt>
 File: GeographyDiagram.pdf Graphic file (type pdf)
  <use GeographyDiagram.pdf>
-Package pdftex.def Info: GeographyDiagram.pdf used on input line 157.
-(pdftex.def)             Requested size: 276.00105pt x 206.9994pt.
+Package pdftex.def Info: GeographyDiagram.pdf used on input line 137.
+(pdftex.def)             Requested size: 281.85587pt x 211.38687pt.
 
-[3] [4 <./GeographyDiagram.pdf>] [5]
-<matplotlib/Fst.png, id=47, 703.1871pt x 437.9562pt>
-File: matplotlib/Fst.png Graphic file (type png)
- <use matplotlib/Fst.png>
-Package pdftex.def Info: matplotlib/Fst.png used on input line 316.
-(pdftex.def)             Requested size: 345.0pt x 214.8744pt.
+[2] [3 <./GeographyDiagram.pdf>]
 
-[6]
+LaTeX Warning: Marginpar on page 4 moved.
+
+[4] <matplotlibPlots/FST_HRR.png, id=44, 616.10175pt x 412.6617pt>
+File: matplotlibPlots/FST_HRR.png Graphic file (type png)
+
+<use matplotlibPlots/FST_HRR.png>
+Package pdftex.def Info: matplotlibPlots/FST_HRR.png used on input line 297.
+(pdftex.def)             Requested size: 375.80544pt x 251.71066pt.
+ [5] [6 <./matplotlibPlots/FST_HRR.png>]
 
 LaTeX Warning: Marginpar on page 7 moved.
 
-<matplotlib/TimeToAdaptation.png, id=52, 533.3526pt x 277.5168pt>
-File: matplotlib/TimeToAdaptation.png Graphic file (type png)
 
-<use matplotlib/TimeToAdaptation.png>
-Package pdftex.def Info: matplotlib/TimeToAdaptation.png used on input line 345
-.
-(pdftex.def)             Requested size: 345.0pt x 179.51146pt.
- [7 <./matplotlib/Fst.png>]
-<matplotlib/MPFAI.png, id=58, 571.6557pt x 432.8973pt>
-File: matplotlib/MPFAI.png Graphic file (type png)
+LaTeX Warning: Marginpar on page 7 moved.
 
-<use matplotlib/MPFAI.png>
-Package pdftex.def Info: matplotlib/MPFAI.png used on input line 374.
-(pdftex.def)             Requested size: 276.00105pt x 209.01695pt.
- [8 <./matplotlib/TimeToAdaptation.png>]
-<matplotlib/MeanPhenotype1.png, id=63, 466.1415pt x 458.1918pt>
-File: matplotlib/MeanPhenotype1.png Graphic file (type png)
+<matplotlibPlots/TimeToAdaptation.png, id=53, 533.3526pt x 277.5168pt>
+File: matplotlibPlots/TimeToAdaptation.png Graphic file (type png)
 
-<use matplotlib/MeanPhenotype1.png>
-Package pdftex.def Info: matplotlib/MeanPhenotype1.png used on input line 412.
-(pdftex.def)             Requested size: 276.00105pt x 271.30263pt.
- [9 <./matplotlib/MPFAI.png>] [10 <./matplotlib/MeanPhenotype1.png>] Excluding 
-'comment' comment. [11]
-(./Stickleback_Paper.bbl) [12] (./Stickleback_Paper.aux) ) 
+<use matplotlibPlots/TimeToAdaptation.png>
+Package pdftex.def Info: matplotlibPlots/TimeToAdaptation.png used on input lin
+e 326.
+(pdftex.def)             Requested size: 375.80544pt x 195.5435pt.
+
+<matplotlibPlots/MPFAI.png, id=54, 571.6557pt x 432.8973pt>
+File: matplotlibPlots/MPFAI.png Graphic file (type png)
+
+<use matplotlibPlots/MPFAI.png>
+Package pdftex.def Info: matplotlibPlots/MPFAI.png used on input line 355.
+(pdftex.def)             Requested size: 281.85587pt x 213.44923pt.
+
+<matplotlibPlots/MFAI.png, id=55, 632.3625pt x 474.0912pt>
+File: matplotlibPlots/MFAI.png Graphic file (type png)
+
+<use matplotlibPlots/MFAI.png>
+Package pdftex.def Info: matplotlibPlots/MFAI.png used on input line 367.
+(pdftex.def)             Requested size: 281.85587pt x 211.31354pt.
+
+<plotlyPlots/NumFAA.png, id=56, 1445.4pt x 734.24312pt>
+File: plotlyPlots/NumFAA.png Graphic file (type png)
+
+<use plotlyPlots/NumFAA.png>
+Package pdftex.def Info: plotlyPlots/NumFAA.png used on input line 379.
+(pdftex.def)             Requested size: 281.85587pt x 143.17122pt.
+
+<plotlyPlots/StandingGeneticVariation.png, id=57, 1445.4pt x 732.7375pt>
+File: plotlyPlots/StandingGeneticVariation.png Graphic file (type png)
+
+<use plotlyPlots/StandingGeneticVariation.png>
+Package pdftex.def Info: plotlyPlots/StandingGeneticVariation.png used on input
+ line 387.
+(pdftex.def)             Requested size: 281.85587pt x 142.87764pt.
+ [7 <./matplotlibPlots/TimeToAdaptation.png>] [8 <./matplotlibPlots/MPFAI.png> 
+<./matplotlibPlots/MFAI.png>]
+[9 <./plotlyPlots/NumFAA.png> <./plotlyPlots/StandingGeneticVariation.png>]
+<matplotlibPlots/MeanPhenotype1.png, id=73, 466.1415pt x 458.1918pt>
+File: matplotlibPlots/MeanPhenotype1.png Graphic file (type png)
+
+<use matplotlibPlots/MeanPhenotype1.png>
+Package pdftex.def Info: matplotlibPlots/MeanPhenotype1.png used on input line 
+421.
+(pdftex.def)             Requested size: 281.85587pt x 277.05658pt.
+ [10 <./matplotlibPlots/MeanPhenotype1.png>] <matplotlibPlots/Power_FP.png, id=
+78, 787.0203pt x 500.1084pt>
+File: matplotlibPlots/Power_FP.png Graphic file (type png)
+
+<use matplotlibPlots/Power_FP.png>
+Package pdftex.def Info: matplotlibPlots/Power_FP.png used on input line 468.
+(pdftex.def)             Requested size: 328.82707pt x 208.95285pt.
+ [11 <./matplotlibPlots/Power_FP.png>]
+<plotlyPlots/FstAcross5e-5.png, id=83, 1927.2pt x 933.4875pt>
+File: plotlyPlots/FstAcross5e-5.png Graphic file (type png)
+
+<use plotlyPlots/FstAcross5e-5.png>
+Package pdftex.def Info: plotlyPlots/FstAcross5e-5.png used on input line 504.
+(pdftex.def)             Requested size: 328.82707pt x 159.27477pt.
+
+<plotlyPlots/FstAcross5e-4.png, id=84, 1927.2pt x 930.47626pt>
+File: plotlyPlots/FstAcross5e-4.png Graphic file (type png)
+
+<use plotlyPlots/FstAcross5e-4.png>
+Package pdftex.def Info: plotlyPlots/FstAcross5e-4.png used on input line 513.
+(pdftex.def)             Requested size: 328.82707pt x 158.76099pt.
+
+<plotlyPlots/FstAcross5e-3.png, id=85, 1927.2pt x 928.46875pt>
+File: plotlyPlots/FstAcross5e-3.png Graphic file (type png)
+
+<use plotlyPlots/FstAcross5e-3.png>
+Package pdftex.def Info: plotlyPlots/FstAcross5e-3.png used on input line 522.
+(pdftex.def)             Requested size: 328.82707pt x 158.41846pt.
+
+<plotlyPlots/FstAcross5e-2.png, id=86, 1927.2pt x 926.46124pt>
+File: plotlyPlots/FstAcross5e-2.png Graphic file (type png)
+
+<use plotlyPlots/FstAcross5e-2.png>
+Package pdftex.def Info: plotlyPlots/FstAcross5e-2.png used on input line 531.
+(pdftex.def)             Requested size: 328.82707pt x 158.07593pt.
+
+<plotlyPlots/Haplo5e-5.png, id=87, 474.77374pt x 543.02875pt>
+File: plotlyPlots/Haplo5e-5.png Graphic file (type png)
+
+<use plotlyPlots/Haplo5e-5.png>
+Package pdftex.def Info: plotlyPlots/Haplo5e-5.png used on input line 540.
+(pdftex.def)             Requested size: 328.82707pt x 376.1154pt.
+
+<plotlyPlots/Haplo5e-4.png, id=88, 479.7925pt x 570.13pt>
+File: plotlyPlots/Haplo5e-4.png Graphic file (type png)
+
+<use plotlyPlots/Haplo5e-4.png>
+Package pdftex.def Info: plotlyPlots/Haplo5e-4.png used on input line 549.
+(pdftex.def)             Requested size: 328.82707pt x 390.74548pt.
+
+<plotlyPlots/Haplo5e-3.png, id=89, 480.79625pt x 569.12625pt>
+File: plotlyPlots/Haplo5e-3.png Graphic file (type png)
+
+<use plotlyPlots/Haplo5e-3.png>
+Package pdftex.def Info: plotlyPlots/Haplo5e-3.png used on input line 558.
+(pdftex.def)             Requested size: 328.82707pt x 389.24124pt.
+
+<plotlyPlots/Haplo5e-2.png, id=90, 491.8375pt x 606.265pt>
+File: plotlyPlots/Haplo5e-2.png Graphic file (type png)
+
+<use plotlyPlots/Haplo5e-2.png>
+Package pdftex.def Info: plotlyPlots/Haplo5e-2.png used on input line 567.
+(pdftex.def)             Requested size: 328.82707pt x 405.34436pt.
+
+<plotlyPlots/PhenotypeThroughout5e-5.png, id=91, 1423.3175pt x 745.78625pt>
+File: plotlyPlots/PhenotypeThroughout5e-5.png Graphic file (type png)
+
+<use plotlyPlots/PhenotypeThroughout5e-5.png>
+Package pdftex.def Info: plotlyPlots/PhenotypeThroughout5e-5.png used on input 
+line 576.
+(pdftex.def)             Requested size: 328.82707pt x 172.28967pt.
+
+<plotlyPlots/PhenotypeThroughout5e-4.png, id=92, 1431.3475pt x 755.82375pt>
+File: plotlyPlots/PhenotypeThroughout5e-4.png Graphic file (type png)
+
+<use plotlyPlots/PhenotypeThroughout5e-4.png>
+Package pdftex.def Info: plotlyPlots/PhenotypeThroughout5e-4.png used on input 
+line 585.
+(pdftex.def)             Requested size: 328.82707pt x 173.6282pt.
+
+<plotlyPlots/PhenotypeThroughout5e-3.png, id=93, 1425.325pt x 745.78625pt>
+File: plotlyPlots/PhenotypeThroughout5e-3.png Graphic file (type png)
+
+<use plotlyPlots/PhenotypeThroughout5e-3.png>
+Package pdftex.def Info: plotlyPlots/PhenotypeThroughout5e-3.png used on input 
+line 594.
+(pdftex.def)             Requested size: 328.82707pt x 172.05069pt.
+
+<plotlyPlots/PhenotypeThroughout5e-2.png, id=94, 1428.33624pt x 756.8275pt>
+File: plotlyPlots/PhenotypeThroughout5e-2.png Graphic file (type png)
+
+<use plotlyPlots/PhenotypeThroughout5e-2.png>
+Package pdftex.def Info: plotlyPlots/PhenotypeThroughout5e-2.png used on input 
+line 603.
+(pdftex.def)             Requested size: 328.82707pt x 174.22833pt.
+ [12 <./plotlyPlots/FstAcross5e-5.png> <./plotlyPlots/FstAcross5e-4.png>] (./St
+ickleback_Paper.bbl) [13 <./plotlyPlots/FstAcross5e-3.png> <./plotlyPlots/FstAc
+ross5e-2.png>] [14 <./plotlyPlots/Haplo5e-5.png>] [15 <./plotlyPlots/Haplo5e-4.
+png>] [16 <./plotlyPlots/Haplo5e-3.png>] [17 <./plotlyPlots/Haplo5e-2.png>] [18
+ <./plotlyPlots/PhenotypeThroughout5e-5.png> <./plotlyPlots/PhenotypeThroughout
+5e-4.png>] [19 <./plotlyPlots/PhenotypeThroughout5e-3.png> <./plotlyPlots/Pheno
+typeThroughout5e-2.png>]
+(./Stickleback_Paper.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 14415 strings out of 492995
- 282399 string characters out of 6132704
- 341639 words of memory out of 5000000
- 17695 multiletter control sequences out of 15000+600000
+ 14525 strings out of 492995
+ 285526 string characters out of 6132704
+ 344771 words of memory out of 5000000
+ 17784 multiletter control sequences out of 15000+600000
  5504 words of font info for 20 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,9n,77p,747b,700s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Stickleback_Paper.pdf (12 pages, 366702 bytes).
+ 62i,9n,77p,923b,700s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Stickleback_Paper.pdf (19 pages, 7107691 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 166 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 118 words of extra memory for PDF output out of 10000 (max. 10000000)
 
