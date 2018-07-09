@@ -12,6 +12,10 @@
  \usepackage{fullpage}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
+%\documentclass{article}
+%\usepackage{subcaption}
+%\documentclass[smallextended]{svjour3}
+%\usepackage{lipsum}% Just for this example
 
 
 %\singlespacing
@@ -30,11 +34,13 @@ JARGON WE SHOULD THINK ON ??
 
 Trait | Phenotype = Probably Trait
 
-effect loci | QTL | causal: = ??
+effect loci (locus) | QTL | causal: = ?
  
-Original Lakes | $P_{1}$, $P_{3}$, $P_{3}$ = ?
+Original Lakes | initial | $P_{1}$, $P_{3}$, $P_{3}$ = ?
 
 Migration Rate | Introgression = ?
+
+pre-existing freshwater adapted alleles | standing genetic variants = ?
 
 \section{Abstract}
 
@@ -95,7 +101,7 @@ and almost no freshwater individuals.
 \jgg{Re: should I? Doesn't Thom's work and parallel above suggest they have the same alleles?}
 
 If selection on SGV is key in rapid adaptation, 
-many questions are brought to light concerning the surrounding population genetics parameters and underlying genomic architecture.
+many questions are exposed concerning the surrounding population genetics parameters and underlying genomic architecture.
 How rapidly can selection act on standing genetic variants at a given value of migration, $M$?
 How many alleles underly a certain trait? (expand here)
 Furthermore, how can we infer causal loci for regions of the genome that must be driving the rapid adaptation, from real data.
@@ -112,7 +118,7 @@ same selective pressure.
 %read though Peter's paper more and connect it to what we're doing here. 
 
 In this paper, we explore time to local adaptation as a function of migration rate through an environment (marine) with opposing selective pressure. 
-Next, we compare to real data and explore how $F_{st}$ data can be impacted by introgression, or lack of.
+Next, we compare to real data and explore how $F_{st}$ data can be impacted by introgression.
 %Explain what we do and what we find that is important
 
 %We use forward moving simulations to model marine and freshwater populations of stickleback.
@@ -124,29 +130,35 @@ Next, we compare to real data and explore how $F_{st}$ data can be impacted by i
 Our simulations are forward-moving evolutionary models which
 emulate the geography, selective pressure, and genomic architecture 
 of coastal marine and freshwater lake populations. 
-Here, we describe the specifics of out model.
+Here, we describe the specifics and parameter values of our model.
 
 \subsection*{life cycle}
 
-For this study, we used a flexible evolutionary framework, SLiM \citep{Haller2017}.
-The model-type we used was based off of an extended wright-fisher. 
+For this study, we used an evolutionary framework, SLiM \citep{Haller2017}.
+The model-type we used was derived from an extended wright-fisher. 
 The simulation life cycle of each generation is as follows.
 First, generate offspring by:
 (1) choosing parents based on cached fitness values and migration rates, 
 (2) performing recombination of parental genomes, 
 (3) allow for mutation, 
 (4) modify each child by a defined callback. 
-Next, offspring become individuals before fitness is evaluated for the next generation.
-Finally, the generation counter is incremented. 
+Next, offspring become individuals.
+And finally, fitness is evaluated for the next generation
+and the generation counter is incremented. 
+
 The population structure in SLiM can be arranged in any number of subpopulations, 
 continuous or discrete, connected by any rate of migration. 
+Individual's (diploidy) genomes are represented by a linear array of loci. 
+Each locus is positionally defined with recombination and mutation rates,
+as well as mutation types allowed to arise. 
 
 \subsection*{Geography}
 
+\jgg{do we need this section or should we just give a really good description in the geography diagram?}
 What we've modeled geographically is a coastal marine population 
 connected by migration to multiple, smaller freshwater populations that are located along the coast.
 The population structure for the marine is modeled as a one-dimensional, continuous population
-ranging from 0.0 to 10.0.
+ranging from [0.0 to 10.0].
 There are two sets of lakes which represent freshwater populations; 
 the first which evolves in parallel to the marine, 
 and a set introduced later in the simulation as a subset of the marine. 
@@ -159,9 +171,11 @@ each of the lakes fluctuate around $200$.
 	\begin{center}
   		\includegraphics[width=0.6\linewidth]{GeographyDiagram}
   		\caption{A representation of the geographic and evolutionary history of all populations throughout the simulation. 
-		The marine is a one-dimensional, continuous population with spatial positions ranging from [0.0 - 10.0]. Each 
-		lake$_{i}$ is a discrete population connected by migration only through the marine at position $i - 0.5$. The introduced lakes 
-		have the same location and selective pressure as the original lakes, but arise at 40K generations.
+		The marine is a one-dimensional, continuous population with spatial positions ranging from [0.0 - 10.0]. 
+		Each freshwater lake$_{i}$ for both the introduced and freshwater populations
+		is a discrete population connected by migration only through the marine, at position $i - 0.5$. 
+		The introduced lakes have the same spatial location (but separate?) and selective pressure as the original lakes, but arise at 40K generations.
+		The marine has $2000$ diploid individuals while each of the lakes fluctuate around $200$. 
 		the introduced population is initialized as a copy of all marine individuals to model marine 
 		individuals inhabiting a newly created freshwater environment such as the ponds around Middleton Island.
 		We then observe the selection process of marine individuals and following generations 
@@ -173,58 +187,8 @@ each of the lakes fluctuate around $200$.
 	\end{center}
 \end{figure}
 
-\subsection*{Selective Pressure}
-
-%(TALK ABOUT ADAPTEDNESS and TRADE-OFF), 
-% abstracting real fish phenotype with `` trait value "
-
-%Trait value is equal to the sum of the contribution of the effect loci and the loci may be 
-%add, dom, recc. Uniformly chosen 
-
-To emulate the freshwater and marine selective pressure, 
-we set up a quantitative genetics model in which fitness is phenotypically based. 
-Freshwater and Marine environments are distinguished by a single numeric value. 
-This number is the optimum trait value for each environment
-and acts as a representation of lateral plate number and opercle shape in the stickleback populations.
-%The fitness of an individual is then determined by a probability density for a normal distribution 
-%at the quantile (?) of the difference between the optimum and the individual's phenotype
-We use a Gaussian fitness function, 
-where the fitness of an individual with trait $x$ in a population with optimal trait value $x_0$ is:
-\begin{align}
-    f(x; x_0) &= \exp\left(\frac{(x - x_0)^2 }{ 2 \sigma^2}\right),
-\end{align}
-with $\sigma = 15$.
-
-Where a trait value, $x$, is also defined by a single numeric value; 
-determined as a summation of the selection coefficients of all mutations an individual possesses. 
-% no empty lines before equations, usually - they should read like part of the text itself.
-%	\[
-%{\textnormal{Individual.Phenotype = } \sum_{m \in mutations} \textnormal{m.selectionCoeff}}
-%	\]
-    
-We allow six mutation types which affect phenotype along with one neutral mutation type.
-Among the effect mutations; 
-there are additive, dominant, and recessive mutations which a ffect phenotype
-in either the positive or negative direction. 
-The selection coefficients are pulled from a gamma distribution 
-with a shape parameter of $1$ and a mean of either $0.5$, or ${-0.5}$. 
-\plr{Can just say this in words, no need to have an equation.
-    Also, a Gamma with shape 1 and mean 0.5 is an Exponential with mean 0.5.}
-
-%	\[
-%\textnormal{Mutation.selectionCoeff = } X \sim \Gamma (1,\pm0.5)
-%	\]
-
-\todo{maybe the order of these should be reversed?}
-\plr{I agree: first explain how phenotypes are calculated, then say what fitness is.
-    Notation suggestion: phenotype for an individual that is heterozygous at loci $H$
-    and homozygous derived at loci $D$ is $x = \sum_{\ell \in H} h_\ell s_\ell + \sum_{\ell \in D} s_\ell$,
-    where $h_\ell$ is the dominance coefficient for locus $\ell$ (0 for recessive, 1 for dominant, 0.5 for additive),
-    and $s_\ell$ is the effect of the derived mutation on the phenotype}
-
 \subsection*{Genomic Architecture}
 
-\plr{This should maybe come before the phenotype.}
 In SLiM, the genome is conceptually a linear array of loci defining locations for 
 mutations that arise and breakpoints for recombination. 
 Genomic elements define a range depicting the types of mutations that can arise, and the ratio at which different mutation types can arise. 
@@ -240,9 +204,61 @@ This means the effect regions make up exactly $1\%$ of the entire genome for eve
 The entire genome has a mutation rate of $10^{-7}$ meaning approximately 1 in every 100 individuals, per generation, is subject to a new mutation. 
 The genome has a recombination rate of $10^{-5}$, which is approximately 1 breakpoint event, per individual, per generation. 
 
-\subsection{Sampling}
-\plr{I think the purpose of this section is to define terms and statistics used later;
-    so maybe a better title is ``Descriptive statistics''?}
+\subsection*{Selective Pressure}
+
+%(TALK ABOUT ADAPTEDNESS and TRADE-OFF), 
+% abstracting real fish phenotype with `` trait value "
+
+%Trait value is equal to the sum of the contribution of the effect loci and the loci may be 
+%add, dom, recc. Uniformly chosen 
+
+To emulate the freshwater and marine selective pressure, 
+we set up a quantitative genetics model in which fitness is phenotypically based. 
+phenotype for an individual that is heterozygous at locus $H$
+and homozygous derived at loci $D$ is $x = \sum_{\ell \in H} h_\ell s_\ell + \sum_{\ell \in D} s_\ell$,
+where $h_\ell$ is the dominance coefficient for locus $\ell$ (0 for recessive, 1 for dominant, 0.5 for additive),
+and $s_\ell$ is the effect of the derived mutation on the phenotype
+
+Freshwater and Marine environments are distinguished by a single numeric value. 
+This number is the optimum trait value for each environment
+and acts as a representation of lateral plate number and opercle shape in the stickleback populations.
+%The fitness of an individual is then determined by a probability density for a normal distribution 
+%at the quantile (?) of the difference between the optimum and the individual's phenotype
+We use a Gaussian fitness function, 
+where the fitness of an individual with trait $x$ in a population with optimal trait value $x_0$ is:
+\begin{align}
+    f(x; x_0) &= \exp\left(\frac{(x - x_0)^2 }{ 2 \sigma^2}\right),
+\end{align}
+with $\sigma = 15$.
+
+%Where a trait value, $x$, is also defined by a single numeric value; 
+%determined as a summation of the selection coefficients of all mutations an individual possesses. 
+
+%	\[
+%{\textnormal{Individual.Phenotype = } \sum_{m \in mutations} \textnormal{m.selectionCoeff}}
+%	\]
+    
+%We allow six mutation types which affect phenotype along with one neutral mutation type.
+%Among the effect mutations; 
+%there are additive, dominant, and recessive mutations which a ffect phenotype
+%in either the positive or negative direction. 
+%The selection coefficients are pulled from a gamma distribution 
+%with a shape parameter of $1$ and a mean of either $0.5$, or ${-0.5}$. 
+
+%	\[
+%\textnormal{Mutation.selectionCoeff = } X \sim \Gamma (1,\pm0.5)
+%	\]
+
+%\plr{I agree: first explain how phenotypes are calculated, then say what fitness is.
+%    Notation suggestion: phenotype for an individual that is heterozygous at loci $H$
+%    and homozygous derived at loci $D$ is $x = \sum_{\ell \in H} h_\ell s_\ell + \sum_{\ell \in D} s_\ell$,
+%    where $h_\ell$ is the dominance coefficient for locus $\ell$ (0 for recessive, 1 for dominant, 0.5 for additive),
+%    and $s_\ell$ is the effect of the derived mutation on the phenotype}
+
+
+\subsection*{Descriptive statistics}
+%\plr{I think the purpose of this section is to define terms and statistics used later;
+%    so maybe a better title is ``Descriptive statistics''?}
 
 %how did we use slim 
 %More question based, Why did we measure what we measued 
@@ -255,47 +271,56 @@ The genome has a recombination rate of $10^{-5}$, which is approximately 1 break
 Here, we're interested in observing how different parameter values
 (mainly migrations rates and recombination rates)
 impact the sharing of alleles between populations. 
-\plr{Below, I think we should make sure to use ``population'' to mean either ``lake'' or ``ocean'';
-    so when we compute freshwater-marine $F_{ST}$ this measures differentiation between habitats,
-    not between populations.}
-we define freshwater adapted alleles (FAA),
-\plr{I vote to remove the abbreviations. Also, should make the dependence on generation more clear: maybe ``freshwater adapted alleles at time $t$''?} 
-at any given generation,
+%\plr{Below, I think we should make sure to use ``population'' to mean either ``lake'' or ``ocean'';
+%    so when we compute freshwater-marine $F_{ST}$ this measures differentiation between habitats,
+%    not between populations.}
+We define pre-existing freshwater adapted alleles at time $t$,
+%\plr{I vote to remove the abbreviations. Also, should make the dependence on generation more clear: maybe ``freshwater adapted alleles at time $t$''?} 
 to be a mutations with a frequency higher than $0.5$ in \textit{any} of the original lakes, 
 while remaining lower than $0.5$ in the marine. 
-This is because the transportation hypothesis does not specify where or when an advantageous mutation arises; 
-but simply suggests that when one comes to high enough frequency, it too, could participate in the transportation process. \cite{schluter2009genetics}
+They are defined this way because the transportation hypothesis does not specify where or when an advantageous mutation arises,
+but simply suggests that when a freshwater adapted alleles comes to high enough frequency, it too, could participate in the transportation process \cite{schluter2009genetics}.
 To observe transportation of freshwater alleles in our simulations, we use a variety of metrics when sampling.
-Throughout the simulation, we measure;
-%mutation frequencies, 
-$F_{ST}$ values, \plr{how is $F_{ST}$ computed?}
-average phenotype, 
-mean number of original lakes each FAA appears in,
-and total number of unique FAA. 
-to understand where, as well as how much, of these freshwater haplotypes are being transported,
-we track the mean percentage of FAA per individual (MPFAI) across all populations throughout the simulation:
-computed as the sum of the FAA mutation frequencies among each population.
-\plr{Define ``mean percentage''; no need to say that it is the sum of the frequencies, I think.}
-%word this out better. 
-\plr{Here FAA are defined in terms of the original populations, explaining why the introduced populations can have MPFAI of 0.
-    This is counter-intuitive from the name (FAA); maybe we should call them ``pre-existing freshwater alleles''?
-    ``standing genetic variants''?}
-we're particularly interested in using MPFAI to measure the marine population' capacity to carry FAA,
-as well as observing the introduced populations' ability to select upon them. 
-\plr{omit this last sentence?}
-
-Because we are interested in the local adaptation of the introduced freshwater populations,
-we define time to adaptation ($T_{adapt}$) of the introduced population to be the generation at which
+let $P_{1}$ and $P_{2}$ be the vector of mutation frequencies in the first and second populations, respectively.
+with $\hat{P} = (P_{1} + P_{2}) / 2$ and
+$PQ = (P_{1} \times (1 - P_{1}) + P_{2} \times (1 - P_{2})) / 2$,
+we compute $F_{ST} = 1 - (PQ / (\hat{P} \times (1 - \hat{P})))$.
+%mean number of original lakes each FAA appears in,
+%and total number of unique FAA. 
+Time to adaptation ($T_{adapt}$) of the introduced population is the generation at which
 the difference between the average phenotype of the original and the introduced freshwater populations is less than 0.5. 
-At this generation, we look at:
-the correlation (B. Pearson) between the mutation frequencies of all effect loci and FAA,
-and the number of shared high frequency alleles. 
-\plr{Here we need to define terms; we don't need to say exactly what was computed,
-    as that will be redundant with the Results.}
-These metrics tells us how much of the FAA  were used in the lakes once they have locally adapted. 
+To understand where, as well as how much, of these pre-existing freshwater adapted alleles are being transported,
+we track the the average percentage of freshwater adapted alleles at time $t$ across all populations throughout the simulation.
+%\plr{Here FAA are defined in terms of the original populations, explaining why the introduced populations can have MPFAI of 0.
+%    This is counter-intuitive from the name (FAA); maybe we should call them ``pre-existing freshwater alleles''?
+%    ``standing genetic variants''?}
+%we're particularly interested in using MPFAI to measure the marine population' capacity to carry FAA,
+%as well as observing the introduced populations' ability to select upon them. 
+%\plr{omit this last sentence?}
+%Because we are interested in the local adaptation of the introduced freshwater populations,
+
+%At this generation, we look at:
+%the correlation (B. Pearson) between the mutation frequencies of all effect loci and FAA,
+%and the number of shared high frequency alleles. 
+%\plr{Here we need to define terms; we don't need to say exactly what was computed,
+%    as that will be redundant with the Results.}
+%These metrics tells us how much of the FAA  were used in the lakes once they have locally adapted. 
+
 
 
 \section{Results}
+
+Across a range of introgression from $\approx 0.01 - 100.0$ migrants per generation in populations of 
+size 2000 diploid individuals, we encountered large influence on 
+time to adaptation,
+sharing of pre-existing freshwater adapted alleles,
+and population genetic signals left behind in the simulated populations.
+A larger amount of introgression from all lakes to the marine population helped both the initial and introduced freshwater populations 
+share pre-existing freshwater adapted alleles.
+this resulted in rapid adaptation ($\approx 100$ generations) of the introduced population to adapt to the freshwater environment.
+We also found that larger amounts of migration allow for more statistical power and less false positives in the resulting population genetics data ($F_{st}$ per SNP across the genome).
+
+
 
 %We found this
 %--justify it
@@ -315,41 +340,82 @@ These metrics tells us how much of the FAA  were used in the lakes once they hav
 % [10]. Distribution of # of FWAA Per marine individual.
 
 
-\subsection{Local Adaptation: differentiation with gene flow}
+\subsection*{Local Adaptation: differentiation with gene flow}
 
 %Talk about the genetic basis of trait. 
 %Talk about the progression of adaptation. How you can see introduction new alleles
 
-
 Local adaptation occurred across all simulated parameter values.
-Starting from the same baseline, freshwater and marine populations diverged phenotypically, 
-until they reached an equilibrium,
+Starting from the same baseline, freshwater and marine populations diverged phenotypically
+until they reached an equilibrium
 where the population means were close to or at the optimal phenotype. 
 phenotypic variation within each population was small compared to the difference between populations.
 Polymorphic loci that affected the phenotype,
-showed greater differentiation compared to neutral loci between marine and freshwater populations, with the exception 
-of migration rate at a value of $5e-5$. 
-$F_{st}$ plots along the genome, show peaks at loci underlying local adaptation.
-\plr{Rather than referring to e.g., ``migration rate of $5 \times 10^{-5}$'',
-    it'd be easier to follow if we had names for the different migration rate situations.
-    Maybe ``low, medium-low, medium-high, and high''?
-    Or talk about the number of migrants per generation per lake, e.g.,
-    ``with the exception of the lowest migration rate of 0.01 migrants per generation per lake''?}
+showed greater differentiation compared to neutral loci between marine and freshwater populations, 
+with the exception of the lowest migration rate of 0.01 migrants per generation per lake. 
+%$F_{st}$ plots along the genome, show peaks at loci underlying local adaptation.
+
+%\plr{Rather than referring to e.g., ``migration rate of $5 \times 10^{-5}$'',
+%    it'd be easier to follow if we had names for the different migration rate situations.
+%    Maybe ``low, medium-low, medium-high, and high''?
+%    Or talk about the number of migrants per generation per lake, e.g.,
+%    ``with the exception of the lowest migration rate of 0.01 migrants per generation per lake''?}
 
 \todo{ add more general observations and caveats about not all parameter values. }
 
 \plr{It would be nice to have a small table of parameter values,
     so that when someone wonders ``What was the population size again?'' they could easily find it.}
+\jgg{Re: agreed}
 
-\plr{I vote to put figures \ref{fig:phenotype_ts2} and \ref{fig:phenotype_ts3} 
-    together as one figure and put them here.
-    There's a lot in those we could talk about: you can see the stepwise introduction
-    of individual alleles in figure \ref{fig:phenotype_ts2}, for instance.}
+%\plr{I vote to put figures \ref{fig:phenotype_ts2} and \ref{fig:phenotype_ts3} 
+%    together as one figure and put them here.
+%    There's a lot in those we could talk about: you can see the stepwise introduction
+%    of individual alleles in figure \ref{fig:phenotype_ts2}, for instance.}
 
-\subsection{The Effect of Migration Rate}
 
-\subsubsection*{Migration is Mixing}
-\plr{Title: ``Migration homogenizes genetic variation''}
+
+\begin{figure}[h!tb]
+	\begin{center}
+  		\includegraphics[width=0.7\linewidth]{plotlyPlots/PhenotypeThroughout5e-4.png}
+  		\caption{ Average phenotype in each population as a function of time $t$, in generations. 
+		This is a single simulation run at a migration rate of $5 \times 10^{-4} \approx 1$ mig/gen. 
+		The dark black line represents the mean phenotype of the single marine population with an optimum trait value of + 10. 
+		The pink represents the entire initial freshwater population mean, 
+		as a sum of all the lakes (light green) with and optimum trait value of -10.
+		The orange represents the entire introduced freshwater population mean
+		as a sum of all the lakes (dark green) with an optimum trait value of -10 as well.
+		}
+  		\label{fig:phenotype_ts2}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h!tb]
+	\begin{center}
+  		\includegraphics[width=0.7\linewidth]{plotlyPlots/PhenotypeThroughout5e-3.png}
+  		\caption{Average phenotype in each population as a function of time $t$, in generations. 
+		This is a single simulation run at a migration rate of $5 \times 10^{-3} \approx 1$ mig/gen. 
+		The dark black line represents the mean phenotype of the single marine population with an optimum trait value of + 10. 
+		The pink represents the entire initial freshwater population mean, 
+		as a sum of all the lakes (light green) with and optimum trait value of -10.
+		The orange represents the entire introduced freshwater population mean
+		as a sum of all the lakes (dark green) with an optimum trait value of -10 as well.
+		}
+  		\label{fig:phenotype_ts3}
+	\end{center}
+\end{figure}
+
+\jgg{we should make one caption and the two above should be top-bottom sub-figures}
+\jgg{also, interesting point to make on second plot, you can see the initial lakes taking the same size step. sharing}
+%I could zoom in on the relevent portions of the figure for this. (begging and introduction)
+% a 2 by 2 with the important sections (0 - 20K) $ (40-50K) for both above figures. share axes
+
+\jgg{finished with most edits up to here}
+
+\subsection*{The Effect of Migration Rate}
+
+
+
+\subsubsection*{Migration homogenizes genetic variation}
 
 %FIGURES THAT SHOW THIS:
 %- Fst Plots.
@@ -372,11 +438,10 @@ As can be seen in Figure \ref{fig:Fst},
 $F_{st}$ values for neutral alleles steadily decline between all sets of populations as 
 migration increases, this illustrates less difference between sections of the genome which are not acted up 
 upon by selection, in all populations.
-Additionally, standing genetic variance \todo{computed as?}
+Additionally, standing genetic variance
 (seen in Figure \ref{fig:SGV})
 values in the marine population steady increased with migration which suggests that more alleles from the 
-lakes surrounding were exporting alleles into the marine individuals.
-\todo{Something about SGV rates for the the other population}
+lakes surrounding were exporting alleles into the marine individual.
 
 %TIES TO NATURE?
 %SPECIFICALLY (interesting stuff)
@@ -401,13 +466,13 @@ as migration rates increased.
 As can be seen in Figure \ref{fig:TimeToAdaptation} at the lowest migration rate of $5 * 10^{-5}$,
 It took the introduced population over 20 thousand generations for the average phenotype of all the lakes to 
 get to within 0.5 of the original lakes original phenotypes. 
-\plr{From the plots it looks more like adaptation happens (at least in most lakes) by like 10K or 15K.}
+%\plr{From the plots it looks more like adaptation happens (at least in most lakes) by like 10K or 15K.}
 This suggests that selection was acting primarily on new mutations, meaning the 
 introduced lakes needed to wait for a beneficial mutation to arise before 
 it was selected upon. 
-\plr{We should do the calculation to see if this makes sense: 
-    there's one new effect mutation in the right direction every 100 generations in the lakes,
-    one of effect size $s$ has probability of about $s/2$ of not being lost to drift...}
+%\plr{We should do the calculation to see if this makes sense: 
+%    there's one new effect mutation in the right direction every 100 generations in the lakes,
+%    one of effect size $s$ has probability of about $s/2$ of not being lost to drift...}
 There was a positive correlation between the amount of standing genetic variation in the 
 marine and the rapid adaptation of the introduced populations.
 
@@ -430,33 +495,7 @@ marine and the rapid adaptation of the introduced populations.
 	\end{center}
 \end{figure}
 
-\begin{figure}
-	\begin{center}
-  		\includegraphics[width=\linewidth]{matplotlibPlots/MFAI.png}
-  		\caption{Distributions of mean number of freshwater adapted alleles (FAA) per individual throughout the simulation run, for each subpopulation.
-		We count the total number of freshwater alleles for each individual before averaging them in each population and dividing by the total number of defined
-		freshwater adapted alleles.
-		Looking at total number of FAA per individual gives us an idea behind how many alleles underly a freshwater haplotype, 
-		}
-  		\label{fig:MNFAI}
-	\end{center}
-\end{figure}
 
-\begin{figure}
-	\begin{center}
-  		\includegraphics[width=\linewidth]{plotlyPlots/NumFAA.png}
-  		\caption{(PLACEHOLDER)}
-		\label{fig:NumFAA}
-	\end{center}
-\end{figure}
-
-\begin{figure}
-	\begin{center}
-  		\includegraphics[width=\linewidth]{plotlyPlots/StandingGeneticVariation.png}
-  		\caption{(PLACEHOLDER)}
-		\label{fig:SGV}
-	\end{center}
-\end{figure}
 
 
 
@@ -507,8 +546,6 @@ In Figure \ref{fig:MeanPhenotype} at $M = 5x10^{-2}$, we can see the distributio
 pull towards the opposing selective pressure value and away from the local optimum in all subpopulations.
 
 
-
-
 %TIES TO NATURE?
 
 %SPECIFICALLY (interesting stuff)
@@ -530,7 +567,25 @@ such as marine and
 \plr{Maybe this goes in the Discussion? Remaining observations could merge with the previous section.}
 
 
-\subsection{Genomic Architecture}
+\subsection*{Population genetics data signals}
+
+\begin{figure}[h!tb]
+	\begin{center}
+  		\includegraphics[width=0.7\linewidth]{plotlyPlots/FstAcross5e-3.png}
+  		\caption{(Decription and cleaning needed)
+		}
+  		\label{fig:Fst3}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h!tb]
+	\begin{center}
+  		\includegraphics[width=0.7\linewidth]{plotlyPlots/FstAcross5e-4.png}
+  		\caption{(Description and cleaning needed)
+		}
+  		\label{fig:Fst2}
+	\end{center}
+\end{figure}
 
 \begin{figure}
 	\begin{center}
@@ -575,31 +630,66 @@ This along with low false positive rate across all $F_{st}$ threshold values is 
 
 
 %\subsubsection*{Low Recombination Causes Clustering}
-\begin{comment}
+
+\section{Conclusion \& Discussion}
+
+% at low M we should be able to predict something ---
+% at high M we should be able to predict something ----
+
+%Here, we suggest a range of migration rate (introgression) parameter values which would allow for the rapid (and in turn, parallel) adaptation 
+%of marine stickleback introduced intro a freshwater environment.
+%While this range is heavily effected by all other selections of parameter values. 
+
+%(1) There's a threshold of introgression for both rapid adaptation and migration load. 
+\subsection*{thresholds}
+
+%(2) Do the math, discuss number ( and possibly type ) of mutations underlying the trait value.
+\subsection*{do the math}
+
+%(3) discuss what signals researchers could possibly look out for or connect to real data
+\subsection*{signals and real data}
+
+\clearpage
+%\plr{some problems because you had bibliographystyle before bibliography}
+\bibliographystyle{plainnat}
+\bibliography{Citations}{}
+
+\section{Supp.}
+
+\begin{figure}
+	\begin{center}
+  		\includegraphics[width=\linewidth]{plotlyPlots/NumFAA.png}
+  		\caption{(PLACEHOLDER)}
+		\label{fig:NumFAA}
+	\end{center}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+  		\includegraphics[width=\linewidth]{plotlyPlots/StandingGeneticVariation.png}
+  		\caption{(PLACEHOLDER)}
+		\label{fig:SGV}
+	\end{center}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+  		\includegraphics[width=\linewidth]{matplotlibPlots/MFAI.png}
+  		\caption{Distributions of mean number of freshwater adapted alleles (FAA) per individual throughout the simulation run, for each subpopulation.
+		We count the total number of freshwater alleles for each individual before averaging them in each population and dividing by the total number of defined
+		freshwater adapted alleles.
+		Looking at total number of FAA per individual gives us an idea behind how many alleles underly a freshwater haplotype, 
+		}
+  		\label{fig:MNFAI}
+	\end{center}
+\end{figure}
+
 \begin{figure}[h!tb]
 	\begin{center}
   		\includegraphics[width=0.7\linewidth]{plotlyPlots/FstAcross5e-5.png}
   		\caption{ (PLACEHOLDER)
 		}
   		\label{fig:Fst1}
-	\end{center}
-\end{figure}
-
-\begin{figure}[h!tb]
-	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/FstAcross5e-4.png}
-  		\caption{(PLACEHOLDER)
-		}
-  		\label{fig:Fst2}
-	\end{center}
-\end{figure}
-
-\begin{figure}[h!tb]
-	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/FstAcross5e-3.png}
-  		\caption{(PLACEHOLDER)
-		}
-  		\label{fig:Fst3}
 	\end{center}
 \end{figure}
 
@@ -614,64 +704,10 @@ This along with low false positive rate across all $F_{st}$ threshold values is 
 
 \begin{figure}[h!tb]
 	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/Haplo5e-5.png}
-  		\caption{ (PLACEHOLDER)
-		}
-  		\label{fig:Haplo1}
-	\end{center}
-\end{figure}
-
-\begin{figure}[h!tb]
-	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/Haplo5e-4.png}
-  		\caption{(PLACEHOLDER)
-		}
-  		\label{fig:Haplo2}
-	\end{center}
-\end{figure}
-
-\begin{figure}[h!tb]
-	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/Haplo5e-3.png}
-  		\caption{(PLACEHOLDER)
-		}
-  		\label{fig:Haplo3}
-	\end{center}
-\end{figure}
-
-\begin{figure}[h!tb]
-	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/Haplo5e-2.png}
-  		\caption{(PLACEHOLDER)
-		}
-  		\label{fig:Haplo4}
-	\end{center}
-\end{figure}
-
-\begin{figure}[h!tb]
-	\begin{center}
   		\includegraphics[width=0.7\linewidth]{plotlyPlots/PhenotypeThroughout5e-5.png}
   		\caption{ (PLACEHOLDER)
 		}
   		\label{fig:phenotype_ts1}
-	\end{center}
-\end{figure}
-
-\begin{figure}[h!tb]
-	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/PhenotypeThroughout5e-4.png}
-  		\caption{(PLACEHOLDER)
-		}
-  		\label{fig:phenotype_ts2}
-	\end{center}
-\end{figure}
-
-\begin{figure}[h!tb]
-	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/PhenotypeThroughout5e-3.png}
-  		\caption{(PLACEHOLDER)
-		}
-  		\label{fig:phenotype_ts3}
 	\end{center}
 \end{figure}
 
@@ -683,22 +719,6 @@ This along with low false positive rate across all $F_{st}$ threshold values is 
   		\label{fig:phenotype_ts4}
 	\end{center}
 \end{figure}
-\end{comment}
-
-\section{Conclusion \& Discussion}
-
-% at low M we should be able to predict something ---
-% at high M we should be able to predict something ----
-
-Here, we suggest a range of migration rate (introgression) parameter values which would allow for the rapid (and in turn, parallel) adaptation 
-of marine stickleback introduced intro a freshwater environment.
-While this range is heavily effected by all other selections of parameter values. 
-
-
-\newpage
-\plr{some problems because you had bibliographystyle before bibliography}
-\bibliographystyle{plainnat}
-\bibliography{Citations}{}
 
 
 
