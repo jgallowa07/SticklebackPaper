@@ -42,6 +42,8 @@ Migration Rate | Historical Introgression = ?
 
 pre-existing freshwater adapted alleles | standing genetic variants = ?
 
+should we be using the word ``patch"?
+
 \section{Abstract}
 
 \todo{Do last.}
@@ -84,14 +86,14 @@ adaptation to freshwater environments is sped up through selection on standing g
 One clear example of this is the gene \textit{eda} 
 which has been shown to regulate the number of lateral plates. 
 While this gene arose millions of years ago, it is found in freshwater ponds which have formed much more recently.
-Novel evidence from natural populations has provided evidence that most regions of the genome that distinguish marine-freshwater genetic differences share this pattern. \cite{Nelson2017} 
+Novel evidence from natural populations has provided evidence that most regions of the genome that distinguish marine-freshwater genetic differences share this pattern \citep{Nelson2017}.
 \citet{schluter2009genetics} 
 suggested the ``transporter''-hypothesis.  
 This outlined the flow of freshwater alleles into marine populations through offspring of hybridization events.
 It suggests freshwater haplotypes are distributed though marine individuals and are continually selected upon in introduced freshwater populations.
 The continued selection on freshwater favored alleles and introgression between the two sub-species,
 allows the marine to maintain the freshwater haplotype dispersed in low frequency among its' individuals. 
-Once a new freshwater environment is introduced and inhabited by marine individuals who carry freshwater adapted alleles, selection reconstructs the freshwater haplotype. \cite{schluter2009genetics} 
+Once a new freshwater environment is introduced and inhabited by marine individuals who carry freshwater adapted alleles, selection reconstructs the freshwater haplotype \citep{schluter2009genetics}.
 An alternative to this hypothesis is that individuals from other freshwater environments migrate directly to the new environments, 
 and their haplotype is passed down directly. 
 This hypothesis has been shown to be unlikely due to finding a high frequency of freshwater alleles in the ocean,
@@ -237,51 +239,13 @@ where the fitness of an individual with trait $x$ in a population with optimal t
 \end{align}
 with $\sigma = 15$.
 
-%Where a trait value, $x$, is also defined by a single numeric value; 
-%determined as a summation of the selection coefficients of all mutations an individual possesses. 
-
-%	\[
-%{\textnormal{Individual.Phenotype = } \sum_{m \in mutations} \textnormal{m.selectionCoeff}}
-%	\]
-    
-%We allow six mutation types which affect phenotype along with one neutral mutation type.
-%Among the effect mutations; 
-%there are additive, dominant, and recessive mutations which a ffect phenotype
-%in either the positive or negative direction. 
-%The selection coefficients are pulled from a gamma distribution 
-%with a shape parameter of $1$ and a mean of either $0.5$, or ${-0.5}$. 
-
-%	\[
-%\textnormal{Mutation.selectionCoeff = } X \sim \Gamma (1,\pm0.5)
-%	\]
-
-%\plr{I agree: first explain how phenotypes are calculated, then say what fitness is.
-%    Notation suggestion: phenotype for an individual that is heterozygous at loci $H$
-%    and homozygous derived at loci $D$ is $x = \sum_{\ell \in H} h_\ell s_\ell + \sum_{\ell \in D} s_\ell$,
-%    where $h_\ell$ is the dominance coefficient for locus $\ell$ (0 for recessive, 1 for dominant, 0.5 for additive),
-%    and $s_\ell$ is the effect of the derived mutation on the phenotype}
-
 
 \subsection*{Descriptive statistics}
-%\plr{I think the purpose of this section is to define terms and statistics used later;
-%    so maybe a better title is ``Descriptive statistics''?}
-
-%how did we use slim 
-%More question based, Why did we measure what we measued 
-%are there ways to have two or three subheaders 
-%decriptive statist. 
-%genetic basis -- 
-%process of plotting. 
-%if it's something new
 
 Here, we're interested in observing how different parameter values
 (mainly migrations rates and recombination rates)
 impact the sharing of alleles between populations. 
-%\plr{Below, I think we should make sure to use ``population'' to mean either ``lake'' or ``ocean'';
-%    so when we compute freshwater-marine $F_{ST}$ this measures differentiation between habitats,
-%    not between populations.}
 We define pre-existing freshwater adapted alleles at time $t$,
-%\plr{I vote to remove the abbreviations. Also, should make the dependence on generation more clear: maybe ``freshwater adapted alleles at time $t$''?} 
 to be a mutations with a frequency higher than $0.5$ in \textit{any} of the original lakes, 
 while remaining lower than $0.5$ in the marine. 
 They are defined this way because the transportation hypothesis does not specify where or when an advantageous mutation arises,
@@ -297,21 +261,6 @@ Time to adaptation ($T_{adapt}$) of the introduced population is the generation 
 the difference between the average phenotype of the original and the introduced freshwater populations is less than 0.5. 
 To understand where, as well as how much, of these pre-existing freshwater adapted alleles are being transported,
 we track the the average percentage of freshwater adapted alleles at time $t$ across all populations throughout the simulation.
-%\plr{Here FAA are defined in terms of the original populations, explaining why the introduced populations can have MPFAI of 0.
-%    This is counter-intuitive from the name (FAA); maybe we should call them ``pre-existing freshwater alleles''?
-%    ``standing genetic variants''?}
-%we're particularly interested in using MPFAI to measure the marine population' capacity to carry FAA,
-%as well as observing the introduced populations' ability to select upon them. 
-%\plr{omit this last sentence?}
-%Because we are interested in the local adaptation of the introduced freshwater populations,
-
-%At this generation, we look at:
-%the correlation (B. Pearson) between the mutation frequencies of all effect loci and FAA,
-%and the number of shared high frequency alleles. 
-%\plr{Here we need to define terms; we don't need to say exactly what was computed,
-%    as that will be redundant with the Results.}
-%These metrics tells us how much of the FAA  were used in the lakes once they have locally adapted. 
-
 
 
 \section{Results}
@@ -454,8 +403,13 @@ it was selected upon.
 %\plr{We should do the calculation to see if this makes sense: 
 %    there's one new effect mutation in the right direction every 100 generations in the lakes,
 %    one of effect size $s$ has probability of about $s/2$ of not being lost to drift...}
-There was a positive correlation between the amount of standing genetic variation in the 
-marine and the rapid adaptation of the introduced populations.
+In Figure \ref{fig:MPFAI} we can see there was a correlation between the amount of pre-existing freshwater adapted alleles in the 
+marine and the rapid adaptation of the introduced populations. 
+In the same figure we can see the distributions
+for both the original and Introduced freshwater population become more balanced (similar?) as introgression increases.
+This is further evidence that the introduced population is taking advantage of the alleles from the initial freshwater populations
+
+
 
 %(2) Do the math, discuss number ( and possibly type ) of mutations underlying the trait value.
 
@@ -480,7 +434,7 @@ marine and the rapid adaptation of the introduced populations.
 
 To further investigate this correlation, we take a look at the freshwater adapted alleles driving 
 local adaptation of the introduced population. 
-One common metric we investigate is the percentage of freshwater adapted alleles per individual in each of the populations any time $t$. 
+One common metric we investigate is the percentage of freshwater adapted alleles per individual in each of the populations, at any time $t$. 
 This gives us a idea of where the where these alleles are being distributed throughout the simulation run. 
 Looking at the lowest migration rate for the original lakes population In Figure \ref{fig:MPFAI}
 We see that the average individual has almost exactly $1/10^{th}$ of the total defined freshwater adapted alleles throughout the simulation. 
@@ -612,8 +566,8 @@ This along with low false positive rate across all $F_{st}$ threshold values is 
 \section{Conclusion \& Discussion}
 
 We have shown that historical introgression, at our given parameter sets,
-is able to reproduce rapid and parallel adaptation similar to what we've seen in real populations.
-Selection is able to rebuild the freshwater haplotype from marine populations.
+is able to reproduce rapid and parallel adaptation similar to what we've seen in real populations such as Middleton island.
+Selection is able to rebuild the freshwater haplotype from marine populations as a medium between all freshwater populations.
 Almost all rates of migration were helpful in the efficiency of the population to locally adapt except for the highest at which migration load 
 limited the ability of the populations to reach the local optimum. 
 
@@ -647,8 +601,8 @@ the ability for species to locally adapt to the selective pressure of their envi
 This leads us to consider a window of introgression which allows for the transportation
 of FAA's without migration load. 
 
-\subsection*{connect results back to real data?}
 
+\subsection*{connect results back to real data?}
 
 %In a species that commonly is subjected to two general types of selective pressure 
 %such as marine and freshwater stickleback this is suggestive of the benefit of hybridization in all subpopulations before
