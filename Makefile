@@ -1,5 +1,8 @@
 .PHONY: all, clean
 
+# don't delete these
+.PRECIOUS: Stickleback_Paper.aux Stickleback_Paper.bbl
+
 all: Stickleback_Paper.pdf
 
 clean: 

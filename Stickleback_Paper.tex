@@ -12,25 +12,29 @@
  \usepackage{fullpage}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
-%\documentclass{article}
-%\usepackage{subcaption}
-%\documentclass[smallextended]{svjour3}
-%\usepackage{lipsum}% Just for this example
 
 
 %\singlespacing
 \onehalfspacing
 %\doublespacing
-%\setstretch{1.1}
 
 \newcommand{\plr}[1]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue]{#1}}
 \newcommand{\jgg}[1]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=black]{#1}}
 
 \begin{document}
 
-\linespread{1.5}
+\title{The sweet spot for local polygenic adaptation: a case study motivated by stickleback}
+\author{Jared Galloway, Bill Cresko, and Peter Ralph}
+\maketitle
 
-JARGON WE SHOULD THINK ON ??
+\textbf{Other title ideas?} (Bad ideas allowed.)
+
+How do stickleback share adaptations between lakes? A simulation study.
+
+A simulation study of gene flow and local polygenic adaptation
+
+
+\textbf{JARGON WE SHOULD THINK ON ??}
 
 Trait | Phenotype = Probably Trait
 
@@ -53,10 +57,10 @@ should we be using the word ``patch"?
 \todo{Take out any "we's" and be more specific}
 
 % Jared's general notes for formatting
-
-%\plr{``citep'' for ``cite in parentheses''. (and, citations come before the punctuation)}
-%\plr{in latex, use ` `words' ' to get the open- and closed-double quotes (not the double-quote character)}
-%\plr{"citet" for "cite, as part of the text"}
+%
+% - ``citep'' for ``cite in parentheses''. (and, citations come before the punctuation)
+% - in latex, use ` `words' ' to get the open- and closed-double quotes (not the double-quote character)
+% - "citet" for "cite, as part of the text"
 
 \jgg{Starting a paper is awkward, help}
 The rate and tempo of evolution remains largely unknown.
@@ -71,7 +75,7 @@ A empirical model is the alaskan populations of freshwater and marine Ninespine 
 In 1964, The Great Alaskan Earthquake caused an uplift of Middleton island and in turn,
 introduced a group of freshwater ponds around the perimeter of the island. 
 Quickly inhabited by the surrounding marine population of Stickleback,
-\citet{LescakE7204} observed significant phenotypic changes in less than 50 years that appear to be 
+\citet{lescak2015evolution} observed significant phenotypic changes in less than 50 years that appear to be 
 parallel to freshwater stickleback that have been separated for over $13,000$ years.
 In freshwater stickleback, the number of lateral plates are reduced
 and the opercle shapes shows the same expansion of the dorsal region and reduction of the ventral region.
@@ -86,7 +90,7 @@ adaptation to freshwater environments is sped up through selection on standing g
 One clear example of this is the gene \textit{eda} 
 which has been shown to regulate the number of lateral plates. 
 While this gene arose millions of years ago, it is found in freshwater ponds which have formed much more recently.
-Novel evidence from natural populations has provided evidence that most regions of the genome that distinguish marine-freshwater genetic differences share this pattern \citep{Nelson2017}.
+Novel evidence from natural populations has provided evidence that most regions of the genome that distinguish marine-freshwater genetic differences share this pattern \citep{nelson2017ancient}.
 \citet{schluter2009genetics} 
 suggested the ``transporter''-hypothesis.  
 This outlined the flow of freshwater alleles into marine populations through offspring of hybridization events.
@@ -118,7 +122,7 @@ Unfortunately, the data can be heavily influenced by the level of introgression 
 This being the case, what are the biases we can expect to see in real data for certain levels of introgression. 
 
 There are many different parameters that carry a large impact on the questions above.
-\citet{Ralph2015} 
+\citet{ralph2015convergent} 
 explored the dichotomy of selection on new alleles and those brought in by migrants from a similar selective pressure.
 Answering the fundamental questions surrounding spatial resolution of convergent evolution. 
 %This lead to an understanding of the process by which alleles move from an existing 'patch' to an introduced 'patch' with the 
@@ -133,47 +137,50 @@ Next, we compare to real data and explore how $F_{st}$ data can be impacted by i
 %We then observe the effect (focusing on migration and recombination, for now) 
 %of different parameters on local adaptation of introduced freshwater environments. 
 
-\section{Simulation Model}
 
-Our simulations are forward-moving evolutionary models which
-emulate the geography, selective pressure, and genomic architecture 
-of coastal marine and freshwater lake populations. 
-Here, we describe the specifics and parameter values of our model.
+%%%%%%%%%%%%%%%%
+\section{Methods}
 
-\subsection*{life cycle}
+We explored these questions
+using forwards-time simulations with explicit genomic representation of a quantitative trait
+in SLiM \citep{haller2017slim}.
+The details (described below) are motivated by the nine-spine stickleback,
+but remain simplistic in some aspects due to computational constraints.
+Possibly the most important caveat is that simulated population sizes are much smaller
+than the census size of the nine-spine stickleback population;
+we will consider the likely effects of this in the Discussion.
+\plr{TODO}
 
-For this study, we used an evolutionary framework, SLiM \citep{Haller2017}.
-The model-type we used was derived from an extended wright-fisher. 
-The simulation life cycle of each generation is as follows.
-First, generate offspring by:
-(1) choosing parents based on cached fitness values and migration rates, 
-(2) performing recombination of parental genomes, 
-(3) allow for mutation, 
-(4) modify each child by a defined callback. 
-Next, offspring become individuals.
-And finally, fitness is evaluated for the next generation
-and the generation counter is incremented. 
 
-The population structure in SLiM can be arranged in any number of subpopulations, 
-continuous or discrete, connected by any rate of migration. 
-Individual's (diploidy) genomes are represented by a linear array of loci. 
-Each locus is positionally defined with recombination and mutation rates,
-as well as mutation types allowed to arise. 
+\paragraph{Habitat and geography}
+Our model has two habitat types, which are separate populations
+with a fixed total size of 2,000 diploid individuals each.
+The scheme, depicted in Figure \ref{fig:Geo},
+roughly models a set of freshwater habitats
+along a stretch of coastline.
+The ``marine'' habitat  is a continuous, one-dimensional range of 10 units of length,
+and the ``freshwater'' habitat is divided into ten subpopulations
+(which we call ``lakes''), each connected to the marine habitat
+at positions $i - 1/2$ for $1 \le i \le 10$.
 
-\subsection*{Geography}
-
-\jgg{do we need this section or should we just give a really good description in the geography diagram?}
-What we've modeled geographically is a coastal marine population 
-connected by migration to multiple, smaller freshwater populations that are located along the coast.
-The population structure for the marine is modeled as a one-dimensional, continuous population
-ranging from [0.0 to 10.0].
-There are two sets of lakes which represent freshwater populations; 
-the first which evolves in parallel to the marine, 
-and a set introduced later in the simulation as a subset of the marine. 
-Each of the $10$ lakes, $i$, is located along the marine at $i - 0.5$, 
-and connected by migration only through the marine environment. 
-The marine has $2000$ individuals while 
-each of the lakes fluctuate around $200$. 
+Fitness in each habitat is determined by a single continuous trait with an inherent tradeoff,
+to roughly model the cumulative effect of the various phenotypes
+such as lateral plating and opercle shape
+on which divergent selection acts in the two environments.
+The optimal trait value in the marine habitat is $+10$,
+and in the freshwater habitat is $-10$,
+and fitness of a fish with trait value $x$ in a habitat with optimal value $x_\text{opt}$ is
+Gaussian with standard deviation, i.e.,
+\begin{align*}
+    f(x; x_0)
+    &=
+    \exp\left\{
+        \frac{1}{2}
+            \left(
+            \frac{x-x_\text{opt}}{15}
+            \right)^2
+        \right\} .
+\end{align*}
 
 \begin{figure}
 	\begin{center}
@@ -195,74 +202,105 @@ each of the lakes fluctuate around $200$.
 	\end{center}
 \end{figure}
 
-\subsection*{Potential Genomic Architecture}
 
-In SLiM, the genome is conceptually a linear array of loci defining locations for 
-mutations that arise and breakpoints for recombination. 
-Genomic elements define a range depicting the types of mutations that can arise, and the ratio at which different mutation types can arise. 
-Although still uncertain about how much of the genome is directly associated with the distinguished phenotypes, 
-GWAS has indicated clusters of loci (linkage groups? Operon?) along the genome to be causative. 
-To mimic this and compare dynamics of neutral vs. effect under selection, 
-we create regions of effect. (???)
-In these genomic elements of effect, we uniformly allow additive, recessive, and dominant, mutation that can push phenotype in either the positive or negative direction to arise. 
-Every genomic position outside of these effect regions only allows for selectively neutral mutations to arise.
+\paragraph{Potential genomic architecture}
+Each individual carries two copies of a linear chromosome of $10^5$ loci
+(which could be thought of roughly as a kilobase each).
+New mutations occur with probability $10^{-7}$ per locus per generation.
+Ten ``effect regions'' of 100 loci each
+are spread evenly along the chromosome (separated by 4950 loci)
+in which mutations affect the trait;
+mutations in other parts of the genome are neutral.
+Each mutation in these regions is either additive, completely recessive,
+or completely dominant (with equal probability),
+and with an effect sizes chosen randomly from an Exponential distribution with mean $1/2$,
+either positive or negative with equal probability.
+Individual trait value are determined additively from the diploid genotypes.
+Concretely, an individual that is heterozygous and homozygous for mutations
+at loci $H$ and $D$ respectively
+has trait value
+$x = \sum_{\ell \in H} h_\ell s_\ell + \sum_{\ell \in D} s_\ell$,
+where $s_\ell$ is the effect size of the mutation at locus $\ell$.
+Subsequent mutations at the same locus replace the previous allele.
 
-In our simulations, there are 10 effect regions of size 100 loci, uniformly placed between buffer regions of size 4950 loci. 
-This means the effect regions make up exactly $1\%$ of the entire genome for every individual throughout the simulation. 
-The entire genome has a mutation rate of $10^{-7}$ meaning approximately 1 in every 100 individuals, per generation, is subject to a new mutation. 
-The genome has a recombination rate of $10^{-5}$, which is approximately 1 breakpoint event, per individual, per generation. 
+\paragraph{Life cycle}
+Each generation, the two parents of each new offspring are chosen 
+proportional to their fitness (all individuals are hermaphroditic),
+and the contributing genomes are produced by Poisson recombination
+with an average of one crossover per chromosome per generation
+($10^{-7}$ per locus per generation).
+The model is Wright-Fisher, so that each generation, in each habitat,
+2000 new individuals are produced,
+and so to keep population sizes roughly constant within each lake,
+at the start of each generation we rescale fitness values in the freshwater habitat
+so that the sum of the fitness values within each lake are equal.
 
-\subsection*{Selective Pressure}
+Migration occurs both locally along the coastline in the marine habitat
+and between the marine habitat and the lakes,
+and can be thought of as occurring at the juvenile stage.
+The between-habitat migration rate is denoted $m$,
+and will be called simply the ``migration rate''.
+Each new individual in the marine habitat has freshwater parents with probability $m$;
+to obtain the pair, a first parent is chosen proportional to fitness,
+and a mate is chosen from the same lake as the first, also proportional to fitness.
+The resulting offspring is given a spatial location in the marine habitat
+at the location of the parent's lake.
+Parents for a new marine individual who is not a migrant are chosen similarly (with probability $1-m$):
+first, a single parent is chosen proportionally to fitness in the marine habitat,
+and then a mate is chosen, 
+also proportionally to fitness but reweighted by a Gaussian function 
+of the distance separating the two, with stanadard deviation $1/2$: 
+concretely, if the first parent is marine individual $i$,
+then marine individual $j$ is chosen as the mate
+with probability proportional to $f(x_i) \exp(-2d_{ij}^2)$,
+where $d_{ij}$ is the distance between the two locations.
+Finally, each new marine offspring is given a position 
+displaced from the first parent's position by a random Gaussian distance
+with mean 0 and standard deviation 0.02, and reflected to stay within the population.
+New offspring in the freshwater habitat are chosen in the same way,
+except the probability that the parents are marine individuals is $m$;
+any new freshwater offpsring produced by marine individuals
+are assigned to the lake nearest to the position of the first marine parent.
 
-%(TALK ABOUT ADAPTEDNESS and TRADE-OFF), 
-% abstracting real fish phenotype with `` trait value "
-
-%Trait value is equal to the sum of the contribution of the effect loci and the loci may be 
-%add, dom, recc. Uniformly chosen 
-
-To emulate the freshwater and marine selective pressure, 
-we set up a quantitative genetics model in which fitness is phenotypically based. 
-phenotype for an individual that is heterozygous at locus $H$
-and homozygous derived at loci $D$ is $x = \sum_{\ell \in H} h_\ell s_\ell + \sum_{\ell \in D} s_\ell$,
-where $h_\ell$ is the dominance coefficient for locus $\ell$ (0 for recessive, 1 for dominant, 0.5 for additive),
-and $s_\ell$ is the effect of the derived mutation on the phenotype
-
-Freshwater and Marine environments are distinguished by a single numeric value. 
-This number is the optimum trait value for each environment
-and acts as a representation of lateral plate number and opercle shape in the stickleback populations.
-%The fitness of an individual is then determined by a probability density for a normal distribution 
-%at the quantile (?) of the difference between the optimum and the individual's phenotype
-We use a Gaussian fitness function, 
-where the fitness of an individual with trait $x$ in a population with optimal trait value $x_0$ is:
-\begin{align}
-    f(x; x_0) &= \exp\left(\frac{(x - x_0)^2 }{ 2 \sigma^2}\right),
-\end{align}
-with $\sigma = 15$.
+\paragraph{New lakes}
+To study adaptation in newly appearing habitats,
+we introduce a new set of lakes midway through the simulation.
+The initial set of individuals have parents chosen as above from the marine habitat,
+and act like an independent copy of the original set of lakes -- in particular,
+the two sets of lakes each have 2,000 individuals at all times.
+Since this doubles the number of lake-to-marine immigrants,
+after this happens the probability that a new marine individual has freshwater parents
+is $2m$ instead of $m$.
 
 
-\subsection*{Descriptive statistics}
-
-Here, we're interested in observing how different parameter values
-(mainly migrations rates and recombination rates)
-impact the sharing of alleles between populations. 
-We define pre-existing freshwater adapted alleles at time $t$,
-to be a mutations with a frequency higher than $0.5$ in \textit{any} of the original lakes, 
+\paragraph{Descriptive statistics}
+To assess whether new lakes adapt using existing genetic diversity,
+we define a \emph{pre-existing freshwater adapted allele}
+to be an effect mutation that has frequency higher than $0.5$ in at least one of the original lakes,
 while remaining lower than $0.5$ in the marine. 
-They are defined this way because the transportation hypothesis does not specify where or when an advantageous mutation arises,
-but simply suggests that when a freshwater adapted alleles comes to high enough frequency, it too, could participate in the transportation process \citep{schluter2009genetics}.
-To observe transportation of freshwater alleles in our simulations, we use a variety of metrics when sampling.
-let $P_{1}$ and $P_{2}$ be the vector of mutation frequencies in the first and second populations, respectively.
-with $\hat{P} = (P_{1} + P_{2}) / 2$ and
-$PQ = (P_{1} \times (1 - P_{1}) + P_{2} \times (1 - P_{2})) / 2$,
-we compute $F_{ST} = 1 - (PQ / (\hat{P} \times (1 - \hat{P})))$.
-%mean number of original lakes each FAA appears in,
-%and total number of unique FAA. 
-Time to adaptation ($T_{adapt}$) of the introduced population is the generation at which
-the difference between the average phenotype of the original and the introduced freshwater populations is less than 0.5. 
-To understand where, as well as how much, of these pre-existing freshwater adapted alleles are being transported,
-we track the the average percentage of freshwater adapted alleles at time $t$ across all populations throughout the simulation.
+This categorization is made for each generation using the allele frequencies from that generation,
+and so changes with time.
+Alleles common in the newly introduced lakes do not count
+if they are not also common in the original lakes.
+They are defined this way because the transportation hypothesis 
+does not specify where or when an advantageous mutation arises,
+but simply suggests that any sufficiently common freshwater adapted allele 
+could participate in adaptaiton in new habitat \citep{schluter2009genetics}.
+
+\emph{Time to adaptation} of the introduced population, denoted $T_\text{adapt}$, 
+is defined to be the generation at which 
+the difference between the average trait value in the original and the introduced freshwater populations 
+is less than 0.5. 
+
+We describe overall genetic differentiation between the habitats using $F_{ST}$,
+calculated on a per-locus basis.
+Concretely, if $p_f$ and $p_m$ are the frequencies of a given mutant allele
+in the freshwater and marine habitats, respectively,
+and $\bar p = (p_f + p_m)/2$,
+then we compute $F_{ST}$ for that mutation as $1 - p_f p_m / (\bar p (1-\bar p))$.
 
 
+%%%%%%%%%%%%%%%%%
 \section{Results}
 
 Across a range of historical introgression from $\approx 0.01 - 100.0$ migrants per generation in populations of 
