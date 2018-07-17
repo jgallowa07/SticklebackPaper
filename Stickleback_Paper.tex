@@ -68,6 +68,7 @@ using alleles maintained at low frequency by migration-selection balance
 occurs over a realistic range of intermediate rates of gene flow,
 between slow, independent adaptation with low gene flow
 and large migration load at high gene flow.
+This is mediated mainly by the total downstream influx of alleles \emph{(maybe??)}.
 We do not see evidence for strong effects encouraging genomic clustering of causal alleles
 or towards particular dominance coefficients.
 $F_{ST}$ scans for adaptive alleles are more likely to succeed with higher rates of gene flow,
@@ -83,16 +84,21 @@ and provide a more concrete look at a particular, empirically motivated example.
 % - in latex, use ` `words' ' to get the open- and closed-double quotes (not the double-quote character)
 % - "citet" for "cite, as part of the text"
 
-\jgg{Starting a paper is awkward, help}
-The rate and tempo of evolution remains largely unknown.
-Today, we have found multiple examples as evidence of rapid evolution 
-in tens of generations or fewer.
-Biologists are now starting to address the complexity behind ecological speciation. 
-\jgg{Peter and Bill: Could use help with examples of rapid evolution and the story leading up to stickleback right here}
+\emph{intro outline:}
+Start off with stickleback: repeated, rapid, parallel adaptation with obvious phenotypes.
+But, most species don't seem to have such obviously structured polymorphism: 
+what's special about stickleback?
+The transporter hypothesis is a mechanism; what's required to make it work?
+Other species adapt rapidly in similar ways:
+e.g., Darwin's finches and island mice;
+do these differ through not having such a big, connected reservoir of genetic variation?
+or by not having such a large total population size of the ``other'' habitat?
+Or, is this situation more common than we know, with less obvious phenotypes?
+Also, can we actually tell what's happening from genetic data?
 
 Recently, multiple instances of similar (parallel) underlying genetic basis of rapid local adaptation has brought about 
-questions surrounding the origins of adaptive alleles.
-A empirical model is the alaskan populations of freshwater and marine Ninespine Stickleback fish.
+questions surrounding the origins and maintenance of genetic polymorphism
+A empirical model is the Alaskan populations of freshwater and marine Ninespine Stickleback fish.
 In 1964, The Great Alaskan Earthquake caused an uplift of Middleton island and in turn,
 introduced a group of freshwater ponds around the perimeter of the island. 
 Quickly inhabited by the surrounding marine population of Stickleback,
@@ -328,15 +334,16 @@ then we compute $F_{ST}$ for that mutation as $1 - p_f p_m / (\bar p (1-\bar p))
 We varied the migration rate, $m$,
 from $5 \times 10^{-5}$ to $5 \times 10^{-2}$ per individual,
 i.e., between 0.01 and 10 migrants per year to and from each of the ten lakes.
-This had a strong effect on many aspects of adaptation: 
-including time to adaptation,
-sharing of pre-existing freshwater adapted alleles,
+This had a strong effect on many aspects of adaptation,
+including how fast adaptation occurred in each lake,
+how much alleles were shared between lakes,
 and the population genetic signals left behind.
 At the lowest migration rate, lakes adpated nearly independently,
 while at the highest migration rate, the habitats are beginning to act like a single metapopulation
 with substantial migration load.
 We will now dissect what happens between these extremes.
 
+\emph{merge with the above}
 Interestingly, the ability for separate populations to locally adapt to their own selective pressure was relatively unaffected 
 until the highest rate of migration between the marine and freshwater environments.
 All rates of historical introgression aside from the lowest, helped both the initial and introduced freshwater populations 
@@ -355,19 +362,16 @@ Local adaptation occurred in all simulations:
 as shown in Figure \ref{fig:phenotype_ts2},
 freshwater and marine populations diverged
 until the trait means were close to the optimal values in each habitat. 
-(Remaining simulations are shown in Figures \ref{phenotype_ts1} and \ref{phenotype_ts4}.)
+(Remaining simulations are shown in Figures \ref{fig:phenotype_ts1} and \ref{fig:phenotype_ts4}.)
 Greater migration decreased adaptedness only weakly
 except for at the highest migration rate (10 migrants per generation per lake),
 where the mean trait value equilibrated at roughly half its optimal value 
-(Figures \ref{fig:MeanPhenotype} and \ref{phenotype_ts4}).
-With less than one migrant per generation per lake,
-adaptation happened substantially faster
-in the marine habitat than in the lakes.
+(Figures \ref{fig:MeanPhenotype} and \ref{fig:phenotype_ts4}).
 The establishment of new alleles in the lakes is visible in Figure \ref{fig:phenotype_ts2}
-as jumps in the mean phenotype curve;
+as jumps in the mean trait value;
 in the two simulations these occur on a time scale of 100 (lower migration) to 1000 (higher migration)
 generations,
-and move the phenotype by an amount of order 1.
+and move the trait by an amount of order 1.
 Trait variation within each population was small compared to the difference between populations,
 with interquartile ranges of around XXX.\plr{TODO}
 Across all parameter values, differences at around 16 commonly polymorphic sites 
@@ -416,9 +420,8 @@ As seen in Figure \ref{fig:Fst},
 $F_{ST}$ between marine and freshwater habitats at neutral sites 
 steadily declines as migration increases.
 Local adaptation was still able to occur despite overall homogenization:
-$F_{ST}$ between marine and freshwater habitats 
-at sites with alleles affecting the trait (``effect mutations'')
-was relatively constant across migration values.
+if computed using only sites with alleles affecting the trait (``effect mutations''),
+$F_{ST}$ between habitats was relatively constant across migration values.
 
 
 \begin{figure}
@@ -470,14 +473,18 @@ nearly as quickly as the marine habitat.
 %-MPAA / IND
 %-Total/Avg shared
 
-As expected,
-lakes were able to adapt faster at higher migration rates
-because greater mixing allowed them to share alleles
+The tenfold difference in speed of adaptation occurs because
+at low migration rates, adaptation occurs independently in each lake,
+and the marine habitat has ten times the influx of new alleles than any one lake.
+In other words, 
+greater mixing at higher migration rates allows lakes to share alleles
 instead of developing their own genetic basis of adaptation.
 As a first indication of this, Figure \ref{fig:Fst} shows that
-$F_{ST}$ between the two sets of lakes at effect mutations decreased with migration rate.
+$F_{ST}$ between the ``original'' and ``introduced'' sets of lakes 
+at effect mutations decreased with migration rate.
 
-To further investigate sharing of locally adaptive alleles, 
+To further investigate sharing of locally adaptive alleles
+and the transporter hypothesis,
 we investigate the ``pre-existing freshwater adapted alleles'',
 defined for a particular generation
 to be effect mutations above 50\% in at least one original lake and below 50\% in the marine habitat
