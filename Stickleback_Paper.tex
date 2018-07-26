@@ -669,7 +669,7 @@ which are divided evenly in seven categories: neutral, and then additive, domina
 in either direction.
 This implies that a new additive or dominant effect mutation appears once every 87.5 generations,
 on average.
-Effect sizes are Exponential with mean $1/2$, and as above the probability
+Effect sizes are randomly drawn from an Exponential distribution with mean $1/2$, 
 and so the probability that a dominant mutation manages to establish in a population differing from
 the optimum by $z$ is roughly
 $\int_0^\infty 4 \beta z u \exp(-2u) du = \beta z$,
@@ -679,21 +679,61 @@ The distribution of these successfully established mutations
 has density proportional to $u \exp(-2u)$, i.e., is Gamma with mean 1 and shape parameter 2.
 Since additive alleles have half the effect in heterozygotes,
 they have half the probability of establishment.
-Combining these, we expect during the initial phase of adaptation,
-when the populations begin at around distance $z=10$ from the optimum,
-adaptive alleles to appear through mutation on a time scale of 250 generations,
+During the initial phase of adaptation,
+the populations begin at around distance $z=10$ from the optimum.
+Combining these facts, we expect 
+adaptive alleles to appear through mutation at first on a time scale of 250 generations,
+with the time between local fixation of new alleles increasing as adaptation progresses,
 and each to move the trait by a distance of order 1.
 
-\paragraph{Migration}
-A allele that moves the trait $z=1$ units in the freshwater direction
-has fitness roughly $\exp(-\beta) \approx 1 - \beta$ in the marine environment
+\paragraph{Standing variation}
+An allele that moves the trait $z$ units in the freshwater direction in heterozygotes
+has fitness roughly $\exp(-\beta z^2) \approx 1 - \beta z^2$ in the marine environment
 (which is close to optimal).
 The product of population size and fitness differential in the marine environment
+for a mutation with $z=1$
 is therefore $2Ns = 8.9$, implying that these alleles are strongly selected against
 but might occasionally drift to moderate frequency.
+The average frequency of such an allele in the marine environment at migration-selection equilibrium
+is equal to the total influx of alleles per generation divided by the selective disadvantage,
+which if $M = 2000 m$ is the number of immigrants per generation,
+is $2 M / \beta z^2$. 
+With $z=1$, the factor multiplying $M$ is $2/\beta z^2 \approx 1/200$:
+since lakes have 400 genomes, 
+as long as $M \ge 1$, the chances are good that any particular lake-adapted allele
+that is present in all pre-existing lakes
+will appear at least once in the fish that colonize a new lake.
+However, an allele with $z=1$ only has probability of around 1/20 of establishing locally,
+suggesting that we'd need $M \ge 10$ to ensure enough pre-existing genetic variation
+that adaptation would happen entirely using the initial set of colonizers.
+This corresponds to our highest two migration rates,
+as in e.g., Figure \ref{fig:phenotype_ts2}B.
 
-TODO: estimate rate at which migrant alleles move between lakes
+\paragraph{Migration}
+If sufficient genetic variation is not present in a new lake initially,
+it must appear by new mutation or migration.
+Since a proportion $m$ of each lake is composed of migrants each generation,
+it takes $1/m$ generations until the genetic variation introduced by migrants
+equals the amount initially present at colonization.
+This implies a dichotomy: either 
+(a) adaptation is possible using variants present at colonization
+or arriving shortly thereafter, or 
+(b) adaptation takes many multiples of $1/m$ generations.
 
+These calculations depend on there being no bottleneck in colonization of the lake;
+if there is a bottleneck, then an additional factor must be added.
+
+At what point do we expect new mutation to be more important than migration for adaptation?
+By the calculations above, if $M \ge 10$, we expect initial diversity in a lake to be sufficient 
+for adaptation, corresponding to our third-highest migration rate.
+If this does not happen, then we expect adaptation to take a multiple of $1/m$ generations;
+with our values, $1/m$ ranges from 20,000 to 20 generations.
+Above we estimated that adaptive alleles due to new mutation fix locally about every 2,000 generations,
+suggesting that at our second-lowest migration rate (where $1/m = 2,000$),
+the two contributions of migration and new mutation are roughly equal.
+This is in fact what we see: in Figure \ref{fig:MPFAI},
+we see that at the second migration rate, alleles start to be shared between lakes,
+while by the third migration rate, they are almost entirely shared.
 
 
 %%%%%%%%%%%%%%%%%%%%
