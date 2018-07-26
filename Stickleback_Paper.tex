@@ -4,7 +4,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{setspace}
-\usepackage{natbib}
+\usepackage{natbib} 
 \usepackage{graphicx}
 \usepackage{subfig}
 \usepackage{comment}
@@ -20,11 +20,12 @@
 
 \newcommand{\plr}[1]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue]{#1}}
 \newcommand{\jgg}[1]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=black]{#1}}
+\newcommand{\bill}[1]{\todo[linecolor=green,backgroundcolor=yellow!25,bordercolor=black]{#1}}
 
 \begin{document}
 
 \title{The sweet spot for local polygenic adaptation: a case study motivated by stickleback}
-\author{Jared Galloway, Bill Cresko, and Peter Ralph}
+\author{Jared Galloway, William A. Cresko, and Peter Ralph}
 \maketitle
 
 \textbf{Other title ideas?} (Bad ideas allowed.)
@@ -32,6 +33,8 @@
 How do stickleback share adaptations between lakes? A simulation study.
 
 A simulation study of gene flow and local polygenic adaptation
+
+\bill{A simulation study of gene flow and local polygenic adaptation in stickleback fish}
 
 
 \textbf{JARGON WE SHOULD THINK ON ??}
@@ -53,9 +56,7 @@ verify that adaptation of introduced pops is due to initial diversity not subseq
 
 \section{Abstract}
 
-Ninespine stickleback provide one of the most striking examples of local adaptation,
-as the hemisphere-wide metapopulation includes both marine populations
-and a large number of smaller freshwater populations
+Threespine stickleback fish provide one of the most striking examples of local adaptation. This hemisphere-wide metapopulation includes both marine populations and a large number of smaller freshwater populations
 that have apparently repeatedly adapted to freshwater conditions
 often using the same genetic basis.
 In this paper, we use simulations motivated by stickleback populations
@@ -97,7 +98,7 @@ Or, is this situation more common than we know, with less obvious phenotypes?
 Also, can we actually tell what's happening from genetic data?
 
 Recently, multiple instances of similar (parallel) underlying genetic basis of rapid local adaptation has brought about 
-questions surrounding the origins and maintenance of genetic polymorphism
+questions surrounding the origins and maintenance of genetic polymorphism.
 A empirical model is the Alaskan populations of freshwater and marine Ninespine Stickleback fish.
 In 1964, The Great Alaskan Earthquake caused an uplift of Middleton island and in turn,
 introduced a group of freshwater ponds around the perimeter of the island. 
@@ -106,7 +107,7 @@ Quickly inhabited by the surrounding marine population of Stickleback,
 parallel to freshwater stickleback that have been separated for over $13,000$ years.
 In freshwater stickleback, the number of lateral plates are reduced
 and the opercle shapes shows the same expansion of the dorsal region and reduction of the ventral region.
-\jgg{Bill - more specifics about Bill, Suzie, Kristin  \& or Thom's papers .. ? }
+% \jgg{Bill - more specifics about Bill, Suzie, Kristin  \& or Thom's papers .. ? }
 These results leave us with questions surrounding the nature of rapid adaptation.
 Does convergent evolution breed it's own solution (haplotype) for every new selective pressure, 
 or can these solutions can be efficiently shared across multiple sub - populations facing similar selective pressures. 
@@ -171,17 +172,17 @@ Next, we compare to real data and explore how $F_{st}$ data can be impacted by i
 We explored these questions
 using forwards-time simulations with explicit genomic representation of a quantitative trait
 in SLiM \citep{haller2017slim}.
-The details (described below) are motivated by the nine-spine stickleback,
+The details (described below) are motivated by previous population genomic studies of threespine stickleback,
 but remain simplistic in some aspects due to computational constraints.
 Possibly the most important caveat is that simulated population sizes are much smaller
-than the census size of the nine-spine stickleback population;
+than the census size of the threespine stickleback population;
 we will consider the likely effects of this in the Discussion.
 \plr{TODO}
 
 
 \paragraph{Habitat and geography}
-Our model has two habitat types, which are separate populations
-with a fixed total size of 2,000 diploid individuals each.
+Our model has two habitat types, which are considered separate populations
+with a fixed total size of 2,000 diploid individuals each. The marine population is treated as a single large deme, but the freshwater population is subdivided into local subpopulations or demes.
 The scheme, depicted in Figure \ref{fig:Geo},
 roughly models a set of freshwater habitats
 along a stretch of coastline.
@@ -190,13 +191,11 @@ and the ``freshwater'' habitat is divided into ten subpopulations
 (which we call ``lakes''), each connected to the marine habitat
 at positions $i - 1/2$ for $1 \le i \le 10$.
 
-Fitness in each habitat is determined by a single continuous trait with an inherent tradeoff,
-to roughly model the cumulative effect of the various phenotypes
-such as lateral plating and opercle shape
+Fitness in each habitat is determined by a single continuous trait with an inherent tradeoff such that alternative values of the trait have high or low fitness in tht two different habitats. This situation roughly models the cumulative effect of the various phenotypes
+such as armor morphology, body size, craniofacial variation and opercle shape (among others)
 on which divergent selection acts in the two environments.
 The optimal trait value in the marine habitat is $+10$,
-and in the freshwater habitat is $-10$,
-and fitness of a fish with trait value $x$ in a habitat with optimal value $x_\text{opt}$ is
+and in the freshwater habitat is $-10$. Fitness of a fish with trait value $x$ in a habitat with optimal value $x_\text{opt}$ is
 Gaussian with standard deviation, i.e.,
 \begin{align*}
     f(x; x_0)
@@ -230,7 +229,7 @@ Gaussian with standard deviation, i.e.,
 \end{figure}
 
 
-\paragraph{Potential genomic architecture}
+\paragraph{Potential genomic architecture}\bill{Initial genomic architecture? The header is a little confusing to me}
 Each individual carries two copies of a linear chromosome of $10^5$ loci
 (which could be thought of roughly as a kilobase each).
 New mutations occur with probability $10^{-7}$ per locus per generation.
@@ -276,8 +275,8 @@ Parents for a new marine individual who is not a migrant are chosen similarly (w
 first, a single parent is chosen proportionally to fitness in the marine habitat,
 and then a mate is chosen, 
 also proportionally to fitness but reweighted by a Gaussian function 
-of the distance separating the two, with stanadard deviation $1/2$: 
-concretely, if the first parent is marine individual $i$,
+of the distance separating the two, with stanadard deviation $1/2$. 
+Concretely, if the first parent is marine individual $i$,
 then marine individual $j$ is chosen as the mate
 with probability proportional to $f(x_i) \exp(-2d_{ij}^2)$,
 where $d_{ij}$ is the distance between the two locations.
@@ -290,7 +289,7 @@ any new freshwater offpsring produced by marine individuals
 are assigned to the lake nearest to the position of the first marine parent.
 
 \paragraph{New lakes}
-To study adaptation in newly appearing habitats,
+To study adaptation in newly appearing freshwater habitats,
 we introduce a new set of lakes midway through the simulation.
 The initial set of individuals have parents chosen as above from the marine habitat,
 and act like an independent copy of the original set of lakes -- in particular,
@@ -300,7 +299,7 @@ after this happens the probability that a new marine individual has freshwater p
 is $2m$ instead of $m$.
 
 
-\paragraph{Descriptive statistics}
+\paragraph{Descriptive statistics}\bill{Population genetic analyses? Instead of the more general 'Descriptive statistics'?}
 To assess whether new lakes adapt using existing genetic diversity,
 we define a \emph{pre-existing freshwater adapted allele}
 to be an effect mutation that has frequency higher than $0.5$ in at least one of the original lakes,
