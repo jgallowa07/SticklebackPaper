@@ -318,7 +318,7 @@ We also found that larger amounts of migration allow for more statistical power 
 
 \begin{figure}
 	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/PhenotypeThroughout5e-4.png}
+  		\includegraphics[width=0.7\linewidth]{plotlyPlots/PhenoThroughout5e-5.png}
   		\caption{ Mean individual trait value in each population as a function of time $t$, in generations. 
 		This is a single simulation run at a migration rate of $5 \times 10^{-4} \approx 1$ mig/gen in both 
 		directions for every freshwater population to the single marine population. 
@@ -334,7 +334,7 @@ We also found that larger amounts of migration allow for more statistical power 
 
 \begin{figure}
 	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/PhenotypeThroughout5e-3.png}
+  		\includegraphics[width=0.7\linewidth]{plotlyPlots/PhenoThroughout5e-4.png}
   		\caption{Mean individual trait value in each population as a function of time $t$, in generations. 
 		This is a single simulation run at a migration rate of $5 \times 10^{-3} \approx 1$ mig/gen in both 
 		directions for every freshwater population to the single marine population. 
@@ -392,7 +392,7 @@ with the exception of the lowest migration rate of 0.01 migrants per generation 
 
 \begin{figure}
 	\begin{center}
-  		\includegraphics[width=0.8\linewidth]{matplotlibPlots/FST_HRR.png}
+  		\includegraphics[width=0.8\linewidth]{matplotlibPlots/Fst_Adaptation.png}
   		\caption{Distributions of $F_{st}$  values between the three subpopulations throughout the simulations.
 		On the left, $F_{st}$ was calculated only on neutral mutation frequencies. On the right, $F_{st}$ was calculated
 		only on effect (Impact on phenotype) mutation frequencies. 
@@ -420,7 +420,7 @@ lakes surrounding were exporting alleles into the marine individual.
 %-Time to adaptation
 \begin{figure}
 	\begin{center}
-  		\includegraphics[width=0.8\linewidth]{matplotlibPlots/TimeToAdaptation.png}
+  		\includegraphics[width=0.8\linewidth]{matplotlibPlots/Adaptation_2_matplot.png}
   		\caption{Time to adaptation as a function of migration rate ($M$) parameter value. This is where we measure how many generation
 		it takes for the introduced population's mean phenotype to come within 0.5 of the original lakes average phenotype. 
 		Each point represents a simulation run at some value of $M$. 
@@ -460,7 +460,7 @@ This is further evidence that the introduced population is taking advantage of t
 %-Total/Avg shared
 \begin{figure}
 	\begin{center}
-  		\includegraphics[width=\linewidth]{matplotlibPlots/MPFAI.png}
+  		\includegraphics[width=\linewidth]{matplotlibPlots/MPFAI_2_matplot.png}
   		\caption{Distributions of mean percentage of freshwater adapted alleles (FAA) per individual throughout the simulation run, for each subpopulation.
 		We count the total number of freshwater alleles for each individual before averaging them in each population and dividing by the total number of defined
 		freshwater adapted alleles.
@@ -505,7 +505,7 @@ these are both suggestive of the original lakes sharing solutions to the same se
 %- Phenotype Distribution
 \begin{figure}[h!tb]
 	\begin{center}
-  		\includegraphics[width=0.6\linewidth]{matplotlibPlots/MeanPhenotype1.png}
+  		\includegraphics[width=0.6\linewidth]{matplotlibPlots/Pheno_2_matplot.png}
   		\caption{Distribution of mean phenotype throughout simulation runs at separate migration rate ($M$) parameter values, for each population.
 		The dashed pink line (Pheno = +10) is the optimum phenotype any individual in the marine environment.
 		In contrast the purple line at (Pheno = -10) represents the optimum for any individual in the freshwater environment. 
@@ -532,23 +532,23 @@ pull towards the opposing selective pressure value and away from the local optim
 \subsection*{Realized genomic architecture and signals}
 
 
-\begin{figure}
-	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/FstAcross5e-3.png}
-  		\caption{(Description and cleaning needed)
-		}
-  		\label{fig:Fst3}
-	\end{center}
-\end{figure}
+%\begin{figure}
+%	\begin{center}
+%  		\includegraphics[width=0.7\linewidth]{plotlyPlots/FstAcross5e-3.png}
+%  		\caption{(Description and cleaning needed)
+%		}
+%  		\label{fig:Fst3}
+%	\end{center}
+%\end{figure}
 
-\begin{figure}
-	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/FstAcross5e-4.png}
-  		\caption{(Description and cleaning needed)
-		}
-  		\label{fig:Fst2}
-	\end{center}
-\end{figure}
+%\begin{figure}
+%	\begin{center}
+%  		\includegraphics[width=0.7\linewidth]{plotlyPlots/FstAcross5e-4.png}
+%  		\caption{(Description and cleaning needed)
+%		}
+%  		\label{fig:Fst2}
+%	\end{center}
+%\end{figure}
 
 Now we take a closer look at the genomic architecture of local adaptation between freshwater and marine individuals. 
 Often when looking at real datas, biologists observe patterns of $F_{st}$ and clustering of alleles that suggest causative loci for certain traits.
@@ -559,7 +559,7 @@ given the $F_{st}$ per SNP across the genome.
 
 \begin{figure}
 	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{matplotlibPlots/Power_FP.png}
+  		\includegraphics[width=0.7\linewidth]{matplotlibPlots/0_25_power.png}
   		\caption{ 
 		%SP - suppose you have an Fst Peak, how likely is it that that region is causal. 
 		Statistical Power and False Positives as a function of $F_{st}$ threshold. 
@@ -658,23 +658,7 @@ of FAA's without migration load.
 
 \begin{figure}
 	\begin{center}
-  		\includegraphics[width=\linewidth]{plotlyPlots/NumFAA.png}
-  		\caption{(PLACEHOLDER)}
-		\label{fig:NumFAA}
-	\end{center}
-\end{figure}
-
-\begin{figure}
-	\begin{center}
-  		\includegraphics[width=\linewidth]{plotlyPlots/StandingGeneticVariation.png}
-  		\caption{(PLACEHOLDER)}
-		\label{fig:SGV}
-	\end{center}
-\end{figure}
-
-\begin{figure}
-	\begin{center}
-  		\includegraphics[width=\linewidth]{matplotlibPlots/MFAI.png}
+  		\includegraphics[width=\linewidth]{matplotlibPlots/MFAI_2_matplot.png}
   		\caption{Distributions of mean number of freshwater adapted alleles (FAA) per individual throughout the simulation run, for each subpopulation.
 		We count the total number of freshwater alleles for each individual before averaging them in each population and dividing by the total number of defined
 		freshwater adapted alleles.
@@ -683,51 +667,6 @@ of FAA's without migration load.
   		\label{fig:MNFAI}
 	\end{center}
 \end{figure}
-
-\begin{figure}
-	\begin{center}
-  		\includegraphics[width=\linewidth]{matplotlibPlots/effectRegionCounts.png}
-  		\caption{(PLACEHOLDER)}
-		\label{fig:counts}
-	\end{center}
-\end{figure}
-
-\begin{figure}[h!tb]
-	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/FstAcross5e-5.png}
-  		\caption{ (PLACEHOLDER)
-		}
-  		\label{fig:Fst1}
-	\end{center}
-\end{figure}
-
-\begin{figure}[h!tb]
-	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/FstAcross5e-2.png}
-  		\caption{(PLACEHOLDER)
-		}
-  		\label{fig:Fst4}
-	\end{center}
-\end{figure}
-
-\begin{figure}[h!tb]
-	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/PhenotypeThroughout5e-5.png}
-  		\caption{ (PLACEHOLDER)
-		}
-  		\label{fig:phenotype_ts1}
-	\end{center}
-\end{figure}
-
-\begin{figure}[h!tb]
-	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{plotlyPlots/PhenotypeThroughout5e-2.png}
-  		\caption{(PLACEHOLDER)
-		}
-  		\label{fig:phenotype_ts4}
-	\end{center}
-\end{figure}
-
 
 
 \end{document}
