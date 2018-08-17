@@ -3,4 +3,5 @@
 *.log
 *.bbl
 *.blg
-.DS_Store
+*.swp
+*.out
