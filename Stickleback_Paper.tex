@@ -174,6 +174,7 @@ using forwards-time simulations with explicit genomic representation of a quanti
 in SLiM \citep{haller2017slim}.
 The details (described below) are motivated by previous population genomic studies of threespine stickleback,
 but remain simplistic in some aspects due to computational constraints.
+\jgg{should we brag about treeSeq here a little?}
 Possibly the most important caveat is that simulated population sizes are much smaller
 than the census size of the threespine stickleback population;
 we will consider the likely effects of this in the Discussion.
@@ -210,7 +211,7 @@ Gaussian with standard deviation, i.e.,
 
 \begin{figure}
 	\begin{center}
-  		\includegraphics[width=0.6\linewidth]{GeographyDiagram}
+  		\includegraphics[width=0.6\linewidth]{GeographyFigure}
   		\caption{A representation of the geographic and evolutionary history of all populations throughout the simulation. 
 		The marine is a one-dimensional, continuous population with spatial positions ranging from [0.0 - 10.0]. 
 		Each freshwater lake$_{i}$ for both the introduced and freshwater populations
@@ -380,8 +381,7 @@ were responsible for most of the adaptive differences between freshwater and mar
 
 \begin{figure}
 	\begin{center}
-        \includegraphics[width=0.7\linewidth]{plotlyPlots/PhenotypeThroughout5e-4}
-        \includegraphics[width=0.7\linewidth]{plotlyPlots/PhenotypeThroughout5e-3}
+        \includegraphics[width=1.0\linewidth]{semi_final_plots/Pheno_semi_final.png}
   		\caption{ 
         Mean individual trait values in the marine habitat (black line),
         the original lakes (light green lines; average in pink),
@@ -412,7 +412,7 @@ $F_{ST}$ between habitats was relatively constant across migration values.
 
 \begin{figure}
 	\begin{center}
-  		\includegraphics[width=0.8\linewidth]{matplotlibPlots/Fst_Adaptation.png}
+  		\includegraphics[width=1.0\linewidth]{semi_final_plots/Fst_semi_final.png}
   		\caption{Distributions of $F_{st}$  values between the three subpopulations throughout the simulations.
 		On the left, $F_{st}$ was calculated only on neutral mutation frequencies. On the right, $F_{st}$ was calculated
 		only on effect (Impact on phenotype) mutation frequencies. 
@@ -436,7 +436,7 @@ nearly as quickly as the marine habitat.
 
 \begin{figure}
 	\begin{center}
-  		\includegraphics[width=0.8\linewidth]{matplotlibPlots/Adaptation_2_matplot.png}
+  		\includegraphics[width=1.0\linewidth]{semi_final_plots/T_adapt_semi_final.png}
   		\caption{Time to adaptation as a function of migration rate ($M$) parameter value. This is where we measure how many generation
 		it takes for the introduced population's mean phenotype to come within 0.5 of the original lakes average phenotype. 
 		Each point represents a simulation run at some value of $M$. 
@@ -494,7 +494,7 @@ Since these are \emph{pre-existing} alleles, the value is zero for introduced la
 
 \begin{figure}
 	\begin{center}
-  		\includegraphics[width=\linewidth]{matplotlibPlots/MPFAI_2_matplot.png}
+  		\includegraphics[width=\linewidth]{semi_final_plots/FAA_semi_final.png}
   		\caption{Distributions of mean percentage of freshwater adapted alleles (FAA) per individual throughout the simulation run, for each subpopulation.
 		We count the total number of freshwater alleles for each individual before averaging them in each population and dividing by the total number of defined
 		freshwater adapted alleles.
@@ -513,7 +513,7 @@ Since these are \emph{pre-existing} alleles, the value is zero for introduced la
 %- Phenotype Distribution
 \begin{figure}[h!tb]
 	\begin{center}
-  		\includegraphics[width=0.6\linewidth]{matplotlibPlots/Pheno_2_matplot.png}
+  		\includegraphics[width=1.0\linewidth]{semi_final_plots/PhenoDist_semi_final.png}
   		\caption{Distribution of mean phenotype throughout simulation runs at separate migration rate ($M$) parameter values, for each population.
 		The dashed pink line (Pheno = +10) is the optimum phenotype any individual in the marine environment.
 		In contrast the purple line at (Pheno = -10) represents the optimum for any individual in the freshwater environment. 
@@ -552,6 +552,18 @@ despite a lack of any substantial migration load.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Realized genomic architecture}
 
+\begin{figure}[h!tb]
+	\begin{center}
+  		\includegraphics[width=1.0\linewidth]{semi_final_plots/Haplo_semi_final.png}
+  		\caption{Distribution of mean phenotype throughout simulation runs at separate migration rate ($M$) parameter values, for each population.
+		The dashed pink line (Pheno = +10) is the optimum phenotype any individual in the marine environment.
+		In contrast the purple line at (Pheno = -10) represents the optimum for any individual in the freshwater environment. 
+		All individuals at generation 0 (beginning of the simulation) 
+		}
+  		\label{fig:MeanPhenotype}
+	\end{center}
+\end{figure}
+
 
 Now we take a closer look at the genomic architecture of local adaptation 
 between the two habitats.
@@ -584,7 +596,7 @@ to be a causal locus.
 
 \begin{figure}
 	\begin{center}
-  		\includegraphics[width=0.7\linewidth]{matplotlibPlots/0_25_power.png}
+  		\includegraphics[width=0.7\linewidth]{semi_final_plots/TP_SP_semi_final.png}
   		\caption{ 
 		%SP - suppose you have an Fst Peak, how likely is it that that region is causal. 
 		Statistical Power and False Positives as a function of $F_{st}$ threshold. 
@@ -750,7 +762,6 @@ the ability for species to locally adapt to the selective pressure of their envi
 This leads us to consider a window of introgression which allows for the transportation
 of FAA's without migration load. 
 
-
 \subsection*{connect results back to real data?}
 
 %In a species that commonly is subjected to two general types of selective pressure 
@@ -776,18 +787,6 @@ but would also make it more difficult to establish.
 \clearpage
 \appendix
 \section{Supp.}
-
-\begin{figure}
-	\begin{center}
-  		\includegraphics[width=\linewidth]{matplotlibPlots/MFAI_2_matplot.png}
-  		\caption{Distributions of mean number of freshwater adapted alleles (FAA) per individual throughout the simulation run, for each subpopulation.
-		We count the total number of freshwater alleles for each individual before averaging them in each population and dividing by the total number of defined
-		freshwater adapted alleles.
-		Looking at total number of FAA per individual gives us an idea behind how many alleles underly a freshwater haplotype, 
-		}
-  		\label{fig:MNFAI}
-	\end{center}
-\end{figure}
 
 
 \end{document}
