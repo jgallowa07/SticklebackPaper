@@ -183,11 +183,12 @@ we will consider the likely effects of this in the Discussion.
 
 \paragraph{Habitat and geography}
 Our model has two habitat types, which are considered separate populations
-with a fixed total size of 2,000 diploid individuals each. The marine population is treated as a single large deme, but the freshwater population is subdivided into local subpopulations or demes.
+with a fixed total size of 5,000 diploid individuals each. The marine population is treated as a single large deme, but the freshwater population is subdivided into local subpopulations or demes.
 The scheme, depicted in Figure \ref{fig:Geo},
 roughly models a set of freshwater habitats
 along a stretch of coastline.
-The ``marine'' habitat  is a continuous, one-dimensional range of 10 units of length,
+The ``marine'' habitat  is a continuous, one-dimensional range of 25 units of length,
+%%%%
 and the ``freshwater'' habitat is divided into ten subpopulations
 (which we call ``lakes''), each connected to the marine habitat
 at positions $i - 1/2$ for $1 \le i \le 10$.
@@ -211,7 +212,7 @@ Gaussian with standard deviation, i.e.,
 
 \begin{figure}
 	\begin{center}
-  		\includegraphics[width=0.6\linewidth]{GeographyFigure}
+  		\includegraphics[width=0.6\linewidth]{GeographyFigure.pdf}
   		\caption{A representation of the geographic and evolutionary history of all populations throughout the simulation. 
 		The marine is a one-dimensional, continuous population with spatial positions ranging from [0.0 - 10.0]. 
 		Each freshwater lake$_{i}$ for both the introduced and freshwater populations
