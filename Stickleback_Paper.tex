@@ -48,13 +48,6 @@ Migration Rate | Historical Introgression = ?
 pre-existing freshwater adapted alleles | standing genetic variants = ?
 
 
-\textbf{Pending things to do?} that maybe we do, maybe not
-
-longer genomes ($10^8$ not $10^5$ but rescaling everything accordingly)
-
-verify that adaptation of introduced pops is due to initial diversity not subsequent migration
-\jgg{one way to do this is check the mean number of samples under the introduced populations?}
-
 \section{Abstract}
 
 Threespine stickleback fish provide one of the most striking examples of local adaptation. This hemisphere-wide metapopulation includes both marine populations and a large number of smaller freshwater populations
@@ -325,11 +318,8 @@ in the freshwater and marine habitats, respectively,
 and $\bar p = (p_f + p_m)/2$,
 then we compute $F_{ST}$ for that mutation as $1 - p_f p_m / (\bar p (1-\bar p))$.
 
-
-%%%%%%%%%%%%%%%%%
 \section{Results}
 
-% Overview
 We varied the migration rate, $m$, across separate simulations
 from $5 \times 10^{-5}$ to $5 \times 10^{-1}$ per individual,
 i.e., between 0.01 and 100 migrants per year to and from each of the freshwater lakes.
@@ -350,7 +340,6 @@ share pre-existing freshwater adapted alleles.
 The sharing of alleles resulted in rapid adaptation ($\approx 100$ generations) of the introduced population (split from the marine population) to adapt to the freshwater environment.
 We also found that larger amounts of migration allow for more statistical power and less false positives in the resulting population genetics data ($F_{st}$ per SNP across the genome).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Local Adaptation: differentiation with gene flow}
 
 % The progression of adaptation. How you can see introduction new alleles
@@ -621,7 +610,30 @@ This along with low false positive rate across all $F_{st}$ threshold values is 
 
 %The lowest migration rate of $10^{-5}$ also has a very low false positive rate across all $F_{st}$ threshold values.
 %\subsubsection*{Low Recombination Causes Clustering}
+\subsubsection*{Origin of introduced freshwater adaptive alleles}
+Up to this point, we have quantified rapid and parallel adaptation and found strong evidence that sharing of alleles is (more than likely?) responsible.
+However at $m$ equal to $0.1$ \emph{mig/gen/lake}, in \ref{fig:MPFAI} we see sharing of alleles with between populations,
+yet \emph{Time to adaptation} is still fairly slow ($\approx 2,000$ gens).
+This is surprising when considering we see a similar quantity of allele sharing at  $m$ equal to $1.0$ \emph{mig/gen/lake}, 
+but much more rapid adaptation ($\approx 60$ gens). 
+This $30X$ speedup in \emph{time to adaptation} seems to be the result of either subsequent migration
+from the marine after the point of freshwater introduction, or, the higher saturation of pre-existing freshwater adapted alleles 
+in the marine at \emph{time to introduction} allowed for selection to effectively propagate the pre-existing freshwater adapted alleles.
+To explore this further, we have looked at the genealogical origins using SLiM's \emph{treeSeq} (CITE thesis, treeSeq paper)
+of the adaptive variants in the introduced population (p3) at \emph{time of introduction}, when the introduced population's mean phenotype
+came within 0.5 of the pre-existing freshwater population's mean phenotype.
+The adaptive variants in the introduced population were defined as effect mutations at higher than 0.5 frequency in the 
+introduced population, and below 0.5 frequency in the marine population.
+We classified the origin of each adaptive variant, (freshwater adapted allele in the introduced population) to be:
+(1) pre-existing, propagating from an ancestor that was in the initial generation introduced to the new freshwater selective pressure,
+(2) subsequent migration, propagating from and ancestor who was a migrant from the ocean \emph{after} introduction,
+We then averaged these 3 numbers, for each variant existing in the population.
+In Figure (blah), (FINISH AFTER PLOT)
 
+
+
+
+ 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Theoretical expectations}
