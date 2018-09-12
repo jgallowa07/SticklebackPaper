@@ -63,7 +63,7 @@ using alleles maintained at low frequency by migration-selection balance
 occurs over a realistic range of intermediate rates of gene flow,
 between slow, independent adaptation with low gene flow
 and large migration load at high gene flow.
-This is mediated mainly by the total downstream influx of alleles \emph{(maybe??)}.
+This is mediated mainly by the total downstream influx of alleles \emph{(maybe??)(No)}.
 We do not see evidence for strong effects encouraging genomic clustering of causal alleles
 or towards particular dominance coefficients.
 $F_{ST}$ scans for adaptive alleles are more likely to succeed with higher rates of gene flow,
@@ -267,8 +267,8 @@ at the location of the parent's lake.
 Parents for a new marine individual who is not a migrant are chosen similarly (with probability $1-m$):
 first, a single parent is chosen proportionally to fitness in the marine habitat,
 and then a mate is chosen, 
-also proportionally to fitness but reweighted by a Gaussian function 
-of the distance separating the two, with stanadard deviation $1/2$. 
+also proportionally to fitness but reweighed by a Gaussian function 
+of the distance separating the two, with standard deviation $1/2$. 
 More specifically, if the first parent is marine individual $i$,
 then marine individual $j$ is chosen as the mate
 with probability proportional to $f(x_i) \exp(-2d_{ij}^2)$,
@@ -291,6 +291,28 @@ Since this doubles the number of lake-to-marine immigrants,
 after this happens the probability that a new marine individual has freshwater parents
 is $2m$ instead of $m$.
 
+\paragraph{Using SLiM's TreeSeq}
+This case study involves analyzing large simulations which model populations under the influence of selection. 
+To fully understand the origins of adaptive variants, calculate statistics, and avoid the computationally expensive task of 
+simulating neutral mutations, we have used SLiM's \emph{treeSeq} feature to track the genealogical history of all samples throughout the simulation. 
+This feature outputs a compact representation the genomic outcome of every meiosis relevant to tracked samples (Often thought of as the ARG).
+\jgg{maybe the below should be in descriptive statistics}
+To understand recomposition of the freshwater haplotype in the new lakes through selection, 
+we were able to classify each adaptive variant, in each genome in the population at the generation at time of adaptation,
+as deriving from one of four origins:
+(1) Migrants, brought in from a migrant after the introduction of the new lakes 
+(2) Pre-existing, passed down from an individual in the original generation of the new lakes, 
+however, not defined to be an adaptive variant in the original lakes
+(3) Captured, Pre-existing, passed down from an individual in the original generation of the new lakes, 
+and defined to be adaptive in the original lakes
+(4) De novo, mutated and propagated from an individual existing in the introduced lakes population, after introduction. 
+
+We also used the tree sequence to count the "fitness" of individuals in the initial generation of the new lakes. 
+The "fitness" of an individual in this case, is defined to be the total number off eventual offspring, in the generation at the time of adaptation, 
+which have inherited a adaptive variant from that individual. 
+To calculate this, we only considered gene trees which overlapped an adaptive variant site (defined at time of adaptation).
+We then counted the total number of offspring which had inherited from any adaptive variant site, 
+for each individual in the initial generation. 
 
 \paragraph{Descriptive statistics}\bill{Population genetic analyses? Instead of the more general 'Descriptive statistics'?}
 To assess whether new lakes adapt using existing genetic diversity,
@@ -331,33 +353,22 @@ At the lowest migration rate, lakes adapted nearly independently,
 while at the highest migration rate, the habitats are beginning to act like a single metapopulation
 with substantial migration load.
 We will now dissect what happens between these extremes.
-
-\emph{merge with the above}
-Interestingly, the ability for separate populations to locally adapt to their own selective pressure was relatively unaffected 
-until the highest rate of migration between the marine and freshwater environments.
+Interestingly, all rates of $m$ aside from the two highest had little affect on populations ability to locally adapt.
 All rates of historical introgression aside from the lowest, helped both the initial and introduced freshwater populations 
 share pre-existing freshwater adapted alleles.
-The sharing of alleles resulted in rapid adaptation ($\approx 100$ generations) of the introduced population (split from the marine population) to adapt to the freshwater environment.
+The sharing of alleles resulted in rapid adaptation ($\approx 60$ generations) of the introduced population (split from the marine population) to adapt to the freshwater environment.
 We also found that larger amounts of migration allow for more statistical power and less false positives in the resulting population genetics data ($F_{st}$ per SNP across the genome).
 
 \subsection*{Local Adaptation: differentiation with gene flow}
 
-% The progression of adaptation. How you can see introduction new alleles
-
+\jgg{This needs some work}
 Local adaptation occurred in all simulations:
 as shown in Figure \ref{fig:phenotype_ts2},
 freshwater and marine populations diverged
 until the trait means were close to the optimal values in each habitat. 
-%(Remaining simulations are shown in Figures \ref{fig:phenotype_ts1} and \ref{fig:phenotype_ts4}.)
-%Create these once all plots are finalized
-Greater migration decreased adaptedness only weakly
-except for at the two highest migration rates (10 and 100 migrants per generation per lake),
-where the mean trait value equilibrated at roughly half its optimal value and experienced panmixia, respectively.
-(Figures \ref{fig:MeanPhenotype} and \ref{fig:phenotype_ts4}).
 The establishment of new alleles in the lakes is visible in Figure \ref{fig:phenotype_ts2}
 as jumps in the mean trait value;
-in the two simulations these occur on a time scale of 100 (lower migration) to 1000 (higher migration)
-generations,
+in the two simulations these occur on a time scale of 100 (lower migration) to 1000 (higher migration) generations,
 \jgg{I'm not sure what this means? how do we know how long the jumps take?}
 and move the trait by an amount of order 1.
 Trait variation within each population was small compared to the difference between populations,
@@ -371,19 +382,18 @@ were responsible for most of the adaptive differences between freshwater and mar
 	\begin{center}
         \includegraphics[width=1.0\linewidth]{semi_final_plots/Pheno_semi_final.png}
   		\caption{ 
-        Mean individual trait values in the marine habitat (blue line),
-        the original lakes (light green lines; average in dark green),
-        and the introduced lakes (yellow lines; average in orange)
-        across the course of two simulations, with migration rates of
-        \textbf{(top)} $m=5 \times 10^{-5}$ and
-        \textbf{(bottom)} $m=5 \times 10^{-4}$ per generation individual
-        (i.e., 0.01 and 0.1 migrants per lake per generation, respectively).
-        Optimal trait values in the two habitats are at $\pm 10$.
+        		Mean individual trait values in the marine habitat (blue line),
+        		the original lakes (light green lines; average in dark green),
+        		and the introduced lakes (yellow lines; average in orange)
+        		across the course of two simulations, with migration rates of
+        		\textbf{(top)} $m=5 \times 10^{-5}$ and
+        		\textbf{(bottom)} $m=5 \times 10^{-4}$ per generation individual
+        		(i.e., 0.01 and 0.1 migrants per lake per generation, respectively).
+        		Optimal trait values in the two habitats are at $\pm 10$.
 		}
   		\label{fig:phenotype_ts2}
 	\end{center}
 \end{figure}
-
 
 As expected, increasing migration rate decreased differentiation between habitats.
 As seen in Figure \ref{fig:Fst},
@@ -393,35 +403,38 @@ Local adaptation was still able to occur despite overall homogenization:
 if computed using only sites with alleles affecting the trait (``effect mutations''),
 $F_{ST}$ between habitats was relatively constant across migration values.
 
-
 \begin{figure}
 	\begin{center}
   		\includegraphics[width=1.0\linewidth]{semi_final_plots/Fst_semi_final.png}
   		\caption{
-		Finish this when we finalize plots!
+		$F_{st}$ as a function of genomic location between all combinations of the three subpopulations; 
+		the old lakes, the new lakes, and the marine.
+		$F_{st}$ was calculated based upon allele frequencies in genomic windows of 500 mb. 
+		The four columns of subplot represent separate simulations with increasing $m$. 
+		The three rows represent the combinations of the three separate populations.
+		Ten vertical dotted pink lines in each subplot represent regions which have the potential to affect phenotype
 		 }
   		\label{fig:Fst}
 	\end{center}
 \end{figure}
 
-
 \paragraph*{Speed of adaptation}
 Increasing migration rate strongly decreased the time until freshwater habitats could adapt,
-both in the initial and introduced sets of lakes.
+both in the old and new sets of lakes.
+The different rates of introduction of effect alleles is clearly seen in the traces
+of trait values against time (e.g., Figure \ref{fig:phenotype_ts2}).
 As shown in Figure \ref{fig:TimeToAdaptation}, at the lowest migration rate 
 it took over $20,000$ generations for the mean trait value across introduced lakes to 
 get to within 0.5 of the original lakes value.
-Although many lakes had adapted before this time,
-the different rates of introduction of effect alleles is clearly seen in the traces
-of trait values against time (e.g., Figure \ref{fig:phenotype_ts2}).
-However, higher migration rates allowed the freshwater habitats to adapt
-nearly as quickly as the marine habitat.
-
+At $m = 1.0$, we saw the introduced population adapt in just 32 generations. 
+This rate of adaptation follows what we've observed in natural populations of Threespine stickleback.
+At the highest migration rate, $m = 100$, all individuals were unable to locally adapt.
 
 \begin{figure}
 	\begin{center}
   		\includegraphics[width=1.0\linewidth]{semi_final_plots/T_adapt_semi_final.png}
-  		\caption{Time to adaptation as a function of migration rate ($M$) parameter value. This is where we measure how many generation
+  		\caption{
+		Time to adaptation as a function of migration rate ($M$) parameter value. This is where we measure how many generation
 		it takes for the introduced population's mean phenotype to come within 0.5 of the original lakes average phenotype. 
 		Each point represents a simulation run at some value of $M$. 
 		The yellow dashed line is the average of all points at each respective parameter value}
@@ -429,19 +442,13 @@ nearly as quickly as the marine habitat.
 	\end{center}
 \end{figure}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Sharing of freshwater adapted alleles}
-
-%FIGURES THAT SHOW THIS:
-%-MPAA / IND
-%-Total/Avg shared
 
 \begin{figure}
 	\begin{center}
   		\includegraphics[width=\linewidth]{semi_final_plots/FAA_semi_final.png}
   		\caption{
-			finish this after plots are finalized
+		Distribution of freshwater adapted alleles 
 		}
 		\label{fig:MPFAI}
 	\end{center}
@@ -521,23 +528,6 @@ Significant gene flow constricts local adaptation
 as a consequence of a large number of offspring through hybridization events between subpopulations.
 at $m=0.5$, all populations experience panmixia 
 
-\paragraph{Standing genetic variation}
-\jgg{todo, make this figure for the supp}
-\jgg{this will need updated in I make the plot for it}
-Despite a dramatic difference in the amount of allelic sharing between lakes,
-standing genetic variance (Figure \ref{fig:SGV}) 
-was around 0.05 in the freshwater habitat
-across all but the highest migration rates.
-Concurrently,
-genetic variation in the marine population steady increased with migration
-to a similar value.
-On the one hand, it is not surprising that lakes, as a group,
-carry more genetic variation than the marine habitat,
-since population subdivision allows different alleles to become common in each.
-However, it is striking that at $m=.005$, the marine habitat carries as much genetic variation,
-despite a lack of any substantial migration load.
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Realized genomic architecture}
 
@@ -594,9 +584,7 @@ to be a causal locus.
 \end{figure}
 
 With 10 effect regions across the genome, we can see in \ref{fig:Fst3} that only about 1 or 2 of the region contain peaks. 
-%SOFT STATEMENT - MORE (Peak) EVALUATION?
 When looking closely at the peaks we see that each is usually a composition of 7-8 SNPs close in proximity.
-%SOFT STATEMENT -
 Because some of those mutations are selectively neutral (we can see this because the counts of FAA are not as high as the number in the clusters),
 this is suggestive of hitchhiking alleles along with the SNPs being brought to high frequency by a selective sweeps.
 
@@ -608,32 +596,36 @@ we can look at the statistical power and false positives given $F_{st}$ per SNP 
 In Figure \ref{fig:Power_FP} , looking at an $F_{st}$ threshold greater than 1, we see the two lowest migration rates $10^{-5}$ and $10^{-4}$ having very little statical power. 
 This along with low false positive rate across all $F_{st}$ threshold values is fairly predictable when you consider the high $F_{st}$ values across the genome. 
 
+\begin{figure}
+	\begin{center}
+  		\includegraphics[width=0.7\linewidth]{semi_final_plots/OriginRatio.png}
+  		\caption{ 
+		Ratio of Origins of adaptive alleles in all genomes at time of local adaptation for different values of $m$
+		}
+  		\label{fig:Origin}
+	\end{center}
+\end{figure}
+
+
 %The lowest migration rate of $10^{-5}$ also has a very low false positive rate across all $F_{st}$ threshold values.
 %\subsubsection*{Low Recombination Causes Clustering}
-\subsubsection*{Origin of introduced freshwater adaptive alleles}
+\subsubsection*{Origin of introduced freshwater adaptive alleles: a conundrum}
 Up to this point, we have quantified rapid and parallel adaptation and found strong evidence that sharing of alleles is (more than likely?) responsible.
-However at $m$ equal to $0.1$ \emph{mig/gen/lake}, in \ref{fig:MPFAI} we see sharing of alleles with between populations,
+However in Figure \ref{fig:MPFAI} at $m$ equal to $0.1$ \emph{mig/gen/lake}, we see sharing of alleles between populations,
 yet \emph{Time to adaptation} is still fairly slow ($\approx 2,000$ gens).
 This is surprising when considering we see a similar quantity of allele sharing at  $m$ equal to $1.0$ \emph{mig/gen/lake}, 
 but much more rapid adaptation ($\approx 60$ gens). 
-This $30X$ speedup in \emph{time to adaptation} seems to be the result of either subsequent migration
-from the marine after the point of freshwater introduction, or, the higher saturation of pre-existing freshwater adapted alleles 
-in the marine at \emph{time to introduction} allowed for selection to effectively propagate the pre-existing freshwater adapted alleles.
-To explore this further, we have looked at the genealogical origins using SLiM's \emph{treeSeq} (CITE thesis, treeSeq paper)
-of the adaptive variants in the introduced population (p3) at \emph{time of introduction}, when the introduced population's mean phenotype
-came within 0.5 of the pre-existing freshwater population's mean phenotype.
-The adaptive variants in the introduced population were defined as effect mutations at higher than 0.5 frequency in the 
-introduced population, and below 0.5 frequency in the marine population.
-We classified the origin of each adaptive variant, (freshwater adapted allele in the introduced population) to be:
-(1) pre-existing, propagating from an ancestor that was in the initial generation introduced to the new freshwater selective pressure,
-(2) subsequent migration, propagating from and ancestor who was a migrant from the ocean \emph{after} introduction,
-We then averaged these 3 numbers, for each variant existing in the population.
-In Figure (blah), (FINISH AFTER PLOT)
+Initially, this 30X speedup of adaptation might seem to be the result of subsequent migration from the marine after the point of freshwater introduction. 
+This theory would assert that the continued influx of alleles is necessary for rapid local adaptation at the rate which we've observed in Nature.
+However, in Figure \ref{fig:Origin}, we find that at both $m = 0.1$ and $m = 1.0$, the vast majority of adaptive alleles origins were found to propagate 
+from individuals in the original generation ("Captured" OR "Pre-Existing").
 
+The alternative explanation is that at a higher migration rate, a higher saturation of marine adapted alleles are linked to freshwater adapted alleles.
+This linkage makes rebuilding the freshwater haplotype, in the new lakes, much more difficult as it much wait for recombination to break the links.
+With more historical introgression between the two selective pressures, the freshwater haplotype would remain more "intact" and much more efficient
+to rebuild in the lake.
 
-
-
- 
+%Now lets make this more concrete
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Theoretical expectations}
