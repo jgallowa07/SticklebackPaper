@@ -291,7 +291,7 @@ Since this doubles the number of lake-to-marine immigrants,
 after this happens the probability that a new marine individual has freshwater parents
 is $2m$ instead of $m$.
 
-\paragraph{Using SLiM's TreeSeq}
+\paragraph{TreeSeq}
 This case study involves analyzing large simulations which model populations under the influence of selection. 
 To fully understand the origins of adaptive variants, calculate statistics, and avoid the computationally expensive task of 
 simulating neutral mutations, we have used SLiM's \emph{treeSeq} feature to track the genealogical history of all samples throughout the simulation. 
@@ -426,7 +426,7 @@ of trait values against time (e.g., Figure \ref{fig:phenotype_ts2}).
 As shown in Figure \ref{fig:TimeToAdaptation}, at the lowest migration rate 
 it took over $20,000$ generations for the mean trait value across introduced lakes to 
 get to within 0.5 of the original lakes value.
-At $m = 1.0$, we saw the introduced population adapt in just 32 generations. 
+At $m = 1.0$, we saw the introduced population adapt in just $32$ generations. 
 This rate of adaptation follows what we've observed in natural populations of Threespine stickleback.
 At the highest migration rate, $m = 100$, all individuals were unable to locally adapt.
 
@@ -463,6 +463,8 @@ At the highest migration rate, $m = 100$, all individuals were unable to locally
 		\label{fig:MPFAI}
 	\end{center}
 \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% I'M HERE
 
 This dramatic increase in speed of local adaptation occurs because
 at low migration rates, adaptation occurs independently in each lake,
@@ -508,15 +510,11 @@ This would seem to suggest higher rates of migration allowed
 adaptive alleles of higher effect to travel more efficiently through the populations
 \jgg{is this right?}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Migration load and genetic variation}
 
-%FIGURES THAT SHOW THIS:
-%- Phenotype Distribution
 \begin{figure}[h!tb]
 	\begin{center}
-  		\includegraphics[width=1.0\linewidth]{semi_final_plots/PhenoDist_semi_final.png}
+  		\includegraphics[width=0.6\linewidth]{semi_final_plots/PhenoDist_semi_final.png}
   		\caption{Distribution of mean phenotype throughout simulation runs at separate migration rate ($M$) parameter values, for each population.
 		The dashed pink line (Pheno = +10) is the optimum phenotype any individual in the marine environment.
 		In contrast the purple line at (Pheno = -10) represents the optimum for any individual in the freshwater environment. 
@@ -525,8 +523,6 @@ adaptive alleles of higher effect to travel more efficiently through the populat
   		\label{fig:MeanPhenotype}
 	\end{center}
 \end{figure}
-
-%GENERAL
 
 At first, increased migration allows sharing of adaptive alleles between lakes,
 but at the second from highest migration rate,
@@ -538,19 +534,19 @@ Significant gene flow constricts local adaptation
 as a consequence of a large number of offspring through hybridization events between subpopulations.
 at $m=0.5$, all populations experience panmixia 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Realized genomic architecture}
 
 \begin{figure}[h!tb]
 	\begin{center}
   		\includegraphics[width=1.0\linewidth]{semi_final_plots/Haplo_semi_final.png}
   		\caption{
-			Finish when plot is finalized. 
+			Phenotypes (\textbf{Top}) (effect size and mutation type) and haplotypes \textbf{(Botton)} as a function of spatial position of the individual 
+			possessing the genome. The phenotype of each haplotype is, by definition, the sum of the 
+			effect sizes of each mutation in the genome. 
 		}
   		\label{fig:MeanPhenotype}
 	\end{center}
 \end{figure}
-
 
 Now we take a closer look at the genomic architecture of local adaptation 
 between the two habitats.
@@ -583,11 +579,10 @@ to be a causal locus.
 	\begin{center}
   		\includegraphics[width=0.7\linewidth]{semi_final_plots/TP_SP_semi_final.png}
   		\caption{ 
-		%SP - suppose you have an Fst Peak, how likely is it that that region is causal. 
 		Statistical Power and False Positives as a function of $F_{st}$ threshold. 
 		Statistical Power is the likelihood that a SNP will be predicted to have an effect on phenotype when there is an effect to be detected (?).
 		False Positives give us the ratio of SNPs that effect phenotype to total SNPs greater than the $F_{st}$ threshold.
-        TODO: x-axis label ($F_{ST}$).
+        		TODO: x-axis label ($F_{ST}$).
 		}
   		\label{fig:Power_FP}
 	\end{center}
@@ -610,7 +605,15 @@ This along with low false positive rate across all $F_{st}$ threshold values is 
 	\begin{center}
   		\includegraphics[width=0.7\linewidth]{semi_final_plots/OriginRatio.png}
   		\caption{ 
-		Ratio of Origins of adaptive alleles in all genomes at time of local adaptation for different values of $m$
+		Origin ratio of adaptive alleles in all genomes at time of local adaptation for different values of $m$
+		For all alleles at a frequency $> 0.5$ in any one of the new lakes individuals at time of adaptation, 
+		we traced the origin of the segment of DNA back in time to classify them as 
+		\textbf{(Blue)} Migrants, brought in from a migrant after the introduction of the new lakes 
+		\textbf{(Orange)} Pre-existing, passed down from an individual in the original generation of the new lakes, 
+		however, not defined to be an adaptive variant in the original lakes
+		\textbf{(Green)} Captured, Pre-existing, passed down from an individual in the original generation of the new lakes, 
+		and defined to be adaptive in the original lakes
+		\textbf{(Red)} De novo, mutated and propagated from an individual existing in the introduced lakes population, after introduction. 
 		}
   		\label{fig:Origin}
 	\end{center}
