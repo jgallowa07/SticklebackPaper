@@ -56,13 +56,9 @@ and large migration load at high gene flow.
 Rapid adaptation occurs when the freshwater haplotype has been maintained,
 through historical introgression, in marine environments without tight linkage to 
 marine adapted alleles.
-%This is mediated mainly by the total downstream influx of alleles \emph{(maybe??)(No)}.
-%We do not see evidence for strong effects encouraging genomic clustering of causal alleles
-%or towards particular dominance coefficients.
-$F_{ST}$ scans for adaptive alleles are more likely to succeed with higher rates of gene flow,
+We find $F_{ST}$ scans for adaptive alleles are more likely to succeed with higher rates of gene flow.
 The results support existing theory of local adaptation,
 and provide a more concrete look at a particular, empirically motivated example.
-
 
 \section*{Introduction}
 
@@ -94,7 +90,6 @@ Quickly inhabited by the surrounding marine population of Stickleback,
 parallel to freshwater stickleback that have been separated for over $13,000$ years.
 In freshwater stickleback, the number of lateral plates are reduced
 and the opercle shapes shows the same expansion of the dorsal region and reduction of the ventral region.
-% \jgg{Bill - more specifics about Bill, Suzie, Kristin  \& or Thom's papers .. ? }
 These results leave us with questions surrounding the nature of rapid adaptation.
 Does convergent evolution breed it's own solution (haplotype) for every new selective pressure, 
 or can these solutions can be efficiently shared across multiple sub - populations facing similar selective pressures. 
@@ -277,10 +272,10 @@ As with the old lakes, these are a set of discrete demes connected by migration 
 The initial generation of individuals in these new lakes were created as a copy of the marine individuals 
 at the generation of introduction.
 The new lake's geography acts like an independent copy of the original set of lakes -- in particular,
-the two sets of lakes each have 5,000 individuals at all times 
-(Gene flow constricted to within the lakes and through migration to the marine environment).
+the two sets of lakes each have 5,000 individuals at all times.
+%(Gene flow constricted to within the lakes and through migration to the marine environment).
 Since this doubles the number of lake-to-marine immigrants,
-after this happens the probability that a new marine individual has freshwater parents
+after this happens the probability that a new marine individual has parents from old lakes or the new lakes
 is $2m$ instead of $m$.
 
 \paragraph{TreeSeq}
@@ -309,10 +304,11 @@ We then counted the total number of offspring which had inherited from any adapt
 for each individual in the initial generation. 
 \end{comment}
 
-To determine the ability for the new lakes to select upon the standing variation in the marine at different rates of historical introgression,
-We were able compute the trait value of all effect regions in the initial population.
+We were also able to use the tree sequence to get information about the individual ``effect regions" 
+in all initial genomes of the new lakes at time of introduction.
+From this we determined the ability for the new lakes to select upon the standing variation in the marine.
 Given the probability that effect region fixes at a given trait value, $2 * x / 45$, where $x$ is the effect size of a haplotype,
-we determined the expected total effect sizes of the haplotypes that fix.
+we calculated the expected total effect sizes of the haplotypes that fix.
 Concretely, it is the sum across the 10 effect regions of
 $$\sum_{i=1}^N \prod_{j < i} (1 - p_j) p_i x_i$$
 where $N$ is the number of genomes per lake, $p_i$ is the probability of fixation of the 
@@ -348,11 +344,11 @@ then we compute $F_{ST}$ for that mutation as $1 - p_f p_m / (\bar p (1-\bar p))
 \section*{Results}
 
 We varied the migration rate, $m$ across separate simulations
-from $5 \times 10^{-5}$ to $5 \times 10^{-1}$ by steps one order of magnitude.
-From here on out we will refer to these rates of gene flow as running simulations ranging from {0.01 - 100.0}
+from $5 \times 10^{-5}$ to $5 \times 10^{-1}$ by one order of magnitude steps.
+For clarity given our populations sizes of 5,000 diploid individuals, 200 in each lakes,
+we will refer to these rates of gene flow as running simulations ranging from {0.01 - 100.0}
 migrants \emph{per} lake \emph{per} generation.
-%i.e., between 0.01 and 100 migrants per generation to and from each of the freshwater lakes.
-This had a strong effect on many aspects of adaptation,
+The differing parameter values had a strong effect on many aspects of adaptation;
 including how fast adaptation occurred in each lake,
 how many alleles were shared between lakes,
 and the population genetic signals left behind.
@@ -361,7 +357,7 @@ the freshwater haplotype to be maintained in the marine without creating linkage
 below this threshold, selection on pre-existing freshwater alleles to be much less efficient 
 due to background selection. \jgg{did I get this right?}
 
-Interestingly, all rates of $m$ aside from the two highest had little affect on populations ability to locally adapt.
+Interestingly, all rates of $m$ aside from the two highest had little affect on population's ability to locally adapt.
 All rates of gene flow aside from the lowest, helped both the old lake's and the new lake's freshwater populations share pre-existing freshwater adapted alleles.
 The sharing of alleles at $m = 1.0$ resulted in rapid adaptation ($\approx 32$ generations) of the introduced population to adapt to the freshwater environment.
 At the lowest migration rate, lakes adapted nearly independently,
@@ -558,16 +554,17 @@ In Figure \ref{fig:Power_FP} , looking at an $F_{st}$ threshold greater than 1,
 we see the two lowest migration rates $10^{-5}$ and $10^{-4}$ having very little statical power. 
 This along with low false positive rate across all $F_{st}$ threshold values is fairly predictable when you consider the high $F_{st}$ values across the genome. 
 
-\subsubsection*{Origin of introduced freshwater adaptive alleles: a conundrum}
+\subsubsection*{Origin of introduced freshwater adaptive alleles}
 Up to this point, we have quantified rapid and parallel adaptation and found strong evidence that sharing of alleles is (more than likely?) responsible.
-However in Figure \ref{fig:MPFAI}A at $0.1$ \emph{mig/gen/lake}, we see sharing of alleles between populations,
+Interestingly, in Figure \ref{fig:MPFAI}A at $0.1$ \emph{mig/gen/lake}, we see sharing of alleles between populations,
 yet \emph{Time to adaptation} is still fairly slow ($\approx 2,000$ gens).
 This is surprising when considering we see a similar quantity of allele sharing at  $m$ equal to $1.0$ \emph{mig/gen/lake}, 
 but much more rapid adaptation ($\approx 30$ gens). 
 Initially, this 60X speedup of adaptation might seem to be the result of subsequent migration from the marine after the point of freshwater introduction. 
+perhaps a larger influx of adapted alleles are needed in addition to standing variation in the initial generation.
 To investigate this further we have track the origins of all adaptive variants in all new lake extant individuals at the time of adaptation. 
-However, in Figure \ref{fig:Origin}, we find that at both $m = 0.1$ and $m = 1.0$ \emph{migs/gen/lake}, the vast majority of adaptive alleles origins were found to propagate 
-from individuals in the original generation ("Captured" OR "Pre-Existing").
+Surprisingly in Figure \ref{fig:Origin}, we find that at both $m = 0.1$ and $m = 1.0$ \emph{migs/gen/lake},
+the vast majority of adaptive alleles origins were found to propagate from individuals in the original generation ("Captured" OR "Pre-Existing").
 
 \begin{figure}
 	\begin{center}
@@ -587,11 +584,11 @@ from individuals in the original generation ("Captured" OR "Pre-Existing").
 	\end{center}
 \end{figure}
 
-The alternative explanation is that at a higher migration rate, a higher saturation of marine adapted alleles are linked to freshwater adapted alleles.
-In turn, this linkage acts as a barrier rebuilding the freshwater haplotype, in the new lakes, much more difficult as it much wait for recombination to break the links.
-With more historical introgression between the two selective pressures, the freshwater haplotype would remain more "intact" and much more efficient to rebuild in the lake.
+The alternative explanation, is that at a higher migration rate, a higher saturation of marine adapted alleles are linked to freshwater adapted alleles.
+In turn, the equilibrium of freshwater alleles in marine genomes created by migration-selection balance at lower rates of gene flow acts as a barrier when rebuilding the freshwater haplotype. 
+With more gene flow between the two selective pressures, the freshwater haplotype would remain more "intact" and much more efficient to rebuild in the introduced environment.
 To confirm this, we decided to look at the trait values of the ten affect regions in each genome of the initial population.
-Given the probability that effect region fixes at a given trait value, $2 * x / 45$ where $x$ is the effect size of a haplotype
+Given the probability that effect region fixes at a given trait value, $2 \times x / 45$ where $x$ is the effect size of a haplotype
 we were able to determine expected total effect sizes of the haplotypes that fix (detail about computation in methods).
 Below, we see the mean of these expected total effect sizes across all lakes.
 
@@ -599,20 +596,21 @@ Below, we see the mean of these expected total effect sizes across all lakes.
 \begin{tabular}{ | c | c  | c  | c | }
  \hline
  $m = 0.01$ & $m = 0.1$ & $m = 1.0$ & $m = 10.0$ \\ 
- $0.1227$ &  $4.6976$ & $12.9298$  & $12.2710$\\
+ $-0.1227$ &  $-4.6976$ & $-12.9298$  & $-12.2710$\\
  \hline
 \end{tabular}
 \end{center}
 
-Here, we see a dramatic difference in the total effect sizes of the haplotypes that are likely to fix.
+Between $m = 0.1$ and $m = 1.0$ we see a large difference in the total effect sizes of the haplotypes that are expected to fix.
+Given these numbers were computed assuming additivity (slight overestimate) and individuals are diploid,
+at $m = 0.1$ the mean total genotype expected to fix in the populations puts individuals at a trait value of $\approx -8$ 
+after selection on alleles haplotypes in the initial population. 
+In turn, the population must wait for novel mutation or subsequent migration to provide the alleles for the remaining 2 units before 
+attaining a mean average trait value at the optimum (-10).
+It follows in Figure \ref{fig:phenotype_ts2}B that the majority time to adaptation is spent within 2 units of mean trait value.
+The initial adaptation on selection of standing variation up to that point happens quite rapidly.
 This provides evidence that linkage to marine alleles has a major impact in the introduced population's ability 
-to select and rebuild a pre-existing haplotype given the standing variation at the time of introduction. 
-\jgg{Below may belong in the discussion / future work}
-This also brings to light the role of recombination in a system of migration selection balance. 
-On one hand, a lower recombination rate would allow for the freshwater haplotype to remain "intact" 
-within the marine environment, however, without significant introgression the haplotype would quickly get selected against in marine populations. 
-On the other hand a higher recombination rate would, in theory, allow freshwater adapted alleles more longevity 
-as they would hitchhike with marine adapted haplotypes. 
+to select and rebuild a pre-existing haplotype given the standing variation at time of introduction. 
 
 \subsection*{Theoretical expectations}
 \plr{does this go first or second?}
@@ -711,10 +709,6 @@ while by the third migration rate, they are almost entirely shared.
 %%%%%%%%%%%%%%%%%%%%
 \section*{Discussion}
 
-\jgg{TODO: effect of smaller than realistic population sizes?}
-
-\jgg{TODO: Talk about the role recombination plays}
-
 We have shown that historical introgression, at our given parameter sets,
 is able to reproduce rapid and parallel adaptation similar to what we've seen in real populations such as Middleton island.
 Selection is able to rebuild the freshwater haplotype from marine populations as a medium between all freshwater populations.
@@ -764,6 +758,16 @@ However, these are more strongly selected against in the interstitial time.
 Being recessive would help with this,
 but would also make it more difficult to establish.
 
+\jgg{TODO: effect of smaller than realistic population sizes?}
+
+\jgg{TODO: Talk about the role recombination plays}
+\jgg{Below may belong in the discussion / future work}
+This also brings to light the role of recombination in a system of migration selection balance. 
+On one hand, a lower recombination rate would allow for the freshwater haplotype to remain "intact" 
+within the marine environment, however, without significant introgression the haplotype would quickly get selected against in marine populations. 
+On the other hand a higher recombination rate would, in theory, allow freshwater adapted alleles more longevity 
+as they would hitchhike with marine adapted haplotypes. 
+
 \bibliographystyle{plainnat}
 \bibliography{Citations}{}
 
@@ -786,7 +790,7 @@ but would also make it more difficult to establish.
 
 \begin{figure}
 	\begin{center}
-  		\includegraphics[width=1.0\linewidth]{semi_final_plots/Haplo_semi_final.png}
+  		\includegraphics[width=1.0\linewidth]{Final_Plots/Haplo_small.pdf}
   		\caption{
 			Phenotypes (\textbf{Top}) (effect size and mutation type) and haplotypes \textbf{(Botton)} as a function of spatial position of the individual 
 			possessing the genome. The phenotype of each haplotype is, by definition, the sum of the 
