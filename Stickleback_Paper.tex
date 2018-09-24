@@ -36,7 +36,11 @@ A simulation study of gene flow and local polygenic adaptation
 
 A simulation study of gene flow and local polygenic adaptation in stickleback fish
 
-effect loci (locus) | QTL | causal: = ? REGIONS UNDERLYING TRAIT VALUE , GENES, ---
+\textbf{Jargon}
+
+effect loci? regions underlying trait value?
+
+names of four allele origin categories
 
 \section*{Abstract}
 
@@ -213,7 +217,7 @@ Gaussian with standard deviation, i.e.,
 Each individual carries two copies of a linear chromosome of $10^8$ loci representing a realistic size genome.
 New mutations occur with probability $10^{-10}$ per locus per generation in regions affecting phenotype and $10^{-8}$ in neutral regions.
 Ten ``effect regions'' of $100 Kb$  loci each are spread evenly along the chromosome; 
-mutations in these regions have the potential to affect trait value of the individual which posses them
+mutations in these regions have the potential to affect trait value of the individual which posses them.
 Each mutation in these regions is either additive, completely recessive,
 or completely dominant (with equal probability).
 Effect sizes are chosen randomly from an exponential distribution with mean $1/2$,
@@ -555,16 +559,16 @@ we see the two lowest migration rates $10^{-5}$ and $10^{-4}$ having very little
 This along with low false positive rate across all $F_{st}$ threshold values is fairly predictable when you consider the high $F_{st}$ values across the genome. 
 
 \subsubsection*{Origin of introduced freshwater adaptive alleles}
-Up to this point, we have quantified rapid and parallel adaptation and found strong evidence that sharing of alleles is (more than likely?) responsible.
-Interestingly, in Figure \ref{fig:MPFAI}A at $0.1$ \emph{mig/gen/lake}, we see sharing of alleles between populations,
+Up to this point, we have quantified rapid adaptation and found strong evidence that sharing of alleles is responsible in this system.
+Interestingly, in Figure \ref{fig:MPFAI}A at $m = 0.1$, we see sharing of alleles between populations,
 yet \emph{Time to adaptation} is still fairly slow ($\approx 2,000$ gens).
-This is surprising when considering we see a similar quantity of allele sharing at  $m$ equal to $1.0$ \emph{mig/gen/lake}, 
+This is surprising when considering we see a similar quantity of allele sharing at  $m = 1.0$, 
 but much more rapid adaptation ($\approx 30$ gens). 
-Initially, this 60X speedup of adaptation might seem to be the result of subsequent migration from the marine after the point of freshwater introduction. 
-perhaps a larger influx of adapted alleles are needed in addition to standing variation in the initial generation.
-To investigate this further we have track the origins of all adaptive variants in all new lake extant individuals at the time of adaptation. 
-Surprisingly in Figure \ref{fig:Origin}, we find that at both $m = 0.1$ and $m = 1.0$ \emph{migs/gen/lake},
-the vast majority of adaptive alleles origins were found to propagate from individuals in the original generation ("Captured" OR "Pre-Existing").
+Initially, this 60X speedup of adaptation seems to be the result of subsequent gene flow of freshwater alleles. 
+Perhaps a larger influx of freshwater alleles are needed in addition to standing variation in the initial generation.
+To investigate this further we have tracked the origins of all freshwater alleles, in all new lake individuals at the time of adaptation. 
+Surprisingly in Figure \ref{fig:Origin}, we find that at both $m = 0.1$ and $m = 1.0$,
+the vast majority of adaptive alleles were found to propagate from individuals in the original generation ("Captured" OR "Pre-Existing").
 
 \begin{figure}
 	\begin{center}
@@ -584,11 +588,11 @@ the vast majority of adaptive alleles origins were found to propagate from indiv
 	\end{center}
 \end{figure}
 
-The alternative explanation, is that at a higher migration rate, a higher saturation of marine adapted alleles are linked to freshwater adapted alleles.
-In turn, the equilibrium of freshwater alleles in marine genomes created by migration-selection balance at lower rates of gene flow acts as a barrier when rebuilding the freshwater haplotype. 
-With more gene flow between the two selective pressures, the freshwater haplotype would remain more "intact" and much more efficient to rebuild in the introduced environment.
+The alternative explanation, is that at a lower migration rate, a higher saturation of marine adapted alleles are linked to freshwater adapted alleles.
+In turn, the equilibrium of freshwater alleles in marine genomes created by migration-selection balance acts as a barrier when rebuilding the freshwater haplotype. 
+%With more gene flow between the two selective pressures, the freshwater haplotype remains more "intact" and much more efficient to rebuild in the introduced environment.
 To confirm this, we decided to look at the trait values of the ten affect regions in each genome of the initial population.
-Given the probability that effect region fixes at a given trait value, $2 \times x / 45$ where $x$ is the effect size of a haplotype
+Given the probability that an ``effect region" fixes at a given trait value, $2 \times x / 45$ where $x$ is the effect size of a haplotype,
 we were able to determine expected total effect sizes of the haplotypes that fix (detail about computation in methods).
 Below, we see the mean of these expected total effect sizes across all lakes.
 
