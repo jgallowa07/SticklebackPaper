@@ -90,20 +90,24 @@ Possibly the most important caveat is that simulated population sizes are much s
 (a caveat we revisit in the Discussion).
 
 \paragraph{Habitat and geography}
-Our model has two habitat types, which are considered separate populations with a fixed total size of 5,000 diploid individuals each. 
-The marine population is treated as a single large deme, but the freshwater population is subdivided into local subpopulations or demes. 
-The scheme, depicted in Figure \ref{fig:Geo}, roughly models a set of freshwater habitats along a stretch of coastline. 
-The ``marine'' habitat  is a continuous, one-dimensional range of 25 units of length, and the 
-``freshwater'' habitat is divided into ten subpopulations (which we call ``lakes''), each connected to the marine habitat at positions $i - 1/2$ for $1 \le i \le 25$.
+Each habitat type -- marine and freshwater -- have a fixed total of 5,000 diploid individuals each. 
+The arrangement of these habitats, depicted in Figure \ref{fig:Geo},
+roughly models a set of freshwater habitats along a stretch of coastline. 
+The marine habitat  is a continuous, one-dimensional range of 25 units of length,
+while the freshwater habitat is divided into ten subpopulations (which we call ``lakes''),
+each connected to the marine habitat at regularly spaced intervals
+(positions $i - 1/2$ for $1 \le i \le 25$).
 
-Fitness in each habitat is determined by a single continuous trait with an inherent tradeoff such that alternative values of the trait have high or low fitness in tht two different habitats. 
+Divergent selection is mediated by a single quantitative trait
+with different optima in marine and freshwater habitats.
 This situation roughly models the cumulative effect of the various phenotypes such as armor morphology, 
-body size, craniofacial variation and opercle shape (among others) on which divergent selection acts in the two environments. 
-The optimal trait value in the marine habitat is $+10$, and in the freshwater habitat is $-10$. 
-Fitness of a fish with trait value $x$ in a habitat with optimal value $x_\text{opt}$ is Gaussian with standard deviation, i.e.,
-
+body size, craniofacial variation and opercle shape on which divergent selection is thought to act
+in the two environments. 
+Concretely, the optimal trait values in the marine and freshwater habitats are $+10$ and $-10$ respectively,
+and fitness of a fish with trait value $x$ in a habitat with optimal value $x_\text{opt}$
+is determined by a Gaussian kernel with standard deviation 15, i.e.,
 \begin{align*}
-    f(x; x_0)
+    f(x; x_\text{opt})
     &=
     \exp\left\{
         \frac{1}{2}
@@ -112,6 +116,11 @@ Fitness of a fish with trait value $x$ in a habitat with optimal value $x_\text{
             \right)^2
         \right\} .
 \end{align*}
+Note that only the the scale of trait values relative to mutation effect size is relevant.
+We chose the difference between optima and strength of stabilizing selection in each habitat
+so that 
+(a) around 10 (diploid, homozygous) mutations were sufficient to move from one optimum to the other,
+and (b) well-adapted fish from one habitat would have low, but nonzero, fitness in the other habitat.
 
 \begin{figure}
 	\begin{center}
@@ -674,7 +683,7 @@ This is generally because noise of selectively neutral alleles divergence can ap
 differences between populations that have little gene flow between them.
 It's important to know that in all scenarios, hitchhiking of selectively neutral alleles could also be 
 mistaken for being causative as they often display the same amount of divergence.
->>>>>>> master
+
 %wouldn't it be cool if we could use this fact and simulate introgression, starting with real data that is noisy to extrapolate the areas we care about?
 %this could be nonsense 
 
@@ -718,6 +727,11 @@ On one hand, a lower recombination rate would allow for the freshwater haplotype
 within the marine environment, however, without significant introgression the haplotype would quickly get selected against in marine populations. 
 On the other hand a higher recombination rate would, in theory, allow freshwater adapted alleles more longevity 
 as they would hitchhike with marine adapted haplotypes. 
+
+
+\paragraph{Modeling assumptions}
+Our simulations had much smaller population sizes than real populations.
+How might this affect things?
 
 \bibliographystyle{plainnat}
 \bibliography{Citations}{}
