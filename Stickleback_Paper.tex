@@ -24,21 +24,33 @@
 
 \begin{document}
 
-\title{A simulation study of gene flow and local polygenic adaptation motivated by threespine stickleback evolution}
+\title{A few stickleback suffice to transport adaptive alleles to new lakes}
 \author{Jared Galloway, William A. Cresko, and Peter Ralph}
 \maketitle
 
-\textbf{Other title ideas?} (Bad ideas allowed.)
-
-How do stickleback share adaptations between lakes? A simulation study.
-
-A simulation study of gene flow and local polygenic adaptation
-
-A simulation study of gene flow and local polygenic adaptation in stickleback fish
 
 \section*{Abstract}
 
-Threespine stickleback fish provide a striking example of local adaptation in the context of recurrent gene flow. This Northern hemisphere-wide metapopulation includes both marine populations and a large number of smaller freshwater populations that have repeatedly adapted to freshwater conditions, often by using standing genetic variation. Here we use genealogical simulations to determine the levels of gene flow can best match the observed patterns of allele sharing among habitats in stickleback, and to provide a framework for better understanding of the dynamics of gene flow and local adaptation for the maintenance and reuse of standing genetic variation. We find that rapid, repeated adaptation using alleles maintained at low frequency by migration-selection balance occurs over a realistic range of intermediate rates of gene flow.  Slow and independent adaptation occurs with low gene flow, whereas large migration load occurs at high gene flow, mediated mainly by the total downstream influx of alleles \emph{(maybe??)}. We do not see evidence for strong effects encouraging genomic clustering of causal alleles or towards particular dominance coefficients. $F_{ST}$ scans for adaptive alleles are more likely to succeed with higher rates of gene flow, The results support existing theory of local adaptation, and provide a more concrete look at a particular, empirically motivated example.  
+Threespine stickleback fish provide a striking example of local adaptation despite recurrent gene flow.
+The species is distributed around the Northern hemisphere in both marine and freshwater habitats.
+It is thought that these numerous, smaller freshwater populations
+have been established "de novo" from marine fish,
+and that a shared freshwater phenotype
+is often established using standing genetic variation.
+Here we use genealogical simulations to determine the levels of gene flow
+that best matches observed patterns of allele sharing among habitats in stickleback, 
+and more generally to better understand how gene flow and local adaptation in large metapopulations
+determine speed of adaptation and reuse of standing genetic variation.
+We find that rapid, repeated adaptation using a shared set of alleles
+maintained at low frequency by migration-selection balance
+occurs over a realistic range of intermediate rates of gene flow.
+Low gene flow leads to slow, independent adaptation of distinct habitats,
+whereas high gene flow leads to large migration load.
+We do not see evidence for strong effects encouraging genomic clustering of causal alleles
+or towards particular dominance coefficients.
+$F_{ST}$ scans for adaptive alleles are more likely to succeed with higher rates of gene flow.
+The results support existing theory of local adaptation,
+and provide a more concrete look at a particular, empirically motivated example.  
 
 \textbf{**We need to be more crystal clear in the abstract about the findings from the paper**}
 
@@ -72,10 +84,10 @@ and the population genetic signals left behind. At the lowest migration rate, la
 %%%%%%%%%%%%%%%%
 \section*{Methods}
 
-We explored these questions using forwards-time simulations with explicit genomic representation of a quantitative trait in SLiM \citep{haller2017slim}. 
-The details (described below) are motivated by previous population genomic studies of threespine stickleback, but remain simplistic in some aspects due to computational constraints.
-Possibly the most important caveat is that simulated population sizes are much smaller than the census size of the threespine stickleback population;
-we will consider the likely effects of this in the Discussion. \plr{TODO}
+We explored these questions using forwards-time simulations with explicit genomic representation of a quantitative trait in SLiM \citep{haller2017slim,haller2018slim3}.
+The details (described below) are motivated by current understanding of threespine stickleback history and demography, but remain simplistic in some aspects due to computational constraints.
+Possibly the most important caveat is that simulated population sizes are much smaller than the census size of the threespine stickleback population
+(a caveat we revisit in the Discussion).
 
 \paragraph{Habitat and geography}
 Our model has two habitat types, which are considered separate populations with a fixed total size of 5,000 diploid individuals each. 
