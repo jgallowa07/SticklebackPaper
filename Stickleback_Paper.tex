@@ -85,9 +85,11 @@ and the population genetic signals left behind. At the lowest migration rate, la
 \section*{Methods}
 
 We explored these questions using forwards-time simulations with explicit genomic representation of a quantitative trait in SLiM \citep{haller2017slim,haller2018slim3}.
-The details (described below) are motivated by current understanding of threespine stickleback history and demography, but remain simplistic in some aspects due to computational constraints.
-Possibly the most important caveat is that simulated population sizes are much smaller than the census size of the threespine stickleback population
-(a caveat we revisit in the Discussion).
+The details of the model were motivated by current understanding of threespine stickleback history and demography,
+but remain simplistic in some aspects due to computational constraints.
+Possibly the most important caveat
+is that simulated population sizes are much smaller than the census size of the threespine stickleback population
+(see the Discussion for more on this).
 
 \paragraph{Habitat and geography}
 Each habitat type -- marine and freshwater -- have a fixed total of 5,000 diploid individuals each. 
@@ -126,96 +128,99 @@ and (b) well-adapted fish from one habitat would have low, but nonzero, fitness 
 	\begin{center}
   		\includegraphics[width=0.6\linewidth]{GeographyFigure.pdf}
   		\caption{
-			A representation of the geographic and evolutionary history of all populations throughout the simulation. 
-		The marine is a one-dimensional, continuous population with spatial positions ranging from [0.0 - 25.0]. 
-		Each freshwater lake$_{i}$ for both the introduced and freshwater populations
-		is a discrete population connected by migration only through the marine, at position $i - 0.5$. 
-		Each of the introduced lakes have the same spatial dynamic and selective pressure 
-        as the pre-existing lakes, but arise at 100K generations into the simulation.
-		The marine has $5000$ diploid individuals while each of the lakes fluctuate  $200$ diploid individuals. 
-		the introduced population is initialized as a copy of all marine individuals to model marine 
-		individuals inhabiting a newly created freshwater environment such as the ponds around Middleton Island.
-		We then observe the selection process of marine individuals and following generations 
-		with the new selective pressure across a range of parameter values. 
+            \textbf{Diagram of simulated populations:}
+            a single, continuous, one-dimensional marine habitat (blue)
+            is coupled to randomly mating ``lakes'' at discrete locations.
+            After an inital period of 100K generations with 25 lakes,
+            an additional 25 lakes are added (at the same set of locations)
+            to simulate the appearance of newly accessible freshwater habitats.
+            The marine habitat, and each set of 25 lakes, each contain 5,000 individuals at all times.
 			}
   		\label{fig:Geo}
 	\end{center}
 \end{figure}
 
-\paragraph{Initial genomic architecture} Each individual carries two copies of a linear chromosome of $10^8$ loci(which could be thought of roughly as a kilobase each). 
-New mutations occur with probability $10^{-7}$ per locus per generation. 
-Ten ``effect regions'' of $100Kb$ loci each are spread evenly along the chromosome (separated by 4950 loci) in which mutations affect the trait; 
-mutations in other parts of the genome are neutral. 
+
+\paragraph{Genetic architecture of the trait}
+Each individual carries two copies of a linear chromosome of $10^8$ loci.
+Mutations that can affect the trait under selection can occur at rate $10^{-7}$ per locus per generation
+in ten ``effect regions'' of $100$ loci each,
+spread evenly along the chromosome (separated by 4950 loci).
 Each mutation in these regions is either additive, completely recessive, or completely dominant (with equal probability), 
 and with an effect sizes chosen randomly from an Exponential distribution with mean $1/2$, either positive or negative with equal probability. 
-Individual trait value are determined additively from the diploid genotypes. 
-Concretely, an individual that is heterozygous and homozygous for mutations at loci $H$ and $D$ respectively has trait value 
-$x = \sum_{\ell \in H} h_\ell s_\ell + \sum_{\ell \in D} s_\ell$, 
-where $s_\ell$ is the effect size of the mutation at locus $\ell$. Subsequent mutations at the same locus replace the previous allele.
+Individual trait values are determined additively from the diploid genotypes. 
+Concretely, an individual that is heterozygous and homozygous for mutations at sets of loci $H$ and $D$ respectively has trait value 
+$x = \sum_{i \in H} h_i s_i + \sum_{j \in D} s_j$, 
+where $h_i$ and $s_i$ are the dominance coefficient and the effect size of the mutation at locus $i$.
+Subsequent mutations at the same locus replace the previous allele.
 
-\paragraph{Equilibrium in initial marine and freshwater populations} 
+
+\paragraph{Population dynamics}
+We use SLiM to simulate a Wright--Fisher population with nonoverlapping generations 
+and a fixed population size of 5000 diploid individuals in each habitat.
 Each generation, the two parents of each new offspring are chosen proportional to their fitness 
 (all individuals are hermaphroditic),
 and the contributing genomes are produced by Poisson recombination with an average of one crossover per chromosome per generation 
 ($10^{-7}$ per locus per generation). 
-The model is Wright-Fisher, so that each generation, in each habitat, 
-2000 new individuals are produced, and so to keep population sizes roughly constant within each lake, 
-at the start of each generation we rescale fitness values in the freshwater habitat so that the sum of the fitness values within each lake are equal.
+Since the total population across \emph{all} lakes is regulated,
+to keep population sizes roughly constant within each lake, 
+before selection we divide fitness values of each freshwater individual by the mean fitness in their lake,
+so that the mean fitnesses of all lakes are equal.
 
-Migration occurs both locally along the coastline in the marine habitat and between the marine habitat and the lakes, and can be thought of as occurring at the juvenile stage. 
-The between-habitat migration rate is denoted $m$, and will be called simply the ``migration rate''. 
+Dispersal occurs both locally along the coastline in the marine habitat 
+and between the marine habitat and the lakes, and can be thought of as occurring at the juvenile stage. 
+There is no dispersal directly between lakes.
+The lake--ocean migration rate is denoted $m$, and will be called simply the ``migration rate''. 
 Each new individual in the marine habitat has freshwater parents with probability $m$; 
 to obtain the pair, a first parent is chosen proportional to fitness, and a mate is chosen from the same lake as the first, also proportional to fitness. 
 The resulting offspring is given a spatial location in the marine habitat at the location of the parent's lake. 
 Parents for a new marine individual who is not a migrant are chosen similarly (with probability $1-m$): 
 first, a single parent is chosen proportionally to fitness in the marine habitat,
 and then a mate is chosen, also proportionally to fitness but re-weighted by a Gaussian function of the distance separating the two, with stanadard deviation $1/2$. 
-
-Concretely, if the first parent is marine individual $i$, then marine individual $j$ is chosen as the mate with probability proportional to $f(x_i) \exp(-2d_{ij}^2)$,
+Concretely, if the first parent is marine individual $i$, then marine individual $j$ is chosen as the mate with probability proportional to $f(x_j) \exp(-2d_{ij}^2)$,
 where $d_{ij}$ is the distance between the two locations. 
 Finally, each new marine offspring is given a position displaced from the first parent's position by a random Gaussian distance with mean 0 and standard deviation 0.02, 
-and reflected to stay within the population. 
+and reflected to stay within the population.
 New offspring in the freshwater habitat are chosen in the same way, except the probability that the parents are marine individuals is $m$; 
 any new freshwater offpsring produced by marine individuals are assigned to the lake nearest to the position of the first marine parent.
 
-\paragraph{Population genomic analyses of new freshwater populations} 
-To study adaptation in newly appearing freshwater habitats, we introduce a new set of lakes midway through the simulation. 
-The initial set of individuals have parents chosen as above from the marine habitat, 
+
+\paragraph{New freshwater populations} 
+To study how newly appearing freshwater habitats adapt, we introduce a new set of 25 lakes midway through the simulation.
+The initial set of individuals in these new lakes have parents chosen in the same way from the marine habitat as ocean-to-lake migrants,
 and act like an independent copy of the original set of lakes -- in particular, 
-the two sets of lakes each have 2,000 individuals at all times. 
-Since this doubles the number of lake-to-marine immigrants, after this happens the probability that a new marine individual has freshwater parents is $2m$ instead of $m$.
+the two sets of lakes each have 5,000 individuals at all times. 
+(Since this doubles the number of lake-to-marine immigrants, 
+after this happens the probability that a new marine individual has freshwater parents is $2m$ instead of $m$.)
 
-To assess whether new lakes adapt using existing genetic diversity, we define a \emph{pre-existing freshwater adapted allele}
-to be an effect mutation that has frequency higher than $0.5$ in at least one of the original lakes, while remaining lower than $0.5$ in the marine. 
-This categorization is made for each generation using the allele frequencies from that generation, and so changes with time. Alleles common in the newly introduced lakes do not count
+We quantify how quickly these new populations adapt to their new environment
+by the \textbf{time to adaptation} (denoted $T_\text{adapt}$), 
+which we define to be the number of generations until 
+the difference between the average trait value in the original and the introduced freshwater populations is less than 0.5. 
+We also quantify genetic differentiation between the habitats with per-locus $F_{ST}$:
+if $p_f$ and $p_m$ are the frequencies of a given mutant allele in the freshwater and marine habitats, respectively,
+and $\bar p = (p_f + p_m)/2$, then $F_{ST} = 1 - (p_f (1-p_f) + p_m (1-p_m))/ (2 \bar p (1-\bar p))$.
+
+We also quantify the degree to which adaptation in new lakes uses alleles 
+already present and specific to the pre-existing lakes,
+defining a \emph{pre-existing freshwater adapted allele}
+to be a mutation (with an effect on the trait)
+that at the time of introduction of the new populations
+has frequency higher than $0.5$ in at least one of the original lakes, 
+while remaining lower than $0.5$ in the marine habitat. 
+These alleles represent standing variation (rather than new mutations),
+but furthermore are presumably responsible for local adaptation
+in at least some lakes,
+and present only at migration-selection balance in the ocean.
+Alleles common in the newly introduced lakes do not count
 if they are not also common in the original lakes. 
-They are defined this way because the transportation hypothesis does not specify where or when an advantageous mutation arises, 
-but simply suggests that any sufficiently common freshwater adapted allele could participate in adaptaiton in new habitat \citep{schluter2009genetics}.
+They are defined this way because 
+the transportation hypothesis does not specify where or when an advantageous mutation arises, 
+but simply suggests that any sufficiently common freshwater adapted allele 
+could participate in adaptation in new habitat \citep{schluter2009genetics}.
+\plr{I think we use this definition with respect to different times? 
+     But I don't see where we do this.}
 
-\emph{Time to adaptation} of the introduced population, denoted $T_\text{adapt}$, is defined to be the generation at which the difference between the average trait value in the original and the introduced freshwater populations is less than 0.5. 
-We describe overall genetic differentiation between the habitats using $F_{ST}$,
-calculated on a per-locus basis. Concretely, if $p_f$ and $p_m$ are the frequencies of a given mutant allele in the freshwater and marine habitats, respectively,
-and $\bar p = (p_f + p_m)/2$, then we compute $F_{ST}$ for that mutation as $1 - p_f p_m / (\bar p (1-\bar p))$.
-
-
-
-
-\paragraph{Potential genomic architecture}\bill{Initial genomic architecture? The header is a little confusing to me}
-Each individual carries two copies of a linear chromosome of $10^8$ loci representing a realistic size genome.
-New mutations occur with probability $10^{-10}$ per locus per generation in regions affecting phenotype and $10^{-8}$ in neutral regions.
-Ten ``effect regions'' of $100 Kb$  loci each are spread evenly along the chromosome; 
-mutations in these regions have the potential to affect trait value of the individual which posses them.
-Each mutation in these regions is either additive, completely recessive,
-or completely dominant (with equal probability).
-Effect sizes are chosen randomly from an exponential distribution with mean $1/2$,
-either positive or negative with equal probability.
-Between the effect regions is $9.9 Mb$ of neutral loci.
-Individual trait values are determined additively from the diploid genotypes.
-Concretely, an individual that is heterozygous and homozygous for mutations
-at loci $H$ and $D$ respectively has trait value
-$x = \sum_{\ell \in H} h_\ell s_\ell + \sum_{\ell \in D} s_\ell$,
-where $s_\ell$ is the effect size of the mutation at locus $\ell$.
-Subsequent mutations at the same locus replace the previous allele.
 
 \paragraph{Life cycle}
 Each generation, the two parents of each new offspring are chosen 
