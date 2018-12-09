@@ -627,6 +627,17 @@ the total contribution to trait values of each of the ten genomic regions
 that containing trait-affecting mutations.
 The recombination rate within each of these ten regions is $10^{-2}$,
 so these regions act initially more-or-less like single loci.
+Even though the trait is additive across loci,
+the presence of sufficiently many distinct alleles to attain, in principle,
+the optimal freshwater trait value
+does not ensure adaptation will actually occur with these alleles.
+On the contrary, many of these will likely be lost to drift.
+To get a rough idea of whether the genetic variation present in the initial population
+is sufficient for the population to adapt,
+we translated the total effect size $x$ of each region 
+to a probability of fixation
+(by $p(x) \approx 2x/45$),
+and then calculated $\sum_i x_i p(x_i)$.
 If a region moves the trait an average of $x$ units towards the freshwater optimum
 (averaging over dominance relationships),
 Given the probability that an ``effect region'' fixes at a given trait value, 
