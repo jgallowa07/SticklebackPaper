@@ -18,6 +18,9 @@
 \onehalfspacing
 %\doublespacing
 
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\P}{\mathbb{P}}
+
 \newcommand{\plr}[1]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue]{#1}}
 \newcommand{\jgg}[1]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=black]{#1}}
 \newcommand{\bill}[1]{\todo[linecolor=green,backgroundcolor=yellow!25,bordercolor=black]{#1}}
@@ -622,7 +625,51 @@ Said another way,
 higher gene flow from freshwater to the ocean
 maintains relatively intact freshwater haplotypes
 that can be more easily rebuilt.
-To confirm this, we calculated for each individual in the initial generation of the new lakes
+Recall that trait-affecting mutations only occur in relatively small regions of $10^5$ loci
+in which recombination occurs at rate $10^{-2}$.
+Even if there is a sufficient amount of variation in the initial population of a lake
+to shift the trait from the marine optimum ($+10$) to the freshwater optimum ($-10$),
+these may be tightly linked to alleles that counteract their effect.
+For example, suppose there are 10 variants segregating at low frequency with effect size $-1$ each,
+but each is paired with a compensatory allele with effect size $+1$.
+Each local haplotype is therefore neutral, 
+and so likely to be at higher frequency in the marine population.
+
+Suppose that the alleles present in the initial population of a new lake
+have effect sizes $(x_1, \ldots, x_n)$,
+and that the probability of fixation of a single allele of effect size $x$ is $p(x)$.
+Let $X_i$ be the average per capita effect of the $i^\text{th}$ allele after fixation,
+so that $X_i = 0$ if the allele is lost,
+and $X_i = 2x_i$ if the allele fixes (ignoring dominance).
+Therefore, the expected contribution to the final trait value of allele $i$
+is $\E[X_i] = 2 x_i p(x_i)$.
+The trait value after the initial round of adaptation is $\sum_i X_i$,
+and so the expected trait value is $2 \sum_i x_i p(x_i)$.
+Since there are many alleles that contribute more-or-less additively to the trait,
+the probability of fixation of a particular allele is not easy to find,
+but we can roughly approximate it as follows:
+if the current population trait mean $z$,
+then an allele that moves the trait a distance $x$ closer to the optimum
+has a fitness advantage in heterozygotes of 
+$\exp(-\beta((z - x)^2) / \exp( - \beta z^2)) \approx 1 + 2 \beta z x$, 
+where in our parameterization, $\beta = 1 / 450$.
+Since the probability of fixation of a single allele with relative advantage $s$
+is approximately $2s$ \citep{lambert2006probability,haldane1927mathematical},
+then with $z=10$ we can use $p(x) \approx 4 x / 45$.
+Putting these considerations together,
+a rough estimate for the total shift in trait value resulting from selection
+on standing variation in the initial population is
+$R = \sum_i 8 x_i / 45$,
+where the sum is over all trait-affecting alleles.
+This approximation should be good if each trait-affecting allele is rare (present in only a few copies),
+effects are additive, and most are unlinked.
+
+We computed $R$ to confirm our suspicion that linkage slowed down adaptation
+by showing that there is sufficient allelic variation in the initial populations
+to complete adaptation across both migration rates (0.1 and 1 migrants per lake per generations),
+but not if the haplotypes of each genomic region are assumed to not recombine.
+
+We calculated for each individual in the initial generation of the new lakes
 the total contribution to trait values of each of the ten genomic regions 
 that containing trait-affecting mutations.
 The recombination rate within each of these ten regions is $10^{-2}$,
@@ -632,11 +679,12 @@ the presence of sufficiently many distinct alleles to attain, in principle,
 the optimal freshwater trait value
 does not ensure adaptation will actually occur with these alleles.
 On the contrary, many of these will likely be lost to drift.
+
 To get a rough idea of whether the genetic variation present in the initial population
 is sufficient for the population to adapt,
 we translated the total effect size $x$ of each region 
 to a probability of fixation
-(by $p(x) \approx 2x/45$),
+(as described below $p(x) \approx 2x/45$),
 and then calculated $\sum_i x_i p(x_i)$.
 If a region moves the trait an average of $x$ units towards the freshwater optimum
 (averaging over dominance relationships),
@@ -671,7 +719,14 @@ to select and rebuild a pre-existing haplotype given the standing variation at t
 Here's some rough calculations to get a sense for what should be going on. Everything is done in more detail in OTHER PLACES WE SHOULD CITE.
 Fisher, Chevin, etc.
 
-Suppose a new allele enters a lake, either by migration or mutation. If, when it is rare but present in $n$ copies, it has fitness advantage $s$ -- i.e., the expected number of copies in the next generation is $(1+s)n$ --then the probability that it escapes demographic stochasticity to become common in the population is approximately $2s$ \citep{fisher,prob_fixation}. If the current population all differed from the optimum trait by $z$, and the allele has effect size $-u$ in heterozygotes, then the fitness advantage of the allele would be $s(u) = \exp(-\beta((z - u)^2) / \exp( - \beta z^2)) \approx 2 \beta z u$, where in our parameterization, $\beta = 1 / 450$. This tells us two things: (1) the rate of adaptation decreases as the population approaches the optimum, and (2) larger mutations (in the right direction) are more likely to fix.
+Suppose a new allele enters a lake, either by migration or mutation. 
+If, when it is rare but present in $n$ copies, it has fitness advantage $s$ 
+-- i.e., the expected number of copies in the next generation is $(1+s)n$ 
+-- then the probability that it escapes demographic stochasticity to become common in the population 
+is approximately $2s$ \citep{fisher,prob_fixation}. 
+If the current population all differed from the optimum trait by $z$, 
+and the allele has effect size $-u$ in heterozygotes, 
+then the fitness advantage of the allele would be $s(u) = \exp(-\beta((z - u)^2) / \exp( - \beta z^2)) \approx 2 \beta z u$, where in our parameterization, $\beta = 1 / 450$. This tells us two things: (1) the rate of adaptation decreases as the population approaches the optimum, and (2) larger mutations (in the right direction) are more likely to fix.
 
 \paragraph{New mutations}
 The total rate of appearance of new mutations per lake is $\mu_L = 0.04$, which are divided evenly in seven categories: neutral, and then additive, dominant, and recessive in either direction. This implies that a new additive or dominant effect mutation appears once every 87.5 generations, on average. Effect sizes are randomly drawn from an Exponential distribution with mean $1/2$, and so the probability that a dominant mutation manages to establish in a population differing from the optimum by $z$ is roughly $\int_0^\infty 4 \beta z u \exp(-2u) du = \beta z$, and so the rate of establishment of dominant mutations is $\beta z / 87.5$, i.e., about one such mutation every $2461/z$ generations. The distribution of these successfully established mutations  has density proportional to $u \exp(-2u)$, i.e., is Gamma with mean 1 and shape parameter 2. Since additive alleles have half the effect in heterozygotes, they have half the probability of establishment. During the initial phase of adaptation, the populations begin at around distance $z=10$ from the optimum. Combining these facts, we expect adaptive alleles to appear through mutation at first on a time scale of 250 generations, with the time between local fixation of new alleles increasing as adaptation progresses, and each to move the trait by a distance of order 1.
