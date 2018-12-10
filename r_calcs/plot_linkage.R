@@ -34,6 +34,8 @@ everything <- lapply(0:3, function (run_num) {
     region_effects <- t(apply(effects, 1, tapply, variants$region, sum))
     nodes$phenotype <- rowSums(region_effects)
 
+    frequencies <- do.call(rbind, 
+                           tapply(1:nrow(genotypes), nodes$pop, function (k) colMeans(genotypes[k,])))
     # distribution of per-genome phenotypes
     if (FALSE) hist(nodes$phenotype)
 
@@ -46,7 +48,8 @@ everything <- lapply(0:3, function (run_num) {
                 effects=effects,
                 region_effects=region_effects,
                 pos_effects=pos_effects,
-                neg_effects=neg_effects))
+                neg_effects=neg_effects,
+                frequencies=frequencies))
   } )
 
 pdf(file='frequencies.pdf', width=8, height=5, pointsize=10)
@@ -57,7 +60,7 @@ lapply(everything, function (x) with(list2env(x), {
 
     layout(t(1:2))
 
-    # this shows how frequences alleles vary across lakes (one line per allele)
+    # this shows how allele frequences vary across lakes (one line per allele)
     matplot(lake_freqs, type='l',
             xlab='lake position',
             ylab='allele frequency')
@@ -123,30 +126,51 @@ expected_fix <- sapply(everything, function (x) with(list2env(x), {
               } )
           } ), sum)
      }))
-colnames(expected_fix) <- paste("m=", c(0.01, 0.1, 1, 10))
-
-## This is the table of the text
-xtable(data.frame(t(colMeans(expected_fix)), check.names=FALSE))
-
-# \begin{tabular}{rrrr}
-#   \hline
-#   m= 0.01 & m= 0.1 & m= 1 & m= 10 \\ 
-#   \hline
-#   0.12 & 4.70 & 12.93 & 12.27 \\ 
-#   \hline
-# \end{tabular}
+colnames(expected_fix) <- paste0("m=", c(0.01, 0.1, 1, 10))
 
 # sum of haplotype effect size, weighted by fitness
-# with fitness beta * z * u, where u is the effect size; z is the deviation from optimum,
+# with fitness 2 * beta * z * u, where u is the net effect size; z is the deviation from optimum,
 # and beta is 1/450
 haplotype_fitness <- sapply(everything, function (x) with(list2env(x), {
-    fitnesses <- 10 * abs(neg_effects) / 450
-    # prob of fixation (to account for small s); eq'n 1.64 in Ewens
-    fitnesses <- ifelse(fitnesses == 0, 1/400, fitnesses / (1 - exp(- 2 * 400 * fitnesses)))
+    fitnesses <- 2 * 10 * (-region_effects) / 450
+    # prob of fixation (to account for small s); eq'n 3.31 in Ewens
+    fitnesses <- ifelse(fitnesses == 0, 1/400, 
+                        (1 - exp(-fitnesses)) / (1 - exp(- 400 * fitnesses)))
     sapply( tapply(1:nrow(fitnesses), nodes$pop, function (k) {
                        fit <- fitnesses[k,]
                        fit <- sweep(fit, 2, colSums(fit), "/")
-                       colSums(fit * abs(neg_effects[k,])) } ), sum)
+                       colSums(fit * (region_effects[k,])) } ), sum)
+  } ))
+colnames(haplotype_fitness) <- paste0("m=", c(0.01, 0.1, 1, 10))
+
+# sum of only negative alleles' effect sizes, weighted by haplotype fitness
+# with fitness 2 * beta * z * u, where u is the effect size; z is the deviation from optimum,
+# and beta is 1/450
+allelic_fitness <- sapply(everything, function (x) with(list2env(x), {
+    fitnesses <- 2 * 10 * (-effects) / 450
+    # prob of fixation (to account for small s); eq'n 3.31 in Ewens
+    fitnesses <- ifelse(fitnesses == 0, 1/400, 
+                        (1 - exp(-fitnesses)) / (1 - exp(- 400 * fitnesses)))
+    sapply( tapply(1:nrow(fitnesses), nodes$pop, function (k) {
+                       fit <- fitnesses[k,]
+                       fit <- sweep(fit, 2, colSums(fit), "/")
+                       colSums(fit * (effects[k,])) } ), sum)
+  } ))
+colnames(allelic_fitness) <- paste0("m=", c(0.01, 0.1, 1, 10))
+
+
+
+# calculating the per-locus score with the frequencies instead is similar
+freq_fitnesses <- sapply(everything, function (x) with(list2env(x), {
+    fitnesses <- 2 * 10 * (-variants$size) / 450
+    # prob of fixation (to account for small s); eq'n 3.31 in Ewens
+    pfix <- ((1 - exp(- 400 * frequencies * fitnesses[col(frequencies)]))
+                        / (1 - exp(- 400 * fitnesses[col(frequencies)])))
+    pfix[,fitnesses == 0] <- 1/400
+    rowSums(pfix * variants$size[col(pfix)])
   } ))
 
 
+## This is the table of the text
+xtable(rbind(best=colMeans(best_haps),
+             expected=colMeans(haplotype_fitness)))

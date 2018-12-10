@@ -693,14 +693,30 @@ $2 \times x / 45$ where $x$ is the effect size of a haplotype,
 we were able to determine expected total effect sizes of the haplotypes that fix (detail about computation in methods).
 Below, we see the mean of these expected total effect sizes across all lakes.
 
-\begin{center}
-\begin{tabular}{ | c | c  | c  | c | }
- \hline
- $m = 0.01$ & $m = 0.1$ & $m = 1.0$ & $m = 10.0$ \\ 
- $-0.1227$ &  $-4.6976$ & $-12.9298$  & $-12.2710$\\
- \hline
-\end{tabular}
-\end{center}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{rrrrr}
+      \hline
+     & m=0.01 & m=0.1 & m=1 & m=10 \\ 
+      \hline
+          best & 2.77 & -12.02 & -21.02 & -7.02 \\ 
+      expected & 4.22 & -4.78 & -14.64 & -5.47 \\ 
+       \hline
+    \end{tabular}
+    \caption{
+        Haplotypic variation present in the new lakes at time of colonization,
+        across rates of gene flow.
+        \textbf{``Best''} shows the most negative trait value achievable
+            with intact haplotypes, averaged across populations.
+        \textbf{``Expected''} shows the trait value
+            achieved by averaging haplotypic values weighted by fitness
+            (see text for details).
+        This suggests that populations at $m=1$ have sufficient genetic variation
+        to completely adapt (reach $-10$) using intact haplotypes,
+        while at $m=0.1$ variation must be released from haplotypes by recombination.
+    } \label{tab:linkage}
+\end{table}
+
 
 Between $m = 0.1$ and $m = 1.0$ we see a large difference in the total effect sizes of the haplotypes that are expected to fix.
 Given these numbers were computed assuming additivity (slight overestimate) and individuals are diploid,
