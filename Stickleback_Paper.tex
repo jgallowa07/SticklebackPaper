@@ -44,18 +44,13 @@ Here we use genealogical simulations to determine the levels of gene flow
 that best matches observed patterns of allele sharing among habitats in stickleback, 
 and more generally to better understand how gene flow and local adaptation in large metapopulations
 determine speed of adaptation and reuse of standing genetic variation.
-We find that rapid, repeated adaptation using a shared set of alleles
-maintained at low frequency by migration-selection balance
-occurs over a realistic range of intermediate rates of gene flow.
-Low gene flow leads to slow, independent adaptation of distinct habitats,
-whereas high gene flow leads to large migration load.
-We do not see evidence for strong effects encouraging genomic clustering of causal alleles
-or towards particular dominance coefficients.
-$F_{ST}$ scans for adaptive alleles are more likely to succeed with higher rates of gene flow.
-The results support existing theory of local adaptation,
-and provide a more concrete look at a particular, empirically motivated example.  
-
-\textbf{**We need to be more crystal clear in the abstract about the findings from the paper**}
+(1) We find that rapid, repeated adaptation using a shared set of alleles maintained at low frequency by migration-selection balance occurs over a realistic range of intermediate rates of gene flow.
+(2) Low gene flow leads to slow, independent adaptation of distinct habitats, whereas high gene flow leads to large migration load.
+%We do not see evidence for strong effects encouraging genomic clustering of causal alleles
+%or towards particular dominance coefficients.
+(3) We quantify how $F_{ST}$ scans for adaptive alleles are more likely to succeed with higher rates of gene flow.
+(4) In addition, we find the origin of many freshwater adapted alleles in the introduced lakes to be propagated from the original generation of marine individuals that had inhabited the lake.
+The results support existing theory of local adaptation, and provide a more concrete look at a particular, empirically motivated example.  
 
 \section*{Introduction}
 
@@ -75,13 +70,40 @@ A finding from recent stickleback population genomic studies is that the same ge
  
 These empirical data generally support the ``transporter''-hypothesis proposed by Conte and Schluter in 2009 \citet{schluter2009genetics}, which is a conceptual model for the flow of freshwater alleles from multiple smaller freshwater populations into much larger and less structured marine populations through hybridization events. Alleles in this asymetrically structured metapopulation can then be recycled for subsequent freshwater adaptation. Several questions remain, however, about the manner and degree to which these alleles are scattered among the marine fish and must be re-assembled. Is it more akin to the atomization and rebuilding that occurred in the Star Trek series that motivated this hypothesis? Alternatively does it occur in more of a patchwork by individuals, or their early generation hybrids, in geographically adjacent freshwater habitats moving quickly through the marine environment to seed new freshwater populations. More generally, how do different levels of gene flow and local adaptation interact with the asymmetric nature of stickleback population structure affect the dynamics of the origin and rate of adaptive alleles, as well as their eventual organization into marine and freshwater typical genomes? 
 
-Here we develop a forward simulation approach in SLiM to model the stickleback population structure in marine and freshwater habitats to document the effect of variation in gene flow and recombination on the genetic and genomic architecture of local adaptation. We address how rapidly can selection act on standing genetic variants at a given value of migration, $M$, and what the precise origin is of those variants. We ask what scale of historical introgression between populations with selective pressures $X$ and $Y$, allows for rapid and parallel local adaptation of a population derived from $X$ to an introduced environment with selective pressure $Y$? How are the variants structured, historically and across the genome underlying the trait? Furthermore, how can we infer causal loci for regions of the genome that must be driving the rapid adaptation, from real data. Many biologists today make use of genome wide association studies (GWAS) and $F_{st}$ across the genome to estimate regions responsible for certain traits. Unfortunately, the data can be heavily influenced by the level of introgression and population structure of the samples. This being the case, what are the biases we can expect to see in real data for certain levels of introgression. 
 
-We find that .... \textbf{1. rewrite the previous paragraph to be more concise and tight, and 2. briefly restate our major findings which should line up well with those presented in the abstract. The following I grabbed from the beginning of the Results section}
-*****
-We varied the migration rate, $m$, from $5 \times 10^{-5}$ to $5 \times 10^{-2}$ per individual, i.e., between 0.01 and 10 migrants per year to and from each of the ten lakes. This had a strong effect on many aspects of adaptation, including how fast adaptation occurred in each lake, how much alleles were shared between lakes,
-and the population genetic signals left behind. At the lowest migration rate, lakes adapted nearly independently, while at the highest migration rate, the habitats are beginning to act like a single metapopulation with substantial migration load. We will now dissect what happens between these extremes. Interestingly, the ability for separate populations to locally adapt to their own selective pressure was relatively unaffected until the highest rate of migration between the marine and freshwater environments. All rates of historical introgression aside from the lowest, helped both the initial and introduced freshwater populations share pre-existing freshwater adapted alleles. The sharing of alleles resulted in rapid adaptation ($\approx 100$ generations) of the introduced population (split from the marine population) to adapt to the freshwater environment. We also found that larger amounts of migration allow for more statistical power and less false positives in the resulting population genetics data ($F_{st}$ per SNP across the genome).
-****
+Here we develop a forward simulation approach in SLiM to model the stickleback evolutionary history in marine and freshwater habitats.
+We then record the effect of variation in gene flow on the genetic and genomic architecture of local adaptation.
+We ask, how rapidly can selection act on standing genetic variants at a given value of migration, $M$?
+%Furthermore, how can we infer causal (adaptive?) loci for regions of the genome that must be driving the rapid adaptation, from real data. 
+Furthermore, how might the inference of causal loci through the use of genome wide association studies (GWAS) and $F_{st}$ scans across the genome be skewed by (lack of) introgression between sub-populations. 
+%The use of genome wide association studies (GWAS) and $F_{st}$ scans across the genome to estimate regions responsible for certain traits are popular methods that can be skewed by gene flow and population structure.
+%This being the case, what are the biases we can expect to see in real data for certain levels of introgression. 
+Finally, we trace back through the genealogical history of adaptive variants in new lakes to find the precise origin is of those variants.
+\textbf{Jared - My attempt at concisely stating are questions}
+
+We find that only a few stickleback per generation, per lake, suffice to maintain freshwater alleles at an acceptable frequency in marine environments for efficient ``transportation" of the freshwater haplotype.
+The selection on SGV at this level results in rapid local adaptation in $\approx 60$ generations, this follows closely to what we observe in nature (such as middleton island, cite this).
+With lower $M < 1$ individuals per lake per generation we find either the lakes adapt indipendently by ``\textit{de novo}" mutation, or the selection on SGV is slow. (greater than 2000 gens.)
+This low level of introgression also results in false positive $F_{st}$ peaks when scanning across the genome suggesting introgression plays a key role in inferring causal loci . 
+With higher $M > 10$ individuals per lake per generation we see the impact of migration load, preventing the demes from fully adapting to their selective pressure.
+When tracing back to the origin of adaptive alleles being *used* in new lakes that had adapted, we find the large majority of the alleles had been ``captured" meaning they were present in the individuals that initially colonized the new lake, 
+common in the original lakes, and uncommon in the ocean. 
+This finding is in opposition to the claim that freshwater alleles are transported through subsequent migration, after the lakes have been colonized. 
+\textbf{Jared - My attempt at concisely stating the results}
+
+
+%We ask what scale of historical introgression between populations with selective pressures $X$ and $Y$, allows for rapid and parallel local adaptation of a population derived from $X$ to an introduced environment with selective pressure $Y$? 
+%We ask how the variants are structured, historically and across the genome underlying the trait? 
+%Furthermore, how can we infer causal (adaptive?) loci for regions of the genome that must be driving the rapid adaptation, from real data. 
+%Many biologists today make use of genome wide association studies (GWAS) and $F_{st}$ across the genome to estimate regions responsible for certain traits. 
+%Unfortunately, the data can be heavily influenced by the level of introgression and population structure of the samples. 
+%This being the case, what are the biases we can expect to see in real data for certain levels of introgression. 
+
+%We find that .... \textbf{1. rewrite the previous paragraph to be more concise and tight, and 2. briefly restate our major findings which should line up well with those presented in the abstract. The following I grabbed from the beginning of the Results section}
+%*****
+%We varied the migration rate, $m$, from $5 \times 10^{-5}$ to $5 \times 10^{-2}$ per individual, i.e., between 0.01 and 10 migrants per year to and from each of the ten lakes. This had a strong effect on many aspects of adaptation, including how fast adaptation occurred in each lake, how much alleles were shared between lakes,
+%and the population genetic signals left behind. At the lowest migration rate, lakes adapted nearly independently, while at the highest migration rate, the habitats are beginning to act like a single metapopulation with substantial migration load. We will now dissect what happens between these extremes. Interestingly, the ability for separate populations to locally adapt to their own selective pressure was relatively unaffected until the highest rate of migration between the marine and freshwater environments. All rates of historical introgression aside from the lowest, helped both the initial and introduced freshwater populations share pre-existing freshwater adapted alleles. The sharing of alleles resulted in rapid adaptation ($\approx 100$ generations) of the introduced population (split from the marine population) to adapt to the freshwater environment. We also found that larger amounts of migration allow for more statistical power and less false positives in the resulting population genetics data ($F_{st}$ per SNP across the genome).
+%****
 
 
 %%%%%%%%%%%%%%%%
@@ -133,7 +155,8 @@ and (b) well-adapted fish from one habitat would have low, but nonzero, fitness 
   		\caption{
             \textbf{Diagram of simulated populations:}
             a single, continuous, one-dimensional marine habitat (blue)
-            is coupled to randomly mating ``lakes'' at discrete locations.
+            is coupled to randomly mating ``lakes'' at discrete locations with dark green arrows representing migration patterns.
+            %It is important to note there is no migration from any one lake to another, therefor, freshwater alleles must travel through the marine habitat as is often the case in nature
             After an initial period of 100K generations with 25 lakes,
             an additional 25 lakes are added (at the same set of locations)
             to simulate the appearance of newly accessible freshwater habitats.
@@ -188,7 +211,7 @@ where $d_{ij}$ is the distance between the two locations.
 Finally, each new marine offspring is given a position displaced from the first parent's position by a random Gaussian distance with mean 0 and standard deviation 0.02, 
 and reflected to stay within the population.
 New offspring in the freshwater habitat are chosen in the same way, except the probability that the parents are marine individuals is $m$; 
-any new freshwater offpsring produced by marine individuals are assigned to the lake nearest to the position of the first marine parent.
+any new freshwater offspring produced by marine individuals are assigned to the lake nearest to the position of the first marine parent.
 
 
 \paragraph{New freshwater populations} 
@@ -229,6 +252,7 @@ into four categories:
     \item \emph{Migrant alleles:} 
         not present in the individuals that initially colonized the new lake, 
         but brought in by migration at a later time.
+        %\textbf{The allele CAN exist in individuals at time of introduction, this category mean the linage of a specific allele in an individual happened to come from a migrant}
     \item \emph{Captured alleles:}
         present in the individuals that initially colonized the new lake, 
         and both common (above 50\%) in the original lakes,
@@ -237,6 +261,8 @@ into four categories:
         present in the individuals that initially colonized the new lake, 
         and not a captured allele.
 \end{enumerate}
+\textbf{I may be conf}
+
 Roughly speaking, these four categories describe the contribution of
 (1) new mutation, 
 (2) post-colonization migration, 
@@ -419,7 +445,7 @@ new lakes managed to adapt in only 32 generations.
 		Each point represents a single simulation run,
 		and the yellow dashed line is the average of all points at each respective parameter value.
         (Adaptation did not occur at the highest rate of gene flow.)
-        \textbf{where are the multiple points?}
+        \textbf{where are the multiple points?, They do not exist, we only ran the one set. They each take $\approx$ 36 hours to run; but I can run them again if you want.} 
         } \label{fig:TimeToAdaptation}
 	\end{center}
 \end{figure}
@@ -832,7 +858,7 @@ How might this affect things?
 
 
 \section*{Supplementary material}
-
+\begin{comment}
 \begin{figure}
 	\begin{center}
   		\includegraphics{Final_Plots/True_Power.pdf}
@@ -897,7 +923,7 @@ How might this affect things?
         \label{fig:SGV}
 	\end{center}
 \end{figure}
-
+\end{comment}
 
 
 
