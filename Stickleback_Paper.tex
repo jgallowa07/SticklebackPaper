@@ -199,8 +199,9 @@ we normalize the fitnesses of each individual such that approximately 200 offspr
 to do this, we divide fitness values of each freshwater individual by the mean fitness in their lake, 
 so that the mean fitnesses of all lakes are equal before selection happens.
 
-Dispersal occurs both locally along the coastline in the marine habitat 
-and between the marine habitat and the lakes, and can be thought of as occurring at the juvenile stage. 
+As shown in Figure~\ref{fig:Geo} as lines and arrows, dispersal occurs both locally along the coastline in the marine habitat
+as well as between the marine habitat and the lakes.
+All individual dispersal events can be thought of as occurring at the juvenile stage in the life cycle of the simulation. 
 The lake--ocean migration rate is denoted $m$, 
 which we refer to as the rate of \emph{gene flow} between habitats.
 Each new individual in each habitat 
@@ -211,7 +212,7 @@ and parents from the same habitat with probability $1-m$.
 The first parent of each nonmigrant individual in the freshwater habitat
 is chosen from the freshwater habitat proportional to fitness, 
 and a mate is chosen from the same lake as the first, also proportional to fitness. 
-The offspring lives in the same lake as the parents.
+The offspring then lives in the same lake as the parents.
 Parents for each nonmigrant marine individual are chosen similarly:
 first, a single parent is chosen proportionally to fitness in the marine habitat,
 and then a mate is chosen, also proportionally to fitness but re-weighted by a Gaussian function of the distance separating the two, with standard deviation $1/2$. 
@@ -309,7 +310,7 @@ These numbers were computed assuming additivity of mutations, meaning the number
 \section*{Results}
 
 To observe the impact of gene flow on selection in the new lakes, we varied the ocean--lake migration rate, $m$, across separate simulations from $5 \times 10^{-5}$ to $5 \times 10^{-1}$.
-Since each lake contains 200 individuals, we refer to these migration rates as between 0.01 and 100 migrants per lake, per generation.
+Since each lake contains 200 individuals, we refer to these migration rates in terms of \emph{dispersal} ($M$) \jgg{($D?$)} ranging from $0.01$ to $100$ migrants per lake, per generation.
 Many aspects of adaptation changed substantially across this range, including the speed of adaptation, degree of sharing of adaptive alleles between lakes, and the population genetic signals left behind.
 At very low rates of gene flow, each new lake's population adapted completely separately from \emph{de novo} mutation, which took a very long time ($\approx 20,000$ generations).
 At very high rates of gene flow, local adaptation was constrained by the large influx of maladaptive alleles.
@@ -378,6 +379,7 @@ at neutral sites steadily declines as migration increases.
         		\textbf{(bottom)} old and new lakes.
         		Each plot shows $F_{ST}$ values for a separate simulation,
         		with columns corresponding to increasing gene flow from left to right.
+		$F_{st}$ is calculated between all marine individuals, and all lakes pooled together.
 		%Ten vertical dotted pink lines in each subplot 
         		%show regions which have the potential to affect phenotype.
 		All locations of pre-existing freshwater adapted alleles have been highlighted by 
@@ -553,33 +555,43 @@ as seen in Figure \ref{fig:MeanPhenotype}.
 \subsection*{Realized genetic architecture}
 
 Here, we take a closer look at the genomic architecture of local adaptation between the two habitats. 
-Do measures of local differentiation identify the causal loci? 
-Figure \ref{fig:Fst} shows plots along the genome of per-locus $F_{ST}$ values between habitats.
-(Note that we are pooling freshwater habitats; a single lake would provide substantially less power.)
-\plr{need to know where the FAA are in these figures}
-\jgg{check the new plot}
-Higher migration rates showed more distinct $F_{ST}$ peaks over polymorphic loci 
-underlying trait differences between the habitats. 
+Do measures of local differentiation such as $F_{st}$ scans or Genome Wide Association Studies (GWAS) identify the causal loci? 
+Figure \ref{fig:Fst} shows plots along the genome of per-locus $F_{ST}$ values between the marine habitat and all freshwater habitats pooled together.
+Higher rates of dispersal showed more distinct $F_{ST}$ peaks over polymorphic loci 
 ``Background'' levels of $F_{ST}$ increase as gene flow decreases,
 swamping out this signal until the regions under selection are indistinguishable. 
-This is likely due to two reasons: 
+This is likely the contribution of two separate forces of natural selection: 
 first, stronger genetic drift with less migration leads to higher background $F_{ST}$, and 
 second, greater sharing of adaptive alleles providing a shared signal across populations.
 
-This suggests that genome scans for local adaptation based purely on measures of differentiation 
+At first glance, this suggests that genome scans for local adaptation based purely on measures of differentiation 
 will only be successful given enough migration between habitats. 
+But how many of these peaks are actually underlying trait differences that form the basis for local adaptation?
 To quantify this, Figure \ref{fig:Power_FP} shows the power and false positive rates 
 that would be obtained by an $F_{ST}$ cutoff 
 that declared everything above a certain value to be a causal locus.
+What we observe most plainly in this graph is that $M = 1.0 \& M = 10.0$ migrants per lake, per generation
+are the only rates of dispersal which provide reliable true negatives when observing peaks
+This means that a large percentage of peaks past an $F_{ST}$ cutoff of $0.05$ 
+actually lie on top of regions which could impact trait differences. 
+Unfortunately, the low statistical power for all rates of $M$ would seem to suggest
+that many regions which impact trait differences do not appear as $F_{st}$ peaks. 
+This may imply that genome scans for local adaptation based purely on measures of differentiation may not be as reliable as previously thought.
+To summarize, our study find that with high rates of dispersal between population, $F_{st}$ peaks may be a good indication of causal loci.
+However, this is a one way implication, meaning even with high dispersal, not all causal loci will appear as $F_{st}$ peaks.
 
-\plr{Need to fix caption on figure \ref{fig:Power_FP} before editing this bit.}
-\jgg{There is still something wrong with this figure besides the labels ... }
 
-In regions of the genome underlying individual trait value, we observed 
-Given that migration increases the gene flow between subpopulations, how valid are $F_{st}$ peaks at different $M$. 
-Knowing exactly which mutations effect phenotype in our simulations, we can look at the statistical power and false positives given $F_{st}$ per SNP across the genome.
-In Figure \ref{fig:Power_FP} , looking at an $F_{st}$ threshold greater than 1, we see the two lowest migration rates $10^{-5}$ and $10^{-4}$ having very little statical power. 
-This along with low false positive rate across all $F_{st}$ threshold values is fairly predictable when you consider the high $F_{st}$ values across the genome. 
+It's important to note that our study in Figures~\ref{fig:Fst} \& \ref{fig:Power_FP} pooled together all lakes and all marine individuals for the calculations. 
+For comparison, Figures~\ref{fig:fst_5lakes} \& \ref{fig:Power_FP_5lakes} shows the same scans but calculated 
+only on between individuals in the marine with spacial location $\le 5.0$ and the individuals in the respective 5 lakes.
+These graphs show even less power and True Positives only at $ M = 10.0$ migrants per lake, per generation
+
+%In regions of the genome underlying individual trait value, we observed 
+%Given that migration increases the gene flow between subpopulations, how valid are $F_{st}$ peaks at different $M$. 
+%Knowing exactly which mutations effect phenotype in our simulations, we can look at the statistical power and false positives given $F_{st}$ per SNP across the genome.
+%In Figure \ref{fig:Power_FP} , looking at an $F_{st}$ threshold greater than 1, we see the two lowest migration rates $10^{-5}$ and $10^{-4}$ having very little statical power. 
+%This along with low false positive rate across all $F_{st}$ threshold values is fairly predictable when you consider the high $F_{st}$ values across the genome. 
+
 
 \subsection*{Origin of introduced freshwater adaptive alleles}
 
@@ -847,7 +859,7 @@ How might this affect things?
 
 \begin{figure}
 	\begin{center}
-  		\includegraphics{Final_Plots/True_Power.pdf}
+  		\includegraphics{Final_Plots/True_Power_0_25_500.pdf}
   		\caption{ 
 		Statistical Power and False Positives as a function of $F_{st}$ threshold. 
 		Statistical Power is the likelihood that a SNP will be predicted to have an effect on phenotype when there is an effect to be detected (?).
@@ -856,6 +868,20 @@ How might this affect things?
                 TODO: fix this caption; x-axis label ($F_{ST}$).}
 		}
   		\label{fig:Power_FP}
+	\end{center}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{Final_Plots/True_Power_0_5_500.pdf}
+  		\caption{ 
+		Statistical Power and False Positives as a function of $F_{st}$ threshold. 
+		Statistical Power is the likelihood that a SNP will be predicted to have an effect on phenotype when there is an effect to be detected (?).
+		False Positives give us the ratio of SNPs that effect phenotype to total SNPs greater than the $F_{st}$ threshold.
+            \textbf{
+                TODO: fix this caption; x-axis label ($F_{ST}$).}
+		}
+  		\label{fig:Power_FP_5lakes}
 	\end{center}
 \end{figure}
 
@@ -890,6 +916,24 @@ How might this affect things?
 	\end{center}
 \end{figure}
 
+\begin{figure}
+	\begin{center}
+  		\includegraphics[width=1.0\linewidth]{Final_Plots/Fst_Genome_faa_0_5_500.pdf}
+  		\caption{
+		Average $F_{ST}$ in windows of 500Mb between:
+        		\textbf{(top)} marine habitat and old lakes;
+        		\textbf{(middle)} marine habitat and new lakes; and
+        		\textbf{(bottom)} old and new lakes.
+        		Each plot shows $F_{ST}$ values for a separate simulation,
+        		with columns corresponding to increasing gene flow from left to right.
+		$F_{st}$ is calculated between all marine individuals with spatial location $\le 5.0$, and the five corresponding lakes.
+		All locations of pre-existing freshwater adapted alleles have been highlighted by 
+		pink dashed vertical lines with an alpha value of 0.3, so darker shades of blue imply more 
+		freshwater adapted alleles at that location.
+		}
+  		\label{fig:fst_5lakes}
+	\end{center}
+\end{figure}
 
 \end{document}
 
