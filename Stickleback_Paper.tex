@@ -597,16 +597,15 @@ These graphs show even less power and True Positives only at $ M = 10.0$ migrant
 
 We have thus far found that the speed of adaptation depends strongly
 on the degree to which alleles can be shared between populations.
-However, there remains a mystery.
-Figure~\ref{fig:MPFAI}A shows that with $m = 0.1$ migrants per lake per generation, 
+However, the large increase in speed of adaptation between dispersal rates of $M = 0.1 \& M = 1.0$, seen in Figure \ref{fig:TimeToAdaptation}, remains a mystery. 
+Figure~\ref{fig:MPFAI}A shows that with $M = 0.1$ migrants per lake per generation, 
 there is substantial sharing of alleles between populations,
-and yet Figure~\ref{fig:TimeToAdaptation} shows that new lakes 
-take around 2,000 generations to adapt.
+and yet at this rate new lakes take around 2,000 generations to adapt.
 This is surprising because we see a similar quantity of allele sharing at  $m = 1.0$, 
-but much more rapid adaptation ($\approx 30$ generations). 
-Perhaps this 60$\times$ discrepancy occurs because 
+but much more rapid adaptation ($\approx 60$ generations). 
+A reasonable explanation for this 33$\times$ discrepancy is that 
 new lakes must wait for an additional influx of freshwater alleles through migration
-beyond what is present in the initial generation?
+beyond what is present in the initial generation.
 This hypothesis is disproven by
 Figure~\ref{fig:Origin}, which shows that at both $m = 0.1$ and $m = 1.0$,
 the vast majority of alleles underlying the local adaptation
@@ -637,39 +636,43 @@ derived from individuals in the original generation (``captured'').
 
 An alternative explanation is that at lower rates of gene flow,
 freshwater alleles present as standing variation in the marine habitat
-are more tightly linked to marine alleles,
-and so adaptation in the new lakes must wait for recombination.
-This might be expected since freshwater alleles present in the ocean,
-to remain present at migration-selection balance at low migration rates,
+are more tightly linked to marine alleles.
+This implies the adaptation in the new lakes must wait for recombination to break freshwater adapted alleles from nearby marine adapted alleles.
+This might be expected at low dispersal rates since freshwater alleles present in the ocean
+%to remain present at migration-selection balance at low migration rates,
 must be ``masked'' by nearby compensatory alleles.
+Without masking their affect on phenotype, they would likely be pushed out by drift.
 Reversing this ``masking'' then slows the process of adaptation that uses this genetic variation.
-Said another way,
-higher gene flow from freshwater to the ocean
-maintains relatively intact freshwater haplotypes
+In other words, higher dispersal from freshwater to the ocean maintains relatively intact freshwater haplotypes
 that can be more easily rebuilt in the marine environments.
-Recall that trait-affecting mutations only occur in relatively small regions of $10^5$ loci
-in which recombination occurs at rate $10^{-2}$.
-Even if there is a sufficient amount of variation in the initial population of a lake
+Recall from our description in methods, that trait-affecting mutations only occur in relatively small regions of $10^5$ loci
+in which recombination occurs in these regions only once in every one thousand meioses.
+This implies that even if there is a sufficient amount of variation in the initial population of a lake
 to shift the trait from the marine optimum ($+10$) to the freshwater optimum ($-10$),
-these may be tightly linked to alleles that counteract their effect.
+rebuilding the most beneficial haplotype may prove to be a non-trivial task for selection.
+%these may be tightly linked to alleles that counteract their effect.
 For example, suppose there are 10 variants segregating at low frequency with effect size $-1$ each,
 but each is paired with a compensatory allele with effect size $+1$.
-Each local haplotype is therefore neutral
-(and so likely to be at higher frequency in the marine population).
+Each local haplotype is therefore neutral.
+This would also explain why at low rates of dispersal 
+the marine still has the capacity to hold a large amount maladaptive alleles within the individuals of its population, 
+as seen in \ref{fig:MPFAI}A.
+%(and so likely to be at higher frequency in the marine population).
 
-Indeed, this appears to be the case.
+%Indeed, this appears to be the case.
 To quantify the genetic variation available \emph{without} recombining within the ten genomic regions,
 we first found, within each population, the haplotype with the largest net negative effect
 at each of the ten genomic regions.
 Summing these ten numbers, 
 we get the maximum amount that selection could move the population in the freshwater direction
-without recombining within regions.
-The mean of this value across the 25 populations is shown 
-in the first row (``best'') of Table~\ref{tab:linkage} --
-typical populations at $m=0.1$ migrants per lake per generation could shift to a phenotype of -12.02
+without recombining \emph{within} selectively non-neutral regions.
+The mean of this value across the 25 lake populations is shown 
+in the (``best'') row of Table~\ref{tab:linkage} --
+typical populations at $M=0.1$ migrants per lake per generation could shift to a phenotype of -12.02
 (and so have sufficient variation to adapt without recombination),
-but the ``best'' haplotypes populations at $m=1.0$ have effect sizes nearly twice as big 
-(a mean total of -21.02).
+but the ``best'' haplotypes in the populations at $M=1.0$ have effect sizes nearly twice as big at a mean total of -21.02.
+Confusingly, at $M=10.0$ the best haplotype then raises to an unimpressive -7.02.
+However, this can simply be explained by the migration load the populations are experiencing, explained earlier and seen in Figure~\ref{fig:MeanPhenotype}
 
 \subsection*{Theoretical expectations}
 
