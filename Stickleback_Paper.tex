@@ -199,27 +199,33 @@ we normalize the fitnesses of each individual such that approximately 200 offspr
 to do this, we divide fitness values of each freshwater individual by the mean fitness in their lake, 
 so that the mean fitnesses of all lakes are equal before selection happens.
 
-
-
-%\textbf{The paragraph below has a confusing structure, skipping for now ... }
-Dispersal occurs both locally along the coastline in the marine habitat
-%When an offspring is generated, it's spatial location is calculated by 
+Dispersal occurs both locally along the coastline in the marine habitat 
 and between the marine habitat and the lakes, and can be thought of as occurring at the juvenile stage. 
-%There is no dispersal directly between lakes.
 The lake--ocean migration rate is denoted $m$, 
-%which we refer to as the rate of \emph{gene flow} between habitats.
-Each new individual in the marine habitat has freshwater parents with probability $m$; 
-to obtain the pair, a first parent is chosen proportional to fitness, and a mate is chosen from the same lake as the first, also proportional to fitness. 
-The resulting offspring is given a spatial location in the marine habitat at the location of the parent's lake. 
-Parents for a new marine individual who is not a migrant are chosen similarly (with probability $1-m$): 
+which we refer to as the rate of \emph{gene flow} between habitats.
+Each new individual in each habitat 
+has parents from the other habitat with probability $m$ 
+(in which case we call it a ``migrant''),
+and parents from the same habitat with probability $1-m$.
+% how do we get nonmigrants?
+The first parent of each nonmigrant individual in the freshwater habitat
+is chosen from the freshwater habitat proportional to fitness, 
+and a mate is chosen from the same lake as the first, also proportional to fitness. 
+The offspring lives in the same lake as the parents.
+Parents for each nonmigrant marine individual are chosen similarly:
 first, a single parent is chosen proportionally to fitness in the marine habitat,
 and then a mate is chosen, also proportionally to fitness but re-weighted by a Gaussian function of the distance separating the two, with standard deviation $1/2$. 
-Concretely, if the first parent is marine individual $i$, then marine individual $j$ is chosen as the mate with probability proportional to $f(x_j) \exp(-2d_{ij}^2)$,
-where $d_{ij}$ is the distance between the two locations. 
+Concretely, if the first parent is marine individual $i$, 
+then marine individual $j$ is chosen as the mate with probability proportional to $f(x_j) \exp(-2d_{ij}^2)$,
+where $f(x_j)$ is the fitness of individual $j$ and $d_{ij}$ is the distance between the two locations. 
 Finally, each new marine offspring is given a position displaced from the first parent's position by a random Gaussian distance with mean 0 and standard deviation 0.5, 
 and reflected to stay within the population.
-New offspring in the freshwater habitat are chosen in the same way, except the probability that the parents are marine individuals is $m$; 
-any new freshwater offspring produced by marine individuals are assigned to the lake nearest to the position of the first marine parent.
+% what about migrants?
+Parents for each freshwater migrant are chosen in the same way
+as for nonmigrant marine individuals,
+and are assigned to the lake nearest to the position of the first marine parent.
+Similarly, parents for each marine migrant are both chosen from the same lake as before,
+and the offspring is given a spatial location in the marine habitat at the location of the parent's lake. 
 
 \paragraph{New freshwater populations} 
 To study how newly appearing freshwater habitats adapt and select on the standing genetic variation in the marine, we introduce a new set of 25 lakes midway through the simulation at 100K generations.
