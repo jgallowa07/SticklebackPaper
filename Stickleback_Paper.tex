@@ -199,12 +199,15 @@ we normalize the fitnesses of each individual such that approximately 200 offspr
 to do this, we divide fitness values of each freshwater individual by the mean fitness in their lake, 
 so that the mean fitnesses of all lakes are equal before selection happens.
 
-\textbf{The paragraph below has a confusing structure, skipping for now ... }
-Dispersal occurs both locally along the coastline in the marine habitat 
+
+
+%\textbf{The paragraph below has a confusing structure, skipping for now ... }
+Dispersal occurs both locally along the coastline in the marine habitat
+%When an offspring is generated, it's spatial location is calculated by 
 and between the marine habitat and the lakes, and can be thought of as occurring at the juvenile stage. 
-There is no dispersal directly between lakes.
+%There is no dispersal directly between lakes.
 The lake--ocean migration rate is denoted $m$, 
-which we refer to as the rate of \emph{gene flow} between habitats.
+%which we refer to as the rate of \emph{gene flow} between habitats.
 Each new individual in the marine habitat has freshwater parents with probability $m$; 
 to obtain the pair, a first parent is chosen proportional to fitness, and a mate is chosen from the same lake as the first, also proportional to fitness. 
 The resulting offspring is given a spatial location in the marine habitat at the location of the parent's lake. 
@@ -213,7 +216,7 @@ first, a single parent is chosen proportionally to fitness in the marine habitat
 and then a mate is chosen, also proportionally to fitness but re-weighted by a Gaussian function of the distance separating the two, with standard deviation $1/2$. 
 Concretely, if the first parent is marine individual $i$, then marine individual $j$ is chosen as the mate with probability proportional to $f(x_j) \exp(-2d_{ij}^2)$,
 where $d_{ij}$ is the distance between the two locations. 
-Finally, each new marine offspring is given a position displaced from the first parent's position by a random Gaussian distance with mean 0 and standard deviation 0.02, 
+Finally, each new marine offspring is given a position displaced from the first parent's position by a random Gaussian distance with mean 0 and standard deviation 0.5, 
 and reflected to stay within the population.
 New offspring in the freshwater habitat are chosen in the same way, except the probability that the parents are marine individuals is $m$; 
 any new freshwater offspring produced by marine individuals are assigned to the lake nearest to the position of the first marine parent.
