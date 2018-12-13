@@ -678,10 +678,10 @@ However, this can simply be explained by the migration load the populations are 
 
 We now revisit our observations above
 in the light of population genetics theory.
-The discussion will be rough,
+The discussion will be roughly based on estimates,
 with a focus on intuition rather than precise calculations.
-Since within each population we model stabilizing selection on an additive trait
-controlled by a moderately large number of loci,
+Because we model stabilizing selection on an additive trait
+controlled by a moderately large number of loci within each population,
 more precise expectations might be obtained through quantitative genetics \citep{svardal2014general}
 or even Fisher's geometric model \citep{barton2001hybridization,chevin2014niche}.
 
@@ -704,7 +704,9 @@ Effect sizes are randomly drawn from an Exponential distribution with mean $1/2$
 and so the probability that a dominant mutation manages to establish in a population differing from the optimum by $z$ 
 is roughly $\int_0^\infty 4 \beta z u \exp(-2u) du = \beta z$, 
 and so the rate of establishment of dominant mutations is $\beta z / 87.5$, 
-i.e., about one such mutation every $2461/z$ generations. 
+i.e., about one such mutation every $39375/z$ generations. 
+A the begging of the simulation where z = 10, we would then expect the fixation of alleles to take $\approx 5000$ generations.
+It follows that when looking at Figure~\ref{fig:phenotype_time}A, we can see the establishment of alleles in jumps roughly this size.
 The distribution of these successfully established mutations 
 has density proportional to $u \exp(-2u)$, i.e., is Gamma with mean 1 and shape parameter 2. 
 Since additive alleles have half the effect in heterozygotes, 
@@ -712,25 +714,24 @@ they have half the probability of establishment.
 During the initial phase of adaptation, the populations begin at around distance $z=10$ from the optimum. 
 Combining these facts, we expect adaptive alleles to appear through mutation within lakes at first on a time scale of 250 generations, 
 with the time between local fixation of new alleles increasing as adaptation progresses, and each to move the trait by a distance of order 1.
-This agrees roughly with what we see in Figures~\ref{fig:phenotype_ts2} and XXX.
-\plr{refer to additional trace plots in the supp}
+This agrees roughly with what we see in Figures~\ref{fig:phenotype_time} and \ref{fig:phenotype_time_supp}.
 
 \paragraph{Standing variation}
-An allele that moves the trait $z$ units in the freshwater direction in heterozygotes 
-has fitness roughly $\exp(-\beta z^2) \approx 1 - \beta z^2$ in the marine environment. 
-The product of population size and fitness differential in the marine environment for a mutation with $z=1$ is therefore $2Ns = 8.9$, 
+An allele that moves the trait $u$ units in the freshwater direction, in heterozygotes, 
+has fitness roughly $\exp(-\beta u^2) \approx 1 - \beta u^2$ in the marine environment, i.e a fitness differential of $\beta u^2$. 
+The product of population size and fitness differential in the marine environment for a mutation with $u=1$ is therefore $2Ns = 8.9$, 
 implying that these alleles are strongly selected against but might occasionally drift to moderate frequency. 
 The average frequency of such an allele in the marine environment at migration-selection equilibrium 
-is equal to the total influx of alleles into the ocean per generation divided by the selective disadvantage, 
-which if there are $M$ immigrants per generation, is $2 M / \beta z^2$. 
-\plr{This $M$ is the total number in the ocean! Make sure this differs from notation above for the number per lake.}
+is equal to the total influx of alleles into the ocean per generation divided by the selective disadvantage, i.e.
+if there are $I$ immigrants per generation, the frequency is $2 I / \beta u^2$. 
+%\plr{This $M$ is the total number in the ocean! Make sure this differs from notation above for the number per lake.}
 Each new lake is likely to contain a few copies of alleles at frequency above 1/400
-(since each new lake is begun with 400 genomes).
-With $z=1$, the factor multiplying $M$ is $2/\beta z^2 \approx 1/200$,
-so if $M \ge 1$, 
+(since each new lake is initialized with 400 randomly selected genomes).
+With $u=1$, the factor multiplying $I$ is $2/\beta u^2 \approx 1/200$,
+so if $I \ge 1$, 
 the chances are good that any particular lake-adapted allele that is present in all pre-existing lakes 
 will appear at least once in the fish that colonize a new lake. 
-However, an allele with $z=1$ only has probability of around 1/20 of establishing locally, 
+However, an allele with $u=1$ only has probability of around 1/20 of establishing locally, 
 suggesting that the migration rate should be somewhat higher to ensure enough pre-existing genetic variation 
 that adaptation would happen entirely using the initial set of colonizers. 
 % This corresponds to our highest two migration rates, as in e.g., Figure \ref{fig:phenotype_ts2}B.
@@ -772,7 +773,7 @@ Small patches of similar selective pressures can be found in many places such as
 Recently, (Cite Nelson Ferretti et al), discovered seven new species of Hapalotremus (Theraphosinae), living at the extremely high altitudes distributed along the Andes and Yungas in western South America.
 With the ancestral species at much lower altitudes, beneficial high altitude alleles could potentially be carried to help in the colonization of neighboring mountain environments. 
 Systems of metapopulations like this could potentially arise in many places
-where the ancestral species carries around with it beneficial alleles forselective pressures it has encountered in the past and remains connected to through hybridization events.
+where the ancestral species carries around with it beneficial alleles for selective pressures it has encountered in the past and remains connected to through hybridization events.
  
 %(1) the subspeciesthat inhabits a different selective pressure, and ancestral species are not constrained by pre, or post-zygotic isolation to participate in hybridization events, and
 %(2) the ancestral species spans across a wide range. 
