@@ -49,6 +49,8 @@ Low gene flow leads to slow, independent adaptation of distinct habitats, wherea
 We quantify how $F_{ST}$ scans for adaptive alleles are more likely to succeed with higher rates of gene flow.
 In addition, we find the origin of many freshwater adapted alleles in the introduced lakes to be propagated from the original generation of marine individuals that had inhabited the lake.
 The results support existing theory of local adaptation, and provide a more concrete look at a particular, empirically motivated example.  
+\plr{say transporter hypothesis?}
+\plr{talk about linkage and haplotypes}
 
 \section*{Introduction}
 
@@ -65,6 +67,7 @@ How could migration-selection balance and ecological speciation actually benefit
 A growing number of studies have identified instances of convergent or shared adaptive evolution in small demes that utilize standing genetic variation (SGV) found in the static population from which they split.
 However, it is still widely unknown which variations of evolutionary processes such as gene flow, recombination, selection and mutation, promote the maintenance and re-use of such genetic polymorphisms.
 In addition, we would like to know how complex geographic systems, with a variety of selective pressures, interact with these evolutionary forces to help or hinder the use of SGV in newly colonized subpopulations.
+\plr{I like the spirit of the first paragraph, but want to totally rewrite it}
 
 Recently, a large flood of data resulting from evolutionary systems of organisms have come from population genomic studies powered by advances in sequencing technologies. 
 One such organism is the threespine stickleback. 
@@ -88,38 +91,58 @@ The first clear example of the global reuse of SGV was the gene \textit{eda} whi
 While the low lateral plate version of this gene arose millions of years ago, it is found in freshwater ponds which have formed much more recently. 
 Contemporary population genomic studies employing genome-wide haplotype analyses has provided evidence that \textit{most} regions of the genome that distinguish marine-freshwater genetic differences share this pattern \citep{nelson2017ancient}. 
  
-These empirical data generally support the ``transporter''-hypothesis proposed by Conte and Schluter in 2009 \citet{schluter2009genetics}, 
-which is a conceptual model for the flow of freshwater alleles from multiple smaller freshwater populations into much larger and less structured marine populations through hybridization events. 
-Alleles in this asymmetrically structured meta-population can then be recycled for subsequent freshwater adaptation. 
-Several questions remain, however, about the manner and degree to which these alleles are scattered among the marine fish allowing the haplotype to be re-assembled. 
-Is it more akin to the atomization and rebuilding that occurred in the Star Trek series that motivated this hypothesis? 
-Alternatively does it occur in more of a patchwork by individuals, 
-or their early generation hybrids in geographically adjacent freshwater habitats moving quickly through the marine environment to seed new freshwater populations. 
-More generally, how do different levels of gene flow and local adaptation interact with the asymmetric nature of stickleback population structure affect the dynamics of the origin and rate of adaptive alleles, 
-as well as their eventual organization into marine and freshwater typical genomes? 
+\citet{schluter2009genetics} formulated the ``transporter'' hypothesis to explain these observations,
+a conceptual model in which alleles benefical in freshwater populations
+are maintained at migration-selection balance in the larger oceanic population
+and thus available for subsequent adaptation into new freshwater habitats.
+The hypothesis seems fits available data,
+but a number of quantitative questions remain.
+Are the actual population sizes, migration rates, and fitness differentials
+consistent with this hypothesis?
+How many of these differentially selected alleles are there,
+and how are they arranged within the genome?
+Does adaptation to a new lake rely on presence of early-generation hybrids between freshwater and marine fish,
+i.e., on long haplotypes recently inherited from freshwater-dwelling stickleback?
+Or, is the process
+more akin to the atomization and reconstruction effected by the Star Trek technology that motivated the hypothesis' name?
+More generally, 
+how do the dynamics and eventual genomic organization
+depend on the level of gene flow and strength of local adaptation,
+both across the entire stickleback metapopulation
+and separately within each lake?
 
-Here we develop a forward simulation approach in SLiM to model the stickleback evolutionary history in marine and freshwater habitats.
-We then record the effect of variation in gene flow on the genetic and genomic architecture of local adaptation.
-We ask, how rapidly can selection act on standing genetic variants at a given value of migration, $M$?
-Furthermore, how might the inference of causal loci through the use of genome wide association studies (GWAS) and $F_{st}$ scans across the genome be skewed by (lack of) introgression between sub-populations. 
-Finally, we trace back through the genealogical history of adaptive variants in new lakes to find the precise origin is of those variants.
+In this paper, we used forward simulations 
+modeled on the threespine stickleback metapopulation
+to ask how gene flow affects the genetic and genomic architecture of local adaptation.
+We know in practice that stickleback populations in new habitats can adapt in only tens of generations \citep{middleton};
+what level of between-habitat gene flow is required for such rapid adaptation?
+Genome scans for between-habitat differentiation have detected a number of causal QTL;
+what proportion of the loci actually underlying adaptation do we expect to be detected by such scans?
+How does our power to detect causal loci depend on the amount of gene flow?
 
 We find that only a few stickleback per generation, per lake, 
-suffice to maintain freshwater alleles from a (global?) haplotype at an acceptable frequency in marine environments for efficient ``transportation" of the freshwater haplotype.
-The selection on SGV at this level results in rapid local adaptation in $\approx 60$ generations, this follows closely to what we observe in nature (such as middleton island, cite this).
-Surprisingly, we find that the the continued gene flow (subsequent migration) of marine individuals is less important than the initial amount of SGV in the initial generation marine individuals at time of colonization.
-This suggests downstream gene flow from freshwater populations is key to this system of ``transportation".
-We show that low levels of introgression also results in noise that often presents itself as $F_{st}$ peaks when scanning across the genome suggesting introgression plays a key role in inferring causal loci . 
-With higher $M > 10$ individuals per lake per generation we see the impact of migration load, preventing the demes from fully adapting to their selective pressure.
+suffices to maintain sufficient genetic variation in the ocean
+so that new freshwater populations can adapt from standing variation in only tens of generations.
+We also find that continued gene flow of marine individuals into recently established lakes
+is not important for adaptation,
+and so it is only ``downstream'' gene flow that allows freshwater adaptations to be ``transported'' between lakes.
+% We show that low levels of introgression also results in noise that often presents itself as $F_{st}$ peaks when scanning across the genome suggesting introgression plays a key role in inferring causal loci . 
+This rapid, local adaptation can only occur over an intermediate range of levels of gene flow --
+low gene flow prevents variation from being transported,
+while high gene flow prevents local adaptation.
+
 
 %%%%%%%%%%%%%%%%
 \section*{Methods}
 
-We explored these questions using forwards-time simulations with explicit genomic representation of individuals selecting upon a single continuous quantitative trait using SLiM \citep{haller2017slim,haller2018slim3}.
-The details of the model were motivated by current understanding of threespine stickleback evolutionary history and demography.
-We set up a realistic model of the relationship between marine and freshwater selective pressures with continuous space and migration rates between the populations to emulate gene flow. 
-Certain aspects of the the model remain simplistic due to computational constraints.
-Possibly the most important caveat is that simulated population sizes are much smaller than the census size of the threespine stickleback populations observed in nature
+To explore these questions, we used SLiM \citep{haller2017slim,haller2018slim3} 
+to implement forwards-time simulation of populations of individuals with explicitly represented genomes
+in which selection acted upon a single continuous quantitative trait.
+The details of the model were motivated by current understanding of threespine stickleback evolutionary history and demography,
+and included divergent selection in the two habitats which had substantial spatial structure.
+Certain aspects of the model remain simplistic due to computational constraints.
+Possibly the most important caveat is that simulated population sizes 
+are much smaller than the census size of the threespine stickleback populations observed in nature
 (see the Discussion for more on this).
 
 \paragraph{Habitat and geography}
