@@ -62,9 +62,9 @@ The results support existing theory of local adaptation, and provide a more conc
 
 The canonical model for the genetics of adaptation, first formulated by Fisher in the early part of the 20th century, involves the sequential fixation of new mutations. 
 While it has proven valid in numerous studies in the field as well as in the lab, this model is now rightfully understood as incomplete for many species in nature that have more complicated population structures. 
-What role does genomic variation play in metapopulations with connection to an array of selective pressures?
+What role does genomic variation play in meta-populations with connection to an array of selective pressures?
 How could migration-selection balance and ecological speciation actually benefit species as a whole?
-A growing number of studies have identified instances of convergent or shared adaptive evolution in small demes that utilize standing genetic variation (SGV) found in the static population from which they split.
+A growing number of studies have identified instances of convergent or shared adaptive evolution in small demes that utilize standing genetic variation (SGV) found in the static population from which they split \citet{nelson2017ancient,Barrett2008,Schrider2017}.
 However, it is still widely unknown which variations of evolutionary processes such as gene flow, recombination, selection and mutation, promote the maintenance and re-use of such genetic polymorphisms.
 In addition, we would like to know how complex geographic systems, with a variety of selective pressures, interact with these evolutionary forces to help or hinder the use of SGV in newly colonized subpopulations.
 \plr{I like the spirit of the first paragraph, but want to totally rewrite it}
@@ -77,7 +77,7 @@ The ancestral marine form of stickleback has given rise to millions of independe
 While geographic isolation prevents direct migration between a large majority of these patches of freshwater populations,
 They appear to exhibit very similar phenotypes, as well as many shared, adaptive alleles often found to be identical by decent (IBD). 
 Impressively, independent local adaptation of marine individuals to freshwater environments has been observed to take place in tens of generations, 
-and the adaptive alleles are found in freshwater populations that have been geographically isolated since the end of the last ice age $\approx 13,000$ years ago (Cite Kristin).
+and the adaptive alleles are found in freshwater populations that have been geographically isolated since the end of the last ice age $\approx 13,000$ years ago.
 For example, in 1964 the Great Alaskan Earthquake caused an uplift of Middleton island and in turn, introduced a group of freshwater ponds around the perimeter of the island. 
 Quickly inhabited by the surrounding marine population of stickleback, 
 \citet{lescak2015evolution} observed significant phenotypic changes in less than 50 years that appear to be parallel to freshwater stickleback that have been separated for over thousands of years. 
@@ -108,13 +108,13 @@ more akin to the atomization and reconstruction effected by the Star Trek techno
 More generally, 
 how do the dynamics and eventual genomic organization
 depend on the level of gene flow and strength of local adaptation,
-both across the entire stickleback metapopulation
+both across the entire stickleback meta-population
 and separately within each lake?
 
 In this paper, we used forward simulations 
-modeled on the threespine stickleback metapopulation
+modeled on the threespine stickleback meta-population
 to ask how gene flow affects the genetic and genomic architecture of local adaptation.
-We know in practice that stickleback populations in new habitats can adapt in only tens of generations \citep{middleton};
+We know in practice that stickleback populations in new habitats can adapt in only tens of generations \citep{lescak2015evolution};
 what level of between-habitat gene flow is required for such rapid adaptation?
 Genome scans for between-habitat differentiation have detected a number of causal QTL;
 what proportion of the loci actually underlying adaptation do we expect to be detected by such scans?
@@ -264,7 +264,7 @@ Since this introduction of lakes doubles the number of lake-to-marine immigrants
 the probability that a new marine individual has freshwater parents is $2m$ instead of $m$.
 
 \paragraph{Recording genealogical history}
-We used SLiM's ability to record \emph{tree sequences} \citep{haller2018treesequence}
+We used SLiM's ability to record \emph{tree sequences} \citep{haller2018treesequence,Kelleher2016}
 to output the genealogical history of all individuals
 at the time of introduction of new lakes, at the time of adaptation, and at the end of the simulation.
 This allowed us to directly query the true origins of adaptive alleles.
@@ -313,7 +313,7 @@ Many aspects of adaptation changed substantially across this range, including th
 degree of sharing of adaptive alleles between lakes, and the population genetic signals left behind.
 At very low rates of gene flow, each new lake's population adapted almost completely independently throught \emph{de novo} mutation, 
 which took a very long time ($\approx 20,000$ generations).
-At very high rates of gene flow, local adaptation was constrained by the large influx of locally maladaptive alleles.
+At very high rates of gene flow, local adaptation was constrained by the large influx of locally maladaptive alleles \citet{bolnick2007natural}.
 Between these two extremes, genetic variation that allowed adaptation to freshwater habitats could move relatively easily between lakes.
 Perhaps surprisingly, only a few migrants per generation from the lakes to the ocean were needed
 to maintain sufficient genetic variation in the ocean to accelerate adaptation in new lakes.
@@ -548,7 +548,6 @@ Here, we take a closer look at the genomic architecture of local adaptation betw
 Can measures of local differentiation such as $F_{ST}$ be used to identify the causal loci? 
 Figure \ref{fig:Fst} shows plots along the genome of average per-locus $F_{ST}$ values 
 in 500bp windows between the marine habitat and all freshwater habitats pooled together.
-\plr{500bp windows, right?}
 Higher rates of dispersal showed more distinct $F_{ST}$ peaks over polymorphic loci,
 while ``background'' levels of $F_{ST}$ increase as gene flow decreases,
 swamping out this signal until the regions under selection are indistinguishable. 
@@ -759,7 +758,7 @@ as seen in Figure~\ref{fig:Origin}.
 %%%%%%%%%%%%%%%%%%%%
 \section*{Discussion}
  
-In this paper, we have described a realistic simulation model of a coastal metapopulation to observe the effects of selection of genetic variation (SGV) across a wide range of gene flow rates.
+In this paper, we have described a realistic simulation model of a coastal meta-population to observe the effects of selection of genetic variation (SGV) across a wide range of gene flow rates.
 We have shown that historical introgression, at our given parameter sets, is able to reproduce rapid and parallel adaptation similar to what we've seen in real populations such as Middleton island. 
 Selection is able to rebuild the freshwater haplotype at a rapid pace (in tens of generations) from marine populations as a medium between all freshwater populations. 
 Almost all rates of migration were helpful in the efficiency of the population to locally adapt except for the highest at which migration load limited the ability of the populations to reach the local optimum. 
@@ -767,35 +766,20 @@ Almost all rates of migration were helpful in the efficiency of the population t
 While our findings prove useful to the understanding of stickleback, they are not autonomous to this species. 
 Now, we will discuss the broader implications of our findings on the more general framework of similar systems, we also explore what other questions remain. 
 Small patches of similar selective pressures can be found in many places such as high altitudes, underwater volcanic vents, or post forest fire environments. 
-%We are still finding new subspecies, that seem to have adapted to extreme environments presented in small patches connected to larger spanning biospheres where the ancestral species naturally inhabits.
-Recently, (Cite Nelson Ferretti et al), discovered seven new species of Hapalotremus (Theraphosinae), living at the extremely high altitudes distributed along the Andes and Yungas in western South America.
-With the ancestral species at much lower altitudes, beneficial high altitude alleles could potentially be carried to help in the colonization of neighboring mountain environments. 
-Systems of metapopulations like this could potentially arise in many places
+Recently,  \citep{Ferretti2018}, discovered seven new species of Hapalotremus (Theraphosinae), living at the extremely high altitudes distributed along the Andes and Yungas in western South America.
+With the ancestral species at much lower altitudes, one could image high altitude alleles that could potentially be carried to help in the colonization of neighboring mountain environments. 
+Systems of meta-populations like this could potentially arise in many places
 where the ancestral species carries around with it beneficial alleles for selective pressures it has encountered in the past and remains connected to through hybridization events.
- 
-%(1) the subspeciesthat inhabits a different selective pressure, and ancestral species are not constrained by pre, or post-zygotic isolation to participate in hybridization events, and
-%(2) the ancestral species spans across a wide range. 
-%For brevity, I will call evolutionary systems which satisfy these conditions, 
-%The vast number of species which encou
- 
+
  \paragraph{Atmosphere's ability to carry whoever scotty is beaming up ... }
 Perhaps the most notable finding in this study is that large, ancestral populations have the capacity to maintain alleles which are potentially deleterious for an extended amount of time.  
-%This system seems analagous the marvel superhero \emph{Rogue}, who can steal superpowers or memories from another  for a limited amount of time as long as she has contact with the indivi
 This principle, deriving solely from the properties of sex and natural selection, could be applicable to almost any species experiencing the influence of divergent selection with introgression.
 And to explore further how this process is carried out exactly, many of the questions lie in understanding which properties of genomic architecture and demographics allow this transportation to be possible. 
-%In terms of Star Trek's ``transporter" referred to by \citet{schluter2009genetics}, 
 his is largely analogous to exploring the specific properties of the atmosphere / space which allow for the heroes to be disassembled, then put back together.
-%While the perspective of our 
 In our simulations, the continued gene flow from freshwater populations meant that the alleles were maintained at a constant rate with fixed demographics. 
 Two possible questions that might arise from this are:
 (1) How do population sizes, demographics, and evolutionary histories impact an ancestral population's capacity for carrying maladaptive alleles in its opposing environment, and 
 (2) What role does genomic architecture play in the ability for a haplotype to be rebuilt.
- 
-\paragraph{Origins of genetic basis of local adaptation in new lakes}
-In Figure~\ref{fig:Origin} we found that the genetic basis for local adaptation, when selecting upon SGV, is propogated largely from the initial generation of inhabitants. 
-This contrasts the belief that subsequent migration is a necessity in newly established populations ability to rebuild a haplotype.
-This finding suggests that with high probability, a randomly chosen subset from ancestral species in the metapopulations like marine stickleback, 
-carry the capacity to rapidly adapt without \emph{any} continued connection to the rest of of the species.
 
 \paragraph{Realized genomic architecture}
 Additionally have also shown introgression is beneficial for inferring causative loci from divergence ($F_{st}$) along the genome. 
@@ -803,6 +787,23 @@ This is generally because noise of selectively neutral alleles divergence can ap
 differences between populations that have little gene flow between them.
 It's important to know that in all scenarios, hitchhiking of selectively neutral alleles could also be 
 mistaken for being causative as they often display the same amount of divergence.
+In general, our study may suggest that diversity scans may not prove as useful in causal loci inference as previously thought.
+It is important to note that these summary statics could prove to be very useful if used beyond just the peaks seen when looked at as a function of genomic position. 
+Many methods, such as advanced machine learning, have proved to be very good at taking in noisy data and parsing out important information \citet{Schrider2018}.
+
+\paragraph{Implications for the ``Transporter"-hypothesis}
+This study was in large, supportive of the ``Transporter"-hypothesis suggested by \citep{schluter2009genetics}.
+Provided there is enough dispersal, we found that repeated colonization and adaptation of freshwater stickleback was able to produce beneficial alleles which could then be 
+supported by the marine stickleback population through the offspring of hybridization events. 
+When new freshwater environments were colonized by the marine stickleback, selection was able to rebuild the freshwater haplotype. 
+Shown in Table~\ref{tab:linkage}, we found that a populations capacity to cary maladaptive alleles remains pretty constant over realistic ranges of dispersal, but low rates of gene flow may 
+"mask" the alleles through linkage which counteracts the fitness disadvantage. 
+This linkage prevents the ability for a sub-population to rapidly select on the beneficial SGV as recombination acts as a bottleneck to evolution in this situation. 
+Additionally, In Figure~\ref{fig:Origin} we found that the genetic basis for local adaptation, when selecting upon SGV, is propagated largely from the initial generation of inhabitants. 
+This contrasts the belief that subsequent migration is a necessity in newly established populations ability to rebuild a haplotype.
+In other words, this finding suggests that with high probability, a randomly chosen subset from ancestral species in the meta-populations like marine stickleback, 
+carry the capacity to rapidly adapt without \emph{any} continued connection to the rest of of the species.
+
 
 %\paragraph{Implications for the ``Transporter"--hypothesis}
 
@@ -855,7 +856,6 @@ How might this affect things?
 \renewcommand{\thetable}{S\arabic{table}}
 \setcounter{figure}{0}
 \renewcommand{\thefigure}{S\arabic{figure}}
-
 
 \section*{Supplementary material}
 
