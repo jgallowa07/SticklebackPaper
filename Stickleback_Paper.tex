@@ -34,62 +34,25 @@
 
 \section*{Abstract}
 
-Threespine stickleback fish provide a striking example of local adaptation despite recurrent gene flow.
-The species is distributed around the Northern hemisphere in both marine and freshwater habitats.
-It is thought that these numerous, smaller freshwater populations
-have been established ``de novo" from marine fish,
-and that a shared freshwater phenotype
-is often established using standing genetic variation.
-Here we use genealogical simulations to determine the levels of gene flow
-that best matches observed patterns of allele sharing among habitats in stickleback, 
-and more generally to better understand how gene flow and local adaptation in large metapopulations
-determine speed of adaptation and reuse of standing genetic variation.
-We find that rapid, repeated adaptation using a shared set of alleles maintained at low frequency by migration-selection balance occurs over a realistic range of intermediate rates of gene flow.
-Low gene flow leads to slow, independent adaptation of distinct habitats, whereas high gene flow leads to large migration load.
-We quantify how $F_{ST}$ scans for adaptive alleles are more likely to succeed with higher rates of gene flow.
-In addition, we find the origin of many freshwater adapted alleles in the introduced lakes to be propagated from the original generation of marine individuals that had inhabited the lake.
-The results support existing theory of local adaptation, and provide a more concrete look at a particular, empirically motivated example.  
+Threespine stickleback provide a striking example of local adaptation to divergent habitats while still being contected by recurrent gene flow. These small fish occurin marine and freshwater habitats throughout the Northern Hemisphere, and in numerous cases smaller freshwater populations have been established ``de novo'' from marine colonists. Previous results show that a similar freshwater phenotype often evolves in independent populations soon after colonization using largely the same standing genetic variation, even in very distant geographic regions. Here we use genealogical simulations to determine the levels of gene flow that best matches observed patterns of allele sharing among habitats in stickleback, and to better understand how gene flow and local adaptation in large metapopulations determine the speed of adaptation and reuse of standing genetic variation. We find that rapid, repeated adaptation using a shared set of alleles that are maintained at low frequency by migration-selection balance in ocean populations occurs over a realistic range of intermediate rates of gene flow that match previous empirical population genomic studies in stickleback. Using these realistic simulations we discovered that low gene flow leads to slow, independent adaption to district habitats, whereas high gene flow leads to significant mutation load. A consequence is that population genomic scans for locally adapted alleles are more likely to succeed with higher rates of gene flow. Lastly, we find that the origin of many freshwater adapted alleles in the introduced lakes is the original generation of marine individuals that colonized the lake. Thuses simulations provide deeper context for existing studies of stickleback evolutionary genomics, and provide guidance for future empirical studies in this model. More broadly, our results support existing theory of local adaptation but extend it by more completely documenting the genealogical history of adaptive alleles in a metapopulation.  
+
 %\plr{say transporter hypothesis?}
 %\plr{talk about linkage and haplotypes}
 
 \section*{Introduction}
 
 % Jared's general notes for formatting
-%
 % - ``citep'' for ``cite in parentheses''. (and, citations come before the punctuation)
 % - in latex, use ` `words' ' to get the open- and closed-double quotes (not the double-quote character)
 % - "citet" for "cite, as part of the text"
 
-The canonical model for the genetics of adaptation, first formulated by Fisher in the early part of the 20th century, involves the sequential fixation of new mutations. 
-While it has proven valid in numerous studies in the field as well as in the lab, this model is now rightfully understood as incomplete for many species in nature that have more complicated population structures. 
-What role does genomic variation play in meta-populations with connection to an array of selective pressures?
-How could migration-selection balance and ecological speciation actually benefit species as a whole?
-A growing number of studies have identified instances of convergent or shared adaptive evolution in small demes that utilize standing genetic variation (SGV) found in the static population from which they split \citet{nelson2017ancient,Schrider2017,Barrett2008}.
-However, it is still widely unknown which variations of evolutionary processes such as gene flow, recombination, selection and mutation, promote the maintenance and re-use of such genetic polymorphisms.
-In addition, we would like to know how complex geographic systems, with a variety of selective pressures, interact with these evolutionary forces to help or hinder the use of SGV in newly colonized subpopulations.
+The sequential fixation of new mutations has long been the canonical model for the genetics of adaptation (\textbf{cite}). While it has proven valid in numerous studies in the field as well as in the lab, this model is now rightfully understood as incomplete for many species in nature that have more complicated population structures. What role does genomic variation play in meta-populations with connection to an array of selective pressures? How could migration-selection balance and ecological speciation actually benefit species as a whole? A growing number of studies have identified instances of convergent or shared adaptive evolution in small demes that utilize standing genetic variation (SGV) found in the static population from which they split \citet{nelson2017ancient,Schrider2017,Barrett2008}. However, it is still widely unknown which variations of evolutionary processes such as gene flow, recombination, selection and mutation, promote the maintenance and re-use of such genetic polymorphisms. In addition, we would like to know how complex geographic systems, with a variety of selective pressures, interact with these evolutionary forces to help or hinder the use of SGV in newly colonized subpopulations
+
 %\plr{I like the spirit of the first paragraph, but want to totally rewrite it}
 
-Recently, a large flood of data resulting from evolutionary systems of organisms have come from population genomic studies powered by advances in sequencing technologies. 
-One such organism is the threespine stickleback. 
-Many studies of species have exhibited a long standing evolutionary history of migration-selection balance between marine and freshwater populations across the globe.
-The rigidity of the stickleback's ability to frequently prosper in newly created freshwater environments has made this fish a good model for understanding the genetic basis of adaptive evolution. 
-The ancestral marine form of stickleback has given rise to millions of independently derived populations in recently de-glaciated regions of the Northern Hemisphere.
-While geographic isolation prevents direct migration between a large majority of these patches of freshwater populations,
-They appear to exhibit very similar phenotypes, as well as many shared, adaptive alleles often found to be identical by decent (IBD). 
-Impressively, independent local adaptation of marine individuals to freshwater environments has been observed to take place in tens of generations, 
-and the adaptive alleles are found in freshwater populations that have been geographically isolated since the end of the last ice age $\approx 13,000$ years ago.
-For example, in 1964 the Great Alaskan Earthquake caused an uplift of Middleton island and in turn, introduced a group of freshwater ponds around the perimeter of the island. 
-Quickly inhabited by the surrounding marine population of stickleback, 
-\citet{lescak2015evolution} observed significant phenotypic changes in less than 50 years that appear to be parallel to freshwater stickleback that have been separated for over thousands of years. 
-In these freshwater stickleback, the number of lateral plates are reduced and the opercle shapes shows
-the same expansion of the dorsal region and reduction of the ventral region as observed in the large majority of freshwater demes.
+Recently, a large flood of data resulting from evolutionary systems of organisms have come from population genomic studies powered by advances in sequencing technologies. One such organism is the threespine stickleback. Many studies of species have exhibited a long standing evolutionary history of migration-selection balance between marine and freshwater populations across the globe. The rigidity of the stickleback's ability to frequently prosper in newly created freshwater environments has made this fish a good model for understanding the genetic basis of adaptive evolution. The ancestral marine form of stickleback has given rise to millions of independently derived populations in recently de-glaciated regions of the Northern Hemisphere. While geographic isolation prevents direct migration between a large majority of these patches of freshwater populations, They appear to exhibit very similar phenotypes, as well as many shared, adaptive alleles often found to be identical by decent (IBD). Impressively, independent local adaptation of marine individuals to freshwater environments has been observed to take place in tens of generations, and the adaptive alleles are found in freshwater populations that have been geographically isolated since the end of the last ice age $\approx 13,000$ years ago. For example, in 1964 the Great Alaskan Earthquake caused an uplift of Middleton island and in turn, introduced a group of freshwater ponds around the perimeter of the island. Quickly inhabited by the surrounding marine population of stickleback, \citet{lescak2015evolution} observed significant phenotypic changes in less than 50 years that appear to be parallel to freshwater stickleback that have been separated for over thousands of years. In these freshwater stickleback, the number of lateral plates are reduced and the opercle shapes shows the same expansion of the dorsal region and reduction of the ventral region as observed in the large majority of freshwater demes.
 
-But how can evolution occur at such a rapid pace? 
-Waiting for new mutations to arise in each lake would take much longer, and the genotypes being identical by state is even more improbable. 
-This would seem to suggest that freshwater alleles are maintained in the marine individuals allowing the accelerated selection on SGV found in marine individuals which colonize the lake. 
-The first clear example of the global reuse of SGV was the gene \textit{eda} which has been shown to be an important regulator for the number of lateral plates. 
-While the low lateral plate version of this gene arose millions of years ago, it is found in freshwater ponds which have formed much more recently. 
-Contemporary population genomic studies employing genome-wide haplotype analyses has provided evidence that \textit{most} regions of the genome that distinguish marine-freshwater genetic differences share this pattern \citep{nelson2017ancient}. 
+But how can evolution occur at such a rapid pace? Waiting for new mutations to arise in each lake would take much longer, and the genotypes being identical by state is even more improbable. This would seem to suggest that freshwater alleles are maintained in the marine individuals allowing the accelerated selection on SGV found in marine individuals which colonize the lake. The first clear example of the global reuse of SGV was the gene \textit{eda} which has been shown to be an important regulator for the number of lateral plates. While the low lateral plate version of this gene arose millions of years ago, it is found in freshwater ponds which have formed much more recently. Contemporary population genomic studies employing genome-wide haplotype analyses has provided evidence that \textit{most} regions of the genome that distinguish marine-freshwater genetic differences share this pattern \citep{nelson2017ancient}. 
  
 \citet{schluter2009genetics} formulated the ``transporter'' hypothesis to explain these observations,
 a conceptual model in which alleles benefical in freshwater populations
