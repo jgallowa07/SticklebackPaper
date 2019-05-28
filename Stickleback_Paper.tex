@@ -24,10 +24,10 @@
 
 \begin{document}
 
-\title{A few stickleback can transport adaptive alleles to new lakes}
+\title{A few stickleback suffice for the transport of alleles to new lakes}
 \author{Jared Galloway, William A. Cresko, and Peter Ralph}
 \maketitle
-\jgg{To me, this title makes it sound like only a "select few" stickleback have the ability to transport, no?}
+%\jgg{To me, this title makes it sound like only a "select few" stickleback have the ability to transport, no?}
 
 \section*{Abstract}
 
@@ -35,13 +35,14 @@ Threespine stickleback provide a striking example of local adaptation to diverge
 These small fish occur in marine and freshwater habitats throughout the Northern Hemisphere, and in numerous cases the smaller freshwater populations have been established ``de novo'' from marine colonists. 
 Previous results have found similar phenotypes, between independently evolved freshwater populations, are derived largely from the same standing genetic variants found to be Identical-by-decent.
 Geographic isolation preventing direct migration between the freshwater populations strongly suggests that these shared adaptive alleles are transported through the wide-spanning marine population.
-However, it is still largely unknown how gene flow, recombination, and selection jointly impact standing variation to fuel adaptation.
-Here we use genealogical simulations to determine the levels of gene flow that best match observed patterns of allele sharing among habitats in stickleback, and to better understand how gene flow and local adaptation in large metapopulations determine the speed of adaptation and re-use of standing genetic variation. 
+However it is still largely unknown how gene flow, recombination, and selection jointly impact standing variation to fuel adaptation.
+Here we use genealogical simulations to determine the levels of gene flow that best match observed patterns of allele sharing among habitats in stickleback.
+We aim to better understand how gene flow and local adaptation in large metapopulations determine the speed of adaptation and re-use of standing genetic variation. 
 In our simulations we find that repeated adaptation uses a shared set of alleles that are maintained at low frequency by migration-selection balance in oceanic populations. 
 This process occurs over a realistic range of intermediate levels of gene flow that match previous empirical population genomic studies in stickleback. 
-Examining these simulations more deeply reveals that lower levels of gene flow leads to slow, independent adaptation to district habitats, whereas higher levels gene flow leads to significant mutation load, but an increased probability of successful population genomic scans for locally adapted alleles. 
+Examining these simulations more deeply reveals that lower levels of gene flow leads to slow, independent adaptation to district habitats, whereas higher levels gene flow leads to significant mutation load -- but an increased probability of successful population genomic scans for locally adapted alleles. 
 Surprisingly, we find that the genealogical origins of most freshwater adapted alleles can be traced back to the original generation of marine individuals that colonized the lakes, as opposed to subsequent migrants. 
-These simulations provide deeper context for existing studies of stickleback evolutionary genomics, and provide guidance for future empirical studies in this model.
+These simulations provide deeper context for existing studies of stickleback evolutionary genomics, and guidance for future empirical studies in this model.
 More broadly, our results support existing theory of local adaptation but extend it by more completely documenting the genealogical history of adaptive alleles in a metapopulation.  
 
 \section*{Introduction}
@@ -53,9 +54,6 @@ A growing number of empirical studies have identified instances of convergent ev
 However, it is still not clear how variation in evolutionary processes - such as gene flow, recombination, selection and mutation -  can promote the maintenance and re-use of SGV, particularly during colonization and adaptation to new environments \citep{nelson2017ancient}. 
 It is similarly unclear whether variation in these evolutionary processes can determine the genetic architecture of evolving traits via SGV. 
 While empirical studies in the field and lab are essential, modeling specific systems can help us understand the nature of standing genetic variants to fuel local adaptation as well as the genomic signals we can expect to see.
-\plr{I like the spirit of the first paragraph, but want to totally rewrite it}
-\wac{I did a little editing but Peter can still totally rewrite. Regardless, it needs to be streamlined a fair bit}
-\jgg{I think this encapsulates the feel of the paper, but happy for it to be streamlined}
 
 The ancestral marine form of threespine stickleback fish has given rise to millions of independently derived freshwater populations in recently de-glaciated regions around the Northern Hemisphere (\textbf{cite}). 
 This model organism has provided some of the earliest data in a recent flood showing the heterogeneous nature of divergence across genomes (\textbf{cite}) and the much more extensive use of SGV than once thought (\textbf{cite}).  
@@ -77,8 +75,9 @@ More recently, genome-wide haplotype analyses have provided evidence that \texti
 While this growing body of population genomic data on stickleback evolution support the transporter hypothesis, a number of questions remain. 
 What are the actual population sizes, migration rates, and fitness differentials consistent with this hypothesis? 
 How many differentially selected alleles exist, how many are used at any one time, and how are they arranged within the genome? 
-A curious natural history observation undergirding many of these questions is the fact that some newly formed freshwater habitats, such as the ponds on Middleton Island, are quite small and presumably the number of initial marine migrants is few. 
-Here we use forward simulations implemented in SLiM incorporating linkage and realistic length genomes to model the stickleback metapopulation and address these questions \citep{haller2017slim,haller2018slim3}. 
+A curious natural history observation underlying many of these questions is the fact that some newly formed freshwater habitats, such as the ponds on Middleton Island, are quite small and presumably the number of initial marine migrants is few. 
+
+Here, we use forward simulations implemented in SLiM incorporating linkage and realistic length genomes to model the stickleback metapopulation and address these questions \citep{haller2017slim,haller2018slim3}. 
 We ask how variation in amount of gene flow affects the genetic architecture of local adaptation to newly created freshwater ponds.
 Because we are documenting the entire genealogy of all alleles, we can determine the distribution and abundance of haplotypes across all in marine and freshwater populations to know the timing and proportion of potentially adaptive alleles that are actually utilized in each population. 
 In addition, we can document how these adaptive alleles are distributed across the genomes, and as a consequence determine how this may affect the efficacy of genome scans for between-habitat differentiation. 
@@ -353,9 +352,6 @@ At first glance, this suggests that genome scans for local adaptation based pure
 But how many of these peaks are actually underlying trait differences that form the basis for local adaptation? 
 To quantify this, Figure \ref{fig:Power_FP} shows the power and false positive rates that would be obtained by an $F_{ST}$ cutoff that declared everything above a certain value to be a causal locus. 
 
-\plr{need to say what true and false positive windows are} 
-\jgg{? like the pink lines in Figure \ref{fig:Fst}}
-
 What we observe most plainly in this graph is that $M = 1.0$ and $M = 10.0$ migrants per lake, per generation are the only rates of dispersal which provide reliable true negatives when observing peaks. 
 This means that a large percentage of peaks past an $F_{ST}$ cutoff of $0.05$ actually lie on top of regions which could impact trait differences.
 Unfortunately, the low statistical power for all rates of $M$ would seem to suggest that many regions which impact trait differences do not appear as $F_{st}$ peaks. 
@@ -412,7 +408,7 @@ This is surprising because we see a similar quantity of allele sharing at  $M = 
 
 A possible explanation is that at lower rates of gene flow, freshwater alleles present as standing variation in the marine habitat are more tightly linked to marine alleles. This implies the adaptation in the new lakes must wait for recombination to separate freshwater adapted alleles from nearby marine adapted alleles. This might be expected at low dispersal rates since freshwater alleles may need to be ``masked'' by nearby compensatory alleles to remain in the ocean for long periods of time. Reversing this ``masking'' then slows the process of adaptation that uses this genetic variation.
 
-\plr{cite \citet{yeaman2011genetic}?}
+%\plr{cite \citet{yeaman2011genetic}?}
 
 In other words, higher dispersal from freshwater to the ocean maintains relatively intact freshwater haplotypes that can be more easily rebuilt in the marine environments. Recall that trait-affecting mutations only occur in relatively small regions of $10^5$ loci in which recombination occurs only once in every one thousand meioses. This implies that even if there is a sufficient amount of variation in the initial population of a lake to shift the trait from the marine optimum ($+10$) to the freshwater optimum ($-10$), rebuilding the most beneficial haplotype may prove to be a non-trivial task for selection.
 %these may be tightly linked to alleles that counteract their effect.
@@ -473,9 +469,6 @@ Shown in Table~\ref{tab:linkage}, we found that a populations capacity to cary m
 This linkage prevents the ability for a sub-population to rapidly select on the beneficial SGV as recombination acts as a bottleneck to evolution in this situation. 
 
 \jgg{This feels awkward, help please.}
-%This is evidence that standing genetic variation from gene flow likely plays a key role in local adaptation for many sub-species.
-
-
 
 \bibliographystyle{plainnat}
 \bibliography{Citations}{}
