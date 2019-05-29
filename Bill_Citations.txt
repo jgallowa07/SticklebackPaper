@@ -1,0 +1,222 @@
+Aeschbacher, S., Selby, J.P., Willis, J.H. & Coop, G. 2017. Population-genomic inference of the strength and timing of selection against gene flow. P Natl Acad Sci USA 114: 7061-7066.
+Akerman, A., and R. Burger, 2014 The consequences of gene flow for local adaptation and differentiation: a two-locus two-deme model. J Math Biol 68: 1135-1198.
+Albert, A. Y., S. Sawaya, T. H. Vines, A. K. Knecht, C. T. Miller et al., 2008 The genetics of adaptive shape shift in stickleback: pleiotropy and effect size. Evolution 62: 76-85.
+Aldenhoven, J.T., Miller, M.A., Corneli, P.S. & Shapiro, M.D. 2010. Phylogeography of ninespine sticklebacks (Pungitius pungitius) in North America: glacial refugia and the origins of adaptive traits. Mol Ecol 19: 4061-4076.
+Angert, A. L., M. Bayly, S. N. Sheth and J. R. Paul, 2018 Testing range-limit hypotheses using range-wide habitat suitability and occupancy for the scarlet monkeyflower (Erythranthe cardinalis). Am Nat 191: E76-E89.
+Arnegard, M.E., McGee, M.D., Matthews, B., Marchinko, K.B., Conte, G.L., Kabir, S. et al. 2014. Genetics of ecological divergence during speciation. Nature 511: 307-311.
+Arnold, B., Corbett-Detig, R.B., Hartl, D. & Bomblies, K. 2013. RADseq underestimates diversity and introduces genealogical biases due to nonrandom haplotype sampling. Mol Ecol 22: 3179-3190.
+Baird, N. A., P. D. Etter, T. S. Atwood, M. C. Currey, A. L. Shiver et al., 2008 Rapid SNP discovery and genetic mapping using sequenced RAD markers. PLoS One 3: e3376.
+Barrett, R. D., and D. Schluter, 2008 Adaptation from standing genetic variation. Trends Ecol Evol 23: 38-44.
+Barrett, R.D., Rogers, S.M. & Schluter, D. 2008. Natural selection on a major armor gene in threespine stickleback. Science 322: 255-257.
+Barton, N. & Bengtsson, B.O. 1986. The Barrier to Genetic Exchange between Hybridizing Populations. Heredity 57: 357-376.
+Bassham, S., J. Catchen, E. Lescak, F. A. von Hippel and W. A. Cresko, 2018 Repeated selection of alternatively adapted haplotypes creates sweeping genomic remodeling in stickleback. Genetics 209: 921-939.
+Begun, D. J., A. K. Holloway, K. Stevens, L. W. Hillier, Y. P. Poh et al., 2007 Population genomics: whole-genome analysis of polymorphism and divergence in Drosophila simulans. PLoS Biol 5: e310.
+Begun, D. J., and C. F. Aquadro, 1992 Levels of naturally occurring DNA polymorphism correlate with recombination rates in D. melanogaster. Nature 356: 519-520.
+Bell, M. A., 1984 Evolutionary phenetics and genetics. The threespine stickleback, Gasterosteus aculeatus, and related species, pp. 431-527 in Evolutionary Genetics of Fishes, edited by B. J. Turner.
+Bell, M. A., and S. A. Foster, 1994 The evolutionary biology of the threespine stickleback. Oxford University Press, Oxford ; New York.
+Bell, M. A., W. E. Aguirre and N. J. Buck, 2004 Twelve years of contemporary armor evolution in a threespine stickleback population. Evolution 58: 814-824.
+Bell, M.A., Baumgartner, J.V. & Olson, E.C. 1985. Patterns of Temporal Change in Single Morphological Characters of a Miocene Stickleback Fish. Paleobiology 11: 258-271.
+Berg, J. J., and G. Coop, 2015 A coalescent model for a sweep of a unique standing variant. Genetics 201: 707-725.
+Bergland, A. O., E. L. Behrman, K. R. O'Brien, P. S. Schmidt and D. A. Petrov, 2014 Genomic Evidence of Rapid and Stable Adaptive Oscillations over Seasonal Time Scales in Drosophila. PLoS Genet 10.
+Berner, D., A. C. Grandchamp and A. P. Hendry, 2009 Variable progress toward ecological speciation in parapatry: stickleback across eight lake-stream transitions. Evolution 63: 1740-1753.
+Bird, C., S. Karl, P. Mouse and R. Toonen, 2011 Detecting and measuring genetic differentiation, pp. 31-55 in Phylogeography and Population Genetics in Crustacea. CRC Press, Boca Raton, Florida.
+Boughman, J. W., H. D. Rundle and D. Schluter, 2005 Parallel evolution of sexual isolation in sticklebacks. Evolution 59: 361-373.
+Burke, M. K., G. Liti and A. D. Long, 2014 Standing genetic variation drives repeatable experimental evolution in outcrossing populations of Saccharomyces cerevisiae. Mol Biol Evol 31: 3228-3239.
+Burke, M. K., J. P. Dunham, P. Shahrestani, K. R. Thornton, M. R. Rose et al., 2010 Genome-wide analysis of a long-term evolution experiment with Drosophila. Nature 467: 587-590.
+Burri, R., 2017 Linked selection, demography and the evolution of correlated genomic landscapes in birds and beyond. Mol Ecol 26: 3853-3856.
+Burri, R., A. Nater, T. Kawakami, C. F. Mugal, P. I. Olason et al., 2015 Linked selection and recombination rate variation drive the evolution of the genomic landscape of differentiation across the speciation continuum of Ficedula flycatchers. Genome Res 25: 1656-1665.
+Caldera, E. J., and D. I. Bolnick, 2008 Effects of colonization history and landscape structure on genetic variation within and among threespine stickleback (Gasterosteus aculeatus) populations in a single watershed. Evol Ecol Res 10: 575-598.
+Carneiro, M., N. Ferrand and M. W. Nachman, 2009 Recombination and speciation: loci near centromeres are more differentiated than loci near telomeres between subspecies of the European rabbit (Oryctolagus cuniculus). Genetics 181: 593-606.
+Catchen, J. M., A. Amores, P. Hohenlohe, W. Cresko and J. H. Postlethwait, 2011 Stacks: building and genotyping Loci de novo from short-read sequences. G3 (Bethesda) 1: 171-182.
+Catchen, J., Hohenlohe, P.A., Bassham, S., Amores, A. & Cresko, W.A. 2013. Stacks: an analysis tool set for population genomics. Mol Ecol 22: 3124-3140.Catchen, J., P. A. Hohenlohe, S. Bassham, A. Amores and W. A. Cresko, 2013b Stacks: an analysis tool set for population genomics. Mol Ecol 22: 3124-3140.
+Catchen, J., S. Bassham, T. Wilson, M. Currey, C. O'Brien et al., 2013 The population structure and recent colonization history of Oregon threespine stickleback determined using restriction-site associated DNA-sequencing. Mol Ecol 22: 2864-2883.
+Catchen, J.M., Amores, A., Hohenlohe, P., Cresko, W. & Postlethwait, J.H. 2011. Stacks: building and genotyping loci de novo from short-read sequences. G3-Genes Genom Genet 1: 171-182.
+Chan, Y.F., Marks, M.E., Jones, F.C., Villarreal, G., Jr., Shapiro, M.D., Brady, S.D. et al. 2010. Adaptive evolution of pelvic reduction in sticklebacks by recurrent deletion of a Pitx1 enhancer. Science 327: 302-305.
+Charlesworth, B., 1998 Measures of divergence between populations and the effect of forces that reduce variability. Mol Biol Evol 15: 538-543.
+Charlesworth, B., 2012 The effects of deleterious mutations on evolution at linked sites. Genetics 190: 5-22.
+Charlesworth, B., D. Charlesworth and N. H. Barton, 2003 The effects of genetic and geographic structure on neutral variation. Ann Rev Ecol Evol Systemat 34: 99-125.
+Charlesworth, B., M. Nordborg and D. Charlesworth, 1997 The effects of local selection, balanced polymorphism and background selection on equilibrium patterns of genetic diversity in subdivided populations. Genet Res 70: 155-174.
+Charlesworth, B., M. T. Morgan and D. Charlesworth, 1993 The effect of deleterious mutations on neutral molecular variation. Genetics 134: 1289-1303.
+Clausen, J., W. M. Keck and W. M. Hiesey, 1941 Regional differentiation in plant species. Am Nat 75: 231-250.
+Colosimo, P. F., K. E. Hosemann, S. Balabhadra, G. Villarreal, Jr., M. Dickson et al., 2005 Widespread parallel evolution in sticklebacks by repeated fixation of Ectodysplasin alleles. Science 307: 1928-1933.
+Colosimo, P.F., Peichel, C.L., Nereng, K., Blackman, B.K., Shapiro, M.D., Schluter, D. et al. 2004. The genetic architecture of parallel armor plate reduction in threespine sticklebacks. PLoS Biol 2: 635-641.
+Cresko, W. A., A. Amores, C. Wilson, J. Murphy, M. Currey et al., 2004 Parallel genetic basis for repeated evolution of armor loss in Alaskan threespine stickleback populations. Proc Natl Acad Sci U S A 101: 6050-6055.
+Cresko, W. A., K. L. McGuigan, P. C. Phillips and J. H. Postlethwait, 2007 Studies of threespine stickleback developmental evolution: progress and promise. Genetica 129: 105-126.
+Cruickshank, T. E., and M. W. Hahn, 2014 Reanalysis suggests that genomic islands of speciation are due to reduced diversity, not reduced gene flow. Mol Ecol 23: 3133-3157.
+Cutter, A. D., and B. A. Payseur, 2013 Genomic signatures of selection at linked sites: unifying the disparity among species. Nat Rev Genet 14: 262-274.
+Davey, J.W., Hohenlohe, P.A., Etter, P.D., Boone, J.Q., Catchen, J.M. & Blaxter, M.L. 2011. Genome-wide genetic marker discovery and genotyping using next-generation sequencing. Nat Rev Genet 12: 499-510.
+Deagle, B. E., F. C. Jones, Y. F. Chan, D. M. Absher, D. M. Kingsley et al., 2012 Population genomics of parallel phenotypic evolution in stickleback across stream-lake ecological transitions. Proc R Soc B-Biol Sci 279: 1277-1286.
+Defaveri, J., and J. Merila, 2013 Evidence for adaptive phenotypic differentiation in Baltic Sea sticklebacks. J Evol Biol 26: 1700-1715.
+Defaveri, J., T. Shikano, Y. Shimada and J. Merilä, 2013 High degree of genetic differentiation in marine three-spined sticklebacks (Gasterosteus aculeatus). Mol Ecol 22: 4811-4828.
+DeFaveri, J., T. Shikano, Y. Shimada, A. Goto and J. Merila, 2011 Global analysis of genes involved in freshwater adaptation in threespine sticklebacks (Gasterosteus aculeatus). Evolution 65: 1800-1807.
+Dobzhansky, T., and M. L. Queal, 1938 Genetics of Natural Populations. II. Genic Variation in Populations of Drosophila Pseudoobscura Inhabiting Isolated Mountain Ranges. Genetics 23: 463-484.
+Domingues, V.S., Poh, Y.P., Peterson, B.K., Pennings, P.S., Jensen, J.D. & Hoekstra, H.E. 2012. Evidence of adaptation from ancestral variation in young populations of beach mice. Evolution 66: 3209-3223.
+Ellegren, H., L. Smeds, R. Burri, P. I. Olason, N. Backström et al., 2012 The genomic landscape of species divergence in Ficedula flycatchers. Nature: 1-5.
+Elyashiv, E., S. Sattath, T. T. Hu, A. Strutsovsky, G. McVicker et al., 2016 A genomic map of the effects of linked selection in Drosophila. PLoS Genet 12: e1006130.
+Endler, J. A., 1977 Geographic variation, speciation, and clines, pp. Princeton University Press, Princeton, NJ.
+Evanno, G., S. Regnaut and J. Goudet, 2005 Detecting the number of clusters of individuals using the software STRUCTURE: a simulation study. Mol Ecol 14: 2611-2620.
+Fay, J. C., and C. I. Wu, 2000 Hitchhiking under positive Darwinian selection. Genetics 155: 1405-1413.
+Feder, J. L., and P. Nosil, 2010 The efficacy of divergence hitchhiking in generating genomic islands during ecological speciation. Evolution 64: 1729-1747.
+Feder, J. L., S. P. Egan and P. Nosil, 2012 The genomics of speciation-with-gene-flow. Trends Genet 28: 342-350.
+Feulner, P. G., F. J. Chain, M. Panchal, C. Eizaguirre, M. Kalbe et al., 2013 Genome-wide patterns of standing genetic variation in a marine population of three-spined sticklebacks. Mol Ecol 22: 635-649.
+Flaxman, S. M., J. L. Feder and P. Nosil, 2013 Genetic hitchhiking and the dynamic buildup of genomic divergence during speciation with gene flow. Evolution 67: 2577-2591.
+Fontaine, M.C., Pease, J.B., Steele, A., Waterhouse, R.M., Neafsey, D.E., Sharakhov, I.V. et al. 2015. Mosquito genomics. Extensive introgression in a malaria vector species complex revealed by phylogenomics. Science 347: 1258524.
+Francis, R.C., Baumgartner, J.V., Havens, A.C. & Bell, M.A. 1986. Historical and ecological sources of variation among lake populations of threespine sticklebacks, Gasterosteus aculeatus, near Cook Inlet, Alaska. Can J Zool 64: 2257-2265.
+Gautier, M., Gharbi, K., Cezard, T., Foucaud, J., Kerdelhue, C., Pudlo, P. et al. 2013. The effect of RAD allele dropout on the estimation of genetic variation within and between populations. Mol Ecol 22: 3165-3178.
+Gelmond, O., F. A. von Hippel and M. S. Christy, 2009 Rapid ecological speciation in three-spined stickleback Gasterosteus aculeatus from Middleton Island, Alaska: the roles of selection and geographic isolation. J Fish Biol 75: 2037-2051.
+Geraldes, A., P. Basset, K. L. Smith and M. W. Nachman, 2011 Higher differentiation among subspecies of the house mouse (Mus musculus) in genomic regions with low recombination. Mol Ecol 20: 4722-4736.
+Gillespie, J. H., 2000 Genetic drift in an infinite population: The pseudohitchhiking model. Genetics 155: 909-919.
+Glazer, A.M., Killingbeck, E.E., Mitros, T., Rokhsar, D.S. & Miller, C.T. 2015. Genome assembly improvement and mapping convergently evolved skeletal traits in sticklebacks with genotyping-by-sequencing. G3-Genes Genom Genet 5: 1463-1472.
+Grant, P.R. & Grant, B.R. 2002. Unpredictable evolution in a 30-year study of Darwin's finches. Science 296: 707-711.
+Guerrero, R.F., Rousset, F. & Kirkpatrick, M. 2012. Coalescent patterns for chromosomal inversions in divergent populations. Phil Trans Roy Soc B-Biol Sci 367: 430-438.
+Guo, B., J. DeFaveri, G. Sotelo, A. Nair and J. Merila, 2015 Population genomic evidence for adaptive differentiation in Baltic Sea three-spined sticklebacks. BMC Biol 13: 19.
+Hahn, M. W., 2008 Toward a selection theory of molecular evolution. Evolution 62: 255-265.
+Haller, B. C., and P. W. Messer, 2017 SLiM 2: flexible, interactive forward genetic simulations. Mol Biol Evol 34: 230-240.
+Han, F., S. Lamichhaney, B. R. Grant, P. R. Grant, L. Andersson et al., 2017 Gene flow, ancient polymorphism, and ecological adaptation shape the genomic landscape of divergence among Darwin's finches. Genome Res 27: 1004-1015.
+Hendry, A. P., and M. T. Kinnison, 1999 Perspective: The pace of modern life: Measuring rates of contemporary microevolution. Evolution 53: 1637-1653.
+Hendry, A. P., and M. T. Kinnison, 2001 An introduction to microevolution: rate, pattern, process. Genetica 112-113: 1-8.
+Hendry, A. P., J. K. Wenburg, P. Bentzen, E. C. Volk and T. P. Quinn, 2000 Rapid evolution of reproductive isolation in the wild: evidence from introduced salmon. Science 290: 516-519.
+Hendry, A.P., Taylor, E.B. & McPhail, J.D. 2002. Adaptive divergence and the balance between selection and gene flow: lake and stream stickleback in the Misty system. Evolution 56: 1199-1216.
+Hermisson, J., and P. S. Pennings, 2005 Soft sweeps: Molecular population genetics of adaptation from standing genetic variation. Genetics 169: 2335-2352.
+Hey, J., 2010 Isolation with migration models for more than two populations. Mol Biol Evol 27: 905-920.
+Hirase, S., H. Ozaki and W. Iwasaki, 2014 Parallel selection on gene copy number variations through evolution of three-spined stickleback genomes. BMC Genomics 15: 735.
+Hoekstra, H. E., K. E. Drumm and M. W. Nachman, 2004 Ecological genetics of adaptive color polymorphism in pocket mice: geographic variation in selected and neutral genes. Evolution 58: 1329-1341.
+Hohenlohe, P. A., J. Catchen and W. A. Cresko, 2012 Population genomic analysis of model and nonmodel organisms using sequenced RAD tags. Methods Mol Biol 888: 235-260.
+Hohenlohe, P. A., S. Bassham, M. Currey and W. A. Cresko, 2012 Extensive linkage disequilibrium and parallel adaptive divergence across threespine stickleback genomes. Philos Trans R Soc Lond B Biol Sci 367: 395-408.
+Hohenlohe, P.A., Bassham, S., Etter, P.D., Stiffler, N., Johnson, E.A. & Cresko, W.A. 2010. Population genomics of parallel adaptation in threespine stickleback using sequenced RAD tags. Plos Genet 6: e1000862.
+Holsinger, K., and B. Weir, 2009a Genetics in geographically structured populations: defining, estimating and interpreting F(ST). Nat Rev Genet 10: 639-650.
+Hubby, J. L., and R. C. Lewontin, 1966 A molecular approach to the study of genic heterozygosity in natural populations. I. The number of alleles at different loci in Drosophila pseudoobscura. Genetics 54: 577-594.
+Hudson, R. R., M. Slatkin and W. P. Maddison, 1992 Estimation of levels of gene flow from DNA-sequence data. Genetics 132: 583-589.
+Hudson, R.R., Slatkin, M. & Maddison, W.P. 1992. Estimation of levels of gene flow from DNA-sequence data. Genetics 132: 583-589.
+Huerta-Sánchez, E., Jin, X., Asan, Bianba, Z., Peter, B.M., Vinckenbosch, N. et al. 2014. Altitude adaptation in Tibetans caused by introgression of Denisovan-like DNA. Nature 512: 194-197.
+Jakobsson, M., M. D. Edge and N. A. Rosenberg, 2013 The relationship between F(ST) and the frequency of the most frequent allele. Genetics 193: 515-528.
+Jones, F.C., Grabherr, M.G., Chan, Y.F., Russell, P., Mauceli, E., Johnson, J. et al. 2012. The genomic basis of adaptive evolution in threespine sticklebacks. Nature 484: 55-61.
+Jones, M. R., L. S. Mills, P. C. Alves, C. M. Callahan, J. M. Alves et al., 2018 Adaptive introgression underlies polymorphic seasonal camouflage in snowshoe hares. Science 360: 1355-1358.
+Kaeuffer, R., C. L. Peichel, D. I. Bolnick and A. P. Hendry, 2012 Parallel and nonparallel aspects of ecological, phenotypic, and genetic divergence across replicate population pairs of lake and stream stickleback. Evolution 66: 402-418.
+Kern, A. D., and M. W. Hahn, 2018 The neutral theory in light of natural selection. Mol Biol Evol 35: 1366-1371.
+Kimmel, C. B., W. A. Cresko, P. C. Phillips, B. Ullmann, M. Currey et al., 2012 Independent axes of genetic variation and parallel evolutionary divergence of opercle bone shape in threespine stickleback. Evolution 66: 419-434.
+Kimmel, C.B., Ullmann, B., Walker, C., Wilson, C., Currey, M., Phillips, P.C. et al. 2005. Evolution and development of facial bone morphology in threespine sticklebacks. Proc Natl Acad Sci U S A 102: 5791-5796.
+Kimura, M., and T. Ota, 1971 Theoretical aspects of population genetics. Monogr Popul Biol 4: 1-219.
+Kingman, J.F.C. 1982a. The coalescent. Stochastic Processes and their Applications 13: 235-248.
+Kingman, J.F.C. 1982b. On the genealogy of large populations. J Appl Probab 19: 27-43.
+Kirkpatrick, M. & Barton, N. 2006. Chromosome inversions, local adaptation and speciation. Genetics 173: 419-434.
+Kitano, J., A. Ishikawa, M. Kume and S. Mori, 2012 Physiological and genetic basis for variation in migratory behavior in the three-spined stickleback, Gasterosteus aculeatus. Ichthyological Research 59: 293-303.
+Kitano, J., D. I. Bolnick, D. A. Beauchamp, M. M. Mazur, S. Mori et al., 2008 Reverse evolution of armor plates in the threespine stickleback. Curr Biol 18: 769-774.
+Kopp, M., and S. Matuszewski, 2014 Rapid evolution of quantitative traits: theoretical perspectives. Evol Appl 7: 169-191.
+Kusakabe, M., A. Ishikawa, M. Ravinet, K. Yoshida, T. Makino et al., 2017 Genetic basis for variation in salinity tolerance between stickleback ecotypes. Mol Ecol 26: 304-319.
+Langley, C. H., K. Stevens, C. Cardeno, Y. C. Lee, D. R. Schrider et al., 2012 Genomic variation in natural populations of Drosophila melanogaster. Genetics 192: 533-598.
+Laporte, M., S. A. Pavey, C. Rougeux, F. Pierron, M. Lauzent et al., 2016 RAD sequencing reveals within-generation polygenic selection in response to anthropogenic organic and metal contamination in North Atlantic Eels. Mol Ecol 25: 219-237.
+Leaver, S. D., and T. E. Reimchen, 2012 Abrupt changes in defence and trophic morphology of the giant threespine stickleback (Gasterosteus sp.) following colonization of a vacant habitat. Biol J Linn Soc 107: 494-509.
+Lee, K. M., and G. Coop, 2017 Distinguishing among modes of convergent adaptation using population genomic data. Genetics 207: 1591-1619.
+Lenormand, T., 2002 Gene flow and the limits to natural selection. Trends in Ecology & Evolution 17: 183-189.
+Lenormand, T., D. Bourguet, T. Guillemaud and M. Raymond, 1999 Tracking the evolution of insecticide resistance in the mosquito Culex pipiens. Nature 400: 861-864.
+Lescak, E.A., Bassham, S.L., Catchen, J., Gelmond, O., Sherbick, M.L., von Hippel, F.A. et al. 2015. Evolution of stickleback in 50 years on earthquake-uplifted islands. Proc Natl Acad Sci U S A 112: E7204-7212.
+Levin, D., 1995 Metapopulations: an arena for local speciation. Journal of Evolutionary Biology.
+Lewontin, R. C., and J. L. Hubby, 1966 A molecular approach to study of genic heterozygosity in natural populations .II. Amount of variation and degree of heterozygosity in natural populations of Drosophila pseudoobscura. Genetics 54: 595-609.
+Li, H., 2013 Aligning sequence reads, clone sequences and assembly contigs with BWA-MEM, pp.  in ArXiv e-prints.
+Li, H., Handsaker, B., Wysoker, A., Fennell, T., Ruan, J., Homer, N. et al. 2009. The Sequence alignment/map (SAM) format and SAMtools. Bioinformatics 25: 2078-2079.
+Li, L., M. Jean and F. Belzile, 2006 The impact of sequence divergence and DNA mismatch repair on homeologous recombination in Arabidopsis. Plant J 45: 908-916.
+Linnen, C.R., Kingsley, E.P., Jensen, J.D. & Hoekstra, H.E. 2009. On the origin and spread of an adaptive allele in deer mice. Science 325: 1095-1098.
+Lotterhos, K. E., and S. M. Schaal, 2014 Genome scans for the contemporary response to selection in quantitative traits. Mol Ecol 23: 4435-4437.
+Lucek, K., M. Lemoine and O. Seehausen, 2014 Contemporary ecotypic divergence during a recent range expansion was facilitated by adaptive introgression. J Evol Biol 27: 2233-2248.
+Marchinko, K. B., B. Matthews, M. E. Arnegard, S. M. Rogers and D. Schluter, 2014 Maintenance of a genetic polymorphism with disruptive natural selection in stickleback. Curr Biol 24: 1289-1292.
+Marques, D. A., K. Lucek, J. I. Meier, S. Mwaiko, C. E. Wagner et al., 2016 Genomics of Rapid Incipient Speciation in Sympatric Threespine Stickleback. PLoS Genet 12: e1005887.
+Mather, K., 1943 Polygenic inheritance and natural selection. Biological Reviews 18: 32-64.
+Maynard Smith, J., and J. Haigh, 1974 The hitch-hiking effect of a favourable gene. Genetical Research 23: 23-35.
+McCairns, R. J., and L. Bernatchez, 2010 Adaptive divergence between freshwater and marine sticklebacks: insights into the role of phenotypic plasticity from an integrated analysis of candidate gene expression. Evolution 64: 1029-1047.
+McCairns, R.J.S. & Bernatchez, L. 2012. Plasticity and heritability of morphological variation within and between parapatric stickleback demes. J Evol Biol 25: 1097-1112.
+McGuigan, K., Nishimura, N., Currey, M., Hurwit, D. & Cresko, W.A. 2011. Cryptic genetic variation and body size evolution in threespine stickleback. Evolution 65: 1203-1211.
+McKinnon, J. S., and H. D. Rundle, 2002 Speciation in nature: the threespine stickleback model systems. TREE 17: 480-488.
+McKinnon, J.S. & Rundle, H.D. 2002. Speciation in nature: the threespine stickleback model systems. Trends Ecol Evol 17: 480-488.
+Meier, J. I., D. A. Marques, S. Mwaiko, C. E. Wagner, L. Excoffier et al., 2017 Ancient hybridization fuels rapid cichlid fish adaptive radiations. Nat Comm 8: 14363.
+Meirmans, P. G., 2006 Using the AMOVA framework to estimate a standardized genetic differentiation measure. Evolution 60: 2399-2402.
+Messer, P. W., and D. A. Petrov, 2013 Population genomics of rapid adaptation by soft selective sweeps. Trends Ecol Evol 28: 659-669.
+Mettler, L. E., R. A. Voelker and T. Mukai, 1977 Inversion clines in populations of Drosophila melanogaster. Genetics 87: 169-176.
+Miller, C. T., A. M. Glazer, B. R. Summers, B. K. Blackman, A. R. Norman et al., 2014 Modular skeletal evolution in sticklebacks is controlled by additive and clustered quantitative trait Loci. Genetics 197: 405-420.
+Milligan-Myhre, K., C. M. Small, E. K. Mittge, M. Agarwal, M. Currey et al., 2016 Innate immune responses to gut microbiota differ between oceanic and freshwater threespine stickleback populations. Dis Model Mech 9: 187-198.
+Modrich, P., and R. Lahue, 1996 Mismatch repair in replication fidelity, genetic recombination, and cancer biology. Ann Rev Biochem 65: 101-133.
+Nachman, M. W., 2002 Variation in recombination rate across the genome: evidence and implications. Curr Opinion Genet Devel 12: 657-663.
+Nadeau, N. J., S. H. Martin, K. M. Kozak, C. Salazar, K. K. Dasmahapatra et al., 2013 Genome-wide patterns of divergence and gene flow across a butterfly radiation. Mol Ecol 22: 814-826.
+Nei, M. 1987. Molecular evolutionary genetics. Columbia university press.
+Nelson, T. C., and W. A. Cresko, 2018 Ancient genomic variation underlies repeated ecological adaptation in young stickleback populations. Evol Lett 2: 9-21.
+Nelson, T.C. et al. 2019. Genetics in Press
+Nielsen, R., S. Williamson, Y. Kim, M. J. Hubisz, A. G. Clark et al., 2005 Genomic scans for selective sweeps using SNP data. Genome Res 15: 1566-1575.
+Nordborg, M., B. Charlesworth and D. Charlesworth, 1996 The effect of recombination on background selection. Genet Res 67: 159-174.
+Nosil, P., and B. J. Crespi, 2006 Experimental evidence that predation promotes divergence in adaptive radiation. Proc Natl Acad Sci U S A 103: 9090-9095.
+Nosil, P., D. J. Funk and D. Ortiz-Barrientos, 2009 Divergent selection and heterogeneous genomic divergence. Mol Ecol 18: 375-402.
+O'Brown, N. M., B. R. Summers, F. C. Jones, S. D. Brady and D. M. Kingsley, 2015 A recurrent regulatory change underlying altered expression and Wnt response of the stickleback armor plates gene EDA. Elife 4: e05290.
+Opperman, R., E. Emmanuel and A. A. Levy, 2004 The effect of sequence divergence on recombination between direct repeats in Arabidopsis. Genetics 168: 2207.
+Ormond, L., Foll, M., Ewing, G.B., Pfeifer, S.P. & Jensen, J.D. 2016. Inferring the age of a ﬁxed beneﬁcial allele. Mol Ecol 25: 157-169.
+Orr, H. A., 2005 The genetic theory of adaptation: a brief history. Nat Rev Genet 6: 119-127.
+Otto, S.P. & Bourguet, D. 1999. Balanced polymorphisms and the evolution of dominance. Am Nat 153: 561-574.
+Paradis, E. 2010. pegas: an R package for population genetics with an integrated-modular approach. Bioinformatics 26: 419-420.
+Paradis, E., J. Claude and K. Strimmer, 2004 APE: Analyses of phylogenetics and evolution in R language. Bioinformat 20: 289-290.
+Pardo-Diaz, C., C. Salazar, S. W. Baxter, C. Merot, W. Figueiredo-Ready et al., 2012 Adaptive introgression across species boundaries in Heliconius butterflies. PLoS Genet 8.
+Pease, J.B., Haak, D.C., Hahn, M.W. & Moyle, L.C. 2016. Phylogenomics reveals three sources of adaptive variation during a rapid radiation. PLoS Biol 14: e1002379.
+Peter, B.M., Huerta-Sanchez, E. & Nielsen, R. 2012. Distinguishing between selective sweeps from standing variation and from a de novo mutation. PLoS Genet 8.
+Peterson, B.K., Weber, J.N., Kay, E.H., Fisher, H.S. & Hoekstra, H.E. 2012. Double digest RADseq: An inexpensive method for de novo SNP discovery and genotyping in model and non-model species. PLoS One 7.
+Pfeifer, B., U. Wittelsburger, S. E. Ramos-Onsins and M. J. Lercher, 2014 PopGenome: an efficient Swiss army knife for population genomic analyses in R. Mol Biol Evol 31: 1929-1936.
+Pfeifer, B., Wittelsburger, U., Ramos-Onsins, S.E. & Lercher, M.J. 2014. PopGenome: An Efficient Swiss Army Knife for Population Genomic Analyses in R. Mol Biol Evol 31: 1929-1936.
+Phillips, P.C. 2008. Epistasis: the essential role of gene interactions in the structure and evolution of genetic systems. Nat Rev Genet 9: 855-867.
+Plafker, G., 1969 The Alaska Earthquake, March 27, 1964: regional effects – the tectonics of the March 27, 1964 Alaska Earthquake. 543-I: 1-73.
+Plafker, G., and M. Rubin, 1978 Uplift history and earthquake recurrence as deduced from marine terraces on Middleton Island, Alaska. 78: 687-721.
+Poelstra, J. W., N. Vijay, C. M. Bossu, H. Lantz, B. Ryll et al., 2014 The genomic landscape underlying phenotypic integrity in the face of gene flow in crows. Science 344: 1410-1414.
+Pritchard, J. K., and A. Di Rienzo, 2010 Adaptation - not by sweeps alone. Nat Rev Genet 11: 665-667.
+Pritchard, J. K., J. K. Pickrell and G. Coop, 2010 The genetics of human adaptation: hard sweeps, soft sweeps, and polygenic adaptation. Curr Biol 20: R208-215.
+Pritchard, J. K., M. Stephens and P. Donnelly, 2000 Inference of population structure using multilocus genotype data. Genetics 155: 945-959.
+R Core Team (2016). R: A language and environment for statistical computing. R Foundation for Statistical Computing Vienna, Austria.
+Radwan, J., and W. Babik, 2012 The genomics of adaptation. Proc Biol Sci 279: 5024-5028.
+Reid, N. M., D. A. Proestou, B. W. Clark, W. C. Warren, J. K. Colbourne et al., 2016 The genomic landscape of rapid repeated evolutionary adaptation to toxic pollution in wild fish. Science 354: 1305-1308.
+Reimchen, T. E., 1994 Predators and morphological evolution in threespine stickleback, pp. 240-276 in The Evolutionary Biology of the Threespine Stickleback, edited by M. A. Bell and S. A. Foster. Oxford University Press, New York.
+Reimchen, T. E., C. Bergstrom and P. Nosil, 2013 Natural selection and the adaptive radiation of Haida Gwaii stickleback. Evol Ecol Res 15: 241-269.
+Roesti, M., D. Moser and D. Berner, 2013 Recombination in the threespine stickleback genome - Patterns and consequences. Mol Ecol 22: 3014-3027.
+Roesti, M., Gavrilets, S., Hendry, A.P., Salzburger, W. & Berner, D. 2014. The genomic signature of parallel adaptation from shared genetic variation. Mol Ecol 23: 3944-3956.
+Roesti, M., Kueng, B., Moser, D. & Berner, D. 2015. The genomics of ecological vicariance in threespine stickleback fish. Nat Commun 6: 8767.
+Samuk, K., Owens, G.L., Delmore, K.E., Miller, S.E., Rennison, D.J. & Schluter, D. 2017. Gene flow and selection interact to promote adaptive divergence in regions of low recombination. Mol Ecol 26: 4378-4390.
+Sardell, J. M., C. D. Cheng, A. J. Dagilis, A. Ishikawa, J. Kitano et al., 2018 Sex Differences in Recombination in Sticklebacks. G3-Genes Genomes Genetics 8: 1971-1983.
+Savolainen, O., M. Lascoux and J. Merila, 2013 Ecological genomics of local adaptation. Nat Rev Genet 14: 807-820.
+Scheet, P., and M. Stephens, 2006 A fast and flexible statistical model for large-scale population genotype data: applications to inferring missing genotypes and haplotypic phase. Am J Hum Genet 78: 629-644.
+Schliep, A., I. G. Costa, C. Steinhoff and A. Schonhuth, 2005 Analyzing gene expression time-courses. IEEE/ACM Trans Comput Biol Bioinform 2: 179-193.
+Schlotterer, C., Tobler, R., Kofler, R. & Nolte, V. 2014. Sequencing pools of individuals-mining genome-wide polymorphism data without big funding. Nat Rev Genet 15: 749-763.
+Schluter, D. & Conte, G.L. 2009. Genetics and ecological speciation. Proc Natl Acad Sci U S A 106 Suppl 1: 9955-9962.
+Schluter, D., E. A. Clifford, M. Nemethy and J. S. McKinnon, 2004 Parallel evolution and inheritance of quantitative traits. Am Nat 163: 809-822.
+Schrider, D. R., and A. D. Kern, 2017 Soft sweeps are the dominant mode of adaptation in the human genome. Mol Biol Evol 34: 1863-1877.
+Shapiro, M. D., M. E. Marks, C. L. Peichel, B. K. Blackman, K. S. Nereng et al., 2004 Genetic and developmental basis of evolutionary pelvic reduction in threespine sticklebacks. Nature 428: 717-723.
+Shapiro, M.D., Summers, B.R., Balabhadra, S., Aldenhoven, J.T., Miller, A.L., Cunningham, C.B. et al. 2009. The genetic architecture of skeletal convergence and sex determination in ninespine sticklebacks. Curr Biol 19: 1140-1145.
+Shikano, T., Laine, V.N., Herczeg, G., Vilkki, J. & Merilä, J. 2013. Genetic architecture of parallel pelvic reduction in ninespine sticklebacks. G3-Genes Genom Genet 3: 1833-1842.
+Slatkin, M., 1985 Gene flow in natural populations. Ann Rev Ecol Systemat 16: 393-430.
+Slatkin, M., 1991 Inbreeding coefficients and coalescence times. Genet Res 58: 167-175.
+Slatkin, M., and T. Wiehe, 1998 Genetic hitch-hiking in a subdivided population. Genet Res 71: 155-160.
+Stankowski, S., and M. A. Streisfeld, 2015 Introgressive hybridization facilitates adaptive divergence in a recent radiation of monkeyflowers. Proc R Soc B-Biol Sci 282: 20151666.
+Stankowski, S., J. M. Sobel and M. A. Streisfeld, 2017 Geographic cline analysis as a tool for studying genome-wide variation: a case study of pollinator-mediated divergence in a monkeyflower. Mol Ecol 26: 107-122.
+Stankowski, S., M. A. Chase, A. M. Fuiten, P. L. Ralph and M. A. Streisfeld, 2018 The tempo of linked selection: Rapid emergence of a heterogeneous genomic landscape during a radiation of monkeyflowers. BioRxiv.
+Stephens, M. & Scheet, P. 2005. Accounting for decay of linkage disequilibrium in haplotype inference and missing-data imputation. Am J Hum Genet 76: 449-462.
+Stephens, M., N. J. Smith and P. Donnelly, 2001 A new statistical method for haplotype reconstruction from population data. American Journal of Human Genetics 68: 978-989.
+Stuart, Y. E., T. Veen, J. N. Weber, D. Hanson, M. Ravinet et al., 2017 Contrasting effects of environment and genetics generate a continuum of parallel evolution. Nat Ecol Evol 1: 0158.
+Suchard, M. A., P. Lemey, G. Baele, D. L. Ayres, A. J. Drummond et al., 2018 Bayesian phylogenetic and phylodynamic data integration using BEAST 1.10. Virus Evol 4.
+Tajima, F. 1983. Evolutionary relationship of DNA-sequences in finite populations. Genetics 105: 437-460.
+Tavares, H., A. Whibley, D. L. Field, D. Bradley, M. Couchman et al., 2018 Selection and gene flow shape genomic islands that control floral guides. Proc Natl Acad Sci U S A 115: 11006.
+Team, R. C., 2016 R: A language and environment for statistical computing, pp. R Foundation for Statistical Computing, Vienna, Austria.
+Terekhanova, N. V., M. D. Logacheva, A. A. Penin, T. V. Neretina, A. E. Barmintseva et al., 2014 Fast evolution from precast bricks: genomics of young freshwater populations of threespine stickleback Gasterosteus aculeatus. PLoS Genet 10: e1004696.
+Thompson, C. E., E. B. Taylor and J. D. McPhail, 1997 Parallel evolution of lake-stream pairs of threespine sticklebacks (Gasterosteus) inferred from mitochondrial dna variation. Evolution 51: 1955-1965.
+Thompson, J. N., 1998 Rapid evolution as an ecological process. Trends in Ecology & Evolution 13: 329-332.
+Troth, A., J. R. Puzey, R. S. Kim, J. H. Willis and J. K. Kelly, 2018 Selective trade-offs maintain alleles underpinning complex trait variation in plants. Science 361: 475-478.
+Turner, T. L., M. W. Hahn and S. V. Nuzhdin, 2005 Genomic islands of speciation in Anopheles gambiae. PLoS Biol 3: 1572-1578.
+Van Belleghem, S. M., C. Vangestel, K. De Wolf, Z. De Corte, M. Möst et al., 2018 Evolution at two time frames: Polymorphisms from an ancient singular divergence event fuel contemporary parallel evolution. PLoS Genet 14: e1007796.
+Vijay, N., M. Weissensteiner, R. Burri, T. Kawakami, H. Ellegren et al., 2017 Genomewide patterns of variation in genetic diversity are shared among populations, species and higher-order taxa. Mol Ecol 26: 4284-4295.
+Wakeley, J. 2009. Coalescent Theory: An Introduction. Harvard University.
+Walker, J. A., and M. A. Bell, 2000 Net evolutionary trajectories of body shape evolution within a microgeographic radiation of threespine sticklebacks (Gasterosteus aculeatus). Journal of Zoology 252: 293-302.
+Wallbank, R. W., S. W. Baxter, C. Pardo-Diaz, J. J. Hanly, S. H. Martin et al., 2016 Evolutionary novelty in a butterfly wing pattern through enhancer shuffling. PLoS Biol 14: e1002353.
+Weir, B. S., 1996 Genetic Data Analysis II. Sinauer Associates, Sunderland, MA.
+Weir, B. S., and C. C. Cockerham, 1984 Estimating F-Statistics for the Analysis of Population-Structure. Evolution 38: 1358-1370.
+Whitlock, M. C., and N. H. Barton, 1997 The effective size of a subdivided population. Genetics 146: 427-441.
+Willing, E.M., Dreyer, C. & van Oosterhout, C. 2012. Estimates of genetic differentiation measured by FST do not necessarily require large sample sizes when using many SNP markers. Plos One 7.
+Wolf, J. B., and H. Ellegren, 2017 Making sense of genomic islands of differentiation in light of speciation. Nat Rev Genet 18: 87-100.
+Wright, K.M., Lloyd, D., Lowry, D.B., Macnair, M.R. & Willis, J.H. 2013. Indirect evolution of hybrid lethality due to linkage with selected locus in Mimulus guttatus. PLoS Biol 11.
+Wright, S. 1932. The roles of mutation, inbreeding, crossbreeding and selection in evolution. Procs Sixth Internat Con Genet 1: 356-366.
+Wright, S., 1931 Evolution in Mendelian populations. Genetics 16: 97-159.
+Wu, T. D., and S. Nacu, 2010 Fast and SNP-tolerant detection of complex variants and splicing in short reads. Bioinformat 26: 873-881.
+Wund, M.A., Singh, O.D., Geiselman, A. & Bell, M.A. 2016. Morphological evolution of an anadromous threespine stickleback population within one generation after reintroduction to Cheney Lake, Alaska. Evol Ecol Res 17: 203-224.
+Yeaman, S., and M. C. Whitlock, 2011 The genetic architecture of adaptation under migration-selection balance. Evolution 65: 1897-1911.
+Yeaman, S., and S. P. Otto, 2011 Establishment and maintenance of adaptive genetic divergence under migration, selection, and drift. Evolution 65: 2123-2129.
+
