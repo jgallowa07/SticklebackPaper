@@ -24,11 +24,11 @@
 
 \begin{document}
 
+
 \title{A few stickleback suffice for the transport of alleles to new lakes}
 \author{Jared Galloway, William A. Cresko, and Peter Ralph}
 \maketitle
-%\jgg{To me, this title makes it sound like only a "select few" stickleback have the ability to transport, no?}
-%\wac{How about 'A small number of stickleback ... }
+
 
 \section*{Abstract}
 
@@ -46,31 +46,49 @@ Surprisingly, we find that the genealogical origins of most freshwater adapted a
 These simulations provide deeper context for existing studies of stickleback evolutionary genomics, and guidance for future empirical studies in this model.
 More broadly, our results support existing theory of local adaptation but extend it by more completely documenting the genealogical history of adaptive alleles in a metapopulation.  
 
+
 \section*{Introduction}
 
-The canonical model for the genetics of adaptation has long been the sequential fixation of new mutations \textbf{smith_haigh_1974 Endler_1977 Orr_2005}.
-While it has proved to be a useful baseline for understanding the genetic variation we see in species today, this model is now rightfully understood as incomplete for many species in nature that have more complicated population structures \textbf{Lai2152, Schrider2017}. 
-In particular, empirical studies have increasingly identified the need to more deeply incorporate standing genetic variation (SGV) into adaptation dynamics for metapopulations inhabiting an array of habitats \textbf{Hermisson_2005, Barrett_2008, Peter_2012, Burke_2014}. Populations experiencing diverse selective pressures while still exhibiting significant gene flow often result in more complex genomic signals that are still not fully understood \textbf{Charlesworth_1997, Charlesworth_2003, Leonormand_2002, Nosil_2009, Flaxman_2013, Samuk 2017}. 
-A growing number of empirical studies have identified instances of convergent evolution using SGV \citep{Schrider2017,Barrett2008}, \textbf{Burke 2014, Nelson_2018, Nelson_2019, Bassham_2018}. 
-However, it is still not clear how variation in evolutionary processes - such as gene flow, recombination, selection and mutation -  can promote the maintenance and re-use of SGV, particularly during colonization and adaptation to new environments \citep{nelson2017ancient}\textbf{Pritchard_2010,Yeaman_2011, Messer_2013, Shrider2017}. 
+The canonical model for the genetics of adaptation has long been the sequential fixation of new mutations 
+\citep{smith_haigh_1974, Endler_1977, Orr_2005}.
+While it has proved to be a useful baseline for understanding the genetic variation we see in species today, this model is now rightfully understood as incomplete for many species in nature that have more complicated population structures 
+\citep{Lai2152, Schrider2017}. 
+In particular, empirical studies have increasingly identified the need to more deeply incorporate standing genetic variation (SGV) into adaptation dynamics for metapopulations inhabiting an array of habitats 
+\citep{Hermisson_2008, Barrett2008}. 
+Populations experiencing diverse selective pressures while still exhibiting significant gene flow often result in more complex genomic signals that are still not fully understood 
+\citep{Charlesworth_1997, Charlesworth_2003, Nosil_2009, Flaxman_2013, Samuk_2017}. 
+A growing number of empirical studies have identified instances of convergent evolution using SGV 
+\citep{Schrider2017, Barrett2008, Nelson_2018, Nelson_2019, Bassham_2018}. 
+However, it is still not clear how variation in evolutionary processes - such as gene flow, recombination, selection and mutation -  can promote the maintenance and re-use of SGV, particularly during colonization and adaptation to new environments
+\citep{nelson2017ancient, Pritchard_2010, yeaman2011genetic, Schrider2017}. 
 It is similarly unclear whether variation in these evolutionary processes can determine the genetic architecture of evolving traits via SGV. 
 While empirical studies in the field and lab are essential, modeling specific systems can help us understand the nature of standing genetic variants to fuel local adaptation as well as the genomic signals we can expect to see.
 
-The ancestral marine form of threespine stickleback fish has given rise to millions of independently derived freshwater populations in recently de-glaciated regions around the Northern Hemisphere \textbf{Bell_1994, Bell_1994, Thompson_1997, Cresko_2007}. 
-This model organism has provided some of the earliest data in a recent flood showing the heterogeneous nature of divergence across genomes \textbf{Hohenlohe_2010, Jones_2012, Terekhanova_2014, Marques_2016} and the much more extensive use of SGV than once thought \textbf{Schluter_2009, Roesti_2014,Nelson_2018, Bassham_2018, Nelson_2019}.  
-While geographic isolation often prevents direct migration between freshwater populations, they frequently evolve similar phenotypes \textbf{Cresko_2004, Colosimo_2004, Shapiro_2005}. 
-The most recent evolutionary genomic studies on stickleback document that while the overall dynamic of local adaptation to marine and freshwater habitats has been occurring for millions of years \textbf{Jones_2012, Nelson_2018}, independent local adaptation of marine individuals to freshwater environments has been observed to take place in just tens of generations \textbf{Terekhanova_2014, Lescak_2015, Bassham_2018}. 
-For example, in 1964 the Great Alaskan Earthquake caused an uplift of many islands and coastal regions throughout the Gulf of Alaska \textbf{Pflaker_1969, Pflaker_1978}. 
-Studies of stickleback populations on uplifted Middleton Island showed that newly created freshwater ponds were invaded by the surrounding marine population of stickleback which evolved the freshwater syndrome of phenotypes in less than 50 years (\textbf{Lescak_2015, Bassham_2018}). 
-Amazingly, nearly a quarter of the genome diverged significantly in this same time but - with very little change in the rest of the genome - in a pattern that mirrored previous genomic studies of freshwater stickleback populations that have been geographically separated for thousands of years \textbf{Hohenlohe_2010, Bassham_2018}. 
+The ancestral marine form of threespine stickleback fish has given rise to millions of independently derived freshwater populations in recently de-glaciated regions around the Northern Hemisphere 
+\citep{Bell_1994, Thompson_1997, Cresko_2007}. 
+This model organism has provided some of the earliest data in a recent flood showing the heterogeneous nature of divergence across genomes 
+and the much more extensive use of SGV than once thought 
+\citep{schluter2009genetics, Roesti_2014, Nelson_2018, Bassham_2018, Nelson_2019, Hohenlohe_2010, Terekhanova_2014, Marques_2016}.  
+While geographic isolation often prevents direct migration between freshwater populations, they frequently evolve similar phenotypes 
+\citep{Cresko_2004, Colosimo_2004}. 
+The most recent evolutionary genomic studies on stickleback document that while the overall dynamic of local adaptation to marine and freshwater habitats has been occurring for millions of years 
+\citep{Nelson_2018}, independent local adaptation of marine individuals to freshwater environments has been observed to take place in just tens of generations \citep{Terekhanova_2014, Lescak2015evolution, Bassham_2018}. 
+For example, in 1964 the Great Alaskan Earthquake caused an uplift of many islands and coastal regions throughout the Gulf of Alaska. 
+Studies of stickleback populations on uplifted Middleton Island showed that newly created freshwater ponds were invaded by the surrounding marine population of stickleback which evolved the freshwater syndrome of phenotypes in less than 50 years 
+\citep{Lescak2015evolution, Bassham_2018}. 
+Amazingly, nearly a quarter of the genome diverged significantly in this same time but - with very little change in the rest of the genome - in a pattern that mirrored previous genomic studies of freshwater stickleback populations that have been geographically separated for thousands of years 
+\citep{Hohenlohe_2010, Bassham_2018}. 
+
 
 But how can evolution occur at such a rapid pace?
 Waiting for new mutations to arise in each lake or pond would take much longer than the decades since the Alaskan earthquake. 
 Even more improbable is having divergence cluster in such similar genomic regions across independent populations. 
 An alternative hypothesis, supported by the most recent population genomic analyses, is that the majority of alleles important for freshwater adaptation are maintained in the marine individuals due to recurrent gene flow from freshwater back in to marine populations. 
 In 2009 \citet{schluter2009genetics} proposed a conceptual model they termed the ``transporter''- hypothesis to describe the process of alleles beneficial in freshwater environment being maintained at migration-selection balance in the larger oceanic population and thus available for subsequent adaptation to new freshwater habitats.
-The first clear example of the global reuse of SGV in stickleback was the gene \textit{eda} which has been shown to be an important regulator for the number of bony lateral plates \textbf{Colosimo_2004, Cresko_2004, Colosimo_2005}. 
-While the low lateral plate version of this gene arose millions of years ago, it is found in much younger freshwater ponds around the Northern Hemisphere \textbf{O'Brown_2015}. 
+The first clear example of the global reuse of SGV in stickleback was the gene \textit{eda} which has been shown to be an important regulator for the number of bony lateral plates 
+\citep{Colosimo_2004, Cresko_2004, Colosimo_2005}. 
+While the low lateral plate version of this gene arose millions of years ago, it is found in much younger freshwater ponds around the Northern Hemisphere 
+\citep{O'Brian_2015}. 
 More recently, genome-wide haplotype analyses have provided evidence that \textit{most} regions of the genome that distinguish marine-freshwater genetic differences share this pattern \citep{nelson2017ancient}. 
 
 While this growing body of population genomic data on stickleback evolution support the transporter hypothesis, a number of questions remain. 
@@ -165,6 +183,7 @@ These new lakes are populated with marine individuals to emulate a freshwater la
 This creates two \emph{sets} of lakes, which along with the marine population have a total of 15,000 individuals. Since this introduction of lakes doubles the number of lake-to-marine immigrants, the probability that a new marine individual has freshwater parents is $2m$ instead of $m$.
 
 \paragraph{Recording genealogical history}
+
 We used SLiM's ability to record \emph{tree sequences} \citep{haller2018treesequence,Kelleher2016} to output the genealogical history of all individuals at the time of introduction of new lakes, at the time of adaptation, and at the end of the simulation. This allowed us to directly query the true origins of adaptive alleles. 
 In addition, it allowed for much larger simulations by avoiding the computationally expensive task of simulating neutral mutations which were retroactively added to the gene trees at a rate of $10^{-8}$ per locus per generation, as described in \citet{kelleher2018efficient}.
 The output tree sequence from each simulation allows us to explore the origin of the genetic basis of adaptation in the new lakes. 
