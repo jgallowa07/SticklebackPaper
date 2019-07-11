@@ -400,7 +400,7 @@ first, stronger genetic drift with less migration leads to higher background $F_
 
 At first glance, this suggests that genome scans for local adaptation based purely on measures of differentiation will only be successful given enough migration between habitats. 
 But how many of these peaks are actually underlying trait differences that form the basis for local adaptation? 
-To quantify this, Figure \ref{fig:Power_FP} shows the power and false positive rates that would be obtained by an $F_{ST}$ cutoff that declared everything above a certain value to be a causal locus. 
+To quantify this, Figure \ref{fig:Power_FP} shows the power and true positive rates that would be obtained by an $F_{ST}$ cutoff that declared everything above a certain value to be a causal locus. 
 
 What we observe most plainly in this graph is that $M = 1.0$ and $M = 10.0$ migrants per lake per generation 
 are the only rates of dispersal at which a large percentage of peaks (above $F_{ST} = 0.05$) 
@@ -438,13 +438,13 @@ If effectively capturing standing genetics variants is the key to rapid adaptati
 %Figure~\ref{fig:MPFAI}A shows that with $M = 0.1$ migrants per lake per generation, there is substantial sharing of alleles between populations.
 %So why does it take $M = 0.1$ scenario nearly 2,000 generations to adapt. 
 This is surprising because we see a similar quantity of allele sharing at  $M = 1.0$, but much more rapid adaptation ($\approx 60$ versus 2000 generations).
-%A reasonable explanation for this 33-fold discrepancy is that new lakes must wait for an additional influx of freshwater alleles through migration beyond what is present in the initial generation. However, Figure~\ref{fig:Origin} shows this is not the case: at both $m = 0.1$ and $m = 1.0$, the vast majority of alleles responsible for local adaptation came from individuals in the original generation (``captured'').
+%A reasonable explanation for this 33-fold discrepancy is that new lakes must wait for an additional influx of freshwater alleles through migration beyond what is present in the initial generation. However, Figure~\ref{fig:Origin} shows this is not the case: at both $M = 0.1$ and $M = 1.0$, the vast majority of alleles responsible for local adaptation came from individuals in the original generation (``captured'').
 
 \begin{table}[ht]
     \centering
     \begin{tabular}{rrrrr}
       \hline
-     & m=0.01 & m=0.1 & m=1 & m=10 \\ 
+     & M=0.01 & M=0.1 & M=1 & M=10 \\ 
       \hline
           best & 2.77 & -12.02 & -21.02 & -7.02 \\ 
       % expected & 4.22 & -4.78 & -14.64 & -5.47 \\ 
@@ -559,9 +559,9 @@ Thus, the large marine population was able to harbor and distribute deleterious 
     \begin{center}
           \includegraphics{Final_Plots/True_Power_0_25_500.pdf}
           \caption{ 
-        Statistical Power and False Positives as a function of $F_{ST}$ threshold. 
-        Statistical Power is the likelihood that a SNP will be predicted to have an effect on phenotype when there is an effect to be detected.
-        False Positives give us the ratio of SNPs that effect phenotype to total SNPs greater than the $F_{ST}$ threshold.
+        Statistical power and true positive rate as a function of $F_{ST}$ threshold. 
+        Statistical power is the likelihood that a SNP will be predicted to have an effect on phenotype when there is an effect to be detected.
+        True positive rate is the proportion of SNPs above the $F_{ST}$ threshold that affect phenotype.
           \label{fig:Power_FP}
           }
     \end{center}
@@ -571,9 +571,8 @@ Thus, the large marine population was able to harbor and distribute deleterious 
     \begin{center}
         \includegraphics{Final_Plots/True_Power_0_5_500.pdf}
           \caption{ 
-        Statistical Power and False Positives as a function of $F_{ST}$ threshold. 
-        Statistical Power is the likelihood that a SNP will be predicted to have an effect on phenotype when there is an effect to be detected.
-        False Positives give us the ratio of SNPs that effect phenotype to total SNPs greater than the $F_{ST}$ threshold.
+        Statistical power and true positive rate as a function of $F_{ST}$ threshold. As in Figure \ref{fig:Power_FP}
+        but computed only using the first one-fifth of the total range -- i.e., fish in the first five lakes and those in the ocean with coordinate less than 5.0.
          	}
           \label{fig:Power_FP_5lakes}
     \end{center}
@@ -584,7 +583,7 @@ Thus, the large marine population was able to harbor and distribute deleterious 
     \begin{center}
           \includegraphics[width=1.0\linewidth]{Final_Plots/Haplo_small.pdf}
           \caption{
-            Phenotypes (\textbf{Top}) (effect size and mutation type) and haplotypes \textbf{(Botton)} as a function of spatial position of the individual 
+            Phenotypes (\textbf{Top}) (effect size and mutation type) and haplotypes \textbf{(Bottom)} as a function of spatial position of the individual 
             possessing the genome. The phenotype of each haplotype is, by definition, the sum of the 
             effect sizes of each mutation in the genome. 
         }
@@ -624,7 +623,7 @@ Thus, the large marine population was able to harbor and distribute deleterious 
                 with columns corresponding to increasing gene flow from left to right.
         $F_{st}$ is calculated between all marine individuals with spatial location $\le 5.0$, and the five corresponding lakes.
         All locations of pre-existing freshwater adapted alleles have been highlighted by 
-        pink dashed vertical lines with an alpha value of 0.3, so darker shades of blue imply more 
+        partially transparent pink dashed vertical lines, so darker shades of blue imply more 
         freshwater adapted alleles at that location.
         }
           \label{fig:fst_5lakes}
@@ -674,7 +673,7 @@ This study was in large, supportive of the ``Transporter"-hypothesis suggested b
 Provided there is enough dispersal, we found that repeated colonization and adaptation of freshwater stickleback was able to produce beneficial alleles which could then be 
 supported by the marine stickleback population through the offspring of hybridization events. 
 When new freshwater environments were colonized by the marine stickleback, selection was able to rebuild the freshwater haplotype. 
-Shown in Table~\ref{tab:linkage}, we found that a populations capacity to cary maladaptive alleles remains pretty constant over realistic ranges of dispersal, but low rates of gene flow may 
+Shown in Table~\ref{tab:linkage}, we found that a populations capacity to carry maladaptive alleles remains pretty constant over realistic ranges of dispersal, but low rates of gene flow may 
 "mask" the alleles through linkage which counteracts the fitness disadvantage. 
 This linkage prevents the ability for a sub-population to rapidly select on the beneficial standing genetic variation as recombination acts as a bottleneck to evolution in this situation. 
 Additionally, In Figure~\ref{fig:Origin} we found that the genetic basis for local adaptation, when selecting on standing genetic variation, is propagated largely from the initial generation of inhabitants. 
@@ -771,9 +770,9 @@ the optimal freshwater trait value
 does not ensure adaptation will actually occur with these alleles.
 On the contrary, many of these will likely be lost to drift.
 
-Between $m = 0.1$ and $m = 1.0$ we see a large difference in the total effect sizes of the haplotypes that are expected to fix.
+Between $M = 0.1$ and $M = 1.0$ we see a large difference in the total effect sizes of the haplotypes that are expected to fix.
 Given these numbers were computed assuming additivity (slight overestimate) and individuals are diploid,
-at $m = 0.1$ the mean total genotype expected to fix in the populations puts individuals at a trait value of $\approx -8$ 
+at $M = 0.1$ the mean total genotype expected to fix in the populations puts individuals at a trait value of $\approx -8$ 
 after selection on alleles haplotypes in the initial population. 
 In turn, the population must wait for novel mutation or subsequent migration to provide the alleles for the remaining 2 units before 
 attaining a mean average trait value at the optimum (-10).
