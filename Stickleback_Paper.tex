@@ -61,7 +61,7 @@ Populations experiencing diverse selective pressures while still exhibiting sign
 Concurrently, a growing number of empirical studies have identified instances of convergent evolution using standing genetic variation 
 \citep{Schrider2017, Barrett2008, Nelson_2018, Nelson_2019, Bassham_2018}. 
 However, it is still not clear how variation in evolutionary processes - such as gene flow, recombination, selection and mutation -  can promote the maintenance and re-use of standing genetic variation, particularly during colonization and adaptation to new environments
-\citep{nelson2017ancient, Pritchard_2010, yeaman2011genetic, Schrider2017}. 
+\citep{Nelson_2018, Pritchard_2010, yeaman2011genetic, Schrider2017}. 
 It is similarly unclear whether variation in these evolutionary processes can determine the genetic architecture of evolving traits via standing genetic variation. 
 Theoretical work is mostly limited to one or two loci, or relies on approximations of uncertain validity
 \citep[e.g.,][]{slatkin1975selection,petry1983effect,barton1986barrier,yeaman2011genetic,ralph2015standing}.
@@ -95,7 +95,7 @@ Even more improbable is having divergence cluster in such similar genomic region
 An alternative hypothesis
 is that the majority of alleles important for freshwater adaptation are maintained in the marine individuals due to recurrent gene flow from freshwater back in to marine populations. 
 \citet{schluter2009genetics} proposed a conceptual model they termed the ``transporter'' hypothesis to describe the process by which 
-alleles beneficial in freshwater environments are maintained at migration-selection balance in the larger oceanic population and thus available for subsequent adaptation to new freshwater habitats.
+alleles beneficial in freshwater environments are maintained at migration-selection balance in the larger oceanic population and therefore available to be utilized during subsequent adaptation to new freshwater habitats.
 (The alleles conferring adaptation to freshwater environments are thereby ``transported'' to and reassembled in new lakes.)
 The first clear example of the global reuse of such alleles in stickleback was the gene \textit{eda} which has been shown to be an important regulator for the number of bony lateral plates 
 \citep{Colosimo_2004, Cresko_2004, Colosimo_2005}. 
@@ -107,8 +107,7 @@ While the growing body of population genomic data on stickleback evolution suppo
 What are the actual population sizes, migration rates, and fitness differentials consistent with this hypothesis? 
 How many differentially selected alleles exist, how many are used at any one time, and how are they arranged within the genome? 
 A curious natural history observation underlying many of these questions is the fact that some newly formed freshwater habitats, such as the ponds on Middleton Island, 
-are quite small and presumably the number of initial marine migrants is few,
-thus presumably representing a small portion of available variation.
+are quite small and presumably the number of initial marine migrants is few. The variation carried by these few initial migrants might therefore be a small subset of the total variation, and thus be insufficient to fuel adaptation without subsequent influx of alleles from additional generations of marine migrants carrying the remaining freshwater adaptive alleles.
 
 Here, we use individual-based forward simulations implemented in SLiM that incorporates selection on a quantitative trait
 explicitly determined additively from a realistically long genome to model the stickleback metapopulation and address these questions \citep{haller2017slim,haller2018slim3}. 
@@ -116,17 +115,20 @@ We ask how variation in amount of gene flow affects the genetic architecture of 
 Because we record the entire genealogy of all alleles \citep{kelleher2018efficient}, 
 we can determine the distribution and abundance of haplotypes across all marine and freshwater populations to know the timing and proportion of potentially adaptive alleles that are actually utilized in each population. 
 In addition, we can document how these adaptive alleles are distributed across the genomes, and as a consequence determine how this may affect the efficacy of genome scans for between-habitat differentiation. 
-We find that only a few stickleback migrants per lake per generation are sufficient to maintain standing genetic variation in the ocean, allowing new freshwater populations to adapt in only tens of generations. 
+
+-- I'm wondering if we can drop the following sentences that describe the findings from the Introduction. We state similar things in the abstract already, and the Introduction ends nicely with the previous sentence --
+
+**We find that only a few stickleback migrants per lake per generation are sufficient to maintain standing genetic variation in the ocean, allowing new freshwater populations to adapt in only tens of generations. 
 We also find that continued gene flow of marine individuals into recently established lakes is not necessary for adaptation as the majority of alleles are present in the initial marine colonizers. 
 Finally, we find that this rapid, local adaptation can only occur over an intermediate range of levels of gene flow. 
 Low gene flow prevents variation from being 
 maintained in the ocean if it is maladaptive there, while high gene flow prevents local adaptation. 
-Together these simulation findings enhance and extend the existing rich empirical work on stickleback evolutionary genomics.
+Together these simulation findings enhance and extend the existing rich empirical work on stickleback evolutionary genomics.**
 
 \section*{Methods}
 
 To explore these questions, we used SLiM \citep{haller2017slim,haller2018slim3} to implement forward-time simulation of populations of individuals with explicitly represented genomes in which selection acted upon a single continuous quantitative trait. 
-The details of the model were motivated by current understanding of threespine stickleback evolutionary history and demography, and included divergent selection in the two habitats which had substantial spatial structure. 
+The details of the model were motivated by current understanding of threespine stickleback evolutionary history and demography, and included divergent selection in the two habitats which had substantial spatial structure.
 Certain aspects of the model remain simplistic due to computational constraints;
 in particular, total population sizes are much smaller than in reality,
 although we may capture a good picture of local dynamics.
@@ -325,7 +327,7 @@ This difference occurs because in the absence of gene flow, each lake must wait 
 Because the marine habitat is continuous, with 25 times more individuals than any one lake, there is a much larger influx of new mutations to be selected upon. 
 At higher migration rates, greater mixing allows the initial lakes to share alleles instead of developing their own genetic basis for adaptation. 
 
-To investigate in more depth how locally adaptive alleles found in the original lakes are shared between lakes, as well as how they spread to the new lakes, we defined and tracked the distribution of ``pre-existing freshwater adapted alleles'' at the beginning of each generation. 
+To investigate in more depth how locally adaptive alleles found in the original lakes are shared among newly derived lakes, as well as how they spread to the new lakes, we defined and tracked the distribution of ``pre-existing freshwater adapted alleles'' at the beginning of each generation. 
 To be considered in this category, an allele must participate in the genetic basis of local adaptation for at least one of the original lakes. 
 Concretely, these are any non-neutral mutations whose frequency is above 50\% in at least one original lake and below 50\% in the marine habitat. 
 (So, ``captured'' alleles as defined above are pre-existing, but not all pre-existing alleles are captured.)
@@ -419,7 +421,7 @@ More generally, the difficulty of correctly identifying causal loci in even our 
 calls for caution (and proof-of-concept simulations) in designing and carrying out scans for alleles underlying locally adaptive, polygenic traits.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Freshwater adaptation is mostly present in the initial generation}
+\subsection*{Alleles for freshwater adaptation are mostly present in the initial generation}
 
 We have thus far found that the speed of adaptation depends strongly on the degree to which alleles can be shared between populations. 
 However, the \textit{origin} of the alleles underlying the phenotype is still unknown. 
@@ -430,7 +432,7 @@ Surprisingly, for all cases with the exception of $M = 0.01$, we found that the 
 In our simulations,
 any reasonable subset of the ancestral population has the potential for rapid adaptation without the need post-colonization hybridization events.
 
-If effectively capturing standing genetics variants is the key to rapid adaptation, as we have presented thus far, why is there a large difference in speed of adaptation between dispersal rates of $M = 0.1$ and $M = 1.0$ seen in Figure \ref{fig:TimeToAdaptation}?
+If effectively capturing standing genetic variants is the key to rapid adaptation, as we have presented thus far, why is there a large difference in speed of adaptation between dispersal rates of $M = 0.1$ and $M = 1.0$ seen in Figure \ref{fig:TimeToAdaptation}?
 %Figure~\ref{fig:Origin} shows both migration levels being able to effectively capture and propagate the standing genetic variants, and
 %Figure~\ref{fig:MPFAI}A shows that with $M = 0.1$ migrants per lake per generation, there is substantial sharing of alleles between populations.
 %So why does it take $M = 0.1$ scenario nearly 2,000 generations to adapt. 
@@ -478,7 +480,7 @@ Note that some of these haplotypes will likely be lost to drift -- indeed, if th
 However, this calculation supports our explanation above:
 it appears that adaptation at $M=0.1$ is slower because it must wait for intralocus recombination to free up genetic variation present but masked in the marine population.
 
-\subsection*{Theoretical expectations}
+\subsection*{Simulation results align with theoretical expectations}
 
 How do our results compare to what is expected from population genetics theory?
 Our simulations included many loci under selection and in linkage to many other selected alleles,
@@ -496,8 +498,8 @@ If the allele has fitness advantage $s$ --
 the expected number of copies in the next generation is $(1+s)n$ --
 then the probability that it escapes demographic stochasticity to become common in the population 
 is approximately $2s$ \citep{lambert2006probability,haldane1927mathematical} 
-(assuming Poisson reproduction, as we roughly have here). 
-Since we study a quantitative trait, the fitness effect of each allele
+, assuming Poisson reproduction, as we roughly have here. 
+Since we are studying a quantitative trait, the fitness effect of each allele
 depends on the population context:
 if the individuals in the population all have trait values $z$ units above the optimum,
 and the allele has effect size $-u$ in heterozygotes,
@@ -581,7 +583,10 @@ since the same number of migrants make up a smaller proportion of a larger popul
 So, if the marine population was well-mixed and tenfold larger than all freshwater populations combined,
 the number of migrants per lake per generation would need to be ten times larger than in our simulations to maintain sufficient standing genetic variation.
 If the marine population was a thousandfold larger,
-adaptation from standing genetic variation that is deleterious in the ocean might be impossible.
+adaptation from standing genetic variation that is deleterious in the ocean might be impossible. 
+The fact that repeated adaptation from standing genetic variation has been shown to occur in real world threespine stickleback populations argues that the population sizes of marine and combined freshwater stickleback are not that different. 
+While this might at first seem implausible given the ocean is large and lakes are small, in reality there are hundreds of thousands if not millions of lakes inhabited by threespine stickleback in coastal regions of the Northern Hemisphere, and the limiting habitat in the ocean constraining marine stickleback population sizes is likely to be coastal nesting areas. 
+Together, these facts make the equivalency of marine and freshwater stickleback population sizes much more plausible.
 
 
 \section*{Conclusion}
@@ -594,11 +599,10 @@ These simulations therefore provide an in-depth look at (and quantitative proof-
 the ``transporter'' hypothesis suggested by \citet{schluter2009genetics}.
 Selection is able to rebuild the freshwater haplotype at a rapid pace (in tens of generations) from variation present at migration-selection balance in marine populations 
 A finding of practical consequence is that the efficacy of $F_{ST}$-based genomic scans varies significantly with migration rate.
-Perhaps surprisingly, we found
-that the majority of adaptive variant can be traced back to the original generation of new habitats,
+Perhaps surprisingly, we found that the majority of adaptive variant can be traced back to the original generation of new habitats,
 with little role for post-colonization migrant alleles. 
-In other words, a randomly chosen subset of marine stickleback carry the capacity to rapidly adapt without \emph{any} continued connection to the rest of of the species.
-Thus, the large marine population was able to harbor and distribute deleterious alleles to the surrounding freshwater populations with only a few migrants per population, per generation. 
+In other words, a randomly chosen subset of marine stickleback carry the capacity to rapidly adapt in freshwater habitats without \emph{any} continued connection to the rest of of the species.
+Thus, the large marine population was able to harbor and distribute alleles that were deleterious in the ocean habitat, but adaptive in freshwater habitats, to surrounding freshwater populations with only a few migrants per population, per generation. 
 % Our simulation findings significantly extend previous empirical and theoretical population genomic studies of stickleback to make testable predictions, and provide a framework for similar studies in other organisms to determine the generality of our findings.
 
 \plr{TODO: discuss total population size caveats}
