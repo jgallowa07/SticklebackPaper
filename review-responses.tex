@@ -1,0 +1,404 @@
+%%%%%%
+%%
+%%  Don't reorder the reviewer points; that'll mess up the automatic referencing!
+%%
+%%%%%
+
+\begin{minipage}[b]{2.5in}
+  Resubmission Cover Letter \\
+    {\it G3}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{2.5in}
+    Jared Galloway, \\
+    William Cresko, \\
+    \emph{and} Peter Ralph \\
+  \today
+\end{minipage}
+ 
+\vskip 2em
+ 
+\noindent
+{\bf To the Editor(s) -- }
+ 
+\vskip 1em
+
+We are writing to submit a revised version of our manuscript, 
+``A few stickleback suffice for the transport of alleles to new lakes'',
+XXX
+
+
+
+\vspace{5em}
+
+\noindent \hspace{4em}
+\begin{minipage}{3in}
+\noindent
+{\bf Sincerely,}
+
+\vskip 2em
+
+{\bf 
+Jared Galloway, Bill Cresko, and Peter Ralph.
+}\\
+\end{minipage}
+
+\vskip 4em
+
+\pagebreak
+\setcounter{page}{1}
+
+%%%%%%%%%%%%%%
+\reviewersection{AE}
+
+\begin{quote}
+    Please submit your revision along with a response to the reviewers' concerns
+    and suggestions, which can be viewed at the bottom of this email. I agree
+    particularly with questions from two of the reviewers asking for
+    explanation or additional simulations on the founder population size, with
+    reviewer 3's point about clarifying old vs new, and reviewer 1's request
+    for more simulations. I do understand that simulations can be time
+    consuming, however, and want to make clear additional simulations are not a
+    requirement for acceptance (but would be rad if feasible). My lab and I
+    also spent some time debating what was meant by the explanation at the
+    bottom of page 13 -- I think more effort to clarify here would be helpful.
+    Finally, we also wondered why the simulations started at a trait value of 0
+    instead of 10 -- it makes comparison of old vs new a bit harder than seems
+    necessary. I expect these revisions can be done within 30 days, but don't
+    hesitate to ask if you need more time. 
+\end{quote}
+
+
+\plr{IMPORTANT: don't reorder or delete ``points'' below - it messes up the automatic numbering!}
+
+
+%%%%%%%%%%%%%%
+\reviewersection{1}
+
+
+\begin{quote}
+This is a very well done work addressing the fundamental problem of local
+adaptation in metapopulations; stickleback are a nice study system but the
+findings are relevant for a wide variety of systems. I enjoyed it very much,
+and my only wish is that the simulation has been run more than once. This is
+not necessary for speed of adaptation - within-simulation replication of lakes
+is totally sufficient for this - but for aspects related to genome scanning,
+numbers of adaptive alleles in a metapopulation, and haplotype-wise effect
+sizes (table 1), since (especially at high M) the number of adaptive alleles is
+very few across the whole metapopulation. That said, I do not insist on
+rerunning the simulation, since it must be very computationally intensive.
+\end{quote}
+
+
+\begin{point}{}
+    \textit{``As expected, the genetic basis of the freshwater phenotype seems to simplify
+    as migration increases - higher rates of migration allow adaptive alleles of
+    larger effect to travel more efficiently through the population, even though
+    they are deleterious in the ocean.''}
+    Very cool. It gives a very intuitive guideline as to which genetic
+    architecture of local adaptation to expect given a certain migration rate.
+    There is one neat aspect of this result that is perhaps worth better
+    emphasizing (please correct me if I an : detectable Fst peaks at truly adaptive
+    alleles can only be very few. If we had replicate runs we could say how many
+    true Fst peaks, on average, we see at M=1 and M=10, Many published studies
+    (particularly in marine animals) report dozens if not hundreds Fst outliers
+    throughout the genome; your simulation here suggests that most of them have to
+    be false positives of some kind, especially since migration in the sea is
+    likely to be high.
+\end{point}
+
+\reply{
+}
+
+
+\begin{point}{}
+Also, about Fig. S1: I am confused what is ``statistical power'' here :
+``likelihood that a SNP will be predicted to have an effect on phenotype when
+there is an effect to be detected''. In this model every SNP has at least *some*
+effect on phenotype, so what defines ``effect to be detected'' then?
+\end{point}
+
+\reply{
+}
+
+\begin{point}{}
+    \textit{``Surprisingly, for all cases with the exception of M = 0.01, we found that the
+    majority of adaptive allele origins traced back the original generation of
+    inhabitants in the lake (Figure 7)''}
+    This is really cool and counter-intuitive,
+    but maybe it is not too surprising since first-arriving (``captured'') alleles
+    are simply much more numerous relative to the alleles that trickle in later,
+    *before the adaptation is complete*? Indeed, initial colonization involves
+    arrival of 200 individuals in a single generation, which is equivalent to 200/M
+    generations of subsequent immigration. Considering that at any appreciable M
+    (>=0.1) adaptation happens very rapidly (fig 3 and S3), there might simply be
+    not enough additional immigrant alleles to make a contribution. I wonder how
+    this would work if colonization of a lake was a more gradual process, say 2
+    individuals per generation (not all 200 at once)? Would the early-arriving
+    alleles still have advantage? (I would bet yes)
+\end{point}
+
+\reply{
+}
+
+
+
+%%%%%%%%%%%%%%
+\reviewersection{2}
+
+\begin{quote}
+    This is an interesting, and as far as I can judge, a sound simulation study
+    focused on population genetics of adaptation in the threespine stickleback.
+    While the problem(s) approached in the manuscript are interesting and relevant,
+    the way the ms has been pitched makes is mostly interesting for community of
+    researchers interested on sticklebacks. By angling the story in more general
+    terms and bringing stickleback in as model system, broader general appeal might
+    have been achieved.
+\end{quote}
+
+
+\begin{point}{}
+Latin binomial of the focal model species appears only in the references. It would make sense to incorporate it in the abstract and introduction given that the entire ms is focused on this species.
+\end{point}
+
+\reply{
+    Good point; we've added it to the first use of the name after the abstract \revref.
+}
+
+\begin{point}{Title:}
+I would make it clear that this is about the ``threespine stickleback'' - there are many different stickleback species.
+\end{point}
+
+\reply{
+}
+
+\begin{point}{\revref}
+``to millions of independently derived''. Do the references you cite say so? Can you really back up your claim of millions of freshwater populations?
+\end{point}
+
+\reply{
+}
+
+\begin{point}{\revref}
+``heterogenous nature of divergence''. I think you should cite here the first (paper using global sampling) showing evidence for heterogenous nature of this genetic divergence: DeFaveri et al. (2011). Global analysis of genes involved in freshwater adaptation in threespine sticklebacks (Gasterosteus aculeatus). Evolution, 65(6), 1800-1807.
+\end{point}
+
+\reply{
+}
+
+\begin{point}{\revref}
+P2. ``stickleback in them'' - threespine stickleback in them
+\end{point}
+
+\reply{
+}
+
+\begin{point}{p.3 Methods}
+From here on, the ms is generally very thinly referenced. In particular, it remains unclear to reader where the many equations come from: are they something authors have derived themselves (I guess not?), or who did that?
+\end{point}
+
+\reply{
+}
+
+\begin{point}{p.5}
+One is left to wonder if it realistic to think that the marine population is as big as 25 freshwater populations. Admittedly, this is discussed to some extent in the discussion, but given the abundance of the threespine stickleback in many seas (there is actually quantitative estimates of this in literature), it seems plausible that the marine population(s) is orders of magnitudes larger than that of typical freshwater population, even if combined. I guess a more quantitative view on this in light of literature would be something worth attempting.
+\end{point}
+
+\reply{
+}
+
+\begin{point}{\revref}
+    Where does the mutation rate $10^{-10}$ come from? Why this particular value, and how are the results influenced by choice of this?
+\end{point}
+
+\reply{
+}
+
+\begin{point}{}
+P4. It is bit unclear here how LD as was dealt with in the simulations. Are all the loci assumed to be unlinked?
+\end{point}
+
+\reply{
+}
+
+\begin{point}{\revref}
+What happens if generations are overlapping, as is the case in sticklebacks?
+\end{point}
+
+\reply{
+}
+
+\begin{point}{\revref}
+Here the authors say that a different model in SLiM would have been more appropriate to be used, but that they ``do not expect this to influence the results''. This does not sound very good - why not to check this? Why not to rerun the analyses if a more appropriate model is available?
+\end{point}
+
+\reply{
+}
+
+\begin{point}{Fig 1}
+The modeled scenario is probably correct over shorter geographic distances. But there is plenty of empirical evidence to show that marine threespine stickleback populations over larger geographic distances are not genetically homogenous. I think it would be appropriate to acknowledge this somewhere in manuscript.
+\end{point}
+
+\reply{
+}
+
+\begin{point}{\revref}
+``The efficacy of genomic scans of selection depends on gene flow''. I found this section rather uninformative: all this has been studied in quite detail already in many theoretical (and empirical) papers. This could be shortened. And references to earlier findings would be in place here too - there is no single reference to earlier works here at all.
+\end{point}
+
+\reply{
+}
+
+\begin{point}{\revref}
+``Simulation results align with..'' It is nice that the results are referenced back to theory. I was left to think that it might have been better to do this by combining this section with the actual results. Now the structure of the ms appears to be: 1) Results \& Discussion, 2) Discussion. Furthermore, references to theory are given in the first paragraph, but not after this. Readers do not know where all the equations are derived from.
+\end{point}
+
+\reply{
+}
+
+\begin{point}{\revref}
+``we found that standing..'' Is ``found'' right word here? You made an inference, even a guess, that this was so. But you did not prove this?
+\end{point}
+
+\reply{
+}
+
+\begin{point}{\revref}
+``Population size''. Here it is argued that population sizes of marine and freshwater populations are not so different. I found it hard to believe this in the light of quantitative data there is. Could it simply be so that marine population is actually very much larger, but structured (as there is genetic evidence for this in many papers) so that the fraction feeding the freshwater colonizations is to some degree isolated from ones feeding the freshwaters in a particular area? This would in effect make relevant portion of the marine population smaller, without need to postulate that the total marine population equals in size to freshwater populations, and that there are millions of lakes inhabited by three spine sticklebacks. Note also that in introduction it was claimed millions of freshwater populations, here you say ``if not millions'' - inconsistent.
+\end{point}
+
+\reply{
+}
+
+
+
+
+%%%%%%%%%%%%%%
+\reviewersection{3}
+
+\begin{quote}
+    \ldots
+    Overall, the paper finds clear support for the transporter hypothesis, and
+    uncovers some key conditions under which the transporter mechanism is most
+    likely to occur. An interesting insight is that little gene flow can suffice to
+    provide enough standing variation in the marine gene pool for parallel
+    freshwater adaptation to mostly involve pre-existing (instead of de novo). I
+    also found interesting that freshwater-adaptive alleles can be maintained for a
+    relatively long time in the marine population, thus indicating that it's not a
+    necessity for gene flow to occurs at all times between freshwater and the sea
+    for genetic variation to be shared by descent among freshwater populations. I
+    also liked the paper's insights on the importance of considering entire
+    adaptive haplotypes - and not only the number of adaptive alleles - for
+    repeated adaptation.  
+\end{quote}
+
+\begin{quote}
+    The paper is well written and I like this work and don't see any
+    fundamental flaws in the way the simulations were set up or in how the results
+    are interpreted. Of course, one always needs to make certain assumptions when
+    setting up simulations (such as on effect sizes of loci etc.), but I think that
+    the authors explore the parameter space appropriately. 
+\end{quote}
+
+\begin{quote}
+    In what follows, I provide suggestions on how to further improve the work. Most
+    of these points should be understood as recommendations. A side-note:
+    Please make sure to add line numbers to your next submission. It is
+    difficult for reviewers to refer to specific text passages without line
+    numbers being present.
+\end{quote}
+
+\begin{point}{}
+Founder effects followed by population growth: I wonder how founder effects during the colonization of the 'new lakes', followed by population growth, would influence the results? It seems that this was never explored, as each new lake had a constant population size of 200 individuals (rather low). I don't expect there to be a qualitative change in the overall results, but the relative contribution of de novo vs. standing variants to adaptation might well be influenced by a more colonization scenario. If the authors decided not to run additional simulations on this issue, it might at least be worth speculating on how founder effects followed by population growth might influence some of their results (such as the results shown in Fig. 7).
+\end{point}
+
+\reply{
+}
+
+\begin{point}{}
+If possible, it would be interesting to check what type of mutations - in terms of effect size and in terms of dominance - fall under the 'captured', 'marine' and 'de novo' categories. I could well imagine, for example, that mutations that can stay in the marine populations relatively long are more likely to be recessive. Is this true?
+\end{point}
+
+\reply{
+}
+
+\begin{point}{}
+I'm a bit confused by how the adaptive loci along the chromosome were modeled. I don't fully understand what you mean by mutations occurring at a rate $10^{-10}$ per locus per generations in ten regions of $10^5$ loci each (Page 4, 'Genetic architecture of the trait'). Why are the adaptive loci themselves organized in distinct regions? Why isn't there simply a given number of adaptive loci that are evenly spread across the chromosome?
+\end{point}
+
+\reply{
+}
+
+\begin{point}{Results \& Discussion section}
+    Sometimes, it is not fully clear whether you talk about the 'old' lakes or the 'new' lakes. This is often unclear, for example, in the section ``Rapid local adaptation at intermediate gene flow rates''. Could you make this clear throughout the manuscript?
+\end{point}
+
+\reply{
+}
+
+\begin{point}{Figure 2}
+    Are these the results after 50k generations?
+\end{point}
+
+\reply{
+}
+
+\begin{point}{}
+    In the legend of Figure 4, it might be good to re-iterate what the number on top of the panels means exactly. Say that these are actual numbers of migrants per population and what the population size is. What is meant by 'M' is said more clearly in the legend to Figure 6, yet, it would be good to here also state (again) how large the populations are. M can only be understood in context of the actual population size. Otherwise, you would need to provide 'm'.
+\end{point}
+
+\reply{
+}
+
+\begin{point}{}
+Figure 5: delete '100' along the x-axis.
+\end{point}
+
+\reply{
+}
+
+\begin{point}{}
+Typo on page 14: two '- -' instead of only one.
+\end{point}
+
+\reply{
+    Whoops! Fixed; thanks. \revref
+}
+
+\begin{point}{}
+Page 2, 2nd paragraph (beginning): When you talk about the evolutionary history of stickleback, an appropriate citation would also be Bell \& Foster 1994.
+\end{point}
+
+\reply{
+}
+
+\begin{point}{}
+Page 2, 2nd paragraph: You provide several empirical papers that demonstrate the re-use of standing variation in stickleback. Your list of papers is fair, although I don't think you chose the best papers of all the ones available. There are papers that are not cited that directly show evidence of standing variation in the sea that is being re-used for freshwater adaptation, such as: Jones et al. 2012 (Curr Biol); Haenel et al. 2019 (EvolLet), Feulner et al. 2014 (MolEcol) etc. Evidence for the reuse of the exact same genetic variation at different locations on the northern hemisphere also comes from inversions in the stickleback genome (Jones et al. 2012 (Nature); Roesti et al. 2015 (NatCom)).
+\end{point}
+
+\reply{
+}
+
+\begin{point}{}
+Page 2, 2nd paragraph: you here talk about 'similar phenotypes' that have evolved repeatedly in freshwater, but you provide only two examples. The cited papers are mostly concerned with the genetic basis of a specific phenotype that has repeatedly evolved (plate loss). However, at the phenotypic level, there are many more examples for marine-freshwater adaptations in stickleback.
+\end{point}
+
+\reply{
+}
+
+\begin{point}{}
+Page 3, 2nd sentence ('An alternative hypothesis ... maintained in the marine .... due to recurrent gene flow'). I would replace 'maintain' with 'present' because it is unclear at this point whether alleles are actually maintained in the marine population (i.e., stay there for many generations), or whether they are just 'washed into' the marine population over and over again from freshwater without staying long in the marine population at all.
+\end{point}
+
+\reply{
+}
+
+
+\begin{point}{}
+It might be good to cite Hohenlohe et al. 2010 and/or Roesti et al. 2014 to justify that the marine population is modeled to be panmictic (page 4, top). Both these studies have shown very little genome-wide differentiation between samples taken at different marine locations.
+\end{point}
+
+\reply{
+}
+
+

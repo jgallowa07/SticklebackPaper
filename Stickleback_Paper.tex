@@ -22,6 +22,16 @@
 \newcommand{\jgg}[1]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=black]{#1}}
 \newcommand{\wac}[1]{\todo[linecolor=green,backgroundcolor=yellow!25,bordercolor=black]{#1}}
 
+%%%%%%%%%%%
+% for responses to reviewers
+% set this to show line numbers and include responses to reviews or not
+\newif\ifreviewresponses
+\reviewresponsestrue  % include them
+% \reviewresponsesfalse  % don't include them
+\input{review-response-commands}
+\newcommand{\responsefile}{review-responses.tex}  % name of the review reponses file
+
+
 \begin{document}
 
 
@@ -70,13 +80,15 @@ provide an important complement to empirical studies in the lab and field,
 by helping us understand precisely how standing genetic variation might fuel local adaptation,
 and what genomic signals we can expect to see.
 
-The ancestral marine form of threespine stickleback fish has given rise to millions of independently derived freshwater populations in recently de-glaciated regions around the Northern Hemisphere 
+The ancestral marine form of threespine stickleback fish (\textit{Gasterosteus aculeatus}) \revpoint{2}{1}
+has given rise to millions of independently derived freshwater populations \revpoint{2}{3}
+in recently de-glaciated regions around the Northern Hemisphere 
 \citep{Bell_1994, Thompson_1997, Cresko_2007}. 
-This model organism has provided some of the earliest data showing the heterogeneous nature of divergence across genomes 
+This model organism has provided some of the earliest data showing the heterogeneous nature of divergence across genomes \revpoint{2}{4}
 and the much more extensive use of standing genetic variation than once thought 
 \citep{schluter2009genetics, Roesti_2014, Nelson_2018, Bassham_2018, Nelson_2019, Hohenlohe_2010, Terekhanova_2014, Marques_2016}.  
-While geographic isolation often prevents direct migration between freshwater populations, stickleback in them frequently evolve similar phenotypes 
-\citep{Cresko_2004, Colosimo_2004}. 
+While geographic isolation often prevents direct migration between freshwater populations, stickleback in them \revpoint{2}{5}
+frequently evolve similar phenotypes \citep{Cresko_2004, Colosimo_2004}. 
 The most recent evolutionary genomic studies on stickleback document that while the overall dynamic of local adaptation to marine and freshwater habitats has been occurring for millions of years 
 \citep{Nelson_2018}, independent local adaptation of marine individuals to freshwater environments has been observed to take place in just tens of generations \citep{Terekhanova_2014, Lescak2015evolution, Bassham_2018}. 
 For example, in 1964 the Great Alaskan Earthquake caused an uplift of many islands and coastal regions throughout the Gulf of Alaska. 
@@ -167,7 +179,8 @@ We chose the difference between optima and strength of stabilizing selection in 
 \paragraph{Genetic architecture of the trait}
 
 Each individual carries two linear chromosomes, each of size $10^8$ loci. 
-Mutations that can affect the trait under selection can occur at rate $10^{-10}$ per locus per generation in ten regions of $10^5$ loci each, spread evenly along the chromosome. 
+Mutations that can affect the trait under selection can occur at rate $10^{-10}$ per locus per generation \revpoint{2}{8}
+in ten regions of $10^5$ loci each, spread evenly along the chromosome. 
 Each mutation in these regions is either additive, completely recessive, or completely dominant (with equal probability). 
 Effect sizes for these mutations are chosen randomly from an exponential distribution with mean $1/2$, either positive or negative with equal probability. 
 Individual trait values ($x_\text{ind}$) are determined additively from the diploid genotypes. 
@@ -175,11 +188,12 @@ Concretely, an individual that is heterozygous and homozygous for mutations at s
 
 \paragraph{Population dynamics}
 
-We use SLiM to simulate a Wright--Fisher population with non-overlapping generations and a fixed population size of 5,000 diploid individuals in each habitat. 
+We use SLiM to simulate a Wright--Fisher population with non-overlapping generations \revpoint{2}{10}
+and a fixed population size of 5,000 diploid individuals in each habitat. 
 Each generation, the two parents of each new offspring are chosen proportional to their fitness 
 (unlike actual stickleback, all individuals are hermaphroditic), and the contributing genomes are produced by Poisson recombination with an average of one crossover per chromosome per generation ($10^{-8}$ per locus per generation). 
 Since the total population across \emph{all} 25 lakes is fixed at 5000, and the Wright--Fisher model assumes unrealistic global population regulation, we normalize the fitnesses of each individual so that approximately 200 offspring are generated in each lake, each generation. 
-(A better implementation would use SLiM's ``non-Wright-Fisher'' model type,
+(A better implementation would use SLiM's ``non-Wright-Fisher'' model type, \revpoint{2}{11}
 which was not available when we wrote the simulations; but we do not expect the difference to affect results.)
 To do this, we divide fitness values of each freshwater individual by the mean fitness in their lake, so that the mean fitnesses of all lakes are equal before selection happens.
 
@@ -224,6 +238,11 @@ The proportion of trait-affecting alleles in new lakes that fall in these catego
 We used neutral mutations to calculate $F_{ST}$ for each locus, which we then averaged in windows as a measure of between-population relative differentiation. 
 Concretely, if $p_f$ and $p_m$ are the frequencies of a given mutant allele in the freshwater and marine habitats, respectively, and $\bar p = (p_f + p_m)/2$, 
 then we compute $F_{ST}$ for that mutation as $1 - (p_f (1-p_f) + p_m (1-p_m))/ (2 \bar p (1-\bar p))$.
+
+\subsection*{Data availability}
+
+The source code used to run and analyze the simulations in this paper
+are available at \url{https://github.com/jgallowa07/SticklebackPaper}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Results \& Discussion}
@@ -275,7 +294,7 @@ as can be seen by the mean trait values of Figure~\ref{fig:MeanPhenotype}.
 Figures~\ref{fig:phenotype_time} and \ref{fig:phenotype_time_supp} show how mean trait values in freshwater and marine populations diverged over time, until the trait means were close to the optimal values in each habitat. 
 Establishment of new alleles in the lakes during the first few thousand generations manifests as jumps in the mean trait value which move the trait by an amount of order 1 every few hundred generations (Fig. \ref{fig:phenotype_time}).
 At the lowest rate of gene flow, $M = 0.01$, differences at around 20 commonly polymorphic sites (about 10 that shift the trait in each direction) were responsible for most of the adaptive differences between freshwater and marine habitats. 
-As expected, increasing migration rate decreased differentiation between habitats: as seen in Figure~\ref{fig:Fst}, $F_{ST}$ between marine and freshwater habitats at neutral sites steadily declines as migration increases. 
+As expected, increasing migration rate decreased differentiation between habitats: as seen in Figure~\ref{fig:Fst}, $F_{ST}$ between marine and freshwater habitats at neutral sites steadily declines as migration increases.  \revpoint{1}{1}
 
 \begin{figure}
     \begin{center}
@@ -385,6 +404,7 @@ but is sufficient to shift the mean trait values to nearly half their optimal va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{The efficacy of genomic scans of selection depends on gene flow}
 
+\revpoint{2}{13}
 Here, we take a closer look at the genomic architecture of local adaptation between the two habitats. 
 Can measures of local differentiation such as $F_{ST}$ be used to identify the causal loci? Figure \ref{fig:Fst} shows plots along the genome of average per-locus $F_{ST}$ values in 500bp windows between the marine habitat and all freshwater habitats pooled together. 
 Higher rates of dispersal showed more distinct $F_{ST}$ peaks over polymorphic loci, while ``background'' levels of $F_{ST}$ increase as gene flow decreases, swamping out this signal until the regions under selection are indistinguishable. This is likely the contribution of two separate forces of natural selection: 
@@ -474,6 +494,7 @@ it appears that adaptation at $M=0.1$ is slower because it must wait for intralo
 
 \subsection*{Simulation results align with theoretical expectations}
 
+\revpoint{2}{14}
 How do our results compare to what is expected from population genetics theory?
 Our simulations included many loci under selection and in linkage to many other selected alleles,
 which makes precise calculation impossible.
@@ -485,8 +506,8 @@ but doing so is beyond the scope of this paper
 
 One of the most useful things that theory tells us is about
 the fate of a new allele in a lake, that has appeared by either migration or mutation. 
-If the allele has fitness advantage $s$ --
--- i.e., when it is rare but present in $n$ copies,
+If the allele has fitness advantage $s$ -- \revpoint{3}{8}
+i.e., when it is rare but present in $n$ copies,
 the expected number of copies in the next generation is $(1+s)n$ --
 then the probability that it escapes demographic stochasticity to become common in the population 
 is approximately $2s$ \citep{lambert2006probability,haldane1927mathematical} 
@@ -552,7 +573,9 @@ Putting these calculations together,
 we expect migration-selection balance to maintain sufficient genetic variation for new lakes to adapt if $m \ge 10^{-4}$, which corresponds to $M \ge 0.4$.
 This is in good agreement with our observations.
 % This corresponds to our highest two migration rates, as in e.g., Figure \ref{fig:phenotype_ts2}B.
-However, this calculation treats each allele independently; in practice we found that standing freshwater variation in the ocean was masked by linkage to compensatory marine variants.
+However, this calculation treats each allele independently;
+in practice we found that standing freshwater variation in the ocean
+was masked by linkage to compensatory marine variants. \revpoint{2}{15}
 
 \paragraph{Migration}
 The key quantity regulating the amount of standing variation in the ocean is the \emph{downstream} migration rate, from lakes to the ocean. 
@@ -567,7 +590,7 @@ Since in our model lower migration also reduces the amount of variation availabl
 we expect very little contribution of subsequent migration across any value of $m$, as seen in Figure~\ref{fig:Origin}.
 
 \paragraph{Population size}
-In our simulations,
+In our simulations, \revpoint{2}{16}
 the marine and freshwater populations are of equal size.
 More generally, we expect the downstream migration rate that is required to maintain standing variation there
 to scale with the size of the marine population,
@@ -685,6 +708,11 @@ Thus, the large marine population was able to harbor and distribute alleles that
     \end{center}
 \end{figure}
 
+%%%%%%% reviews
+\newpage
+
+\includereviews
+ 
 \end{document}
 
 
