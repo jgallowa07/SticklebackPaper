@@ -90,7 +90,7 @@ rerunning the simulation, since it must be very computationally intensive.
 \end{quote}
 
 
-\begin{point}{}
+\begin{point}{\revref}
     \textit{``As expected, the genetic basis of the freshwater phenotype seems to simplify
     as migration increases - higher rates of migration allow adaptive alleles of
     larger effect to travel more efficiently through the population, even though
@@ -108,6 +108,11 @@ rerunning the simulation, since it must be very computationally intensive.
 \end{point}
 
 \reply{
+We agree with the reviewer that this is an important point, 
+and that our results are consistant with the above hypothesis. 
+However, to quantify and assert that previous empiracal studies 
+are reporting false-positives would require many 
+more simulations (and \textit{careful} analysis), which we believe is outside the rhelm of this paper.
 }
 
 
@@ -119,9 +124,10 @@ effect on phenotype, so what defines ``effect to be detected'' then?
 \end{point}
 
 \reply{
+TODO: Peter, you might be able to best describe this most clearly.
 }
 
-\begin{point}{}
+\begin{point}{\revref}
     \textit{``Surprisingly, for all cases with the exception of M = 0.01, we found that the
     majority of adaptive allele origins traced back the original generation of
     inhabitants in the lake (Figure 7)''}
@@ -131,7 +137,7 @@ effect on phenotype, so what defines ``effect to be detected'' then?
     *before the adaptation is complete*? Indeed, initial colonization involves
     arrival of 200 individuals in a single generation, which is equivalent to 200/M
     generations of subsequent immigration. Considering that at any appreciable M
-    (>=0.1) adaptation happens very rapidly (fig 3 and S3), there might simply be
+    ($>=0.1$) adaptation happens very rapidly (fig 3 and S3), there might simply be
     not enough additional immigrant alleles to make a contribution. I wonder how
     this would work if colonization of a lake was a more gradual process, say 2
     individuals per generation (not all 200 at once)? Would the early-arriving
@@ -139,8 +145,11 @@ effect on phenotype, so what defines ``effect to be detected'' then?
 \end{point}
 
 \reply{
+We agree that this is an important point to explore, and a good observation.
+We have appended to the section on migration to more clearly address this \llname{disc_colon}.  
+However, the available code could certainly be used in further studies to investigate this question
+more in-depth.
 }
-
 
 
 %%%%%%%%%%%%%%
@@ -170,6 +179,7 @@ I would make it clear that this is about the ``threespine stickleback'' - there 
 \end{point}
 
 \reply{
+    We believe the first sentence in the abstract makes this clear to the reader.
 }
 
 \begin{point}{\revref}
@@ -177,6 +187,7 @@ I would make it clear that this is about the ``threespine stickleback'' - there 
 \end{point}
 
 \reply{
+    This order of magnitute estimate is roughly based upon the length of the coastal range and coastal lake density. Because there is no concrete evidence, we have re-worded this \llname{hundreds-thousands-or-more}. 
 }
 
 \begin{point}{\revref}
@@ -184,6 +195,7 @@ I would make it clear that this is about the ``threespine stickleback'' - there 
 \end{point}
 
 \reply{
+    Thank you for pointing this out. The citations has been added.
 }
 
 \begin{point}{\revref}
@@ -191,6 +203,7 @@ P2. ``stickleback in them'' - threespine stickleback in them
 \end{point}
 
 \reply{
+    Fixed.
 }
 
 \begin{point}{p.3 Methods}
@@ -198,6 +211,7 @@ From here on, the ms is generally very thinly referenced. In particular, it rema
 \end{point}
 
 \reply{
+    All equations explaining dynamics of the simulation model (outside of \llname{Fst}) were chosen explicitely by the authors as input to SLiM. We have added citations for the population genetics theoretical expectations (\llname{Gil_cite} \llname{Fst}) as well as clarified the derivation of equations in the Methods section \llname{clarify_equations}.
 }
 
 \begin{point}{p.5}
@@ -205,6 +219,7 @@ One is left to wonder if it realistic to think that the marine population is as 
 \end{point}
 
 \reply{
+    TODO
 }
 
 \begin{point}{\revref}
@@ -212,6 +227,13 @@ One is left to wonder if it realistic to think that the marine population is as 
 \end{point}
 
 \reply{
+    This was chosen as an arbitrary, yet realistic, rate at which you could expect incoming mutations to affect phenotype. 
+At $10^{6}$ loci where these mutations can arise at a rate of $10^{-10}$, and $5000$ diploid individuals in each population, you can expect $\approx 1$ mutations to arise in each population, each generation, which impact the trait value.
+Another way to look at this is that it is a per-nucleotide mutation rate of $10^{-8}$ with a total target size of $10^{4}$. 
+Because we hold selective pressure (optimum trait value) constant and stack mutations, mutation rate will only affect the speed of adaptation through the use of ``de-novo'' mutation. 
+While this comparison is an important point in our ms,
+the authors believe this rate is, if anything, a generous assumption to make.
+We have re-worded and appended to the ms to hopefully make this more clear. \llname{mu_exp}
 }
 
 \begin{point}{}
@@ -219,6 +241,7 @@ P4. It is bit unclear here how LD as was dealt with in the simulations. Are all 
 \end{point}
 
 \reply{
+    All chromsomes are linear with a per-nucleotide recombination rate of $10^{-8}$. This has been clarified here \revref.
 }
 
 \begin{point}{\revref}
@@ -226,6 +249,7 @@ What happens if generations are overlapping, as is the case in sticklebacks?
 \end{point}
 
 \reply{
+The authors expect no fundemental difference between results yeilded from WF model vs. non-WF model.
 }
 
 \begin{point}{\revref}
@@ -233,6 +257,10 @@ Here the authors say that a different model in SLiM would have been more appropr
 \end{point}
 
 \reply{
+In a perfect world, we would re-run and compare. 
+However, to re-write this model as non-WF would require a relatively significant amount of change to the code as well as much more computational power to re-run the analysis.
+With no fundemental differences expected between the two models other than one being slightly more realistic, the authors opted to stick with WF model. 
+We agree the ms makes this slightly confusing, so we have altered the wording a bit here \llname{realistic}.
 }
 
 \begin{point}{Fig 1}
@@ -240,6 +268,8 @@ The modeled scenario is probably correct over shorter geographic distances. But 
 \end{point}
 
 \reply{
+The authors agree, it should be made clear that the oceanic population is not panmictic but rather has one-dimential continuous spatial structure.
+We have clarified this here \llname{continuous}.
 }
 
 \begin{point}{\revref}
@@ -247,6 +277,10 @@ The modeled scenario is probably correct over shorter geographic distances. But 
 \end{point}
 
 \reply{
+The authors believe this finding supports existing studies, specifically, how stronger genetic drift with less migration leads to higher background $F_{ST}$.
+However, for our study, showing how greater sharing of adaptive alleles provides a shared signal across populations seemed necessary for a study of selection on standing variants.
+Thus, the authors have decided to leave this section as is.
+TODO: Looks like we could use some citations, I was unable to find any good ones :(.
 }
 
 \begin{point}{\revref}
@@ -254,6 +288,8 @@ The modeled scenario is probably correct over shorter geographic distances. But 
 \end{point}
 
 \reply{
+The authors thought about connected it back to the results and decided it would be more confusing to the reader. 
+As above, we have decided to reference Gillespie throughout this section.
 }
 
 \begin{point}{\revref}
@@ -261,6 +297,8 @@ The modeled scenario is probably correct over shorter geographic distances. But 
 \end{point}
 
 \reply{
+TODO
+\jgg{Justify that this is actually a finding, by adding a sentence to the bit on masking to make this more concrete.} 
 }
 
 \begin{point}{\revref}
@@ -268,6 +306,8 @@ The modeled scenario is probably correct over shorter geographic distances. But 
 \end{point}
 
 \reply{
+TODO
+\jgg{This is clearly tied to the above comments about pop size, not sure how to answer these effectively}
 }
 
 
@@ -355,6 +395,7 @@ Figure 5: delete '100' along the x-axis.
 \end{point}
 
 \reply{
+Good point: Fixed.
 }
 
 \begin{point}{}
