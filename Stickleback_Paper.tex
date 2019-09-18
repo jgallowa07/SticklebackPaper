@@ -69,7 +69,7 @@ In particular, empirical studies have increasingly identified the need to more d
 Populations experiencing diverse selective pressures while still exhibiting significant gene flow often result in more complex genomic signals that are still not fully understood 
 \citep{Charlesworth_1997, Charlesworth_2003, Nosil_2009, Flaxman_2013, Samuk_2017}. 
 Concurrently, a growing number of empirical studies have identified instances of convergent evolution using standing genetic variation 
-\citep{Schrider2017, Barrett2008, Nelson_2018, Nelson_2019, Bassham_2018}. 
+\citep{jones_genomic_2012, roesti_genome_2012, feulner_genomics_2015, Schrider2017, Barrett2008, Nelson_2018, Nelson_2019, Bassham_2018}. \revpoint{3}{10}
 However, it is still not clear how variation in evolutionary processes - such as gene flow, recombination, selection and mutation -  can promote the maintenance and re-use of standing genetic variation, particularly during colonization and adaptation to new environments
 \citep{Nelson_2018, Pritchard_2010, yeaman2011genetic, Schrider2017}. 
 It is similarly unclear whether variation in these evolutionary processes can determine the genetic architecture of evolving traits via standing genetic variation. 
@@ -83,7 +83,7 @@ and what genomic signals we can expect to see.
 The ancestral marine form of threespine stickleback fish (\textit{Gasterosteus aculeatus}) \revpoint{2}{1}
 has given rise to hundreds of thousands if not millions of independently derived freshwater populations \revpoint{2}{3} \llabel{hundreds-thousands-or-more}
 in recently de-glaciated regions around the Northern Hemisphere 
-\citep{Bell_1994, Thompson_1997, Cresko_2007}. 
+\citep{Bell_1994, Thompson_1997, Cresko_2007, Hunt_2008} \revpoint{3}{9}
 This model organism has provided some of the earliest data showing the heterogeneous nature of divergence across genomes \revpoint{2}{4}
 and the much more extensive use of standing genetic variation than once thought 
 \citep{schluter2009genetics, DeFaveri_2011, DeFaveri_2013, Roesti_2014, Nelson_2018, Bassham_2018, Nelson_2019, Hohenlohe_2010, Terekhanova_2014, Marques_2016}.  
@@ -105,7 +105,7 @@ Waiting for new mutations to arise in each lake or pond would take much longer t
 with any plausible target size.
 Even more improbable is having divergence cluster in such similar genomic regions across independent populations. 
 An alternative hypothesis
-is that the majority of alleles important for freshwater adaptation are maintained in the marine individuals due to recurrent gene flow from freshwater back in to marine populations. 
+is that the majority of alleles important for freshwater adaptation are present in the marine individuals due to recurrent gene flow from freshwater back in to marine populations. \revpoint{3}{12}
 \citet{schluter2009genetics} proposed a conceptual model they termed the ``transporter'' hypothesis to describe the process by which 
 alleles beneficial in freshwater environments are maintained at migration-selection balance in the larger oceanic population and therefore available to be utilized during subsequent adaptation to new freshwater habitats.
 (The alleles conferring adaptation to freshwater environments are thereby ``transported'' to and reassembled in new lakes.)
@@ -268,9 +268,10 @@ Perhaps surprisingly, only a few migrants per generation from the lakes to the o
     \begin{center}
           \includegraphics{Final_Plots/Pheno_Dist.pdf}
           \caption{
-            Distribution of mean individual trait values across generations of the simulation,
+            Distribution of mean individual trait values across generations of the simulation 
+            (recording started after introduction of the new lakes at 100,000 generations),
             for different migration rates.
-            The dashed pink and purple lines at $\pm 10$ give the optimum phenotypes
+            The dashed yellow and grey lines at $\pm 10$ give the optimum phenotypes
             in the marine and freshwater environments, respectively.
         }
           \label{fig:MeanPhenotype}
@@ -299,7 +300,7 @@ Perhaps surprisingly, only a few migrants per generation from the lakes to the o
 Local adaptation occurred in all simulations with the exception of the highest gene flow at which half of each population was composed of migrants, 
 as can be seen by the mean trait values of Figure~\ref{fig:MeanPhenotype}.
 Figures~\ref{fig:phenotype_time} and \ref{fig:phenotype_time_supp} show how mean trait values in freshwater and marine populations diverged over time, until the trait means were close to the optimal values in each habitat. 
-Establishment of new alleles in the lakes during the first few thousand generations manifests as jumps in the mean trait value which move the trait by an amount of order 1 every few hundred generations (Fig. \ref{fig:phenotype_time}).
+Establishment of adaptive alleles in the old lakes during the first few thousand generations manifests as jumps in the mean trait value - which move the trait by an amount of order 1 every few hundred generations (Fig. \ref{fig:phenotype_time}). \revpoint{3}{4}
 At the lowest rate of gene flow, $M = 0.01$, differences at around 20 commonly polymorphic sites (about 10 that shift the trait in each direction) were responsible for most of the adaptive differences between freshwater and marine habitats. 
 As expected, increasing migration rate decreased differentiation between habitats: as seen in Figure~\ref{fig:Fst}, $F_{ST}$ between marine and freshwater habitats at neutral sites steadily declines as migration increases.  \revpoint{1}{1}
 
@@ -311,8 +312,8 @@ As expected, increasing migration rate decreased differentiation between habitat
         \textbf{(top)} marine habitat and old lakes;
         \textbf{(middle)} marine habitat and new lakes; and
         \textbf{(bottom)} old and new lakes.
-        Each plot shows $F_{ST}$ values for a separate simulation,
-        with columns corresponding to increasing gene flow from left to right.
+        The columns are ordered by the $M$ (number of migrants per lake, per generation) 
+        and show $F_{ST}$ values for a separate simulation,
         $F_{ST}$ is calculated between all marine individuals, and all lakes pooled together.
         All locations of pre-existing freshwater adapted alleles have been highlighted by 
         partially transparent pink dashed vertical lines, so darker shades of pink show more 
@@ -595,8 +596,17 @@ This implies a dichotomy: either
 (b) migration is low, so adaptation takes many multiples of $1/m$ generations. 
 Since in our model lower migration also reduces the amount of variation available in the ocean, 
 we expect very little contribution of subsequent migration across any value of $m$, as seen in Figure~\ref{fig:Origin}.
-It remains unknown how different colonization schemes would impact the origin of adapted alleles, 
-but it stands to reason based upon our results that early arriving alleles are favored as adaptive alleles in any scenario. \llabel{disc_colon}
+Outside of our specific colonization scheme two other possible scenarios, and their respective impact on our results, are relevant to discuss. \llabel{disc_colon}
+In the case of a bottleneck and expanding population size post-colonization \emph{with} continued influx of migrant alleles,
+we would expect time to adaptation for $M = \{0.1, 1.0, 10.0\}$ to be greater, and the origin of adaptive alleles to 
+be weighted more towards ``migrant'' alleles. 
+In the case of a bottleneck and expanding population size post-colonization \emph{without} continued influx of migrant alleles,
+We would expect much less chance at selection on standing variants and most migration rates ($M = \{0.1, 1.0, 10.0\}$) 
+to adapt at the same pace as selection on ``de-novo'' alleles ($M=0.01$).
+
+
+%It remains unknown how different colonization schemes would impact the origin of adapted alleles, 
+%but it stands to reason based upon our results that early arriving alleles are favored as adaptive alleles in any scenario. \llabel{disc_colon}
 
 \paragraph{Population size}
 In our simulations, \revpoint{2}{16}
