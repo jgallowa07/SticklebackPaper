@@ -3,7 +3,7 @@
 This repository contains the simulation, plotting, and tex code used in the production of _A few stickleback can transport adaptive alleles to new lakes_ 
 
 This paper had been accepted by the journal [Genes, Genomes, Genetics](https://www.g3journal.org/)
-The Arxiv of this paper can be here [here](https://www.biorxiv.org/content/10.1101/713040v1)
+The Arxiv of this paper can be found [here](https://www.biorxiv.org/content/10.1101/713040v1)
 
 ## Abstract
 
