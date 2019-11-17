@@ -5,6 +5,17 @@
 
 all: Stickleback_Paper.pdf
 
+submission : Stickleback_Paper_text.pdf submission/resubmission_cover.pdf Stickleback_Paper_responses.pdf
+
+Stickleback_Paper_text.pdf : Stickleback_Paper.pdf
+	pdfjam --outfile $@ $< 1-27
+
+submission/resubmission_cover.pdf : Stickleback_Paper.pdf
+	pdfjam --outfile $@ $< 28
+
+Stickleback_Paper_responses.pdf : Stickleback_Paper.pdf
+	pdfjam --outfile $@ $< 29-
+
 clean: 
 	-rm *.aux *.log *.lof *.lot *.fff *.ttt *.out *.bbl *.blg
 
