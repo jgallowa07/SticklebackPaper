@@ -1,0 +1,138 @@
+%%%%%%
+%%
+%%  Don't reorder the reviewer points; that'll mess up the automatic referencing!
+%%
+%%%%%
+
+\begin{minipage}[b]{2.5in}
+  Resubmission Cover Letter \\
+    {\it G3}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{2.5in}
+    Jared Galloway, \\
+    William Cresko, \\
+    \emph{and} Peter Ralph \\
+  \today
+\end{minipage}
+ 
+\vskip 2em
+ 
+\noindent
+{\bf To the Editor(s) -- }
+ 
+\vskip 1em
+
+Thanks very much for the prompt and positive decision.
+We have added some additional discussion about the two reviewer points
+(that previously we had only responded to in the Response to Reviewers),
+as requested by the editor.
+This was a good idea, as other readers will likely have the same thoughts.
+
+We hope that you agree with our assessment.
+
+
+\vspace{5em}
+
+\noindent \hspace{4em}
+\begin{minipage}{3in}
+\noindent
+{\bf Sincerely,}
+
+\vskip 2em
+
+{\bf 
+Jared Galloway, Bill Cresko, and Peter Ralph.
+}\\
+\end{minipage}
+
+\vskip 4em
+
+\pagebreak
+\setcounter{page}{1}
+
+%%%%%%%%%%%%%%
+\reviewersection{AE}
+
+\begin{quote}
+I would ask that you add some text to the discussion addressing reviewer points 1.1 and 3.2.
+\end{quote}
+
+
+Here is Reviewer 1 point 1:
+\begin{quote}
+    \textit{``As expected, the genetic basis of the freshwater phenotype seems to simplify
+    as migration increases -- higher rates of migration allow adaptive alleles of
+    larger effect to travel more efficiently through the population, even though
+    they are deleterious in the ocean.''}
+    Very cool. It gives a very intuitive guideline as to which genetic
+    architecture of local adaptation to expect given a certain migration rate.
+    There is one neat aspect of this result that is perhaps worth better
+    emphasizing: detectable $F_{ST}$ peaks at truly adaptive
+    alleles can only be very few. If we had replicate runs we could say how many
+    true $F_{ST}$ peaks, on average, we see at $M=1$ and $M=10$. Many published studies
+    (particularly in marine animals) report dozens if not hundreds of $F_{ST}$ outliers
+    throughout the genome; your simulation here suggests that most of them have to
+    be false positives of some kind, especially since migration in the sea is
+    likely to be high.
+\end{quote}
+
+% our previous \reply{
+%     We agree with the reviewer that this is an important point,
+%     and that our results are consistant with the above hypothesis. 
+%     However, to quantify and assert that previous empirical studies 
+%     are reporting false-positives would require many 
+%     more simulations and analysis in many more situations,
+%     which we believe is outside the realm of this paper.
+% }
+
+We have added, at \llname{disco11}:
+
+\textit{
+We find that, unsurprisingly, sharing of alleles across lakes leads to
+a very simple genetic basis -- only tens of loci, at $M \ge 1$.
+This suggests that all else being equal, systems with higher migration
+should have fewer loci responsible for local adaptation.
+However, ``all else is equal'' is rarely plausible:
+the actual number of locally adaptive alleles in a particular system
+depends on many other factors, including
+the strength of selection, degree of pleiotropy, and the genetic basis of the trait.
+A different genetic basis could well lead to a much larger number of alleles, even at high migration rates:
+but, could these be reliably identified?
+Next, we look at how well adaptive alleles are identified with genome scans.
+}
+
+
+% \textit{
+% Because the detectable traits at high dispersal were very few,
+% empirical studies in the situation of high dispersal which report
+% hundreds or thousands of causal loci may benefit from exploring
+% false-positive rates in similar modeling studies.
+% }
+
+\bigskip
+
+Here is Reviewer point 3.2:
+\begin{quote}
+If possible, it would be interesting to check what type of mutations - in terms of effect size and in terms of dominance - fall under the 'captured', 'marine' and 'de novo' categories. I could well imagine, for example, that mutations that can stay in the marine populations relatively long are more likely to be recessive. Is this true?
+\end{quote}
+
+% our previous \reply{
+%     We thought about this also, and did this comparison in some earlier simulations,
+%     but any differential representation was not obvious
+%     -- there was no large effect --
+%     and that we'd need many more simulations to detect anything.
+%     So: this seems plausible, but speculatively,
+%     it doesn't seem to be a major driver of genetic architecture,
+%     but rather a minor adjustment.
+% }
+
+
+
+We have added, at \llname{disco32}:
+
+\textit{
+We explored the possibility of dominance being a good predictor of
+how long an adaptive allele can be maintained in the marine environment,
+but found no effect strong enough to be seen with our relatively small sample size of adaptive alleles.
+}

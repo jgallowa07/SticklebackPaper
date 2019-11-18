@@ -28,8 +28,8 @@
 \newif\ifreviewresponses
 \reviewresponsestrue  % include them
 % \reviewresponsesfalse  % don't include them
+\newcommand{\responsefile}{second-review-responses.tex}  % name of the review reponses file
 \input{review-response-commands}
-\newcommand{\responsefile}{review-responses.tex}  % name of the review reponses file
 
 
 \begin{document}
@@ -304,7 +304,7 @@ as can be seen by the mean trait values of \autoref{fig:MeanPhenotype}.
 Figures~\ref{fig:phenotype_time} and \ref{fig:phenotype_time_supp} show how mean trait values in freshwater and marine populations diverged over time, until the trait means were close to the optimal values in each habitat. 
 Establishment of adaptive alleles in the old lakes during the first few thousand generations manifests as jumps in the mean trait value -- which move the trait by an amount of order 1 every few hundred generations (\autoref{fig:phenotype_time}). \revpoint{3}{4}
 At the lowest rate of gene flow, $M = 0.01$, differences at around 20 commonly polymorphic sites (about 10 that shift the trait in each direction) were responsible for most of the adaptive differences between freshwater and marine habitats. 
-As expected, increasing migration rate decreased differentiation between habitats: as seen in \autoref{fig:Fst}, $F_{ST}$ between marine and freshwater habitats at neutral sites steadily declines as migration increases.  \revpoint{1}{1}
+As expected, increasing migration rate decreased differentiation between habitats: as seen in \autoref{fig:Fst}, $F_{ST}$ between marine and freshwater habitats at neutral sites steadily declines as migration increases. 
 
 \begin{figure}
     \begin{center}
@@ -356,16 +356,17 @@ Concretely, these are any non-neutral mutations whose frequency is above 50\% in
 At $M = 0.1$, we again observe the original lakes adapting nearly independently from each other, but now the new lakes adapt using pre-existing alleles present in the original set of lakes. 
 Concurrently, the average marine individual carries $\approx 2$ pre-existing freshwater adapted alleles, standing variation which was nearly absent at $M=0.01$. As migration rate increases past this, the total number of pre-existing freshwater adapted alleles declines (\autoref{fig:MPFAI}C). Interestingly, the frequency of these alleles in the ocean
 stays relatively constant across the reasonable rates of gene flow.
-We explored the possibility of dominance being a good predictor of how long an adaptive allele can be maintained in the 
-marine environment with no conclusive evidence. 
-Further modeling efforts are needed to say anything conclusive about dominance and allele maintenance in the marine.
+We explored the possibility of dominance being a good predictor of
+how long an adaptive allele can be maintained in the marine environment,
+but found no effect strong enough to be seen with our relatively small sample size of adaptive alleles.
+\llabel{disco32}
 
 \autoref{fig:MPFAI}B shows the distribution, through time, of the mean \emph{percentage} of currently-defined freshwater adapted alleles that each genome in each of the populations carries. 
 If all individuals across lakes carried the same set of alleles determining their trait value, this would be 100\%. At the lowest migration rate ($M = 0.01$), each genome in the original lakes have almost exactly~$1/25^{th}$ of the total number of pre-existing freshwater adapted alleles -- this is because each one of the 25 lakes has adapted with a unique set of alleles. 
 Since these are \emph{pre-existing} alleles, the value is zero for introduced lakes. 
 \autoref{fig:MPFAI}A shows us that at $0.1$ migrants per lake per generation and above, the average individual across the new lakes has nearly the same amount of pre-existing freshwater adapted alleles as individuals across the old lakes. 
 As expected, the genetic basis of the freshwater phenotype seems to simplify as migration increases -- higher rates of migration allow adaptive alleles of larger effect to travel more efficiently through the population, even though they are deleterious in the ocean. \revpoint{1}{1}
-Because the detectable traits at high dispersal were very few, empirical studies in the situation of high dispersal which report hundreds or thousands of causal loci may benefit from exploring false-positive rates in similar modeling studies.
+% Because the detectable traits at high dispersal were very few, empirical studies in the situation of high dispersal which report hundreds or thousands of causal loci may benefit from exploring false-positive rates in similar modeling studies. \llabel{disco11}
 
 The numbers in \autoref{fig:MPFAI} strongly suggest that the dramatic increase in speed of local adaptation we observed above occurs because higher gene flow allows sharing of freshwater alleles among populations.
 We confirmed this finding by using recorded tree sequences to identify the origin of each trait-affecting allele in each individual in the new lakes, as defined in the Methods. 
@@ -414,6 +415,18 @@ the constant influx of alleles between the habitats creates substantial migratio
 This level of gene flow only replaces 5\% of each population each generation with migrants from the other habitat, 
 but is sufficient to shift the mean trait values to nearly half their optimal values, as seen in \autoref{fig:MeanPhenotype}. 
 
+We find that, unsurprisingly, sharing of alleles across lakes leads to
+a very simple genetic basis -- only tens of loci, at $M \ge 1$.
+This suggests that all else being equal, systems with higher migration
+should have fewer loci responsible for local adaptation.
+However, ``all else is equal'' is rarely plausible:
+the actual number of locally adaptive alleles in a particular system
+depends on many other factors, including
+the strength of selection, degree of pleiotropy, and the genetic basis of the trait. \llabel{disco11}
+A different genetic basis could well lead to a much larger number of alleles, even at high migration rates:
+but, could these be reliably identified?
+Next, we look at how well adaptive alleles are identified with genome scans.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{The efficacy of genomic scans of selection depends on gene flow}
@@ -442,7 +455,7 @@ Unfortunately, the low statistical power for all rates of $M$ would seem to sugg
 In other words, with high rates of dispersal between population, $F_{ST}$ peaks may reliably identify causal loci, 
 but not all causal loci will appear as $F_{ST}$ peaks.
 It's important to note that $F_{ST}$ in Figures~\ref{fig:Fst} and \ref{fig:Power_FP} was calculated after pooling together all lakes and all marine individuals.
-For comparison, Figures~\ref{fig:fst_5lakes} \& \ref{fig:Power_FP_5lakes} shows $F_{ST}$ calculated with individuals only in the first fifth of the range (5 lakes and corresponding marine habitat).
+For comparison, Figures~ \ref{fig:Power_FP_5lakes} and~\ref{fig:fst_5lakes} show $F_{ST}$ calculated with individuals only in the first fifth of the range (5 lakes and corresponding marine habitat).
 These show a substantially lower true positive rate, as population-specific noise swamps any signal between the lakes.
 
 As has been suggested elsewhere, introgression aids identification of locally adaptive loci from scans for differentiation.
