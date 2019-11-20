@@ -5,16 +5,22 @@
 
 all: Stickleback_Paper.pdf
 
-submission : Stickleback_Paper_text.pdf submission/resubmission_cover.pdf Stickleback_Paper_responses.pdf
+submission : Stickleback_Paper_text.pdf resubmission_cover.pdf Stickleback_Paper_responses.pdf
 
 Stickleback_Paper_text.pdf : Stickleback_Paper.pdf
-	pdfjam --outfile $@ $< 1-27
+	pdfjam --outfile $@ $< 1-28
 
-submission/resubmission_cover.pdf : Stickleback_Paper.pdf
-	pdfjam --outfile $@ $< 28
+resubmission_cover.pdf : Stickleback_Paper.pdf
+	pdfjam --outfile $@ $< 29
 
 Stickleback_Paper_responses.pdf : Stickleback_Paper.pdf
-	pdfjam --outfile $@ $< 29-
+	pdfjam --outfile $@ $< 30-
+
+Stickleback_Paper-diff%.tex : Stickleback_Paper.tex
+	latexdiff-git -r $* $<
+
+Stickleback_Paper_diff.pdf : Stickleback_Paper-diff48bfde6f30646bc23ca0a710619f42593b238582.pdf
+	pdfjam --outfile $@ $< 1-28
 
 clean: 
 	-rm *.aux *.log *.lof *.lot *.fff *.ttt *.out *.bbl *.blg
