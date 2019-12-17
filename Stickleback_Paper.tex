@@ -13,7 +13,6 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
 
-\onehalfspacing
 
 \newcommand{\E}{\mathbb{E}}
 \renewcommand{\P}{\mathbb{P}}
@@ -26,8 +25,8 @@
 % for responses to reviewers
 % set this to show line numbers and include responses to reviews or not
 \newif\ifreviewresponses
-\reviewresponsestrue  % include them
-% \reviewresponsesfalse  % don't include them
+% \reviewresponsestrue  % include them
+\reviewresponsesfalse  % don't include them
 \newcommand{\responsefile}{second-review-responses.tex}  % name of the review reponses file
 \input{review-response-commands}
 
@@ -81,7 +80,7 @@ and what genomic signals we can expect to see.
 The ancestral marine form of threespine stickleback fish (\textit{Gasterosteus aculeatus}) \revpoint{2}{1}
 has given rise to hundreds of thousands to millions of independently derived freshwater populations \revpoint{2}{3}
 in recently de-glaciated regions around the Northern Hemisphere 
-\citep{Bell_1994, Thompson_1997, Cresko_2007, Hunt_2008} \revpoint{3}{9}
+\citep{Bell_1994, Thompson_1997, Cresko_2007, Hunt_2008}. \revpoint{3}{9}
 This model organism has provided some of the earliest data showing the heterogeneous nature of divergence across genomes \revpoint{2}{4}
 and the much more extensive use of standing genetic variation than once thought 
 \citep{schluter2009genetics, DeFaveri_2011, DeFaveri_2013, Roesti_2014, Nelson_2018, Bassham_2018, Nelson_2019, Hohenlohe_2010, Terekhanova_2014, Marques_2016}.  
@@ -149,7 +148,7 @@ The optimal trait values in the marine and freshwater habitats are $+10$ and $-1
     f(x_\text{ind}; x_\text{opt})
     &=
     \exp\left\{
-        \frac{1}{2}
+        - \frac{1}{2}
             \left(
             \frac{x_\text{ind}-x_\text{opt}}{15}
             \right)^2
@@ -310,7 +309,7 @@ As expected, increasing migration rate decreased differentiation between habitat
     \begin{center}
         \includegraphics[width=\textwidth]{Final_Plots/Fst_Genome_faa.pdf}
           \caption{
-        Average $F_{ST}$ in windows of 500Mb between:
+        Average $F_{ST}$ in windows of 500bp between:
         \textbf{(top)} marine habitat and old lakes;
         \textbf{(middle)} marine habitat and new lakes; and
         \textbf{(bottom)} old and new lakes.
@@ -402,9 +401,9 @@ In other words, greater mixing at higher migration rates allows lakes to share a
         of all trait-affecting alleles above frequency 50\% in at least one new lake,
         classified as
         \textbf{(red)} new mutations,
-        \textbf{(blue)} post-colonization migrants,
-        \textbf{(green)} ``captured'' from pre-existing lakes, or
-        \textbf{(orange)} standing marine variation.
+        \textbf{(black)} post-colonization migrants,
+        \textbf{(tan)} ``captured'' from pre-existing lakes, or
+        \textbf{(grey)} standing marine variation.
         See Methods for precise definitions of these categories.
     } \label{fig:Origin}
     \end{center}
@@ -561,7 +560,7 @@ if the individuals in the population all have trait values $z$ units above the o
 and the allele has effect size $-u$ in heterozygotes,
 then the fitness advantage of the allele is the ratio of fitnesses with and without the allele.
 As we calculate fitness here, this is
-$s(u) = \exp(-\beta((z - u)^2) / \exp( - \beta z^2)) \approx 2 \beta z u$,
+$s(u) = \exp(-\beta(z - u)^2) / \exp( - \beta z^2) \approx 2 \beta z u$,
 where $\beta = 1 / 450$. 
 This tells us two things: (1) the rate of adaptation decreases as the population approaches the optimum, and (2) larger mutations (in the right direction) are more likely to fix.
 
@@ -679,7 +678,7 @@ Thus, the large marine population was able to harbor and distribute alleles that
 \section *{Acknowledgements}
 
 We'd like to thank the entire Cresko lab, as well as Jeff Ross-Ibarra and several anonymous reviewers for useful input.
-Thank you to Dr. Ben Haller For suggesting SLiM model improvements and interpretation. 
+Thank you to Ben Haller for suggesting SLiM model improvements and interpretation. 
 This work benefited from access to the University of Oregon high performance computer, Talapas. 
 
 \bibliographystyle{plainnat}
